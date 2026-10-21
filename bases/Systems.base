@@ -1,0 +1,38 @@
+filters:
+  and:
+    - file.inFolder("systems")
+views:
+  - type: table
+    name: All
+    filters:
+      and:
+        - 'status != "deprecated"'
+    groupBy:
+      property: note.category
+      direction: ASC
+    order:
+      - file.name
+      - note.status
+      - note.runs_on
+      - note.ip
+      - note.last_verified
+  - type: table
+    name: Needs verification
+    filters:
+      and:
+        - 'status != "deprecated"'
+        - or:
+            - '!last_verified'
+            - 'last_verified < today() - "90d"'
+    order:
+      - file.name
+      - note.last_verified
+  - type: table
+    name: Runs on this
+    filters:
+      and:
+        - runs_on.contains(this)
+    order:
+      - file.name
+      - note.category
+      - note.status

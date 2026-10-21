@@ -1,0 +1,12 @@
+{
+  "types": {
+    "date": "date",
+    "completed": "date",
+    "last_verified": "date",
+    "last_tested": "date",
+    "port": "number",
+    "runs_on": "multitext",
+    "system": "multitext",
+    "project": "multitext"
+  }
+}

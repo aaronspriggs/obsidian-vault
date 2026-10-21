@@ -1,0 +1,37 @@
+filters:
+  and:
+    - file.inFolder("changes")
+views:
+  - type: table
+    name: Recent
+    filters:
+      and:
+        - 'date >= today() - "14d"'
+    order:
+      - file.name
+      - note.type
+      - note.system
+  - type: table
+    name: All
+    order:
+      - file.name
+      - note.type
+      - note.system
+      - note.project
+  - type: table
+    name: For this system
+    limit: 10
+    filters:
+      and:
+        - system.contains(this)
+    order:
+      - file.name
+      - note.type
+  - type: table
+    name: For this project
+    filters:
+      and:
+        - project.contains(this)
+    order:
+      - file.name
+      - note.type

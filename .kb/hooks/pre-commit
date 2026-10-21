@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Blocks commits that contain secrets or break the vault schema/links.
+# Enabled per clone with: git config core.hooksPath .kb/hooks
+set -euo pipefail
+
+if ! command -v gitleaks >/dev/null; then
+  echo "pre-commit: gitleaks not installed; refusing to commit unscanned." >&2
+  exit 1
+fi
+gitleaks git --staged --no-banner --redact
+"$(git rev-parse --show-toplevel)/.kb/check.py"

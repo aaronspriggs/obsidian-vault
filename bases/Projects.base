@@ -1,0 +1,59 @@
+filters:
+  and:
+    - file.inFolder("projects")
+views:
+  - type: table
+    name: Open
+    filters:
+      and:
+        - 'status == "active" || status == "blocked"'
+    groupBy:
+      property: note.status
+      direction: ASC
+    order:
+      - file.name
+      - note.type
+      - note.priority
+      - note.system
+      - note.next_step
+  - type: table
+    name: Backlog
+    filters:
+      and:
+        - 'status == "backlog"'
+    groupBy:
+      property: note.priority
+      direction: ASC
+    order:
+      - file.name
+      - note.type
+      - note.system
+  - type: table
+    name: Done
+    filters:
+      and:
+        - 'status == "done"'
+    order:
+      - file.name
+      - note.completed
+      - note.system
+  - type: table
+    name: Open for this system
+    filters:
+      and:
+        - system.contains(this)
+        - 'status != "done"'
+    order:
+      - file.name
+      - note.status
+      - note.priority
+      - note.next_step
+  - type: table
+    name: Sub-items
+    filters:
+      and:
+        - parent == this
+    order:
+      - file.name
+      - note.status
+      - note.next_step

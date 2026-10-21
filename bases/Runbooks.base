@@ -1,0 +1,37 @@
+filters:
+  and:
+    - file.inFolder("runbooks")
+views:
+  - type: table
+    name: By kind
+    filters:
+      and:
+        - 'status != "deprecated"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.system
+      - note.last_tested
+  - type: table
+    name: Untested
+    filters:
+      and:
+        - 'status != "deprecated"'
+        - or:
+            - '!last_tested'
+            - 'last_tested < today() - "180d"'
+    order:
+      - file.name
+      - note.last_tested
+  - type: table
+    name: For this system
+    filters:
+      and:
+        - system.contains(this)
+        - 'status != "deprecated"'
+    order:
+      - file.name
+      - note.kind
+      - note.last_tested

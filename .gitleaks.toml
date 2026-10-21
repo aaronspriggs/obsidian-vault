@@ -1,0 +1,28 @@
+# Default gitleaks rules plus homelab-specific ones.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "home-assistant-webhook-id"
+description = "Home Assistant webhook ID (anyone on the LAN who knows it can trigger the automation)"
+regex = '''/api/webhook/([A-Za-z0-9_-]{12,})'''
+secretGroup = 1
+
+[[rules]]
+id = "uptime-kuma-push-token"
+description = "Uptime Kuma push monitor token"
+regex = '''/api/push/([A-Za-z0-9]{8,})'''
+secretGroup = 1
+
+[[rules]]
+id = "dockhand-api-token"
+description = "Dockhand API token (full admin on Big Boi's Docker)"
+regex = '''\bdh_[A-Za-z0-9_-]{20,}'''
+
+# generic-api-key reads "Verified via API: NZBGet/Prowlarr" as a key. The phrase
+# is in KB pages about the arr health checks (and about this false positive),
+# so the export kept failing; match the exact phrase only.
+[[allowlists]]
+description = "KB prose: 'Verified via API: NZBGet/Prowlarr'"
+regexTarget = "line"
+regexes = ['''Verified via API: NZBGet/Prowlarr''']
