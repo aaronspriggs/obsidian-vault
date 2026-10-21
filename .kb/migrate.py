@@ -221,9 +221,17 @@ def main():
     global current_dir
     dry = "--dry-run" in sys.argv
     api = kbx.Notion(kbx.TOKEN_FILE.read_text().strip())
+    # Search finds the databases; their pages come from a direct query, because
+    # search lags behind recent edits (a run once missed two just-edited pages).
     pages, dbs = [], []
     for o in api.paginate("POST", "/search", {"page_size": 100}):
         (pages if o["object"] == "page" else dbs).append(o)
+    pages = [p for p in pages if p["parent"]["type"] != "database_id"]
+    if not any(norm(p["id"]) == norm(STANDARDS_ID) for p in pages):
+        pages.append(api.call("GET", f"/pages/{STANDARDS_ID}"))
+    for d in dbs:
+        if kbx.plain(d["title"]) in FOLDERS:
+            pages += api.paginate("POST", f"/databases/{d['id']}/query", {"page_size": 100})
     pages = [p for p in pages if not p.get("archived") and not p.get("in_trash")]
     db_names = {norm(d["id"]): kbx.plain(d["title"]) for d in dbs}
     titles = {p["id"]: kbx.page_title(p) for p in pages}
