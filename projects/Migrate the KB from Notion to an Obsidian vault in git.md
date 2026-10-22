@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
-next_step: '2026-10-21: pilot converted locally (~/obsidian-vault); waiting on Aaron to create the GitHub repo + deploy key, then he reviews it in Obsidian on the Mac.'
+next_step: '2026-10-22: pilot reviewed OK in Obsidian on the Mac (~/Documents/Claude/obsidian-vault.nosync; embedded Bases views, links, properties all render). Next: cutover, pending Aaron''s yes on the Tier 3 steps.'
 notion_id: 4007ae76-22ba-8150-91b0-e3d3cd9061bb
 ---
 
