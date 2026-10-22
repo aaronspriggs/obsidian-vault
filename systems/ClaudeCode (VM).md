@@ -51,6 +51,7 @@ Ubuntu Server VM on TrueNAS SCALE (Big Boi) running Claude Code in Remote Contro
 - **Command:** `~/.local/bin/claude-remote-control-start`, which sets HA_MCP_URL from 1Password and then runs `claude remote-control --name "ClaudeCode VM"`
 - **Restart policy:** always
 - **Gotcha:** first run requires answering an interactive "Enable Remote Control? (y/n)" consent prompt, which systemd can't supply (no TTY) — the service will crash-loop until this is accepted once by running the same command manually from the same working directory over SSH, after which the consent persists and systemd starts clean.
+- **Mods (Claude Code plugins) over Remote Control** (tested 2026-10-22, Claude Code 2.1.286): hooks work, UI doesn't. A mod can block, hold or rewrite tool calls and prompts, and its slash commands can answer in text (`tier3-guard` relies on this). Panes, buttons, toasts and status-line entries don't render in the Desktop app or the iOS app: `/ui-test` reported "Surfaces drawing this session: none" on both. Re-check after Claude Code updates with repo `claudecode-vm/mods/ui-test`; see project "Use mod UI once Remote Control clients draw it".
 
 ## Access
 
