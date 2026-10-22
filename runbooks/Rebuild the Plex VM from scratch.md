@@ -103,7 +103,7 @@ sudo rm -rf /root/plexdb && sudo systemctl start plexmediaserver
 - Hardware transcoding: force a transcode (play a 4K file at a lower quality) and confirm the Plex dashboard shows `(hw)`, or `sudo intel_gpu_top` shows the Video engine busy.
 - Remote access over cellular works.
 - **DB export**: `claude-maint plex-db-export` needs one of Plex's own DB backups, and a fresh install has none until Plex's next scheduled backup (Settings → Scheduled Tasks, every 3 days, in the maintenance window). Until then the ClaudeCode VM's Sunday `plex-db-export` run fails, and the B2 pre-script keeps uploading the old export but alerts once it's over 9 days old. After 3 days, Claude runs `sudo systemctl start plex-db-export.service` on the ClaudeCode VM and checks it succeeds.
-- Log the rebuild in the Changes DB and update the Plex Media Server System page (zvol name, kernel, Plex version, host key).
+- Log the rebuild as a change note and update the Plex Media Server System note (zvol name, kernel, Plex version, host key).
 
 ## Rollback
 

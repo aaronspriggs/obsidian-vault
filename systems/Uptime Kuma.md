@@ -20,8 +20,8 @@ Uptime Kuma watches every homelab service and host, plus push heartbeats from sc
 ## Access
 
 - UI: [http://192.168.1.248:3002/](http://192.168.1.248:3002/). Admin login (Kuma has a single user) in Aaron's password manager and, since 2026-10-14, in 1Password `Uptime Kuma` in the Claude vault. Claude uses it via `kuma-api`/`kuma-adopt` on the ClaudeCode VM (repo `uptime-kuma/`), which drive Kuma's internal [socket.io](http://socket.io/) API through AutoKuma's `kuma` CLI; Kuma's API keys only unlock `/metrics`. Monitors are code, managed by AutoKuma (see Config).
-- HA reads it with a Kuma API key entered by Aaron in the HA integration (never in chat or Notion). `/metrics` needs that key.
-- Push monitor URLs contain tokens: they live only in each client's config file on the ClaudeCode or Plex VM, never in Notion or the repo (gitleaks has a rule for them).
+- HA reads it with a Kuma API key entered by Aaron in the HA integration (never in chat or the KB). `/metrics` needs that key.
+- Push monitor URLs contain tokens: they live only in each client's config file on the ClaudeCode or Plex VM, never in the KB or the repo (gitleaks has a rule for them).
 
 ## Config
 
@@ -32,7 +32,7 @@ Uptime Kuma watches every homelab service and host, plus push heartbeats from sc
 - **17 monitors (2026-10-14; the three JSON health monitors were deleted that day):**
     - Services: Plex, Sonarr, Radarr, Prowlarr, NZBGet, Seerr, Home Assistant, Dockhand, TrueNAS.
     - Hosts/devices: UDM Pro, ClaudeCode VM, Wall Panel Pi, HDHomeRun.
-    - Push heartbeats: Plex VM Updates, ClaudeCode VM Updates (homelab-update), TrueNAS Alert Relay (900 s), KB Export (8 days).
+    - Push heartbeats: Plex VM Updates, ClaudeCode VM Updates (homelab-update), TrueNAS Alert Relay (900 s), KB Vault Sync (1 h; kb-sync-check, renamed from KB Export on 2026-10-22 and still AutoKuma ID `kb-export`).
 - **Alerting lives in HA, in Alert2 (since 2026-10-09):** each monitor's `sensor.*_status` carries label `homelab_watch` (24 entities incl. UniFi device states), and Alert2 generates one alert per labelled entity (`alert2.homelab_<name>_down`, UniFi `_offline`); push heartbeats are listed explicitly in the heartbeat generator. Config: repo `ha/alert2.yaml`. **To add a monitor:** add a file under `stacks/uptime-kuma/monitors/`, render, commit and deploy (a push monitor's token then has to go into its client's config on its host), reload the Uptime Kuma integration, add the `homelab_watch` label to its `sensor.*_status`, then run `alert2.reload` (a push monitor also needs a line in the heartbeat generator and the service generator's exclusion list). Pushes 09:00–20:00 only, with a 09:00 report of overnight alerts. The old `automation.homelab_service_device_alerts` is turned off. Arr app health is no longer alerted from the three Kuma JSON health monitors: Alert2's `homelab_<app>_health` alerts use HA's own `rest:` sensors (`sensor.<app>_health_errors`/`_messages`, repo `ha/rest-arr-health.yaml`), firing after 30 min of errors and only while the app is up. The three JSON health monitors were deleted 2026-10-14 (Aaron) and their HA devices removed. Reloading the Uptime Kuma integration is safe: Alert2 conditions ignore `unavailable`.
 
 ## Dependencies

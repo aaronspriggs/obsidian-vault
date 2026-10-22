@@ -42,11 +42,11 @@ All in Aaron's 1Password unless noted. Without the first three, the offsite copi
 | UniFi account (UDM, DHCP reservations) | Aaron's vault | Confirmed 2026-10-16 |
 | Plex account ([plex.tv](http://plex.tv/), Plex Pass lifetime) | Aaron's vault | Confirmed 2026-10-16 (Aaron's personal vault). Only needed if the restored `Preferences.xml` doesn't keep the claim |
 | Wrapper credentials (Dockhand, UniFi read-only, *arr, Kuma, TrueNAS `claude-maint`, ha-mcp URL) | Vault `Homelab - Claude` (9 items, checked 2026-10-16) | Some may need reissuing after a TrueNAS or Dockhand rebuild |
-| Service account `claudecode-vm` token, TrueNAS `claude-readonlyapi` key, kb-export Notion token | Reissued on rebuild | See the ClaudeCode VM runbook |
+| Service account `claudecode-vm` token, TrueNAS `claude-readonlyapi` key, obsidian-vault deploy key | Reissued on rebuild | See the ClaudeCode VM runbook |
 
 ## Verify
 
-After each step, run that runbook's Verify section. At the end, Uptime Kuma should be all green and the HA Home Health dashboard clear. Log the recovery in the Changes DB.
+After each step, run that runbook's Verify section. At the end, Uptime Kuma should be all green and the HA Home Health dashboard clear. Log the recovery as a change note. The KB itself survives the loss of everything here: it is on GitHub (aaronspriggs/obsidian-vault) and in the Mac clone.
 
 ## Rollback
 

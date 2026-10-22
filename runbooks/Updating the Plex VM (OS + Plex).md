@@ -28,7 +28,7 @@ Trigger: Aaron says "update Plex/the Linux VM to the newest version and validate
 6. If `/var/run/reboot-required` exists: `sudo -n /usr/local/sbin/claude-maint reboot`. SSH is back in about 25 s.
 7. **Validate:** the new kernel is running and `reboot-required` is gone; `plexmediaserver` is active and enabled; `/identity` reports the new version, both on the VM and over the LAN; `ls /mnt/media /mnt/dvr` triggers the automounts and both show as NFS; `/dev/dri` has `card*` + `renderD128` and the `plex` user is in `video` + `render`; root disk has room; `systemctl --failed` is empty; `journalctl -b -u plexmediaserver -p err` has no errors.
 8. `sudo -n /usr/local/sbin/claude-maint autoremove`
-9. Log to the Changes DB (Type Upgrade) and update versions on the Plex Media Server System page.
+9. Log a change note (type upgrade) and update versions on the Plex Media Server System note.
 
 ## Rollback
 

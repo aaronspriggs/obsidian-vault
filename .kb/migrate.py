@@ -3,10 +3,10 @@
 
 Reads Notion with kb-export's read-only token and its tested API client and
 block renderer (~/homelab/kb-export/kb-export), then writes notes in the vault
-schema that .kb/check.py enforces. Rerunnable: it rewrites systems/, projects/,
-changes/, runbooks/ and STANDARDS.md from live Notion each time, so the pilot
-and the final cutover run the same code.
-Usage: .kb/migrate.py [--dry-run]
+schema that .kb/check.py enforces. It rewrites systems/, projects/, changes/,
+runbooks/ and STANDARDS.md from Notion, so after the 2026-10-22 cutover it
+refuses to run without --force. Kept as the record of how the vault was built.
+Usage: .kb/migrate.py [--dry-run | --force]
 """
 import datetime
 import importlib.machinery
@@ -220,6 +220,9 @@ def frontmatter(folder, p, deprecated, replaced_by):
 def main():
     global current_dir
     dry = "--dry-run" in sys.argv
+    if not dry and "--force" not in sys.argv:
+        sys.exit("Cutover happened 2026-10-22: the vault is the source of truth and a run would overwrite it. "
+                 "Use --dry-run, or --force only to rebuild from the Notion archive on purpose.")
     api = kbx.Notion(kbx.TOKEN_FILE.read_text().strip())
     # Search finds the databases; their pages come from a direct query, because
     # search lags behind recent edits (a run once missed two just-edited pages).

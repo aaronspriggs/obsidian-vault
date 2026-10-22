@@ -63,7 +63,7 @@ Claude, over `truenas-api`, unless marked:
 - `make -C ~/homelab check`: the `cloudsync:` pre-script line is `ok`.
 - After the next 01:15 run: both Cloud Sync tasks SUCCESS (the pre-script fails if the Plex export is over 9 days old, which is expected right after a Plex rebuild).
 - *Aaron*: SMB share `BIGBOI` opens from the Mac; the UPS shows on the dashboard.
-- Uptime Kuma all green; HA Home Health clear. Log the rebuild in the Changes DB and update the Big Boi System page (version, hardware, boot device).
+- Uptime Kuma all green; HA Home Health clear. Log the rebuild as a change note and update the Big Boi System page (version, hardware, boot device).
 
 ## Rollback
 

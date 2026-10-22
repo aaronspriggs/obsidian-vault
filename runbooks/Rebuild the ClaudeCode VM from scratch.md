@@ -22,11 +22,11 @@ The ClaudeCode VM is gone or unusable: the zvol was lost, the VM won't boot, or 
 | Wrapper credentials (Dockhand, UniFi, *arr, Kuma, TrueNAS `claude-maint`, ha-mcp URL) | 1Password vault `Homelab - Claude`, read via service account `claudecode-vm` |
 | The service account token itself | *Aaron* issues a new one |
 | TrueNAS read-only key (`claude-readonlyapi`) | *Aaron* issues a new one (it was only on the old disk) |
-| kb-export Notion token | *Aaron* refreshes the Notion integration `kb-export` secret |
-| HA webhook and Kuma push URLs (relay, kb-export, homelab-update) | Read back from HA and Kuma by Claude; not secret enough to need 1Password |
+| KB vault clone (`~/obsidian-vault`) | GitHub `aaronspriggs/obsidian-vault`; new deploy key, *Aaron* adds the public key |
+| HA webhook and Kuma push URLs (relay, KB Vault Sync, homelab-update) | Read back from HA and Kuma by Claude; not secret enough to need 1Password |
 | SSH keys (GitHub deploy key, Plex) | Generated new; *Aaron* swaps the public keys |
 | Claude login | Log in again with Aaron's [claude.ai](http://claude.ai/) account |
-| Notion, Gmail and other connectors | Account-level on [claude.ai](http://claude.ai/); nothing to do on the VM |
+| claude.ai connectors (Notion archive, Gmail, ...) | Account-level on [claude.ai](http://claude.ai/); nothing to do on the VM |
 
 ## Prerequisites
 
@@ -89,24 +89,26 @@ sudo install -m 644 ~/homelab/claudecode-vm/systemd/claude-remote-control.servic
 sudo systemctl daemon-reload && sudo systemctl enable --now claude-remote-control
 ```
 "ClaudeCode VM" should appear at [claude.ai/code](http://claude.ai/code). **From here, open a Remote Control session and let Claude do the rest**, pointing it at this runbook.
+**First, the KB vault** (Claude generates the key, *Aaron* adds it), so the rest of this runbook and every other note are readable on the VM. Until then, read this runbook in Obsidian on the Mac or on GitHub. Claude: `ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519_github_obsidian_vault`, append a `Host github-obsidian-vault` block (HostName github.com, User git, that IdentityFile, IdentitiesOnly yes) to `~/.ssh/config`. Aaron: GitHub → obsidian-vault → Settings → Deploy keys → add the `.pub` with write access. Claude: `git clone github-obsidian-vault:aaronspriggs/obsidian-vault.git ~/obsidian-vault && git -C ~/obsidian-vault config core.hooksPath .kb/hooks`, then `~/obsidian-vault/.kb/check.py`.
+
 1. **Plex access** (Claude generates the key, *Aaron* installs it). Claude: `ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519_plex` and append the `Host plex` block (HostName 192.168.1.116, User `claude`, that IdentityFile, IdentitiesOnly yes) to `~/.ssh/config`. Aaron, as `plexadmin` on the Plex VM: replace the line in `/home/claude/.ssh/authorized_keys` with `from="192.168.1.156",no-agent-forwarding,no-port-forwarding,no-X11-forwarding <new id_ed25519_plex.pub>`. Claude then runs `ssh plex true` to accept the host key. The access model is in [Updating the Plex VM (OS + Plex)](<Updating the Plex VM (OS + Plex).md>).
 2. **TrueNAS read-only key** (*Aaron*): in TrueNAS, revoke the old API key of `claude-readonlyapi`, create a new one, and write it to `~/.config/homelab/truenas-api-key` the same way as step 5. See [TrueNAS API access (read-only + maintenance writes) and alert relay (ClaudeCode VM)](<TrueNAS API access (read-only + maintenance writes) and alert relay (ClaudeCode VM).md>). Claude checks it with `truenas-api system.info`.
-3. **Timers** (Claude, plus *Aaron* for the Notion token):
+3. **Timers** (Claude):
     - Relay: fill `~/.config/homelab/truenas-alert-relay.json` (600) from `truenas/truenas-alert-relay.json.example`, with the HA webhook URL and the `TrueNAS Alert Relay` Kuma push URL read back over ha-mcp and `kuma-api`.
-    - kb-export: *Aaron* refreshes the secret of the Notion integration `kb-export` and writes it to `~/.config/kb-export/notion-token` (600, as in step 5). Claude fills `~/.config/kb-export/kb-export.json` from its `.example` (`KB Export` push URL) and does the one-time clone in `kb-export/README.md`.
+    - kb-sync-check: write the `KB Vault Sync` Kuma push URL (without query, read back with `kuma-api`) to `~/.config/homelab/kb-sync-check-push-url` (600). See repo `kb-sync-check/README.md`. (kb-export was retired on 2026-10-22; don't reinstall it.)
     - homelab-update: fill a copy of `homelab-update/hosts/claudecode-vm.conf.example` (webhook ID from the HA automation `homelab_vm_update_reports`, the `ClaudeCode VM Updates` push URL) and run `sudo bash install.sh <conf>` per `homelab-update/README.md`.
-    - Install and enable the units: `truenas-alert-relay`, `kb-export` and `plex-db-export` (`.service` + `.timer` from `truenas/systemd/`, `kb-export/systemd/`, `backup/systemd/`), then `sudo systemctl daemon-reload && sudo systemctl enable --now <each>.timer`.
+    - Install and enable the units: `truenas-alert-relay`, `kb-sync-check` and `plex-db-export` (`.service` + `.timer` from `truenas/systemd/`, `kb-sync-check/systemd/`, `backup/systemd/`), then `sudo systemctl daemon-reload && sudo systemctl enable --now <each>.timer`.
 4. **Drift check**: `make -C ~/homelab check`. Every line should say `ok`.
 
 ## Verify
 
 - `make -C ~/homelab check` is all `ok`.
-- `systemctl is-active claude-remote-control softdog` both active. `systemctl list-timers` shows `homelab-update`, `kb-export`, `plex-db-export`, `truenas-alert-relay`.
+- `systemctl is-active claude-remote-control softdog` both active. `systemctl list-timers` shows `homelab-update`, `kb-sync-check`, `plex-db-export`, `truenas-alert-relay`.
 - `/proc/cmdline` contains `nomodeset`; `wdctl` shows softdog.
-- In a Remote Control session, the Home Assistant (ha-mcp) tools load and a Notion search works.
-- `ssh plex sudo claude-maint unattended-dry-run` succeeds; `truenas-api system.info` returns; `git -C ~/homelab push --dry-run` succeeds.
-- Uptime Kuma: `ClaudeCode VM` is up, and `TrueNAS Alert Relay` turns green within about 15 minutes. `KB Export` and `ClaudeCode VM Updates` are weekly, so check them after the next Sunday.
-- Log the rebuild in the Changes DB and update the ClaudeCode VM System page (Claude Code version, any spec changes).
+- In a Remote Control session, the Home Assistant (ha-mcp) tools load.
+- `ssh plex sudo claude-maint unattended-dry-run` succeeds; `truenas-api system.info` returns; `git -C ~/homelab push --dry-run` and `git -C ~/obsidian-vault push --dry-run` succeed.
+- Uptime Kuma: `ClaudeCode VM` is up, and `TrueNAS Alert Relay` and `KB Vault Sync` turn green within about 15 minutes. `ClaudeCode VM Updates` is weekly, so check it after the next Sunday.
+- Log the rebuild as a change note and update the ClaudeCode VM System note (Claude Code version, any spec changes).
 
 ## Rollback
 

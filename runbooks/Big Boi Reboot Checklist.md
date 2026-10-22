@@ -20,7 +20,7 @@ A planned restart of Big Boi (TrueNAS SCALE, 192.168.1.248): TrueNAS updates, ha
 
 ## Steps
 
-**Step 1. Pre-checks (ask Claude before you start).** Claude checks through the read-only TrueNAS API: pool `Big Boi` ONLINE and healthy, no scrub or resilver running, no unexpected alerts (the "new ZFS feature flags" notice is expected; don't upgrade the pool as part of a reboot), all three VMs running, Dockhand app running. Claude also commits and pushes any open repo work and logs any unfinished Notion work, because the session ends at step 4.
+**Step 1. Pre-checks (ask Claude before you start).** Claude checks through the read-only TrueNAS API: pool `Big Boi` ONLINE and healthy, no scrub or resilver running, no unexpected alerts (the "new ZFS feature flags" notice is expected; don't upgrade the pool as part of a reboot), all three VMs running, Dockhand app running. Claude also commits and pushes any open work in the repo and the KB vault, because the session ends at step 4.
 **Step 2. Tell the household:** no Plex, and no smart-home automations or wall panel, for about 10 minutes. Physical light switches still work.
 **Step 3. Optional: shut the VMs down yourself** (Virtualization → each VM → Stop), in this order: ClaudeCode, Plex, HomeAssistant. TrueNAS does this anyway on restart, but it forces off any VM still running after 90 s (`shutdown_timeout` is 90 for all three), so stopping them first lets you see that each one shut down cleanly. HA takes the longest.
 **Step 4. Restart:** the power icon in the TrueNAS top bar → **Restart**, confirm. Over SSH instead: `sudo midclt call system.reboot "planned reboot"` (the argument is the reason text).

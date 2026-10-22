@@ -55,7 +55,7 @@ Claude, over ha-mcp, unless marked:
 - Alerting: the next `truenas-alert-relay` run turns Kuma `TrueNAS Alert Relay` green; Kuma's Home Assistant monitor is green; a test push reaches Aaron's iPhone (*Aaron* confirms).
 - Backups: the `backup` diagnostics show `automatic_backups_configured: true` with Google Drive in `agent_ids`. Run `backup.create_automatic` once and check the new backup lists both `hassio.local` and `google_drive.*` (see [Set up native Google Drive backup integration for Home Assistant (retire the add-on)](<Set up native Google Drive backup integration for Home Assistant (retire the add-on).md>)).
 - *Aaron*: Apple Home still sees the HomeKit Bridge accessories.
-- Log the restore in the Changes DB; update the Home Assistant OS (VM) System page (HAOS/Core versions, zvol name).
+- Log the restore as a change note; update the Home Assistant OS (VM) System note (HAOS/Core versions, zvol name).
 
 ## Rollback
 
