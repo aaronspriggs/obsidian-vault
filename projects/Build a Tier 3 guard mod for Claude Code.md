@@ -30,6 +30,7 @@ Hard deny: `--no-verify` on git, and `git push --force`/`-f` (`--force-with-leas
 - 2026-10-22: approval is by typed reply, not buttons. Tested with a throwaway mod: on Claude Code 2.1.286 neither the Desktop app nor the iOS app draws a mod's pane when attached to this VM's session over Remote Control (`$.session.surfaces()` returned none on both, no `session.attach` fired). Hooks run normally.
 - 2026-10-22: HA Core restarts are not held: they're Tier 1 (Aaron, 2026-10-09).
 - 2026-10-22: deletes are held even for items Claude created in the same session, stricter than the rule; exempting those is a possible v2.
+- 2026-10-22: `ssh-keygen` is held only when it creates, changes, removes or reveals keys; `-l`, `-F` and usage calls run freely (commit ce93d33).
 - 2026-10-22: network and exposure changes (firewall, DNS, Cloudflare, port forwards) have no single tool call to match, so they stay rule-only. The guard is a backstop, not all of Tier 3.
 
 ## Open questions
