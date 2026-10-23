@@ -4,7 +4,7 @@ status: active
 priority: high
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: '2026-10-16: Phase 1 live and restore-tested; BIGBOI dataset cleanup done. Next: on 2026-10-23 check the B2 bucket size (expect under 10 GB); then phase 2 (split rips out of plex_content/Movies).'
+next_step: '2026-10-23: B2 bucket estimated ~4.3 GB after one week, heading for ~10 GB at 30-day steady state (see Layer 2 status). Next: phase 2 (split rips out of plex_content/Movies); around 2026-11-16 Aaron reads the real bucket size in the B2 web UI to confirm it plateaued; optionally find why dockhand-stacks-backup re-uploads ~700 files nightly.'
 notion_id: 3087ae76-22ba-8115-9603-e15b0f8b9f21
 ---
 
@@ -16,7 +16,7 @@ Design and implement a backup strategy that protects all irreplaceable data in t
 
 ## Status (2026-10-16)
 
-Layer 1 is done and verified: the daily snapshots keep 30 days. S.M.A.R.T. is covered (see checklist). **Layer 2 phase 1 is live:** two Cloud Sync tasks push nightly to B2 bucket `spriggs-bigboi-backup` (`B2 offsite: BIGBOI` 01:00, `B2 offsite: vmstore` 01:15). First runs 2026-10-16: 2.0 GiB + 430 MiB, both SUCCESS; a test restore of `/vmstore` matched every file. How to restore: runbook [Offsite backup to B2: what's covered and how to restore](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>). Left: bucket size check on 2026-10-23, phase 2 (rips).
+Layer 1 is done and verified: the daily snapshots keep 30 days. S.M.A.R.T. is covered (see checklist). **Layer 2 phase 1 is live:** two Cloud Sync tasks push nightly to B2 bucket `spriggs-bigboi-backup` (`B2 offsite: BIGBOI` 01:00, `B2 offsite: vmstore` 01:15). First runs 2026-10-16: 2.0 GiB + 430 MiB, both SUCCESS; a test restore of `/vmstore` matched every file. How to restore: runbook [Offsite backup to B2: what's covered and how to restore](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>). **Bucket size check 2026-10-23** (from TrueNAS job history, `core.get_jobs` for `cloudsync.sync`; Claude has no B2 credentials, so this is an estimate, not B2's own number): first runs uploaded 2.42 GiB, and the seven nightly runs since added 1.58 GiB (BIGBOI ~20 MiB/night, vmstore ~205 MiB/night, 257 MiB on 10-23). With every prior version still inside the 30-day window, the bucket holds about 4.0 GiB (4.3 GB). At about 225 MiB/night of churn the 30-day steady state is roughly 2.45 GiB current + 6.6 GiB prior versions, about 9.8 GB, right at the 10 GB free tier; any overage costs under $0.01/month at $6.95/TB. About 71 MiB of the vmstore churn is the staged DBs and Plex export (real changes); the other ~135 MiB, ~700 files, is in `dockhand-stacks-backup`, which the 23:30 `rsync -a` shouldn't change nightly unless Dockhand rewrites its stack files. Not chased yet. Left: phase 2 (rips).
 **Sizes for Layer 2 (live, 2026-10-15):**
 - Personal photos and videos: `BIGBOI/Media Library/` (`2025/`, `Ouray 2020/`), about 0.8 GB.
 - Configs on the `BIGBOI` root: `servarr/`, `uptime-kuma/`, `autokuma/`, plus the `plex_config` dataset (0.3 GB). The `BIGBOI` dataset holds about 2 GB outside `plex_content`. `servarr/` holds only `overseerr/` (Seerr's live config) since 2026-10-16.
@@ -53,7 +53,7 @@ Everything except the rips adds up to well under 10 GB.
     - a weekly (Sunday night) Plex DB export from the Plex VM onto a dataset. Reading `/var/lib/plexmediaserver` needs a new `claude-maint` subcommand on the Plex VM.
 2. Widen the Dockhand nightly cron so it covers Dockhand's DB as well as `stacks/`. Today it rsyncs only `.../app_mounts/dockhand/data/stacks/`. This is a TrueNAS UI edit by Aaron; Claude provides the command.
 3. Give Aaron the exact Cloud Sync task settings: PUSH, SYNC, nightly, remote encryption on, with the source paths from the phase 1 scope above. `claude-maint` has no cloud-sync rights, so Aaron enters them in the UI (Aaron's preference).
-4. Run the first sync, do a test restore of a few files to a scratch path, and check the B2 bucket size after one week. **First sync and restore test done 2026-10-16; bucket size check due 2026-10-23.**
+4. Run the first sync, do a test restore of a few files to a scratch path, and check the B2 bucket size after one week. **First sync and restore test done 2026-10-16; bucket size checked 2026-10-23 (see Layer 2 status).**
 5. Write the runbook "Offsite backup to B2: what's covered and how to restore", and link it to the Big Boi page. **Done 2026-10-16.**
 
 ## Key Decisions (Documented 2026-03-05)
@@ -164,7 +164,7 @@ For reference (from the UI at Data Protection):
 - [x] Create cloud storage account and bucket: Backblaze B2, `spriggs-bigboi-backup` (2026-10-16).
 - [x] Configure Cloud Sync Task: configs and Plex metadata → cloud (two tasks, 2026-10-16).
 - [x] Back up `Media Library/` offsite: in `B2 offsite: BIGBOI` since 2026-10-16.
-- [ ] Check the B2 bucket size on 2026-10-23 (expect under 10 GB, the free tier).
+- [x] Check the B2 bucket size on 2026-10-23 (expect under 10 GB, the free tier): ~4.3 GB estimated, ~10 GB at steady state (2026-10-23).
 - [x] Clean up orphaned directories on BIGBOI dataset. **Done 2026-10-16:** everything in the 2026-03-07 audit below is gone (re-checked via the API: no `bulk_storage/`, `plex_contentt/`, `vm_imports/`, `homelab-mcp` dataset or `servarr/dockge/`), and the stale pre-Dockhand copy in `servarr/` was removed (manual snapshot `BIGBOI@pre-servarr-cleanup-2026-10-16`). The `plex_config` leftover is tracked on the TrueNAS page.
 - [ ] When UNAS Pro arrives: plan directory structure before populating
 - [ ] When UNAS Pro arrives: configure Rsync Task: Big Boi critical data → UNAS Pro nightly
