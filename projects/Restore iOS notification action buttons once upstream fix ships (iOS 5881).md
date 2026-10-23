@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[Home Assistant OS (VM)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
-next_step: 'Wait for upstream long-press fix, then follow ''When a fix ships''. (Dockhand Restart test dropped: homelab_container_restart_on_tap is being retired ~10-21 by the alerting redesign.)'
+next_step: 'Wait for upstream long-press fix, then follow ''When a fix ships''. (Dockhand Restart test dropped: homelab_container_restart_on_tap was deleted 2026-10-23.)'
 notion_id: 3e67ae76-22ba-8122-9734-d7553f58b8a6
 ---
 
@@ -24,7 +24,7 @@ Open upstream bug [home-assistant/iOS#5881](https://github.com/home-assistant/iO
 
 - `automation.water_leak_detected_notify`: **Shut Off Water** / **Dismiss** buttons (handled by `automation.water_leak_notification_handle_actions`)
 - `automation.ha_updates_ask_for_approval`: **Install** / **Release notes** buttons (handled by `automation.ha_updates_install_on_approval`)
-- `automation.homelab_container_alerts_dockhand` (since 2026-10-07): **Restart** button (`DOCKHAND_RESTART`, handled by `automation.homelab_container_restart_on_tap`). Workaround: tapping the alert opens the Dockhand restart button (Gluetun: the servarr stack). Re-test it with the others; a restart is safe to test on `gluetun-watchdog`.
+- Alert2 container down/unhealthy pushes: **Restart** button (`CONTAINER_RESTART`, handled by `automation.homelab_container_restart_on_approval`). The older `DOCKHAND_RESTART` path and both its automations were deleted 2026-10-23.
 
 ## Temporary workarounds in place (2026-09-25)
 

@@ -11,4 +11,4 @@ notion_id: 3e57ae76-22ba-814b-aaae-cd66a7721bc5
 
 # Replace battery in Water Filter/Softener leak sensor
 
-binary_sensor.samjin_water (Aeotec, basement, Water Filter and Softener): battery at 0.5% since 2026-09-24 (3.5% on 2026-09-04). Takes a CR2450 (Battery Notes). The low-battery alert is working: alert2.home_health_aeotec_water_leak_sensor_water_filter_and_softener_battery_low is on (verified 2026-10-17). The old battery_low_notify automation is being retired by the alerting redesign.
+binary_sensor.samjin_water (Aeotec, basement, Water Filter and Softener): battery at 0.5% since 2026-09-24 (3.5% on 2026-09-04). Takes a CR2450 (Battery Notes). The low-battery alert is working: alert2.home_health_aeotec_water_leak_sensor_water_filter_and_softener_battery_low is on (verified 2026-10-17). The old battery_low_notify automation was deleted 2026-10-23.
