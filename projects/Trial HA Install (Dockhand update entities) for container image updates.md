@@ -6,7 +6,7 @@ system:
 - '[[Servarr Stack (Docker Compose)]]'
 - '[[Uptime Kuma]]'
 parent: '[[Dockhand - give Claude API access and build out Dockhand as the Docker platform]]'
-next_step: '2026-10-17: Sonarr/Radarr passed via one-tap Install on 10-16. Remaining: Install the pending NZBGet update (Aaron taps, or Claude runs it on request), then Claude checks NetworkMode still matches Gluetun''s ID. After that, pick the default method with Aaron.'
+next_step: '2026-10-23: all trial checks passed (NZBGet/Prowlarr NetworkMode intact after Update all). Remaining: Aaron picks the default method (Claude recommends the mix) and it goes in the servarr runbook.'
 notion_id: 3f97ae76-22ba-8182-a6da-e1491dfaf00a
 ---
 
@@ -41,7 +41,7 @@ Since 2026-10-14 the container-update pushes (Alert2 alert + 09:00 report) carry
 ## Results so far
 
 - **2026-10-16, Sonarr + Radarr (Aaron's one-tap Install):** both pulled and recreated alone about 20 s apart. Healthy afterwards (`/api/v3/health` empty), HA entities back to `off`, no errors. Downtime wasn't measured (no trace stored). See [2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install](<../changes/2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install.md>).
-- **Still untested:** NZBGet or Prowlarr, where the `NetworkMode` check against Gluetun's ID is the real risk. NZBGet has been flagged since 2026-10-16 22:01 MDT.
+- **2026-10-23, Radarr, NZBGet, Prowlarr, Seerr, gluetun-watchdog (Aaron's one-tap Update all from the 09:00 push):** recreated one at a time 15:31:52–15:32:40 UTC, whole run 59 s. NZBGet and Prowlarr kept `NetworkMode: container:<Gluetun's ID>`, so the main risk didn't happen. Pending list empty, entities `off`, no alerts. Radarr's cached health briefly said NZBGet was unreachable (it came up 9 s before NZBGet) and cleared on `CheckHealth`. See [2026-10-23 09-00 report batches overnight container updates into one Update all push](<../changes/2026-10-23 09-00 report batches overnight container updates into one Update all push.md>).
 
 ## Decide afterwards
 
