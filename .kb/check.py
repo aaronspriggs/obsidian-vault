@@ -2,9 +2,12 @@
 """Validate the vault: schema, enums, links and unique note names.
 
 Runs from the pre-commit hook and exits 1 on any error. With --health it also
-prints the working list HEALTH.md used to give (stalled projects, unverified
-Systems, untested runbooks, gaps that are allowed but should be filled).
-No AI is involved. Usage: .kb/check.py [--health]
+prints the working list HEALTH.md used to give (open work, stalled projects,
+unverified Systems, untested runbooks, gaps that are allowed but should be
+filled). With --map it prints the link graph instead: one line per System, or
+with a note name, everything linked to or from that note grouped by kind, so a
+lookup starts from one short listing instead of opening every backlink.
+No AI is involved. Usage: .kb/check.py [--health | --map [note]]
 """
 import datetime
 import pathlib
@@ -36,6 +39,8 @@ SCHEMA = {  # folder -> {property: (required, allowed values or kind)}
 WIKILINK = re.compile(r"!?\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 MDLINK = re.compile(r"\]\((<[^>]+>|[^)\s]+)\)")
 CODE = re.compile(r"```.*?```|`[^`\n]*`", re.S)
+LINK_PROPS = ("system", "project", "runs_on", "parent", "superseded_by")
+PRIORITY = {"high": 0, "medium": 1, "low": 2}
 
 
 def notes():
@@ -59,9 +64,84 @@ def last_commit(rel):
     return datetime.date.fromisoformat(out) if out else None
 
 
+def project_line(name, fm):
+    line = f"[{fm.get('status')}/{fm.get('priority')}] {name}"
+    step = str(fm.get("next_step") or "")
+    return line + (f" -> {step[:117] + '...' if len(step) > 120 else step}" if step else "")
+
+
+def backlinks(graph):
+    back = {k: set() for k in graph}
+    for k, node in graph.items():
+        for t in node["links"]:
+            if t in back and t != k:
+                back[t].add(k)
+    return back
+
+
+def print_overview(graph):
+    """One line per System: what's open against it and when it last changed."""
+    back = backlinks(graph)
+    for k, node in sorted(graph.items()):
+        fm = node["fm"]
+        if node["folder"] != "systems" or fm.get("status") == "deprecated":
+            continue
+        near = [graph[b] for b in back[k]]
+        n = lambda f, *st: sum(1 for x in near if x["folder"] == f and (not st or x["fm"].get("status") in st))
+        dates = [x["fm"]["date"] for x in near if x["folder"] == "changes"]
+        print(f"- {node['rel'].stem} [{fm.get('category')}, {fm.get('status')}]"
+              f"{' ' + str(fm['ip']) if fm.get('ip') else ''}: {n('projects', 'active', 'blocked')} open,"
+              f" {n('projects', 'backlog')} backlog, {n('runbooks', 'active')} runbooks,"
+              f" last change {max(dates) if dates else 'none'}")
+
+
+def print_map(graph, query, recent=10):
+    """Everything linked to or from one note, grouped so the open and current parts come first."""
+    q = query.lower().removesuffix(".md")
+    hits = [q] if q in graph else [k for k in graph if q in k]
+    if len(hits) != 1:
+        print(f"{len(hits)} notes match {query!r}" + "".join(f"\n- {graph[h]['rel']}" for h in sorted(hits)))
+        sys.exit(2)
+    k = hits[0]
+    node, back = graph[k], backlinks(graph)
+    fm = node["fm"]
+    print(f"# {node['rel']} ({fm.get('status', '-')})\n{node['summary'][:200]}")
+    for label, prop in (("Runs on", "runs_on"), ("Superseded by", "superseded_by"), ("Parent", "parent")):
+        v = fm.get(prop)
+        if v:
+            print(f"{label}: {', '.join(v) if isinstance(v, list) else v}")
+    near = {x: graph[x] for x in (node["links"] | back[k]) - {k} if x in graph}
+    by = lambda f, *st: sorted((x for x in near.values()
+                                if x["folder"] == f and (not st or x["fm"].get("status") in st)),
+                               key=lambda x: x["rel"].stem)
+    runs_on = lambda x: x["fm"].get("runs_on") or []
+    hosted = {x["rel"].stem for x in by("systems") if any(f"[[{k}]]" == str(r).lower() for r in runs_on(x))}
+    sections = [
+        ("Open projects", [project_line(x["rel"].stem, x["fm"]) for x in sorted(
+            by("projects", "active", "blocked"), key=lambda x: PRIORITY.get(x["fm"].get("priority"), 3))]),
+        ("Runbooks", [f"{x['rel'].stem} ({x['fm'].get('kind')})" for x in by("runbooks", "active")]),
+        ("Systems", [x["rel"].stem + (" (hosted here)" if x["rel"].stem in hosted else "")
+                     for x in by("systems") if x["fm"].get("status") != "deprecated"]),
+    ]
+    for heading, rows in sections:
+        if rows:
+            print(f"\n## {heading} ({len(rows)})\n" + "\n".join(f"- {r}" for r in rows))
+    backlog = by("projects", "backlog")
+    if backlog:
+        print(f"\n## Backlog ({len(backlog)}): " + "; ".join(x["rel"].stem for x in backlog))
+    changes = sorted(by("changes"), key=lambda x: (x["fm"].get("date"), x["rel"].stem), reverse=True)
+    if changes:
+        print(f"\n## Changes ({min(recent, len(changes))} newest of {len(changes)})\n"
+              + "\n".join(f"- {x['rel'].stem}" if x["rel"].stem.startswith(str(x["fm"].get("date")))
+                          else f"- {x['fm'].get('date')} {x['rel'].stem}" for x in changes[:recent]))
+    hidden = len(by("projects", "done")) + sum(1 for x in near.values() if x["fm"].get("status") == "deprecated")
+    if hidden:
+        print(f"\n{hidden} done/deprecated hidden")
+
+
 def main():
     health = "--health" in sys.argv
-    errors, gaps = [], []
+    errors, gaps, graph = [], [], {}
     files = list(notes())
     by_name = {}
     for p, rel in files:
@@ -75,7 +155,7 @@ def main():
         return target.lower() in by_name or target.lower().removesuffix(".md") in by_name
 
     today = datetime.date.today()
-    report = {"Stalled projects": [], "Systems to verify": [], "Untested runbooks": []}
+    report = {"Open work": [], "Stalled projects": [], "Systems to verify": [], "Untested runbooks": []}
     for p, rel in files:
         if p.suffix != ".md":
             continue
@@ -114,14 +194,23 @@ def main():
                             errors.append(f"{rel}: {prop} links to missing note {m.group(1)!r}")
             for prop in set(fm) - set(SCHEMA[folder]) - {"ip", "port", "url", "repo", "next_step", "notion_id"}:
                 errors.append(f"{rel}: unknown property {prop!r}")
+        node = graph[rel.stem.lower()] = {"rel": rel, "folder": folder, "fm": fm, "links": set(),
+                                          "summary": next((ln for ln in body.splitlines() if ln.strip()), "")}
+        for prop in LINK_PROPS:
+            v = fm.get(prop) or []
+            for x in v if isinstance(v, list) else [v]:
+                if m := WIKILINK.fullmatch(str(x).strip()):
+                    node["links"].add(m.group(1).strip().lower())
         body = CODE.sub("", body)  # links inside code are examples, not links
         for m in WIKILINK.finditer(body):
+            node["links"].add(m.group(1).strip().lower().removesuffix(".md"))
             if not resolves(m.group(1)):
                 errors.append(f"{rel}: link to missing note {m.group(1)!r}")
         for m in MDLINK.finditer(body):
             dest = m.group(1).strip("<>").split("#")[0]
             if not dest or re.match(r"[a-z][a-z0-9+.-]*:", dest, re.I):
                 continue
+            node["links"].add(pathlib.Path(urllib.parse.unquote(dest)).stem.lower())
             if not (p.parent / urllib.parse.unquote(dest)).resolve().exists():
                 errors.append(f"{rel}: broken link {dest!r}")
         if re.search(r"https?://(www\.|app\.)?notion\.(so|com)/", body):
@@ -131,6 +220,8 @@ def main():
             continue
         status = fm.get("status")
         if folder == "projects":
+            if status in ("active", "blocked"):
+                report["Open work"].append(project_line(rel.stem, fm))
             if status in ("active", "blocked") and not fm.get("next_step"):
                 gaps.append(f"{rel}: {status} but no next_step")
             if status == "done" and not fm.get("completed"):
@@ -149,7 +240,12 @@ def main():
 
     for e in errors:
         print("ERROR", e)
+    if "--map" in sys.argv:
+        args = sys.argv[sys.argv.index("--map") + 1:]
+        print_map(graph, " ".join(args)) if args else print_overview(graph)
     if health:
+        report["Open work"].sort(key=lambda r: (not r.startswith("[active"),
+                                                PRIORITY.get(r.split("/")[1].split("]")[0], 3)))
         for heading, rows in report.items():
             print(f"\n## {heading} ({len(rows)})")
             print("\n".join(f"- {r}" for r in rows) or "- none")
