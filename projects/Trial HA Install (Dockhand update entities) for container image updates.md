@@ -1,51 +1,32 @@
 ---
 type: task
-status: active
+status: done
 priority: low
 system:
 - '[[Servarr Stack (Docker Compose)]]'
 - '[[Uptime Kuma]]'
 parent: '[[Dockhand - give Claude API access and build out Dockhand as the Docker platform]]'
-next_step: '2026-10-23: all trial checks passed (NZBGet/Prowlarr NetworkMode intact after Update all). Remaining: Aaron picks the default method (Claude recommends the mix) and it goes in the servarr runbook.'
+completed: 2026-10-23
 notion_id: 3f97ae76-22ba-8182-a6da-e1491dfaf00a
 ---
 
-HA Install = ha-dockhand calling POST /api/containers/batch-update-stream for one container (pull + recreate of that container only). Gluetun is opted out via dockhand.update=false (2026-10-14), so Install isn't offered for it.
+# Trial HA Install (Dockhand update entities) for container image updates
 
-## Why
+Done 2026-10-23.
 
-Aaron sees Dockhand image updates in HA's system updates and wants to know if clicking Install there is a better routine than Claude's whole-stack `POST /api/stacks/<stack>/deploy {pull, forceRecreate}`. Both work; this trial collects evidence to pick a default.
+## Outcome
 
-## How HA Install works (verified 2026-10-14 from `custom_components/dockhand/update.py`)
+HA Install (ha-dockhand's `update.big_boi_containers_<name>`, which calls Dockhand's `POST /api/containers/batch-update-stream` for one container: pull + recreate that container only) works for every servarr container. Sonarr and Radarr passed via one-tap Install on 2026-10-16. Radarr, NZBGet, Prowlarr, Seerr and gluetun-watchdog passed via one-tap Update all on 2026-10-23 (59 s, one at a time). NZBGet and Prowlarr kept `NetworkMode: container:<Gluetun's ID>`, which was the main risk. The only side effect was a stale Radarr health error about NZBGet that cleared on the next health check. Gluetun is opted out (`dockhand.update=false`) because recreating it alone strands NZBGet and Prowlarr.
 
-- Each `update.big_boi_containers_<name>` entity's Install calls Dockhand's `POST /api/containers/batch-update-stream` with that one container ID. Dockhand pulls the container's current tag and recreates only that container with its existing config. It runs a vulnerability scan if a scanner is configured, and HA polls `/api/jobs/<id>` for progress.
-- It doesn't go through compose, so the compose-network bug from 2026-10-14 (Kuma's IPv6 gateway) doesn't apply.
-- Install is hidden for system containers (ix-dockhand) and for any container labelled `dockhand.update=false`.
-- Claude can trigger the same thing with ha-mcp `ha_manage_updates(action="install", entity_ids=[...])`. HA's "Update all" button also exists and skips opted-out containers.
+## Decisions
 
-## Gluetun exception
+- **2026-10-14 (Aaron):** nightly snapshots are the safety net, not a pre-update snapshot.
+- **2026-10-23 (Aaron):** HA Install is the default for routine image updates. Daytime: one Install push per container from Alert2. Anything still pending at 09:00: one push with Update all (N). Whole-stack deploy only when Gluetun has an update. Recorded in runbook [Managing the Servarr Docker Stack](<../runbooks/Managing the Servarr Docker Stack.md>).
 
-NZBGet and Prowlarr use `network_mode: service:gluetun`, which pins them to Gluetun's container ID. If Gluetun were recreated alone, its ID would change and both would be left without a network. `gluetun-watchdog` only runs `docker restart`, which can't reattach them. So Gluetun carries `dockhand.update=false` (repo commit fc7e579), and a Gluetun update means a servarr stack deploy as before. Updating NZBGet or Prowlarr alone is fine: they rejoin the current Gluetun.
+## Links
 
-## One-tap Install (2026-10-14)
-
-Since 2026-10-14 the container-update pushes (Alert2 alert + 09:00 report) carry an **Install** button that runs this same HA Install via `automation.homelab_container_update_on_approval` (see [One-tap approval notifications](<One-tap approval notifications (updates and similar).md>)). So the next round will most likely be Aaron tapping Install on his phone. Claude should still run the checks in step 3 afterwards and record the results here.
-
-## Test plan (next update round)
-
-1. Note what's pending (`dockhand-api "/api/containers/pending-updates?env=1"` or HA's update list) and current image IDs.
-2. Install each flagged container from HA (Aaron clicks it, or Claude uses `ha_manage_updates`). If Gluetun is flagged, deploy the servarr stack instead.
-3. Check: the new image ID, the container is running/healthy, and for NZBGet/Prowlarr that `NetworkMode` still matches Gluetun's ID. Check the UIs, the Kuma monitors and any HA alerts. Check the HA entity drops back to `off` and the Dockhand pending list clears.
-4. Write down how long it took, the downtime per container, and any errors (vulnerability-scan blocks, HA timeouts, stale entity state).
-
-## Results so far
-
-- **2026-10-16, Sonarr + Radarr (Aaron's one-tap Install):** both pulled and recreated alone about 20 s apart. Healthy afterwards (`/api/v3/health` empty), HA entities back to `off`, no errors. Downtime wasn't measured (no trace stored). See [2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install](<../changes/2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install.md>).
-- **2026-10-23, Radarr, NZBGet, Prowlarr, Seerr, gluetun-watchdog (Aaron's one-tap Update all from the 09:00 push):** recreated one at a time 15:31:52–15:32:40 UTC, whole run 59 s. NZBGet and Prowlarr kept `NetworkMode: container:<Gluetun's ID>`, so the main risk didn't happen. Pending list empty, entities `off`, no alerts. Radarr's cached health briefly said NZBGet was unreachable (it came up 9 s before NZBGet) and cleared on `CheckHealth`. See [2026-10-23 09-00 report batches overnight container updates into one Update all push](<../changes/2026-10-23 09-00 report batches overnight container updates into one Update all push.md>).
-
-## Decide afterwards
-
-Compare with the stack deploy, which updates everything in one step (~45 s for servarr) but recreates every container in the stack even when only one has a new image. Options: HA Install as the default, stack deploy as the default, or a mix (HA for single containers, stack deploy when Gluetun or most of the stack is flagged). Record the decision in the servarr runbook.
+- [2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install](<../changes/2026-10-16 Updated Sonarr and Radarr images via HA one-tap Install.md>)
+- [2026-10-23 09-00 report batches overnight container updates into one Update all push](<../changes/2026-10-23 09-00 report batches overnight container updates into one Update all push.md>)
 
 ## Changes
 
