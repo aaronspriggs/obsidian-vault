@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1090" width="920" height="1090" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+    <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#cbd5e1" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="920" height="1090" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">Big Boi rebuild — proposed layout</text>
+  <text x="30" y="64" font-size="13" fill="#475569">Keeps the i9-9900 · Gigabyte Z390 Designare · JMCD 12S4 case · 2026-10-25 draft</text>
+
+  <!-- Case front: bays -->
+  <rect x="30" y="85" width="860" height="225" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="48" y="110" font-size="14" font-weight="700" fill="#0f172a">JMCD 12S4 front · 12 hot-swap 3.5" bays</text>
+  <text x="48" y="127" font-size="12" fill="#475569">6U · 306 mm deep (rack limit 370 mm) · backplanes have no expander: 1 SFF-8643 per 4 bays</text>
+  <text x="872" y="110" font-size="13" font-weight="700" fill="#2563eb" text-anchor="end">HDD pool (new): Plex media + bulk</text>
+
+  <g font-size="12" fill="#1e3a8a">
+    <!-- Row A -->
+    <rect x="50" y="138" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="105" y="162" text-anchor="middle">HDD</text>
+    <rect x="170" y="138" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="225" y="162" text-anchor="middle">HDD</text>
+    <rect x="290" y="138" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="345" y="162" text-anchor="middle">HDD</text>
+    <rect x="410" y="138" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="465" y="162" text-anchor="middle">HDD</text>
+    <text x="540" y="162" fill="#0f172a">Backplane A · SFF-8643</text>
+    <!-- Row B -->
+    <rect x="50" y="191" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="105" y="215" text-anchor="middle">HDD</text>
+    <rect x="170" y="191" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="225" y="215" text-anchor="middle">HDD</text>
+    <rect x="290" y="191" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="345" y="215" text-anchor="middle">HDD</text>
+    <rect x="410" y="191" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="465" y="215" text-anchor="middle">HDD</text>
+    <text x="540" y="215" fill="#0f172a">Backplane B · SFF-8643</text>
+    <!-- Row C -->
+    <rect x="50" y="244" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="105" y="268" text-anchor="middle">HDD</text>
+    <rect x="170" y="244" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="225" y="268" text-anchor="middle">HDD</text>
+    <rect x="290" y="244" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="345" y="268" text-anchor="middle">HDD</text>
+    <rect x="410" y="244" width="110" height="38" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="465" y="268" text-anchor="middle">HDD</text>
+    <text x="540" y="268" fill="#0f172a">Backplane C · SFF-8643</text>
+  </g>
+  <!-- backplane connectors -->
+  <rect x="784" y="150" width="16" height="16" fill="#2563eb"/>
+  <rect x="784" y="203" width="16" height="16" fill="#2563eb"/>
+  <rect x="784" y="256" width="16" height="16" fill="#2563eb"/>
+
+  <!-- Motherboard -->
+  <rect x="30" y="335" width="860" height="500" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="48" y="360" font-size="14" font-weight="700" fill="#0f172a">Gigabyte Z390 Designare (ATX) — inside the case</text>
+
+  <!-- CPU -->
+  <rect x="50" y="378" width="230" height="100" rx="8" fill="#e2e8f0" stroke="#64748b"/>
+  <text x="62" y="402" font-size="14" font-weight="700" fill="#0f172a">Intel i9-9900 (kept)</text>
+  <text x="62" y="422" font-size="12" fill="#334155">16 PCIe 3.0 lanes → split x8 / x8</text>
+  <text x="62" y="440" font-size="12" fill="#334155">UHD 630 iGPU → Plex VM</text>
+  <text x="62" y="458" font-size="12" fill="#334155">(passthrough, as today)</text>
+
+  <!-- RAM -->
+  <rect x="295" y="378" width="310" height="100" rx="8" fill="#e2e8f0" stroke="#64748b"/>
+  <rect x="310" y="390" width="60" height="38" rx="3" fill="#94a3b8"/><text x="340" y="414" font-size="11" fill="#fff" text-anchor="middle">32 GB</text>
+  <rect x="380" y="390" width="60" height="38" rx="3" fill="#94a3b8"/><text x="410" y="414" font-size="11" fill="#fff" text-anchor="middle">32 GB</text>
+  <rect x="450" y="390" width="60" height="38" rx="3" fill="#fef3c7" stroke="#d97706" stroke-dasharray="5 3"/><text x="480" y="414" font-size="11" fill="#92400e" text-anchor="middle">+32 GB</text>
+  <rect x="520" y="390" width="60" height="38" rx="3" fill="#fef3c7" stroke="#d97706" stroke-dasharray="5 3"/><text x="550" y="414" font-size="11" fill="#92400e" text-anchor="middle">+32 GB</text>
+  <text x="310" y="450" font-size="12" fill="#334155">128 GB total (board max) · 2 existing + 2 to buy</text>
+  <text x="310" y="468" font-size="12" fill="#334155">XMP supported → existing kit can run at 3600</text>
+
+  <!-- board facts -->
+  <rect x="620" y="378" width="180" height="100" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="632" y="398" font-size="12" font-weight="700" fill="#0f172a">From the manual</text>
+  <text x="632" y="416" font-size="11" fill="#334155">9th-gen Core i9 listed</text>
+  <text x="632" y="432" font-size="11" fill="#334155">128 GB (32 GB DIMMs)</text>
+  <text x="632" y="448" font-size="11" fill="#334155">6 SATA · 2 M.2 · HDMI/DP</text>
+  <text x="632" y="464" font-size="11" fill="#334155">No IPMI</text>
+
+  <!-- Slot 1: GPU (future) -->
+  <rect x="50" y="500" width="200" height="54" rx="6" fill="#ffffff" stroke="#64748b"/>
+  <text x="62" y="522" font-size="13" font-weight="700" fill="#0f172a">PCIEX16</text>
+  <text x="62" y="541" font-size="11" fill="#475569">x8 from CPU (x16 if alone)</text>
+  <rect x="270" y="500" width="420" height="54" rx="6" fill="#fef3c7" stroke="#d97706" stroke-dasharray="6 4"/>
+  <text x="285" y="522" font-size="13" font-weight="700" fill="#92400e">Future GPU — Nvidia</text>
+  <text x="285" y="541" font-size="11" fill="#92400e">Arc not supported on 9th gen · card ≤ 250 mm (case limit)</text>
+
+  <!-- Slot 2: HBA -->
+  <rect x="50" y="580" width="200" height="60" rx="6" fill="#ffffff" stroke="#64748b"/>
+  <text x="62" y="604" font-size="13" font-weight="700" fill="#0f172a">PCIEX8</text>
+  <text x="62" y="623" font-size="11" fill="#475569">x8 from CPU</text>
+  <rect x="270" y="580" width="420" height="60" rx="6" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="285" y="604" font-size="13" font-weight="700" fill="#1e3a8a">Broadcom SAS 9305-16i HBA</text>
+  <text x="285" y="623" font-size="11" fill="#1e3a8a">16 ports · 4× SFF-8643 · 16.2 W · needs 200 LFM airflow</text>
+  <rect x="672" y="586" width="12" height="10" fill="#2563eb"/>
+  <rect x="672" y="599" width="12" height="10" fill="#2563eb"/>
+  <rect x="672" y="612" width="12" height="10" fill="#2563eb"/>
+  <rect x="672" y="625" width="12" height="10" fill="#ffffff" stroke="#2563eb"/>
+  <text x="700" y="634" font-size="11" fill="#475569">4th port spare</text>
+
+  <!-- HBA to backplane cables (SFF-8643 to SFF-8643) -->
+  <g fill="none" stroke="#2563eb" stroke-width="2.5">
+    <polyline points="684,591 820,591 820,264 800,264"/>
+    <polyline points="684,604 845,604 845,211 800,211"/>
+    <polyline points="684,617 870,617 870,158 800,158"/>
+  </g>
+  <text x="800" y="327" font-size="11" fill="#1e3a8a" text-anchor="end">3× SFF-8643 ↔ SFF-8643 cables</text>
+
+  <!-- Slot 3: NIC -->
+  <rect x="50" y="665" width="200" height="54" rx="6" fill="#ffffff" stroke="#64748b"/>
+  <text x="62" y="687" font-size="13" font-weight="700" fill="#0f172a">PCIEX4</text>
+  <text x="62" y="706" font-size="11" fill="#475569">x4 from chipset · x16-length</text>
+  <rect x="270" y="665" width="330" height="54" rx="6" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="285" y="687" font-size="13" font-weight="700" fill="#4c1d95">Intel 82599EN 10 GbE (existing)</text>
+  <text x="285" y="706" font-size="11" fill="#4c1d95">x8 card runs at x4 ≈ 16 Gb/s, enough for 10 GbE</text>
+  <line x1="600" y1="692" x2="712" y2="692" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="625" y="684" font-size="11" fill="#4c1d95">SFP+ DAC</text>
+  <rect x="715" y="665" width="160" height="54" rx="6" fill="#ffffff" stroke="#7c3aed"/>
+  <text x="727" y="687" font-size="12" font-weight="700" fill="#4c1d95">USW Pro Max 16 PoE</text>
+  <text x="727" y="705" font-size="11" fill="#4c1d95">SFP+ 2 (as today)</text>
+
+  <!-- M.2 + SATA -->
+  <rect x="50" y="745" width="200" height="60" rx="6" fill="#ffffff" stroke="#64748b"/>
+  <text x="62" y="768" font-size="13" font-weight="700" fill="#0f172a">M2P · NVMe boot</text>
+  <text x="62" y="787" font-size="11" fill="#475569">disables SATA3 0</text>
+
+  <g font-size="11" text-anchor="middle">
+    <rect x="300" y="750" width="60" height="44" rx="4" fill="url(#hatch)" stroke="#94a3b8"/><text x="330" y="770" fill="#64748b">SATA 0</text><text x="330" y="785" fill="#64748b">off</text>
+    <rect x="370" y="750" width="60" height="44" rx="4" fill="#d1fae5" stroke="#059669"/><text x="400" y="776" fill="#065f46">SATA 1</text>
+    <rect x="440" y="750" width="60" height="44" rx="4" fill="#d1fae5" stroke="#059669"/><text x="470" y="776" fill="#065f46">SATA 2</text>
+    <rect x="510" y="750" width="60" height="44" rx="4" fill="#d1fae5" stroke="#059669"/><text x="540" y="776" fill="#065f46">SATA 3</text>
+    <rect x="580" y="750" width="60" height="44" rx="4" fill="#d1fae5" stroke="#059669"/><text x="610" y="776" fill="#065f46">SATA 4</text>
+    <rect x="650" y="750" width="60" height="44" rx="4" fill="#d1fae5" stroke="#059669"/><text x="680" y="776" fill="#065f46">SATA 5</text>
+  </g>
+  <text x="725" y="768" font-size="11" fill="#475569">5 usable,</text>
+  <text x="725" y="783" font-size="11" fill="#475569">none spare</text>
+
+  <!-- SATA to SSD lines -->
+  <g stroke="#059669" stroke-width="2">
+    <line x1="400" y1="794" x2="400" y2="870"/>
+    <line x1="470" y1="794" x2="470" y2="870"/>
+    <line x1="540" y1="794" x2="540" y2="870"/>
+    <line x1="610" y1="794" x2="610" y2="870"/>
+    <line x1="680" y1="794" x2="680" y2="870"/>
+  </g>
+
+  <!-- SSDs -->
+  <text x="50" y="890" font-size="13" font-weight="700" fill="#065f46">SSD pool (existing)</text>
+  <text x="50" y="908" font-size="12" fill="#334155">5× Samsung 870 EVO 4 TB · RAIDZ1</text>
+  <text x="50" y="926" font-size="12" fill="#334155">VMs, apps, configs</text>
+  <text x="50" y="944" font-size="11" fill="#475569">Case has 4 internal 2.5" mounts</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="368" y="870" width="64" height="62" rx="5" fill="#d1fae5" stroke="#059669"/><text x="400" y="896" fill="#065f46">870 EVO</text><text x="400" y="912" fill="#065f46">internal</text>
+    <rect x="438" y="870" width="64" height="62" rx="5" fill="#d1fae5" stroke="#059669"/><text x="470" y="896" fill="#065f46">870 EVO</text><text x="470" y="912" fill="#065f46">internal</text>
+    <rect x="508" y="870" width="64" height="62" rx="5" fill="#d1fae5" stroke="#059669"/><text x="540" y="896" fill="#065f46">870 EVO</text><text x="540" y="912" fill="#065f46">internal</text>
+    <rect x="578" y="870" width="64" height="62" rx="5" fill="#d1fae5" stroke="#059669"/><text x="610" y="896" fill="#065f46">870 EVO</text><text x="610" y="912" fill="#065f46">internal</text>
+    <rect x="648" y="870" width="64" height="62" rx="5" fill="#fef3c7" stroke="#d97706" stroke-dasharray="5 3"/><text x="680" y="896" fill="#92400e">870 EVO</text><text x="680" y="912" fill="#92400e">mount TBD</text>
+  </g>
+
+  <!-- Legend / open items -->
+  <rect x="30" y="965" width="860" height="110" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <rect x="48" y="982" width="22" height="14" fill="#dbeafe" stroke="#2563eb"/><text x="78" y="994" font-size="12" fill="#334155">Confirmed from manufacturer manual or datasheet</text>
+  <rect x="420" y="982" width="22" height="14" fill="#fef3c7" stroke="#d97706" stroke-dasharray="5 3"/><text x="450" y="994" font-size="12" fill="#334155">Future, to buy, or not decided yet</text>
+  <text x="48" y="1020" font-size="12" font-weight="700" fill="#0f172a">Still open:</text>
+  <text x="125" y="1020" font-size="12" fill="#334155">PSU (≤ 170 mm long, sized for 12-HDD spin-up) · HDD count and size · case fans (HBA needs airflow)</text>
+  <text x="125" y="1038" font-size="12" fill="#334155">Where SSD #5 mounts · BIOS version on the used board · which variant of the case bundle has 3 straight cables</text>
+  <text x="48" y="1062" font-size="12" font-weight="700" fill="#0f172a">Alternative board:</text>
+  <text x="170" y="1062" font-size="12" fill="#334155">Supermicro X11SCA-F — adds IPMI, but the NIC must change to a PCIe x4 card (ConnectX-3) and RAM runs ≤ 2666</text>
+</svg>

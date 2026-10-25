@@ -17,6 +17,10 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 The direction is decided (Aaron, 2026-10-15). It replaces the UniFi UNAS Pro plan in [Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier](<Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier.md>). Case, board, HBA and drive choices were discussed in other Claude threads but never recorded, so they're **missing here**: add them before planning the build.
 
+## Proposed layout (draft 2026-10-25)
+
+![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
+
 ## Candidate case: JMCD 12S4 (found 2026-10-25, from the AliExpress listing; not bought)
 
 [AliExpress listing](https://www.aliexpress.us/item/3256807353540875.html) (sold as "12 bay NAS chassis ... Qunhui AIO"; $336.29 for the standard set on 2026-10-25). Specs from the listing's parameter images:
