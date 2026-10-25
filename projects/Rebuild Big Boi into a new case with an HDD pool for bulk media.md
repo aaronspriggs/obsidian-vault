@@ -70,6 +70,13 @@ Stock SF750 cable kit per [Corsair's product page](https://www.corsair.com/us/en
 - **Future GPU:** the two PCIe cables cover it.
 - **One Molex cable for all 12 HDDs: no.** A daisy-chained Molex cable has one +12 V wire. Each backplane's Molex connector carries only its own 4 drives (about 8 A at spin-up, using Seagate IronWolf Pro's 2.0 A at 12 V startup as quoted by retailers), within the Molex 8981 contact rating (distributor TTI quotes 15 A per contact max). The shared path is the problem: the first wire segment and the PSU-side modular plug would carry all 12 drives, about 24 A. No rated limit found yet for the 18 AWG wire or Corsair's PSU-side plug, but 24 A on one 18 AWG conductor is not a reasonable design. Plan one Molex cable per backplane, which uses all 3 peripheral sockets on the SF750 and leaves none for the 5 SSDs' SATA power, or a different PSU with more peripheral sockets. Re-check with the chosen drive's own datasheet.
 
+### Seller's backplane notes (English listing screenshots from Aaron, 2026-10-25)
+
+- **Power:** method 1 is 3 separate Molex cables (one per backplane); method 2 is 2 separate Molex cables (one feeding two backplanes, one feeding the third); a single Molex cable for all three is marked **incorrect**.
+- **Fan control:** each backplane has a temperature probe and DIP switch SW1. ON/ON (default) = auto: 50% under 30 °C, ramping 30–50 °C, 100% above 50 °C. ON/OFF = 50%, OFF/ON = 75%, OFF/OFF = 100%. Fans on the backplane headers draw from that backplane's Molex.
+- **Data:** the seller suggests an LSI HBA and shows SFF-8643 ↔ SFF-8643 (or SFF-8087) cables to the HBA; reverse SFF-8643-to-4-SATA breakout only for motherboard/SATA-card ports. With the 9305-16i, all three runs are SFF-8643 ↔ SFF-8643.
+- **SF750 fit with method 2:** socket 1 Molex → backplanes A+B, socket 2 second Corsair Type 4 Molex cable → backplane C, socket 3 SATA cable → 4 SSDs. SSD #5 has no SATA socket left (it also has no mount yet); a crimped (not molded) Molex-to-SATA adapter off socket 2's spare connector is the fallback.
+
 ### PSU search (2026-10-25)
 
 Requirement: one Molex cable per backplane (3 sockets) plus two SATA cables for 5 SSDs (2 sockets) = **5 peripheral sockets**, ATX or SFX with bracket, at most 170 mm long.
