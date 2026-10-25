@@ -70,6 +70,13 @@ Stock SF750 cable kit per [Corsair's product page](https://www.corsair.com/us/en
 - **Future GPU:** the two PCIe cables cover it.
 - **One Molex cable for all 12 HDDs: no.** A daisy-chained Molex cable has one +12 V wire. Each backplane's Molex connector carries only its own 4 drives (about 8 A at spin-up, using Seagate IronWolf Pro's 2.0 A at 12 V startup as quoted by retailers), within the Molex 8981 contact rating (distributor TTI quotes 15 A per contact max). The shared path is the problem: the first wire segment and the PSU-side modular plug would carry all 12 drives, about 24 A. No rated limit found yet for the 18 AWG wire or Corsair's PSU-side plug, but 24 A on one 18 AWG conductor is not a reasonable design. Plan one Molex cable per backplane, which uses all 3 peripheral sockets on the SF750 and leaves none for the 5 SSDs' SATA power, or a different PSU with more peripheral sockets. Re-check with the chosen drive's own datasheet.
 
+### PSU search (2026-10-25)
+
+Requirement: one Molex cable per backplane (3 sockets) plus two SATA cables for 5 SSDs (2 sockets) = **5 peripheral sockets**, ATX or SFX with bracket, at most 170 mm long.
+
+- **Corsair RM750x (2024):** 160 mm, Type 4 cables, stock kit 2× SATA (4 each) + 1× Molex (3) ([Corsair](https://www.corsair.com/us/en/p/psu/cp-9020285-na/rm750x-fully-modular-low-noise-atx-power-supply-cp-9020285-na)). Peripheral socket count not found.
+- **Seasonic Focus GX-750 ATX 3 (SRP-FGX751-A5A32SF):** 140 mm, +12 V 62 A, stock kit 2× SATA (4 each) + 1× Molex (3), Molex/SATA cables 18 AWG. Its modular panel has **3 "Peripheral - SATA/Molex" sockets** ([HWBusters review photos](https://hwbusters.com/psus/seasonic-focus-gx-750-v4-atx-v3-1-psu-review/2/)). Same limit as the SF750, so it doesn't solve the problem.
+
 ## Constraints carried over (from earlier projects; re-check)
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project. On that basis the Sliger CX3702 (18") was rejected as too deep. The new case has to fit, or the rack changes.
