@@ -68,7 +68,7 @@ Stock SF750 cable kit per [Corsair's product page](https://www.corsair.com/us/en
 - **SSDs:** 5 need SATA power; the two stock SATA cables give 8 connectors.
 - **Sockets:** the PSU has 3 "Peripheral & SATA" sockets (from the System note), so Molex + 2× SATA uses all three. Splitting the backplanes over two cables would need a second Molex cable and fewer SATA cables.
 - **Future GPU:** the two PCIe cables cover it.
-- **Open:** HDD spin-up current comes from the chosen drive's manual; budget per cable once drives are picked.
+- **One Molex cable for all 12 HDDs: no.** A daisy-chained Molex cable has one +12 V wire, so every drive's spin-up current goes through it and through the first connector. Seagate IronWolf Pro specs (as quoted by retailers) list 2.0 A at 12 V startup for most capacities, i.e. about 24 A for 12 drives, above the Molex 8981 contact rating (distributor TTI quotes 15 A per contact max). One connector per backplane (4 drives, about 8 A at spin-up) is within that rating. Plan one Molex cable per backplane, which uses all 3 peripheral sockets on the SF750 and leaves none for the 5 SSDs' SATA power, or a different PSU with more peripheral sockets. Re-check with the chosen drive's own datasheet.
 
 ## Constraints carried over (from earlier projects; re-check)
 
