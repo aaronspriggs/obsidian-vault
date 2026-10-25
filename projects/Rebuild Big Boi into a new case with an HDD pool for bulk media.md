@@ -29,6 +29,17 @@ The direction is decided (Aaron, 2026-10-15). It replaces the UniFi UNAS Pro pla
 
 Open on this case: noise and cooling with 12 HDDs behind 92 mm fans, cable choice (reverse breakout for the SATA-port lanes), and whether the $336 US price is for the bare case or a bundle.
 
+## HBA and board (researched 2026-10-25, from vendor documents)
+
+Aaron wants all 12 front bays on one HBA (2026-10-25). The JMCD 12S4 has three SFF-8643 backplane ports and no expander, so the card needs 12+ lanes, i.e. a 16i with 4× SFF-8643.
+
+- **Pick: Broadcom SAS 9305-16i.** One SAS3216 chip, PCIe 3.0 x8, 16 internal ports on 4× SFF-8643, SATA 3/6 Gb/s, 16.2 W typical, low profile with a full-height bracket included, FreeBSD and Linux listed, minimum airflow 200 LFM. No auxiliary power connector is listed. Source: [Broadcom 9305-16i user guide, pub-005245](https://docs.broadcom.com/doc/pub-005245).
+- **Rejected: SAS 9300-16i.** Two SAS3008 chips behind a PCIe switch, 26.9 W nominal, with a 6-pin PCIe auxiliary power connector. More heat and more parts for the same ports. Source: [Broadcom 9300-16i user guide](https://docs.broadcom.com/doc/12353308).
+- **Alternative: HBA 9400-16i** (SAS3416, tri-mode, 4× SFF-8643, about 12 W per a reseller listing). Not checked against a Broadcom document yet.
+- **TrueNAS:** its hardware guide names Broadcom/LSI SAS HBAs as the most widely used controllers, and the 9400/9500 for newer builds; TrueNAS ships `sas3flash` and `storcli` for 9300/9400/9500 cards. [TrueNAS hardware guide](https://www.truenas.com/docs/scale/gettingstarted/tnhardwareguide/)
+- **Board candidate: ASRock Z390 Pro4** (ATX, Z390, LGA1151, keeps the i9-9900 and 2×32 GB DDR4). Per the [ASRock manual](https://download.asrock.com/Manual/Z390%20Pro4.pdf): PCIE2 is x16 from the CPU, PCIE4 is x16-length but runs x4 when both are used; 3× PCIe x1; 6× SATA3; two M.2 (M2_1 SATA-type disables SATA3_5; M2_2 SATA-type disables SATA3_1, PCIe-type disables SATA3_0); memory max 64 GB, non-ECC. Layout: HBA in PCIE2, the 10 GbE NIC (82599EN, PCIe 2.0 x8 card) in PCIE4 at x4 (about 16 Gb/s usable, enough for one 10 GbE port), NVMe boot in M2_1, the 5 SSDs on SATA3_0–4.
+- **Gap:** the case has 4 internal 2.5" positions and the SSD pool has 5 drives. Either one SSD takes a front bay on the HBA (11 HDD bays left) or it needs another mount.
+
 ## Constraints carried over (from earlier projects; re-check)
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project. On that basis the Sliger CX3702 (18") was rejected as too deep. The new case has to fit, or the rack changes.
