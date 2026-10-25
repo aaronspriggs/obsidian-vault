@@ -59,6 +59,17 @@ Aaron wants all 12 front bays on one HBA (2026-10-25). The JMCD 12S4 has three S
 - **Board caveats:** 64 GB is both the board's maximum and what Big Boi already has, so no RAM growth on this board. i9-9900 support and the minimum BIOS are **not verified**: ASRock's CPU list wouldn't load (bot wall), and a third-party site says the Z390M Pro4 needs BIOS P4.00. A used board on older firmware may not POST with the i9-9900; check the BIOS version with the seller.
 - **Gap:** the case has 4 internal 2.5" positions and the SSD pool has 5 drives. Either one SSD takes a front bay on the HBA (11 HDD bays left) or it needs another mount.
 
+## Power from the existing SF750 (checked 2026-10-25)
+
+Stock SF750 cable kit per [Corsair's product page](https://www.corsair.com/us/en/p/psu/cp-9020186-na/sf-series-sf750-750-watt-80-plus-platinum-certified-high-performance-sfx-psu-cp-9020186-na): 1× 24-pin (300 mm), 2× EPS 8-pin (400 mm), 2× PCIe cables with two 6+2 connectors each (500 mm), 2× SATA cables with 4 connectors each (445 mm), 1× Molex cable with 3 connectors (330 mm); SFX-to-ATX bracket included. PSU is 125 mm long, under the case's 170 mm limit.
+
+- **Board (Designare manual):** 24-pin, 8-pin + 4-pin CPU, and a PEG connector the manual recommends only for two or more graphics cards. Covered by the 24-pin and the two EPS cables.
+- **Backplanes:** the listing doesn't state the power connector; its photos appear to show one 4-pin Molex per backplane. If so, the stock 3-connector Molex cable fits all three, but it puts all 12 HDDs on one cable and one PSU socket, and at 330 mm it may not reach the front-bottom backplane from a rear PSU. Confirm the connector with the seller.
+- **SSDs:** 5 need SATA power; the two stock SATA cables give 8 connectors.
+- **Sockets:** the PSU has 3 "Peripheral & SATA" sockets (from the System note), so Molex + 2× SATA uses all three. Splitting the backplanes over two cables would need a second Molex cable and fewer SATA cables.
+- **Future GPU:** the two PCIe cables cover it.
+- **Open:** HDD spin-up current comes from the chosen drive's manual; budget per cable once drives are picked.
+
 ## Constraints carried over (from earlier projects; re-check)
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project. On that basis the Sliger CX3702 (18") was rejected as too deep. The new case has to fit, or the rack changes.
