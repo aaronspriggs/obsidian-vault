@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-10-26 Pick the board (Designare vs X11SCA-F) and the HDDs; order 3× 0.5 m SFF-8643 cables; check 7U of free rack space.
+next_step: 2026-10-26 Aaron buys a used Z390 Designare (BIOS F6 or newer); then pick the HDDs, order 3× 0.5 m SFF-8643 cables, check 7U of free rack space.
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -16,7 +16,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-10-26)
 
-**Case ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board down to two candidates; PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
+**Case ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board chosen (Gigabyte Z390 Designare, Aaron sourcing a used one); PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -27,11 +27,11 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Case | JMCD 12S4, 12-bay, base bundle (no cables, no fans) | **Ordered 2026-10-26** |
 | HBA | Broadcom SAS 9305-16i | Chosen, not bought |
 | Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
-| Board | Gigabyte Z390 DESIGNARE (lean) or Supermicro X11SCA-F | Open |
+| Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Chosen 2026-10-26**; Aaron sourcing |
 | CPU | Intel i9-9900 | Keep |
 | RAM | 2× 32 GB existing + 2× 32 GB to buy = 128 GB | To buy |
-| NIC | 10Gtek Intel 82599EN (keep, Designare) or Mellanox ConnectX-3 MCX311A-XCAT (X11SCA-F) | Depends on board |
-| Boot | NVMe in M2P (Designare) or M.2 #2 (X11SCA-F) | To buy |
+| NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
+| Boot | NVMe in M2P (disables SATA3 0) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | Count, size and pool layout | Open |
@@ -72,12 +72,13 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
 - **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
 - **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
+- **2026-10-26 (Aaron):** board = Gigabyte Z390 Designare over the Supermicro X11SCA-F: i9-9900 and 128 GB documented in its manual, keeps the 82599EN, XMP for the 3600 kit, same consumer-board iGPU passthrough path as today. Trade-off accepted: no IPMI, exactly 5 usable SATA ports.
 
 ## Open questions
 
 - Case order details: price paid, order number, ETA.
 - Case height: the listing says 262 mm (6U), the build log below measured 272 mm (6.11U), which takes 7U in a rack. Measure on arrival.
-- Board: Designare (keeps the NIC, XMP for the 3600 kit, no IPMI) vs X11SCA-F (IPMI, needs the ConnectX-3, RAM ≤ 2666). Either way: BIOS version on the used board.
+- Used Designare's BIOS: i9-9900 needs **F6 or newer** per [Pangoly's compatibility table](https://pangoly.com/en/compatibility/gigabyte-z390-designare/cpu) (third-party; Gigabyte's CPU list wouldn't load). The manual lists DualBIOS but no BIOS update without a CPU, so a board on older firmware needs a supported older CPU to flash it. Ask the seller.
 - HDD count, size and pool layout (RAIDZ2 vs mirrors); spin-up current from the chosen drive's datasheet.
 - Where SSD #5 mounts (4 internal 2.5" positions for 5 SSDs) and powers (crimped Molex-to-SATA off the second Molex cable is the fallback).
 - 6U of free rack space; UPS runtime with spinning drives.
