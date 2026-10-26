@@ -1,107 +1,109 @@
 ---
 type: project
-status: backlog
+status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+next_step: 2026-10-26 Record the case order details (variant, price, order number, ETA), then pick the board (Designare vs X11SCA-F) and the HDDs.
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
-Decided by Aaron 2026-10-15; replaces the UNAS Pro plan. Hardware details were discussed in other Claude threads but never recorded in the KB; fill them in here.
+Decided by Aaron 2026-10-15; replaces the UNAS Pro plan. Case ordered 2026-10-26.
 
 ## Goal
 
 Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs two pools. The existing **SSD pool** holds VMs, containers, apps and configs. A new **HDD pool** holds the Plex media library and any future bulk data. Later, a second box hosted **offsite** could receive ZFS replication from Big Boi.
 
-## Status (2026-10-15)
+## Status (2026-10-26)
 
-The direction is decided (Aaron, 2026-10-15). It replaces the UniFi UNAS Pro plan in [Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier](<Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier.md>). Case, board, HBA and drive choices were discussed in other Claude threads but never recorded, so they're **missing here**: add them before planning the build.
-
-## Proposed layout (draft 2026-10-25)
+**Case ordered** (JMCD 12S4, via Alibaba.com with Trade Assurance, 2026-10-26). Variant, price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board down to two candidates; PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
-## Candidate case: JMCD 12S4 (found 2026-10-25, from the AliExpress listing; not bought)
+## Plan: parts
 
-[AliExpress listing](https://www.aliexpress.us/item/3256807353540875.html) (sold as "12 bay NAS chassis ... Qunhui AIO"; $336.29 for the standard set on 2026-10-25). Specs from the listing's parameter images:
+| Part | Choice | State |
+|---|---|---|
+| Case | JMCD 12S4, 12-bay 6U | **Ordered 2026-10-26** |
+| HBA | Broadcom SAS 9305-16i | Chosen, not bought |
+| Backplane cables | 3× SFF-8643 ↔ SFF-8643 (straight), right-angle on the backplane end | Confirm whether the case bundle includes them |
+| Board | Gigabyte Z390 DESIGNARE (lean) or Supermicro X11SCA-F | Open |
+| CPU | Intel i9-9900 | Keep |
+| RAM | 2× 32 GB existing + 2× 32 GB to buy = 128 GB | To buy |
+| NIC | 10Gtek Intel 82599EN (keep, Designare) or Mellanox ConnectX-3 MCX311A-XCAT (X11SCA-F) | Depends on board |
+| Boot | NVMe in M2P (Designare) or M.2 #2 (X11SCA-F) | To buy |
+| PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
+| Case fans | Backplane-controlled; needed for the HBA's airflow | Depends on case variant |
+| HDDs | Count, size and pool layout | Open |
+| GPU | Future, Nvidia | Later |
 
-- **Size:** 432 W × 306 D × 262 H mm (482 mm with ears; 310 mm deep with handles). 262 mm is 6U. Fits the 370 mm depth limit with about 60 mm to spare; the 6U height still has to be checked against free rack space.
-- **Bays:** 12× hot-swap 3.5" trays (2.5" fits) plus 4 internal 2.5" positions. Backplane is 3× 4-bay boards, 12 Gb SAS/SATA, **one SFF-8643 each, no expander**, so 12 drives need 12 lanes: an 8-port HBA plus 4 SATA ports from the board, or a 16-port HBA.
-- **Board:** ATX (smaller should fit), pull-out motherboard tray, 8 full-height expansion slots. Limits: card length 250 mm, **PSU length 170 mm** (the SF750 SFX needs a bracket; an ATX PSU has to be a short one), cooler height 135 mm.
-- **Cooling:** 4× 92 mm positions on the drive wall, plus 3× 120 mm and 1× 92 mm on the upper fan rack. Fans are only included in the 1085 and 1185 variants.
-- **Variants** (the price list is in RMB, per the images): 950 case, 3 backplanes, 12 trays, ears; 1050 adds 3× SFF-8643 cables; 1085 adds 5× 92 mm and 3× 120 mm fans instead; 1185 adds both.
+## Ordered: JMCD 12S4 case (2026-10-26)
 
-Open on this case: noise and cooling with 12 HDDs behind 92 mm fans, cable choice (reverse breakout for the SATA-port lanes), and whether the $336 US price is for the bare case or a bundle.
+Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same model as this [AliExpress listing](https://www.aliexpress.us/item/3256807353540875.html) (sold as "12 bay NAS chassis ... Qunhui AIO", $336.29 for the standard set on 2026-10-25). Specs from the listing's parameter images and the seller's English screenshots:
 
-## HBA and board (researched 2026-10-25, from vendor documents)
+- **Size:** 432 W × 306 D × 262 H mm (482 mm wide with ears; 310 mm deep with handles). 262 mm = 6U. Fits the 370 mm rack depth limit with about 60 mm to spare; 6U still has to be checked against free rack space.
+- **Material:** 1.0 mm galvanized steel, black.
+- **Bays:** 12× tool-free hot-swap 3.5" trays (2.5" fits), each with a status LED; plus 4 internal 2.5" positions.
+- **Backplanes:** 3× 4-bay boards, 12 Gb/s SAS/SATA, no expander. Each board has one SFF-8643 (4 lanes), one 4-pin Molex power input, fan headers, a temperature probe and DIP switch SW1 for fan control: ON/ON (default) auto = 50% under 30 °C, ramping 30–50 °C, 100% above 50 °C; ON/OFF 50%, OFF/ON 75%, OFF/OFF 100%.
+- **Backplane power (seller):** 3 separate Molex cables, or 2 separate cables (one feeding two backplanes); a single cable for all three is marked incorrect.
+- **Data (seller):** suggests an LSI HBA; SFF-8643 ↔ SFF-8643 (or ↔ SFF-8087) to the HBA; reverse SFF-8643-to-4-SATA breakout only for motherboard or SATA-card ports.
+- **Board:** ATX, pull-out motherboard tray, 8 full-height expansion slots. Card length ≤ 250 mm, PSU length ≤ 170 mm, CPU cooler height ≤ 135 mm.
+- **Cooling:** drive wall 4× 92 mm (9225); upper fan rack 3× 120 mm (12025) + 1× 92 mm, quick-release.
+- **Bundles** (price list in RMB per the images): 950 = case, 3 backplanes, 12 trays, ears; 1050 adds 3× "8643" cables; 1085 adds 5× 92 mm PWM (dual ball bearing) + 3× 120 mm PWM fans instead; 1185 adds both. PSU, drives and board not included.
 
-Aaron wants all 12 front bays on one HBA (2026-10-25). The JMCD 12S4 has three SFF-8643 backplane ports and no expander, so the card needs 12+ lanes, i.e. a 16i with 4× SFF-8643.
+## Decisions
 
-- **Pick: Broadcom SAS 9305-16i.** One SAS3216 chip, PCIe 3.0 x8, 16 internal ports on 4× SFF-8643, SATA 3/6 Gb/s, 16.2 W typical, low profile with a full-height bracket included, FreeBSD and Linux listed, minimum airflow 200 LFM. No auxiliary power connector is listed. Source: [Broadcom 9305-16i user guide, pub-005245](https://docs.broadcom.com/doc/pub-005245).
-- **Rejected: SAS 9300-16i.** Two SAS3008 chips behind a PCIe switch, 26.9 W nominal, with a 6-pin PCIe auxiliary power connector. More heat and more parts for the same ports. Source: [Broadcom 9300-16i user guide](https://docs.broadcom.com/doc/12353308).
-- **Alternative: HBA 9400-16i** (SAS3416, tri-mode, 4× SFF-8643, about 12 W per a reseller listing). Not checked against a Broadcom document yet.
-- **TrueNAS:** its hardware guide names Broadcom/LSI SAS HBAs as the most widely used controllers, and the 9400/9500 for newer builds; TrueNAS ships `sas3flash` and `storcli` for 9300/9400/9500 cards. [TrueNAS hardware guide](https://www.truenas.com/docs/scale/gettingstarted/tnhardwareguide/)
-- **Board requirements (Aaron, 2026-10-25):** 128 GB RAM support, slots for the HBA, the 10 GbE NIC, and a future GPU. **The Z390 Pro4 below is ruled out** (64 GB max). On LGA1151 (9th gen, 16 CPU lanes) that means x8/x8 for HBA + GPU plus a chipset slot that physically fits the x8 NIC. Intel lists Arc B-series support only for 10th gen and newer on 400-series and newer boards, and says Resizable BAR must be on "for optimal performance" ([Intel Arc system requirements](https://www.intel.com/content/www/us/en/support/articles/000091128.html)), so an Arc Pro B50 is not a supported pairing on LGA1151. Platform choice (keep the i9-9900 or move to a newer platform) is open with Aaron.
-- **Platform: keep the i9-9900** (Aaron, 2026-10-25). GPU brand open; Arc is out on this platform, so a future GPU means Nvidia.
-- **Board pick: Supermicro X11SCA-F** (C246, ATX 12" × 9.6", EOL, used about $150–210 on eBay 2026-10-25). Per the [Supermicro product page](https://www.supermicro.com/en/products/motherboard/X11SCA-F): 8th/9th gen Core i9 supported, up to 128 GB DDR4-2666 UDIMM (32 GB DIMMs), 8× SATA3, 2× M.2 PCIe x4, AST2500 BMC (IPMI). Per the [manual](https://inquirecontent2.ingrammicro.com/User-Manual/1049448249.pdf) (rev 1.0, predates the 128 GB and Core i9 support): CPU SLOT4 x8 (x16 length), CPU SLOT6 x16 or x8 when SLOT4 is used, PCH SLOT2 x4 (shared with M.2 #1), PCH SLOT7 x1, one PCI slot; BIOS has Internal Graphics enable and Primary Display (IGFX/PEG) options. [ServeTheHome review](https://www.servethehome.com/supermicro-x11sca-f-review-for-intel-xeon-e-2100-and-core-i3-8300/2/): the x1 and x4 slots don't interfere with a double-width card in the x16 slots.
-  - Layout: HBA in SLOT4 (x8), GPU later in SLOT6 (x8), NIC in SLOT2 (x4), boot NVMe in M.2 #2 (M.2 #1 is shared with SLOT2), 5 SSDs on board SATA.
-  - **NIC swap:** SLOT2 is an x4 slot and the current 82599EN card is x8; open-ended or not is unconfirmed, so plan on a Mellanox ConnectX-3 MCX311A-XCAT (single SFP+, PCIe 3.0 x4, 3.47 W typical, per the [NVIDIA ConnectX-3 manual](https://network.nvidia.com/related-docs/user_manuals/ConnectX-3_Ethernet_Single_and_Dual_SFP+_Port_Adapter_Card_User_Manual.pdf)).
-  - **RAM speed:** the existing DDR4-3600 kit works but won't run at 3600. The manual rates the board at 2666 and lists no XMP; BIOS "Maximum Memory Frequency" offers 1333–3200, default auto-detected. Expect 2666 at most (or the kit's JEDEC default if lower). Negligible for this workload.
-  - Unverified: minimum BIOS for the i9-9900 and 32 GB DIMMs, and iGPU passthrough to the Plex VM with the BMC video active.
-- **Alternative: Gigabyte Z390 DESIGNARE** (used, about $80–360 on eBay 2026-10-25, wide spread). Per the [manual](https://download.gigabyte.com/FileList/Manual/mb_manual_z390-designare_1001_190219_e.pdf): 9th/8th gen Core i9 listed, 128 GB (32 GB DIMMs), XMP supported (so the DDR4-3600 kit can run at its rated speed), PCIEX16 + PCIEX8 (x8/x8 from the CPU when both used), PCIEX4 is x16-length at x4 (PCH by default), 2× x1, 6 SATA, HDMI/DP/Thunderbolt outputs. M2P with a PCIe SSD disables SATA3 0; M2M disables SATA3 4/5. Layout: HBA in PCIEX8, GPU in PCIEX16, existing 82599EN NIC in PCIEX4, NVMe boot in M2P, 5 SSDs on SATA3 1–5 (no spare port). No IPMI.
-- **Alternative: Gigabyte C246-WU4** (about $280–360 on eBay, mostly new old stock). Per the [manual](https://download.gigabyte.com/FileList/Manual/server_manual_c246-wu4_sc_0417.pdf) (Chinese): 128 GB, x16 + x8 (shared) + two x16-length x4 slots (PCIEX4_2 shared with M2M), 8 SATA + 2 extra (AHCI only), 2× DisplayPort, no IPMI. The manual says "9th/8th gen Core" without naming i9, and eBay listings say "Core i7/i5/i3": **i9-9900 support unconfirmed**; check Gigabyte's CPU list before buying.
-- **Ruled out: ASRock Rack E3C246D4U / C246M WS** (mATX). The [manual](https://download.asrock.com/Manual/C246M%20WS.pdf) (v1.0) lists 64 GB max; x16 (x8 when Slot 4 used) + x8 + x4, 8 SATA, IPMI. Not pursued.
-- **Not checked: ASUS WS C246 PRO.** Manual downloads failed; a search snippet says x16/x8 + 8 SATA.
-- **Rejected: ASUS PRIME Z390-A.** Its third x16-length slot runs x2 by default, or x4 only with SATA6G_5/6 disabled ([manual](https://dlcdnets.asus.com/pub/ASUS/mb/LGA1151/PRIME_Z390-A/F15017_PRIME_Z390-A_UM_V2_WEB.pdf)), which leaves 4 SATA ports for 5 SSDs.
-- **Board candidate: ASRock Z390 Pro4** (ATX, Z390, LGA1151, keeps the i9-9900 and 2×32 GB DDR4). Per the [ASRock manual](https://download.asrock.com/Manual/Z390%20Pro4.pdf): PCIE2 is x16 from the CPU, PCIE4 is x16-length but runs x4 when both are used; 3× PCIe x1; 6× SATA3; two M.2 (M2_1 SATA-type disables SATA3_5; M2_2 SATA-type disables SATA3_1, PCIe-type disables SATA3_0); memory max 64 GB, non-ECC. Layout: HBA in PCIE2, the 10 GbE NIC (82599EN, PCIe 2.0 x8 card) in PCIE4 at x4 (about 16 Gb/s usable, enough for one 10 GbE port), NVMe boot in M2_1, the 5 SSDs on SATA3_0–4.
-- **Cables:** with the 16i, all three backplanes take SFF-8643↔SFF-8643 cables (the HBA's fourth port stays free). The listing's bundle says "8643 cable ×3" but its wiring diagrams pair two straight cables with one reverse breakout, so confirm with the seller or buy three straight cables.
-- **Airflow:** the 9305-16i needs 200 LFM minimum; budget case fans (1085/1185 variant or own) rather than the bare 950.
-- **Board caveats:** 64 GB is both the board's maximum and what Big Boi already has, so no RAM growth on this board. i9-9900 support and the minimum BIOS are **not verified**: ASRock's CPU list wouldn't load (bot wall), and a third-party site says the Z390M Pro4 needs BIOS P4.00. A used board on older firmware may not POST with the i9-9900; check the BIOS version with the seller.
-- **Gap:** the case has 4 internal 2.5" positions and the SSD pool has 5 drives. Either one SSD takes a front bay on the HBA (11 HDD bays left) or it needs another mount.
-
-## Power from the existing SF750 (checked 2026-10-25)
-
-Stock SF750 cable kit per [Corsair's product page](https://www.corsair.com/us/en/p/psu/cp-9020186-na/sf-series-sf750-750-watt-80-plus-platinum-certified-high-performance-sfx-psu-cp-9020186-na): 1× 24-pin (300 mm), 2× EPS 8-pin (400 mm), 2× PCIe cables with two 6+2 connectors each (500 mm), 2× SATA cables with 4 connectors each (445 mm), 1× Molex cable with 3 connectors (330 mm); SFX-to-ATX bracket included. PSU is 125 mm long, under the case's 170 mm limit.
-
-- **Board (Designare manual):** 24-pin, 8-pin + 4-pin CPU, and a PEG connector the manual recommends only for two or more graphics cards. Covered by the 24-pin and the two EPS cables.
-- **Backplanes:** the listing's backplane photo (checked with Aaron 2026-10-25) shows each of the three 4-bay boards with one 4-pin Molex power input, one SFF-8643, several small 4-pin headers that look like fan headers (the listing says the backplane has temperature control), and a pin header at the end. The stock 3-connector Molex cable fits all three, but it puts all 12 HDDs on one cable and one PSU socket, and at 330 mm it may not reach the front-bottom backplane from a rear PSU. Confirm the connector with the seller.
-- **SSDs:** 5 need SATA power; the two stock SATA cables give 8 connectors.
-- **Sockets:** the PSU has 3 "Peripheral & SATA" sockets (from the System note), so Molex + 2× SATA uses all three. Splitting the backplanes over two cables would need a second Molex cable and fewer SATA cables.
-- **Future GPU:** the two PCIe cables cover it.
-- **One Molex cable for all 12 HDDs: no.** A daisy-chained Molex cable has one +12 V wire. Each backplane's Molex connector carries only its own 4 drives (about 8 A at spin-up, using Seagate IronWolf Pro's 2.0 A at 12 V startup as quoted by retailers), within the Molex 8981 contact rating (distributor TTI quotes 15 A per contact max). The shared path is the problem: the first wire segment and the PSU-side modular plug would carry all 12 drives, about 24 A. No rated limit found yet for the 18 AWG wire or Corsair's PSU-side plug, but 24 A on one 18 AWG conductor is not a reasonable design. Plan one Molex cable per backplane, which uses all 3 peripheral sockets on the SF750 and leaves none for the 5 SSDs' SATA power, or a different PSU with more peripheral sockets. Re-check with the chosen drive's own datasheet.
-
-### Seller's backplane notes (English listing screenshots from Aaron, 2026-10-25)
-
-- **Power:** method 1 is 3 separate Molex cables (one per backplane); method 2 is 2 separate Molex cables (one feeding two backplanes, one feeding the third); a single Molex cable for all three is marked **incorrect**.
-- **Fan control:** each backplane has a temperature probe and DIP switch SW1. ON/ON (default) = auto: 50% under 30 °C, ramping 30–50 °C, 100% above 50 °C. ON/OFF = 50%, OFF/ON = 75%, OFF/OFF = 100%. Fans on the backplane headers draw from that backplane's Molex.
-- **Data:** the seller suggests an LSI HBA and shows SFF-8643 ↔ SFF-8643 (or SFF-8087) cables to the HBA; reverse SFF-8643-to-4-SATA breakout only for motherboard/SATA-card ports. With the 9305-16i, all three runs are SFF-8643 ↔ SFF-8643.
-- **SF750 fit with method 2:** socket 1 Molex → backplanes A+B, socket 2 second Corsair Type 4 Molex cable → backplane C, socket 3 SATA cable → 4 SSDs. SSD #5 has no SATA socket left (it also has no mount yet); a crimped (not molded) Molex-to-SATA adapter off socket 2's spare connector is the fallback.
-
-### PSU search (2026-10-25)
-
-Requirement: one Molex cable per backplane (3 sockets) plus two SATA cables for 5 SSDs (2 sockets) = **5 peripheral sockets**, ATX or SFX with bracket, at most 170 mm long.
-
-- **Corsair RM750x (2024):** 160 mm, Type 4 cables, stock kit 2× SATA (4 each) + 1× Molex (3) ([Corsair](https://www.corsair.com/us/en/p/psu/cp-9020285-na/rm750x-fully-modular-low-noise-atx-power-supply-cp-9020285-na)). Peripheral socket count not found.
-- **Seasonic Focus GX-750 ATX 3 (SRP-FGX751-A5A32SF):** 140 mm, +12 V 62 A, stock kit 2× SATA (4 each) + 1× Molex (3), Molex/SATA cables 18 AWG. Its modular panel has **3 "Peripheral - SATA/Molex" sockets** ([HWBusters review photos](https://hwbusters.com/psus/seasonic-focus-gx-750-v4-atx-v3-1-psu-review/2/)). Same limit as the SF750, so it doesn't solve the problem.
-
-## Constraints carried over (from earlier projects; re-check)
-
-- **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project. On that basis the Sliger CX3702 (18") was rejected as too deep. The new case has to fit, or the rack changes.
-- **Network:** Big Boi is on the USW Pro Max 16 PoE over a 10 GbE SFP+ DAC (10Gtek Intel 82599EN, low-profile). The current board is Mini-ITX with one PCIe slot, which the NIC uses. An HBA for the HDDs needs a board with more slots, or onboard SATA.
-- **Power:** the UPS 2U carries Big Boi plus the network core (110 W now, about 1 h runtime). Spinning drives add load and shorten that runtime; re-check against the [Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>).
-- **Current SSD pool:** RAIDZ1, 5× Samsung 870 EVO 4 TB, 2.36 TB used (2.11 TB of it Plex media), as of 2026-10-15.
-
-## Backup implications (from the [Plan backup strategy for TrueNAS and VMs](<Plan backup strategy for TrueNAS and VMs.md>))
-
-- B2 keeps only the small irreplaceable set (photos, configs, TrueNAS config, Plex DB), which stays near free at any pool size.
-- Bulk media never goes to paid cloud: 14 TB on B2 would be about $97/month. Its offsite copy, if any, is ZFS replication to a TrueNAS box that Aaron owns at another site.
-- **Groundwork now:** split datasets by protection class (configs / Servarr media / self-ripped rips / personal). The whole media tree can then move to the HDD pool with one local replication, and each dataset gets the right snapshot, cloud and replication policy. The backlog item [Reorganize BIGBOI dataset structure under plex- and personal-](<Reorganize BIGBOI dataset structure under plex- and personal-.md>) is the vehicle for this. It's unblocked, since snapshots were verified 2026-10-15.
+- **2026-10-15 (Aaron):** two pools inside a rebuilt Big Boi; replaces the UNAS Pro plan.
+- **2026-10-25 (Aaron):** all 12 front bays on one HBA → a 16-port card.
+- **2026-10-25:** HBA = Broadcom SAS 9305-16i over the 9300-16i (one chip, 16.2 W, no aux power vs two chips, 26.9 W, 6-pin aux).
+- **2026-10-25 (Aaron):** board must support 128 GB, the HBA, the NIC and a future GPU; keep the i9-9900. A future GPU is Nvidia (Intel supports Arc only on 10th gen and newer).
+- **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
+- **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
+- **2026-10-26 (Aaron):** JMCD 12S4 ordered.
 
 ## Open questions
 
-- Case, motherboard, CPU/RAM carry-over, HBA, HDD count and size, and HDD pool layout (RAIDZ2 vs mirrors).
+- Case order details: bundle variant (are the 3 cables straight SFF-8643 ↔ SFF-8643, are fans included), price paid, order number, ETA.
+- Board: Designare (keeps the NIC, XMP for the 3600 kit, no IPMI) vs X11SCA-F (IPMI, needs the ConnectX-3, RAM ≤ 2666). Either way: BIOS version on the used board.
+- HDD count, size and pool layout (RAIDZ2 vs mirrors); spin-up current from the chosen drive's datasheet.
+- Where SSD #5 mounts (4 internal 2.5" positions for 5 SSDs) and powers (crimped Molex-to-SATA off the second Molex cable is the fallback).
+- 6U of free rack space; UPS runtime with spinning drives.
 - Whether the offsite box happens, where it would live, and how it connects (WireGuard/Tailscale).
 - Migration order: build new → move the SSD pool → create the HDD pool → replicate media across.
+
+## Reference: HBA (from vendor documents, 2026-10-25)
+
+- **Broadcom SAS 9305-16i:** one SAS3216 chip, PCIe 3.0 x8, 16 internal ports on 4× SFF-8643, SATA 3/6 Gb/s, 16.2 W typical, low profile with a full-height bracket, FreeBSD and Linux listed, minimum airflow 200 LFM, no auxiliary power connector listed. [Broadcom 9305-16i user guide, pub-005245](https://docs.broadcom.com/doc/pub-005245)
+- **Rejected, SAS 9300-16i:** two SAS3008 chips behind a PCIe switch, 26.9 W nominal, 6-pin PCIe auxiliary power. [Broadcom 9300-16i user guide](https://docs.broadcom.com/doc/12353308)
+- **Alternative, HBA 9400-16i:** SAS3416, tri-mode, 4× SFF-8643, about 12 W per a reseller listing; not checked against a Broadcom document.
+- **TrueNAS:** names Broadcom/LSI SAS HBAs as the most widely used controllers and ships `sas3flash`/`storcli` for 9300/9400/9500 cards. [TrueNAS hardware guide](https://www.truenas.com/docs/scale/gettingstarted/tnhardwareguide/)
+- **Counterfeits** are common at the cheap end; buy from a seller with a record of genuine cards.
+
+## Reference: boards for the i9-9900 (from manuals, 2026-10-25)
+
+LGA1151 9th gen has 16 CPU lanes, so the HBA and GPU share x8/x8 and the NIC needs a chipset slot.
+
+- **Gigabyte Z390 DESIGNARE** (used, about $80–360 on eBay, wide spread). [Manual](https://download.gigabyte.com/FileList/Manual/mb_manual_z390-designare_1001_190219_e.pdf): 9th/8th gen Core i9 listed, 128 GB (32 GB DIMMs), XMP, PCIEX16 + PCIEX8 (x8/x8 when both used), PCIEX4 x16-length at x4 (PCH), 2× x1, 6 SATA, HDMI/DP/Thunderbolt. M2P with a PCIe SSD disables SATA3 0; M2M disables SATA3 4/5. Layout: HBA in PCIEX8, GPU in PCIEX16, 82599EN in PCIEX4, NVMe boot in M2P, 5 SSDs on SATA3 1–5 (no spare). No IPMI.
+- **Supermicro X11SCA-F** (C246, EOL, used about $150–210 on eBay). [Product page](https://www.supermicro.com/en/products/motherboard/X11SCA-F): 8th/9th gen Core i9, up to 128 GB DDR4-2666 UDIMM, 8 SATA, 2× M.2, AST2500 IPMI. [Manual](https://inquirecontent2.ingrammicro.com/User-Manual/1049448249.pdf) (rev 1.0, predates the 128 GB and Core i9 support): SLOT4 x8 (CPU), SLOT6 x16 or x8 with SLOT4 used (CPU), SLOT2 x4 (PCH, shared with M.2 #1), SLOT7 x1, one PCI; BIOS has Internal Graphics enable and Primary Display options; rated 2666, no XMP listed. [ServeTheHome](https://www.servethehome.com/supermicro-x11sca-f-review-for-intel-xeon-e-2100-and-core-i3-8300/2/): x1/x4 slots clear a double-width card in the x16 slots. SLOT2 may not take the x8 82599EN, hence the [ConnectX-3 MCX311A-XCAT](https://network.nvidia.com/related-docs/user_manuals/ConnectX-3_Ethernet_Single_and_Dual_SFP+_Port_Adapter_Card_User_Manual.pdf) (single SFP+, PCIe 3.0 x4, 3.47 W). Unverified: minimum BIOS for the i9-9900 and 32 GB DIMMs; iGPU passthrough with the BMC video active.
+- **Gigabyte C246-WU4** (about $280–360). [Manual](https://download.gigabyte.com/FileList/Manual/server_manual_c246-wu4_sc_0417.pdf): 128 GB, x16 + x8 + two x16-length x4, 10 SATA, no IPMI. i9-9900 support unconfirmed (manual says "9th/8th gen Core"; listings say i7/i5/i3).
+- **Ruled out:** ASRock Z390 Pro4 (64 GB max, [manual](https://download.asrock.com/Manual/Z390%20Pro4.pdf)); ASRock Rack E3C246D4U / C246M WS (64 GB, [manual](https://download.asrock.com/Manual/C246M%20WS.pdf)); ASUS PRIME Z390-A (third slot x2, or x4 only by disabling 2 SATA, [manual](https://dlcdnets.asus.com/pub/ASUS/mb/LGA1151/PRIME_Z390-A/F15017_PRIME_Z390-A_UM_V2_WEB.pdf)). ASUS WS C246 PRO not checked (manual downloads failed).
+- **GPU platform:** Intel lists Arc B-series support only for 10th gen and newer on 400-series and newer boards, with Resizable BAR on "for optimal performance". [Intel Arc system requirements](https://www.intel.com/content/www/us/en/support/articles/000091128.html)
+
+## Reference: power (2026-10-25)
+
+- **SF750 stock kit** per [Corsair](https://www.corsair.com/us/en/p/psu/cp-9020186-na/sf-series-sf750-750-watt-80-plus-platinum-certified-high-performance-sfx-psu-cp-9020186-na): 24-pin (300 mm), 2× EPS 4+4 (400 mm), 2× PCIe with two 6+2 each (500 mm), 2× SATA with 4 connectors each (445 mm), 1× Molex with 3 connectors (330 mm); SFX-to-ATX bracket included; 125 mm long. 3 "Peripheral & SATA" sockets (System note).
+- **Layout (seller's method 2):** socket 1 stock Molex → backplanes A+B; socket 2 second Corsair Type 4 Molex → backplane C; socket 3 SATA → 4 SSDs. Board: 24-pin, 8 + 4-pin CPU (Designare). Future GPU: the PCIe cables. The 330 mm Molex cable's reach to the lowest backplane is unchecked.
+- **Why not one cable:** a daisy-chained Molex cable has one +12 V wire. Each backplane connector carries only its own 4 drives (about 8 A at spin-up, using IronWolf Pro's 2.0 A at 12 V as quoted by retailers), within the Molex 8981 contact rating (TTI quotes 15 A max). The shared first wire segment and PSU-side plug would carry all 12 (about 24 A); no rated limit found for those.
+- **Other PSUs checked:** Seasonic Focus GX-750 ATX 3 (140 mm, 3 peripheral sockets per [HWBusters photos](https://hwbusters.com/psus/seasonic-focus-gx-750-v4-atx-v3-1-psu-review/2/)); Corsair RM750x 2024 (160 mm, socket count not found, [Corsair](https://www.corsair.com/us/en/p/psu/cp-9020285-na/rm750x-fully-modular-low-noise-atx-power-supply-cp-9020285-na)). Neither beats the SF750 here.
+
+## Reference: constraints carried over
+
+- **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project; the Sliger CX3702 (18") was rejected on that basis.
+- **Network:** Big Boi is on the USW Pro Max 16 PoE over a 10 GbE SFP+ DAC.
+- **UPS:** the UPS 2U carries Big Boi plus the network core (110 W now, about 1 h runtime); spinning drives add load. See [Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>).
+- **Current SSD pool:** RAIDZ1, 5× Samsung 870 EVO 4 TB, 2.36 TB used (2.11 TB Plex media), as of 2026-10-15.
+- **Backup** (from [Plan backup strategy for TrueNAS and VMs](<Plan backup strategy for TrueNAS and VMs.md>)): B2 keeps only the small irreplaceable set; bulk media never goes to paid cloud (14 TB on B2 ≈ $97/month), its offsite copy if any is ZFS replication to a box Aaron owns. Groundwork: split datasets by protection class via [Reorganize BIGBOI dataset structure under plex- and personal-](<Reorganize BIGBOI dataset structure under plex- and personal-.md>).
+- **Superseded plan:** [Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier](<Rack Storage Expansion — UniFi UNAS Pro + Bulk HDD Tier.md>).
 
 ## Changes
 
