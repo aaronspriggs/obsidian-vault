@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-10-26 Record the case order details (variant, price, order number, ETA), then pick the board (Designare vs X11SCA-F) and the HDDs.
+next_step: 2026-10-26 Pick the board (Designare vs X11SCA-F) and the HDDs; order 3× 0.5 m SFF-8643 cables; check 7U of free rack space.
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -16,7 +16,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-10-26)
 
-**Case ordered** (JMCD 12S4, via Alibaba.com with Trade Assurance, 2026-10-26). Variant, price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board down to two candidates; PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
+**Case ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board down to two candidates; PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -24,16 +24,16 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 | Part | Choice | State |
 |---|---|---|
-| Case | JMCD 12S4, 12-bay 6U | **Ordered 2026-10-26** |
+| Case | JMCD 12S4, 12-bay, base bundle (no cables, no fans) | **Ordered 2026-10-26** |
 | HBA | Broadcom SAS 9305-16i | Chosen, not bought |
-| Backplane cables | 3× SFF-8643 ↔ SFF-8643 (straight), right-angle on the backplane end | Confirm whether the case bundle includes them |
+| Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
 | Board | Gigabyte Z390 DESIGNARE (lean) or Supermicro X11SCA-F | Open |
 | CPU | Intel i9-9900 | Keep |
 | RAM | 2× 32 GB existing + 2× 32 GB to buy = 128 GB | To buy |
 | NIC | 10Gtek Intel 82599EN (keep, Designare) or Mellanox ConnectX-3 MCX311A-XCAT (X11SCA-F) | Depends on board |
 | Boot | NVMe in M2P (Designare) or M.2 #2 (X11SCA-F) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
-| Case fans | Backplane-controlled; needed for the HBA's airflow | Depends on case variant |
+| Case fans | Aaron's own: 3× 120 mm + 4–5× 92 mm (12025 / 9225 sizes, 4-pin PWM for backplane control) | Have (Aaron, 2026-10-26); sizes to confirm |
 | HDDs | Count, size and pool layout | Open |
 | GPU | Future, Nvidia | Later |
 
@@ -51,6 +51,18 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **Cooling:** drive wall 4× 92 mm (9225); upper fan rack 3× 120 mm (12025) + 1× 92 mm, quick-release.
 - **Bundles** (price list in RMB per the images): 950 = case, 3 backplanes, 12 trays, ears; 1050 adds 3× "8643" cables; 1085 adds 5× 92 mm PWM (dual ball bearing) + 3× 120 mm PWM fans instead; 1185 adds both. PSU, drives and board not included.
 
+## Build log from another owner (bytepursuits.com)
+
+[12-bay homelab NAS: JMCD 12S4 from Taobao](https://bytepursuits.com/12-bay-homelab-nas-jmcd-12s4-from-taobao-upgrading-my-truenas-scale-server-optionally-rack-mountable), read 2026-10-26 (via a summarizer, so spot-check before relying on a detail):
+
+- **Measured** 432 W × 295 D × 272 H mm (6.11U), 12 kg packed. Height differs from the listing's 262 mm.
+- **Cables:** SFF-8643 ↔ SFF-8643; 0.8 m was "somewhat long", 0.5 m recommended; a commenter says 0.5 m works with the HBA in slot 4.
+- **Power:** author warns against daisy-chaining the backplane Molex; one 12 V run per backplane socket if possible. Matches the seller's guidance.
+- **PSU fit:** an SFX unit (EVGA 450GM with ATX adapter) "fit right in". A commenter with an SF750 had to temporarily remove a front panel and the internal 2.5" rack to install it.
+- **Fans:** stock layout 3× 120 mm intake + 4× 92 mm exhaust; backplane jumper curves 37 / 42 / 59 / 100%. Stock JMCD fans have non-standard ridges that needed trimming for one board. With IPMI boards, low fan RPM (≈400) tripped BMC low-RPM thresholds until lowered with ipmitool (relevant to the X11SCA-F).
+- **Limits:** mini-ITX, mATX and ATX boards, not EATX/CEB; board depth about 275 mm; cooler 135 mm; card 250 mm (a 267 mm card didn't fit).
+- **Other:** JMCD's USB 3 header is flimsy and needed a right-angle adapter; HBA can block fan headers on small boards; replacement backplanes available from the seller; TrueNAS imported existing pools without issue; drives fine after a year.
+
 ## Decisions
 
 - **2026-10-15 (Aaron):** two pools inside a rebuilt Big Boi; replaces the UNAS Pro plan.
@@ -59,11 +71,12 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-25 (Aaron):** board must support 128 GB, the HBA, the NIC and a future GPU; keep the i9-9900. A future GPU is Nvidia (Intel supports Arc only on 10th gen and newer).
 - **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
 - **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
-- **2026-10-26 (Aaron):** JMCD 12S4 ordered.
+- **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
 
 ## Open questions
 
-- Case order details: bundle variant (are the 3 cables straight SFF-8643 ↔ SFF-8643, are fans included), price paid, order number, ETA.
+- Case order details: price paid, order number, ETA.
+- Case height: the listing says 262 mm (6U), the build log below measured 272 mm (6.11U), which takes 7U in a rack. Measure on arrival.
 - Board: Designare (keeps the NIC, XMP for the 3600 kit, no IPMI) vs X11SCA-F (IPMI, needs the ConnectX-3, RAM ≤ 2666). Either way: BIOS version on the used board.
 - HDD count, size and pool layout (RAIDZ2 vs mirrors); spin-up current from the chosen drive's datasheet.
 - Where SSD #5 mounts (4 internal 2.5" positions for 5 SSDs) and powers (crimped Molex-to-SATA off the second Molex cable is the fallback).
