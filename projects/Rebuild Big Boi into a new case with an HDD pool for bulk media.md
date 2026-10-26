@@ -33,7 +33,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | NIC | 10Gtek Intel 82599EN (keep, Designare) or Mellanox ConnectX-3 MCX311A-XCAT (X11SCA-F) | Depends on board |
 | Boot | NVMe in M2P (Designare) or M.2 #2 (X11SCA-F) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
-| Case fans | Aaron's own: 3× 120 mm + 4–5× 92 mm (12025 / 9225 sizes, 4-pin PWM for backplane control) | Have (Aaron, 2026-10-26); sizes to confirm |
+| Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | Count, size and pool layout | Open |
 | GPU | Future, Nvidia | Later |
 
