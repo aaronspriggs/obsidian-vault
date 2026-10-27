@@ -92,6 +92,10 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 
 **Other community tools.** [UniFi Protect Blueprints](https://community.home-assistant.io/t/unifi-protect-blueprints/362604) (detection notifications with an alarm-state condition and cooldown). [Protect Sentinel](https://community.home-assistant.io/t/add-on-protect-sentinel-overnight-unifi-protect-reports-sensitive-zone-alerts-and-critical-push-notifications/1026617), an add-on for overnight reports and "sensitive zone" critical pushes over MQTT (posted 2026-09-28, author-tested only). Both are optional, not part of the plan.
 
+## Reference: per-person unlock automations in the community (2026-10-27)
+
+Mostly built on Z-Wave locks, which report the code slot, often managed with [Keymaster](https://github.com/raman325/keymaster) (named slots, date/time windows, use limits, per-slot notifications; describes itself as Z-Wave). Common uses: guest/cleaner/sitter codes that push a notice and work only in a time window; disarm only for certain slots ([forum example](https://community.home-assistant.io/t/disarm-alarm-automation/190883)); arm when locked from outside on the keypad but not from the inside thumb turn ([2026-06 thread](https://community.home-assistant.io/t/best-way-to-handle-arming-disarming-security-alarm-with-door-lock/1012569), lock method rather than person). Per-person welcome scenes are usually driven by presence, not the lock. For the U400 over Matter, method is available and person isn't (see Phase 3), so: method for disarm/arm, phone presence for who; guest codes would be time-limited in the Aqara app.
+
 ## Reference: back slider options (2026-10-27)
 
 The back door is a sliding glass door with a lever latch; the Aeotec Multipurpose on it reports open/closed and has an accelerometer (`binary_sensor.aeotec_multipurpose_sensor_back_door_accelerometer`). Commercial smart locks for sliders are few ([The Smart Cave](https://thesmartcave.com/sliding-door-smart-lock/)).
