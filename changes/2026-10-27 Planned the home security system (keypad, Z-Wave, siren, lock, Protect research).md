@@ -14,4 +14,4 @@ project:
 
 **Verified live:** HA 2026.10.4; ZHA only, no Z-Wave; door sensors reporting; Protect Alarm Manager entity present (Local mode); only the G6 Instant is on Protect; no lock, siren or Alarmo.
 
-**Later the same day:** Aaron confirmed Alarmo as the alarm brain (UniFi only for siren and cameras) and that the U400 is in Apple Home and the Aqara app, so the plan shares it to HA via Matter multi-admin.
+**Later the same day:** Aaron confirmed Alarmo as the alarm brain (UniFi only for siren and cameras) and that the U400 is in Apple Home and the Aqara app, so the plan shares it to HA via Matter multi-admin. Aaron then shared the U400 to HA (Matter multi-admin from Apple Home): `lock.aqara_smart_lock_u400` is live and reads locked; battery 22%.

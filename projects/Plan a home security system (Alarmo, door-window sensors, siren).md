@@ -6,7 +6,7 @@ system:
 - '[[Home Assistant OS (VM)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-10-27: Aaron buys a Home Assistant Connect ZWA-2 and the UP Siren PoE, and shares the U400 from Apple Home to HA (Phase 3 step); Claude can start Phase 0 (Alarmo + door zones) on his go.'
+next_step: '2026-10-27: Aaron buys a Home Assistant Connect ZWA-2 and the UP Siren PoE, (U400 is now in HA); Claude can start Phase 0 (Alarmo + door zones) on his go.'
 ---
 
 ## Goal
@@ -27,7 +27,7 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 | Motion | `binary_sensor.aarons_office_ikea_motion_sensor_aarons_office_occupancy`, `binary_sensor.garage_ikea_motion_sensor_garage_occupancy` | IKEA Zigbee; possible Away-only zones |
 | Protect Alarm Manager | `alarm_control_panel.dream_machine_pro_alarm_manager` | unifiprotect, disarmed, so Protect is in Local mode today |
 | Protect cameras | G6 Instant (Poppy's Bedroom) only | Front Door (doorbell), Driveway, Backyard, Downstairs are still Nest |
-| Front door lock | none | Aqara U400 not in HA; Matter over Thread, and HA already has Matter Server + Thread |
+| Front door lock | `lock.aqara_smart_lock_u400` | Aqara U400, shared from Apple Home to HA over Matter 2026-10-27. Entities: lock, actuator, auto-relock time (300 s), wrong-code limit, operating mode, battery (22% on pairing), firmware. No door state, no who-unlocked entity |
 | Presence | `person.aaron_spriggs` only | Aaron's wife isn't in HA yet: [Add Aaron's wife to Home Assistant (account, Companion app, person)](<Add Aaron's wife to Home Assistant (account, Companion app, person).md>) |
 | Siren | none | |
 | Alarmo | not installed | HACS `nielsfaber/alarmo` v1.10.19, plus `alarmo-card` |
