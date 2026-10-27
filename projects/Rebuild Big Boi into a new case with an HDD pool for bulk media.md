@@ -122,6 +122,7 @@ LGA1151 9th gen has 16 CPU lanes, so the HBA and GPU share x8/x8 and the NIC nee
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project; the Sliger CX3702 (18") was rejected on that basis.
 - **Network:** Big Boi is on the USW Pro Max 16 PoE over a 10 GbE SFP+ DAC.
+- **USB passthrough:** the HA VM's Sonoff ZBDongle-E (Zigbee), and soon a Z-Wave stick for [Plan a home security system (Alarmo, door-window sensors, siren)](<Plan a home security system (Alarmo, door-window sensors, siren).md>), are bound to the USB bus/port path; re-map both in the HA VM's devices after the move.
 - **UPS:** the UPS 2U carries Big Boi plus the network core (110 W now, about 1 h runtime); spinning drives add load. See [Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>).
 - **Current SSD pool:** RAIDZ1, 5× Samsung 870 EVO 4 TB, 2.36 TB used (2.11 TB Plex media), as of 2026-10-15.
 - **Backup** (from [Plan backup strategy for TrueNAS and VMs](<Plan backup strategy for TrueNAS and VMs.md>)): B2 keeps only the small irreplaceable set; bulk media never goes to paid cloud (14 TB on B2 ≈ $97/month), its offsite copy if any is ZFS replication to a box Aaron owns. Groundwork: split datasets by protection class via [Reorganize BIGBOI dataset structure under plex- and personal-](<Reorganize BIGBOI dataset structure under plex- and personal-.md>).

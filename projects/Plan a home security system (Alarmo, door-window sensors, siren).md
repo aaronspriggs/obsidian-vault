@@ -4,7 +4,9 @@ status: active
 priority: low
 system:
 - '[[Home Assistant OS (VM)]]'
-next_step: '2026-10-27: Aaron reads the label on the back of the Ring keypad (1st or 2nd gen) and answers the arming questions below; then Claude picks the Z-Wave controller.'
+- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[UniFi (UDM Pro)]]'
+next_step: '2026-10-27: Aaron picks a Z-Wave stick (ZWA-2 or ZST39, see Plan) after saying how far the rack is from the front door; separately he reads the keypad generation off its back label.'
 ---
 
 ## Goal
@@ -13,7 +15,7 @@ A home alarm built on Home Assistant: Alarmo as the alarm panel, the existing do
 
 ## Status / next step
 
-2026-10-27: opened for planning. Aaron has a Ring keypad powered over PoE (PoE splitter) by the front door; it blinks green (charging, waiting for a network). It is a Z-Wave device, and HA has no Z-Wave controller (only ZHA on the Sonoff ZBDongle-E), so a Z-Wave stick is the first purchase. The keypad must not be paired to a Ring base station; "waiting for network" suggests it isn't, otherwise factory-reset it first.
+2026-10-27: opened for planning. Aaron has a Ring keypad powered over PoE by the front door; it blinks green (charging, waiting for a network). It is a Z-Wave device, and HA has no Z-Wave controller (only ZHA on the Sonoff ZBDongle-E), so a Z-Wave stick is the first purchase. The keypad must not be paired to a Ring base station; "waiting for network" suggests it isn't, otherwise factory-reset it first.
 
 What HA already has, checked live 2026-10-27:
 
@@ -30,8 +32,8 @@ What HA already has, checked live 2026-10-27:
 ## Plan
 
 1. Phase 0: install Alarmo (HACS) and set up zones: the three doors as entry/exit with delay, motion as Away-only.
-2. Phase 1: Z-Wave. Buy a Z-Wave controller, plug it into Big Boi on a USB extension, pass it through to the HA VM like the Zigbee dongle (passthrough binds to the bus/port path), add the Z-Wave JS integration, then include the Ring keypad with S2 security. Coordinate with the Big Boi rebuild: both USB dongles move when the case changes.
-3. Phase 2: wire the keypad to Alarmo: codes and the Disarm/Home/Away buttons into Alarmo, Alarmo state back to the keypad's indicators and entry/exit beeps.
+2. Phase 1: Z-Wave. Buy a Z-Wave controller, plug it into Big Boi on a USB extension, pass it through to the HA VM like the Zigbee dongle (passthrough binds to the bus/port path), add the Z-Wave JS integration, then include the Ring keypad with S2 security. Any 700/800-series stick includes either keypad generation. Candidates, per [HA's adapter list](https://home-assistant.io/docs/z-wave/controllers/) and a [2026 comparison](https://computingforgeeks.com/best-zwave-800-stick-home-assistant/): Home Assistant Connect ZWA-2 (800 series, external antenna, best range) or Zooz ZST39 (same 800 chip and Long Range, about half the price, no external antenna). Range decides it: with one Z-Wave node there is no mesh, so the stick in the rack has to reach the front door directly. Coordinate with [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>): both USB dongles move when the case changes.
+3. Phase 2: wire the keypad to Alarmo with an existing blueprint rather than custom automations: the [Advanced Ring Keypad V2 Blueprint (Alarmo)](https://community.home-assistant.io/t/advanced-ring-keypad-v2-blueprint-for-home-assistant-alarmo/1010017) syncs armed/arming/pending states to the keypad and maps its buttons, and the long-running [Synchronize Ring Alarm Keypad v2 with Alarmo](https://community.home-assistant.io/t/synchronize-ring-alarm-keypad-v2-with-alarmo/349461) thread is the fallback. Both target the 2nd gen.
 4. Phase 3: notifications (Companion app critical alerts, same as the leak alerts) and a siren (about $200–400 in the 2026-09-27 estimate).
 5. Phase 4: more sensors if wanted (windows, about $400–600 in the estimate for a full set).
 6. Phase 5: cameras moved from Nest to UniFi Protect (about $800–1,200), tracked as [Migrate cameras from Nest to UniFi Protect](<Migrate cameras from Nest to UniFi Protect.md>).
@@ -44,7 +46,8 @@ What HA already has, checked live 2026-10-27:
 
 ## Open questions
 
-- Which keypad generation (label on the back)? HA support for the 2nd gen is much better documented; check the 1st gen before buying the stick.
+- Which keypad generation (label on the back)? The Alarmo blueprints found 2026-10-27 are for the 2nd gen; for a 1st gen only Ring's [Z-Wave technical manual](https://ring.com/support/articles/o8ty4/Ring-Alarm-Keypad-1st-gen-Z-Wave-Technical-Manual) turned up, so Phase 2 would be custom work.
+- How far is the rack from the front door, through how many floors and walls? Decides ZWA-2 vs ZST39, and whether a Z-Wave repeater is needed.
 - Who arms it, and how: keypad only, or also phones and presence (auto-arm when everyone leaves)?
 - Windows: cover any, and which?
 - Siren: indoor only, or outdoor too? Z-Wave or Zigbee?
