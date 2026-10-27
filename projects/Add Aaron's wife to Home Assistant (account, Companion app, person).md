@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[Home Assistant OS (VM)]]'
 parent: '[[Plan a home security system (Alarmo, door-window sensors, siren)]]'
-next_step: '2026-10-27: Aaron says what to name her HA user and whether she should be an admin; Claude creates it on his explicit yes (Tier 3, users).'
+next_step: '2026-10-27: Aaron and Claude create her HA user together when Aaron is ready; Aaron gives the name and admin choice, Claude needs his explicit yes (Tier 3, users).'
 ---
 
 ## Goal
@@ -14,7 +14,7 @@ Give Aaron's wife her own Home Assistant user, the Companion app on her phone, a
 
 ## Status / next step
 
-2026-10-27: not started. Only `person.aaron_spriggs` exists. Their infant daughter doesn't need tracking yet.
+2026-10-27: not started; Aaron will help create the account and wants it tracked here. Only `person.aaron_spriggs` exists. Their infant daughter doesn't need tracking yet.
 
 ## Plan
 

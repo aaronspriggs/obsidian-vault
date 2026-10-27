@@ -6,7 +6,7 @@ system:
 - '[[Home Assistant OS (VM)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-10-27: Aaron buys a Home Assistant Connect ZWA-2 and the UP Siren PoE, and checks whether the U400 is already in Apple Home or the Aqara app; Claude can start Phase 0 (Alarmo + door zones) on his go.'
+next_step: '2026-10-27: Aaron buys a Home Assistant Connect ZWA-2 and the UP Siren PoE, and shares the U400 from Apple Home to HA (Phase 3 step); Claude can start Phase 0 (Alarmo + door zones) on his go.'
 ---
 
 ## Goal
@@ -37,7 +37,7 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 1. **Phase 0, Alarmo.** Install from HACS (Tier 2). Zones: the three doors as entry/exit with delay; motion Away-only. Alarmo card on a dashboard.
 2. **Phase 1, Z-Wave.** Home Assistant Connect ZWA-2 on Big Boi, on its cable outside the metal rack, passed through to the HA VM like the Zigbee dongle (bus/port path). Z-Wave JS integration, then include the keypad with S2. The keypad is the only Z-Wave node, so it must reach the stick directly (basement center to 1st-floor front door); if not, add a mains-powered Z-Wave repeater or plug between them. Re-map both dongles after [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>).
 3. **Phase 2, keypad.** Wire it to Alarmo with the [Advanced Ring Keypad V2 Blueprint (Alarmo)](https://community.home-assistant.io/t/advanced-ring-keypad-v2-blueprint-for-home-assistant-alarmo/1010017): state sync (armed, exit delay, entry delay) to the keypad, buttons and codes to Alarmo. Fallback: the [Synchronize Ring Alarm Keypad v2 with Alarmo](https://community.home-assistant.io/t/synchronize-ring-alarm-keypad-v2-with-alarmo/349461) thread.
-4. **Phase 3, lock.** Pair the U400 to HA over Matter (multi-admin from Apple Home or the Aqara app). It needs a Thread border router; HA's Thread integration is loaded, but whether it has a usable preferred network isn't checked yet. Sharing from Apple Home uses Apple's border routers either way. Use it in Alarmo: warn on arming if unlocked, lock on Arm Away. Don't auto-disarm on unlock until a paired U400 shows HA which method/user unlocked; [Selora's U400 page](https://selorahomes.com/devices/aqara/smart-lock-u400/) lists lock, settings and battery entities only, no door state and no unlock attribution, and codes/fingerprints stay in the Aqara app or Apple Home.
+4. **Phase 3, lock.** The U400 is already in Apple Home and the Aqara app (Aaron, 2026-10-27), so add HA as another Matter controller rather than re-pairing. On Aaron's iPhone: Home app, the lock, Settings, Turn On Pairing Mode, copy the setup code; then HA Companion app, Settings, Devices & services, Add device, Add Matter device, and enter the code. Commissioning from the iPhone uses Apple's Thread border routers. Apple Home and the Aqara app keep working; codes and fingerprints stay managed there. Use it in Alarmo: warn on arming if unlocked, lock on Arm Away. Don't auto-disarm on unlock until a paired U400 shows HA which method/user unlocked; [Selora's U400 page](https://selorahomes.com/devices/aqara/smart-lock-u400/) lists lock, settings and battery entities only, no door state and no unlock attribution, and codes/fingerprints stay in the Aqara app or Apple Home.
 5. **Phase 4, phone and siren.**
    - Phone: Alarmo card; when everyone is away while disarmed, push "Everyone left, arm Away?" with an Arm button, never a Disarm button. iOS long-press buttons are broken ([Restore iOS notification action buttons once upstream fix ships (iOS 5881)](<Restore iOS notification action buttons once upstream fix ships (iOS 5881).md>)), but tap-to-open works for actions without `authenticationRequired`. "Everyone" needs Aaron's wife in HA first.
    - Alarm push: Companion app critical alert, same as the leak alerts, with a camera snapshot once Protect cameras cover the doors.
@@ -57,12 +57,10 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 - **2026-10-27 (Aaron):** budget isn't a constraint; priority medium.
 - **2026-10-27 (Aaron):** include the Aqara U400 front-door lock. His wife counts for "everyone left" once she's in HA; their infant daughter doesn't.
 - **2026-10-27:** siren via HA's native unifiprotect `siren` entity, not a Protect Alarm Manager webhook (the integration gained siren support; an [older forum thread](https://community.simon42.com/t/unifi-protect-poe-sirene/71929) saying it couldn't is out of date).
-- **2026-10-27 (proposed, Aaron to confirm):** Alarmo is the one alarm brain; Protect's Alarm Manager only follows it, so losing Protect's Local mode (see Reference) costs a convenience, not the alarm. Consequence: window sensors stay Aeotec Zigbee, and UniFi alarm hardware is limited to the siren and cameras, because adopting UniFi sensors, relays, fobs or an Alarm Hub flips Protect to Global mode.
+- **2026-10-27 (Aaron confirmed):** Alarmo is the one alarm brain; Protect's Alarm Manager only follows it, so losing Protect's Local mode (see Reference) costs a convenience, not the alarm. Consequence: window sensors stay Aeotec Zigbee, and UniFi alarm hardware is limited to the siren and cameras, because adopting UniFi sensors, relays, fobs or an Alarm Hub flips Protect to Global mode.
 
 ## Open questions
 
-- Confirm Alarmo as the brain (Decisions above)?
-- Is the U400 already set up in Apple Home or the Aqara app, and does it have a Thread connection today?
 - How many 1st-floor and basement windows?
 - Where does the siren go, and which PoE port feeds it?
 - Front door camera: when the doorbell moves to Protect, a model with a fingerprint/NFC reader (see Reference) would add disarm-at-the-door. Worth it?
