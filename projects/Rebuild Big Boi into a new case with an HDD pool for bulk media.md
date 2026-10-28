@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-10-26 Aaron buys a used Z390 Designare (BIOS F6 or newer); then pick the HDDs, order 3× 0.5 m SFF-8643 cables, check 7U of free rack space.
+next_step: 2026-10-28 Order the 9305-16i, 3× 0.5 m SFF-8643 cables and 2× Corsair Type 4 Molex cables; then pick the HDDs and check 7U of free rack space.
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -16,7 +16,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-10-26)
 
-**Case ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board chosen (Gigabyte Z390 Designare, Aaron sourcing a used one); PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
+**Case and board ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board chosen (Gigabyte Z390 Designare, Aaron sourcing a used one); PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -25,9 +25,9 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Part | Choice | State |
 |---|---|---|
 | Case | JMCD 12S4, 12-bay, base bundle (no cables, no fans) | **Ordered 2026-10-26** |
-| HBA | Broadcom SAS 9305-16i | Chosen, not bought |
+| HBA | Broadcom SAS 9305-16i, part no. 05-25703-00 (single kit), with full-height bracket | Chosen, not bought |
 | Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
-| Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Chosen 2026-10-26**; Aaron sourcing |
+| Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Ordered by 2026-10-28** |
 | CPU | Intel i9-9900 | Keep |
 | RAM | 2× 32 GB existing + 2× 32 GB to buy = 128 GB | To buy |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
@@ -73,6 +73,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
 - **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
 - **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
+- **2026-10-28 (Aaron):** used Gigabyte Z390 Designare ordered.
 - **2026-10-26 (Aaron):** board = Gigabyte Z390 Designare over the Supermicro X11SCA-F: i9-9900 and 128 GB documented in its manual, keeps the 82599EN, XMP for the 3600 kit, same consumer-board iGPU passthrough path as today. Trade-off accepted: no IPMI, exactly 5 usable SATA ports.
 
 ## Open questions
