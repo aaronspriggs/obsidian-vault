@@ -32,7 +32,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | RAM | 2× 32 GB existing (CMK64GX4M2D3600C18) = 64 GB; upgrade deferred. If ARC proves too small for the HDD pool, add a second CMK64GX4M2D3600C18 (128 GB) | Keep |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
-| PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
+| PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable: CP-8920199 (Premium Sleeved, 6-pin Type 4 to 4× Molex, 750 mm, lists SF series; [digitec](https://www.digitec.ch/en/s1/product/corsair-premium-sleeved-4-pole-molex-cable-75-cm-4-pin-pwm-internal-cables-pc-6145850)). Not the Type 5 version | Cable to buy |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | Count, size and pool layout | Open |
 | GPU | Future, Nvidia | Later |
