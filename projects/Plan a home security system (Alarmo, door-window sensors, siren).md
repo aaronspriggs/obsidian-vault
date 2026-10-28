@@ -94,6 +94,21 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 
 **Other community tools.** [UniFi Protect Blueprints](https://community.home-assistant.io/t/unifi-protect-blueprints/362604) (detection notifications with an alarm-state condition and cooldown). [Protect Sentinel](https://community.home-assistant.io/t/add-on-protect-sentinel-overnight-unifi-protect-reports-sensitive-zone-alerts-and-critical-push-notifications/1026617), an add-on for overnight reports and "sensitive zone" critical pushes over MQTT (posted 2026-09-28, author-tested only). Both are optional, not part of the plan.
 
+## Reference: DIY-alarm considerations (2026-10-28)
+
+Raised by Claude when Aaron asked what else a home-grown setup needs; not yet decided.
+
+- **One box:** HA, both radios and Alarmo all run on Big Boi; a crash, reboot or the rebuild means no alarm. Mitigations: mirror Alarmo's armed state into Protect's Alarm Manager so Protect's own rules (person detection, siren, UniFi app push) keep working if HA dies while armed; pick up [Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent)](<Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent).md>) (backlog).
+- **Alerts need internet:** Companion pushes go through Apple's push service; an outage means no alerts. Option: cellular failover on the UDM Pro.
+- **Nobody is dispatched:** pushes only. Option: a professional-dispatch service with an HA integration (e.g. Noonlight; price and HA support unverified). Insurer discounts usually need a monitored system; ask the insurer.
+- **Sitters leaving:** a sitter disarms with a PIN, but nobody re-arms when they leave and both phones are already away, so the "everyone left" push never fires. Needs a rule, e.g. after a PIN-disarm, the door locked from outside plus no motion for N minutes, push "Sitter left, arm Away?" or auto-arm.
+- **Pets:** pet sitters means pets; the IKEA motion sensors aren't pet-immune. Doors are the main zones; motion and camera zones Away-only, using Protect's person (not animal) detection.
+- **Garage overhead door:** no `cover` entity in HA, so it isn't monitored; only the garage entrance door is. Needs a tilt sensor or an opener integration if the garage is a way in.
+- **Smoke/CO:** no smoke or CO alarms in HA; only the G6 Instant's audio smoke detection. The keypad blueprint can sound a fire/CO siren from any smoke sensor.
+- **Control surface:** ha-mcp's `ha_call_service` isn't gated, so this Claude session can unlock the door and disarm the alarm. Proposed: a STANDARDS rule (Tier 3, Aaron's yes) that Claude never unlocks, disarms or changes alarm config without his explicit request; check voice-assistant exposure for the lock and Alarmo; Alarmo code required to disarm from HA.
+- **Indoor cameras and privacy:** tie the G6 Instant (Poppy's room) privacy/recording to Alarmo state, e.g. not recording while disarmed.
+- **Testing:** a monthly walk-test (each door, keypad, siren, lock disarm, push) like the leak test, since nothing else will tell us a zone died.
+
 ## Reference: U400 lock users and who-unlocked options (2026-10-28)
 
 Who uses the front door (Aaron, 2026-10-28): fingerprints for Aaron, his wife and his mother-in-law; several pet sitters, each with their own PIN. So the method already splits household from sitters: fingerprint = household, PIN = mostly sitters (Aaron's own PIN too).
