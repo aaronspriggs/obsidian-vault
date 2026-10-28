@@ -15,7 +15,7 @@ A home alarm built on Home Assistant: Alarmo as the alarm panel and the single s
 
 ## Status / next step
 
-2026-10-27: planning. Aaron answered the scoping questions (see Decisions) and asked for research on deep UniFi Protect integration (see Reference below). Hardware to buy: Z-Wave stick and UP Siren PoE. The keypad is powered over PoE at the front door and waiting for a Z-Wave network; HA has no Z-Wave controller yet (only ZHA on the Sonoff ZBDongle-E).
+2026-10-28: planning; the plan below now covers every workstream Aaron asked for (guardrails, garage, sitters, alerts, resilience, smoke/CO, testing). Alarmo install deferred by Aaron until later. ZWA-2 ordered; UP Siren PoE still to buy. The keypad is powered over PoE at the front door and waiting for a Z-Wave network; HA has no Z-Wave controller yet (only ZHA on the Sonoff ZBDongle-E).
 
 What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 
@@ -29,32 +29,59 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 | Protect cameras | G6 Instant (Poppy's Bedroom) only | Front Door (doorbell), Driveway, Backyard, Downstairs are still Nest |
 | Front door lock | `lock.aqara_smart_lock_u400` | Aqara U400, shared from Apple Home to HA over Matter 2026-10-27. Entities: lock, actuator, auto-relock time (300 s), wrong-code limit, operating mode, battery (22% on pairing), firmware. No door state, no who-unlocked entity |
 | Presence | `person.aaron_spriggs` only | Aaron's wife isn't in HA yet: [Add Aaron's wife to Home Assistant (account, Companion app, person)](<Add Aaron's wife to Home Assistant (account, Companion app, person).md>) |
+| Garage overhead door | none | Meross opener, in Apple Home and the Meross app; no `cover` entity in HA |
+| Inner garage door lock | none | plain lock, rarely locked |
+| Smoke/CO | `binary_sensor.g6_instant_smoke_alarm_detected` only | G6 Instant audio detection; no smoke/CO alarms in HA |
 | Siren | none | |
 | Alarmo | not installed | HACS `nielsfaber/alarmo` v1.10.19, plus `alarmo-card` |
 
 ## Plan
 
-1. **Phase 0, Alarmo.** Install from HACS (Tier 2). Zones: the three doors as entry/exit with delay; motion Away-only. Alarmo card on a dashboard.
-2. **Phase 1, Z-Wave.** Home Assistant Connect ZWA-2 on Big Boi, on its cable outside the metal rack, passed through to the HA VM like the Zigbee dongle (bus/port path). Z-Wave JS integration, then include the keypad with S2. The keypad is the only Z-Wave node, so it must reach the stick directly (basement center to 1st-floor front door); if not, add a mains-powered Z-Wave repeater or plug between them. Re-map both dongles after [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>).
-3. **Phase 2, keypad.** Wire it to Alarmo with the [Advanced Ring Keypad V2 Blueprint (Alarmo)](https://community.home-assistant.io/t/advanced-ring-keypad-v2-blueprint-for-home-assistant-alarmo/1010017): state sync (armed, exit delay, entry delay) to the keypad, buttons and codes to Alarmo. Fallback: the [Synchronize Ring Alarm Keypad v2 with Alarmo](https://community.home-assistant.io/t/synchronize-ring-alarm-keypad-v2-with-alarmo/349461) thread.
-4. **Phase 3, lock.** The U400 is already in Apple Home and the Aqara app (Aaron, 2026-10-27), so add HA as another Matter controller rather than re-pairing. On Aaron's iPhone: Home app, the lock, Settings, Turn On Pairing Mode, copy the setup code; then HA Companion app, Settings, Devices & services, Add device, Add Matter device, and enter the code. Commissioning from the iPhone uses Apple's Thread border routers. Apple Home and the Aqara app keep working; codes and fingerprints stay managed there. Use it in Alarmo: warn on arming if unlocked, lock on Arm Away. Aaron wants a code or fingerprint unlock to disarm (2026-10-27). HA's Matter lock sets `changed_by` from the DoorLock LockOperation event's operation source (Keypad, Biometric, Manual, Remote, Aliro and so on; [matter/lock.py](https://github.com/home-assistant/core/blob/dev/homeassistant/components/matter/lock.py)); Tested live 2026-10-27 with Matter debug logging (LockOperation events, `operationSource` raw value → HA `changed_by`):
+Grouped by workstream; numbers are a suggested order, not strict dependencies. Each step names who does it where it's Aaron's.
 
-   | Unlock | Raw source | `changed_by` | userIndex |
-   |---|---|---|---|
-   | Thumb turn (inside) | 0 | Unspecified | none |
-   | PIN code | 3 (credential type 3, #2) | Keypad | 1 |
-   | Fingerprint | 128 (Aqara vendor value; confirmed by a fingerprint-only re-test) | Unknown | none |
-   | Home Key (UWB approach and tap) | 10 (credential type 10, #0 and #1) | Aliro | 1 |
-   | Any lock | 0 | Unspecified | none |
+**A. Guardrails (before anything can disarm or unlock)**
 
-   HA sets the state to `unlocked` first and `changed_by` about 10 ms later, so the disarm automation triggers on the `changed_by` attribute changing to `Keypad`, `Unknown` or `Aliro` while unlocked, not on the state. `Unknown` is also HA's default after a restart, so the first fingerprint unlock after a restart may not fire; handle that edge when building it. Every lock event resets it to Unspecified, so repeats fire. Home Key (Aliro) disarms too: UWB approach is the household's most common way in, with tap from iPhone or Apple Watch as the fallback (Aaron, 2026-10-28). Only users 1 and 2 hold Aliro credentials, so no sitter can disarm that way. HA drops `userIndex`, so per-user limits (e.g. excluding guest codes) would need custom work; any PIN disarms. Not built yet: it waits for Alarmo (Phase 0). Aaron wants per-person handling (several people have fingerprints and Home Key, 2026-10-27). What the lock sends: PIN and Home Key carry `userIndex` (and credential index), but HA's Matter lock drops it, keeping only `changed_by` ([lock.py](https://github.com/home-assistant/core/blob/dev/homeassistant/components/matter/lock.py) has no user attribute or event entity); fingerprint arrives as vendor source 128 with no user at all, so the U400 firmware doesn't identify fingerprint users over Matter (similar gaps reported for the U200 in [this thread](https://community.home-assistant.io/t/aqara-u200-matter-integration/748813?page=5)). Options: infer the person from whose phone just arrived home (Companion app presence), or get `userIndex` into HA for PIN/Home Key (upstream change or a small listener on the Matter Server); fingerprint identity would need Aqara to add it. Earlier note: don't auto-disarm on unlock other than these sources; [Selora's U400 page](https://selorahomes.com/devices/aqara/smart-lock-u400/) lists lock, settings and battery entities only, no door state and no unlock attribution, and codes/fingerprints stay in the Aqara app or Apple Home.
-5. **Phase 4, phone and siren.**
-   - Phone: Alarmo card; when everyone is away while disarmed, push "Everyone left, arm Away?" with an Arm button, never a Disarm button. iOS long-press buttons are broken ([Restore iOS notification action buttons once upstream fix ships (iOS 5881)](<Restore iOS notification action buttons once upstream fix ships (iOS 5881).md>)), but tap-to-open works for actions without `authenticationRequired`. "Everyone" needs Aaron's wife in HA first.
-   - Alarm push: Companion app critical alert, same as the leak alerts, with a camera snapshot once Protect cameras cover the doors.
-   - Siren: [UniFi Protect Siren PoE](https://store.ui.com/us/en/products/up-siren-poe) ($109, 110 dB, PoE). HA's unifiprotect integration gives each siren a `siren` entity with trigger, stop, volume and duration (works in API-key-only mode; default 5 s, indefinite not supported), per the [integration docs](https://www.home-assistant.io/integrations/unifiprotect/). A single play is capped at 5, 10, 20 or 30 s (uiprotect `SirenDuration`; [siren.py](https://github.com/home-assistant/core/blob/dev/homeassistant/components/unifiprotect/siren.py) rejects other values), so an automation re-plays it every 30 s while Alarmo is `triggered` and stops it on disarm. uiprotect's public `Siren` model covers both wired (`ucp4`) and SuperLink (`lora`) sirens, so the PoE model should appear; confirm after adoption. Backup sounder: the keypad's own alarm tones.
-6. **Phase 5, Protect as part of the alarm** (see Reference): Protect person detections as Away-only zones; Alarmo arm/disarm mirrored to Protect's Alarm Manager so Protect's own alarm rules and recording follow it. Most of this waits for [Migrate cameras from Nest to UniFi Protect](<Migrate cameras from Nest to UniFi Protect.md>), since only the G6 Instant is on Protect.
-7. **Phase 6, windows.** Same Aeotec Multipurpose (Zigbee) on the 1st floor and maybe the basement, once Aaron counts them.
-8. **Phase 7, resilience.** The keypad battery covers power cuts at the door. Big Boi (HA and both radios), the UDM Pro and the rack PoE switches are on the UPS ([Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>)); check which switch feeds the keypad and the siren.
+1. Propose a STANDARDS rule (Tier 3, Aaron's yes): Claude never unlocks a lock, disarms, or changes alarm zones/codes/automations unless Aaron explicitly asks in that session. Reason: ha-mcp's `ha_call_service` isn't gated, so this session can unlock the door and disarm.
+2. Lock down other control paths: lock and Alarmo not exposed to Assist/voice; Alarmo requires a code to disarm from HA's UI; no Disarm button in any push. Once live, alarm and lock automations count as "safety and security" under STANDARDS change authority.
+
+**B. Core alarm**
+
+3. Alarmo (HACS, Tier 2) with modes Away and Home (night: perimeter only, no motion). Zones: front, back and garage entrance doors as entry/exit with delay; garage overhead door with a longer entry delay (step 9); back-door accelerometer and the IKEA motion sensors Away-only.
+4. Z-Wave: ZWA-2 (ordered 2026-10-28) on Big Boi, on its cable outside the metal rack, USB passthrough to the HA VM like the Zigbee dongle (bus/port path), Z-Wave JS, include the keypad with S2. The keypad is the only Z-Wave node at first, so it must reach the stick directly (basement center to 1st-floor front door); if not, add a mains-powered Z-Wave repeater or plug. Re-map both dongles after [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>).
+5. Keypad: [Advanced Ring Keypad V2 Blueprint (Alarmo)](https://community.home-assistant.io/t/advanced-ring-keypad-v2-blueprint-for-home-assistant-alarmo/1010017) for state sync, codes, buttons, and panic buttons (police/fire/medical → siren + critical push, or dispatch if step 13 is adopted). Fallback: [Synchronize Ring Alarm Keypad v2 with Alarmo](https://community.home-assistant.io/t/synchronize-ring-alarm-keypad-v2-with-alarmo/349461).
+6. Siren: [UniFi Protect Siren PoE](https://store.ui.com/us/en/products/up-siren-poe) ($109, 110 dB, PoE; Aaron to buy). HA's unifiprotect `siren` entity plays 5/10/20/30 s at a time ([siren.py](https://github.com/home-assistant/core/blob/dev/homeassistant/components/unifiprotect/siren.py), uiprotect `SirenDuration`), so an automation re-plays it every 30 s while Alarmo is `triggered` and stops it on disarm. Check right after adoption that Protect stays in Local mode (see Reference: UniFi Protect). Backup sounder: the keypad's alarm tones.
+
+**C. Entry points and who's coming in**
+
+7. Front door (U400, in HA since 2026-10-27): unlock by fingerprint (household), Home Key UWB/tap (household, most common entry) or PIN (sitters, plus Aaron's) disarms; PIN also pushes "front door unlocked with a code, alarm disarmed". Thumb turn and app unlocks never disarm. Trigger on `changed_by` changing to `Unknown` / `Aliro` / `Keypad` while unlocked (see Reference: U400 unlock sources). Arm Away locks it; arming with it unlocked warns.
+8. Garage overhead door (Meross opener, in Apple Home and the Meross app; Aaron's regular way in). Integrate without leaving Apple Home: [Meross LAN](https://community.home-assistant.io/t/meross-lan-not-reliable/721313) (HACS, local; some users report wrong door state at times), else HomeKit Controller after removing it from Apple Home and re-exposing it through HA's HomeKit Bridge ([community setup](https://community.home-assistant.io/t/meross-smart-garage-door-opener-with-chamberlain-remote-apple-homekit-home-assistant-apple-carplay/636592)). Then: alert if left open at night or on arming, close it on Arm Away, and treat opening while armed as an entry with a longer delay (time to park and walk to the inner door).
+9. Inner garage door: today a plain lock, rarely locked. Add a smart lock with the same disarm rules as the front door, so coming in through the garage disarms by fingerprint or Home Key at the inner door. A second U400 if the door has a deadbolt bore (same Matter, Home Key and fingerprint behavior, already tested); a lever-style lock otherwise (to research once the door hardware is known). Until then, disarm from the phone or the front keypad within the garage entry delay; a second Ring keypad by the inner door is the alternative.
+10. Back slider: a second small Zigbee contact sensor on the lever so HA knows latched vs only closed (warn on arming, night reminder), and the existing accelerometer as an Away-only forced-entry zone after a sensitivity test. Motorized options are in Reference: back slider.
+11. People: [Add Aaron's wife to Home Assistant (account, Companion app, person)](<Add Aaron's wife to Home Assistant (account, Companion app, person).md>) (Tier 3, Aaron helps). Mother-in-law uses her fingerprint, so she needs no HA account unless she should count for presence. Sitters: PIN disarm + push (step 7); naming them waits on a route in Reference: U400 lock users.
+12. Sitter leaves: after a PIN disarm, once the door is locked from outside and there's no motion for N minutes, push "Sitter left, arm Away?" (or auto-arm; Aaron to choose). Needs a test of how the U400 reports a lock from the outside keypad.
+
+**D. Alerts and response**
+
+13. Alarm push: critical alert to Aaron and his wife (bypasses Do Not Disturb), with a camera snapshot once Protect cameras cover the doors (needs Protect Full access mode: local UniFi user, Tier 3). "Everyone left, arm Away?" push with an Arm button when both are away while disarmed (iOS long-press buttons are broken, tap-to-open works: [Restore iOS notification action buttons once upstream fix ships (iOS 5881)](<Restore iOS notification action buttons once upstream fix ships (iOS 5881).md>)).
+14. Optional professional dispatch: Noonlight, $9.99/month after a free month, with an HA integration ([Konnected announcement](https://konnected.io/blogs/news/introducing-24-7-smart-home-monitoring-for-security-fire-with-noonlight), [noonlight-hass](https://www.github.com/konnected-io/noonlight-hass)) that exposes an alarm switch. Escalation idea: Alarmo triggered, no disarm within N minutes, then Noonlight. Ask the insurer whether DIY + Noonlight earns a discount.
+
+**E. Resilience**
+
+15. Protect as backup brain: mirror Alarmo's armed state into `alarm_control_panel.dream_machine_pro_alarm_manager` (Local mode) with Alarm Manager rules (person detection, siren, UniFi app push) that keep working if HA or Big Boi dies while armed.
+16. Off-box dead-man check: pick up [Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent)](<Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent).md>) (backlog) as part of this.
+17. Internet failover so pushes still go out: [UniFi 5G Backup](https://ifeeltech.com/blog/unifi-5g-backup-smb-review) ($99, PoE, launched 2026-05; needs a cellular data plan, cost unverified), or LTE Backup Pro ($279) / 5G Max ($399).
+18. Power: Big Boi, UDM Pro and rack PoE switches are on the UPS ([Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>)); confirm the keypad's and siren's PoE ports are on a UPS-backed switch. Lock battery alert done 2026-10-27 (20% threshold).
+
+**F. Coverage**
+
+19. Smoke/CO: nothing in HA today except the G6 Instant's audio smoke detection. Option: [Ring Alarm Smoke & CO Listener](https://ring.com/products/alarm-smoke-co-listener), Z-Wave, pairs with Z-Wave JS, sits inches from each existing alarm, about 3-year battery; or replace alarms with Z-Wave smoke/CO units. Hook them to the keypad's fire/CO siren and a critical push. Avoid UniFi's SuperLink smoke alarm: adopting it flips Protect to Global mode.
+20. Windows: Aeotec Multipurpose (Zigbee) on the 1st floor and maybe the basement, once Aaron counts them.
+21. Cameras: Protect person detection (not animal, because of the pets) as Away-only zones, after [Migrate cameras from Nest to UniFi Protect](<Migrate cameras from Nest to UniFi Protect.md>). G6 Instant (Poppy's room): tie its privacy/recording to Alarmo state (Aaron to choose).
+
+**G. Operations**
+
+22. Monthly walk-test runbook: each door, latch sensor, keypad, siren, each disarm method, garage, pushes to both phones. Record `last_tested`.
+23. When everything is built: change notes, a "Home alarm" System note (zones, codes kept in 1Password names only, automations), and the walk-test runbook.
 
 ## Decisions
 
@@ -69,13 +96,21 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 - **2026-10-27 (Aaron):** include the Aqara U400 front-door lock. His wife counts for "everyone left" once she's in HA; their infant daughter doesn't.
 - **2026-10-27:** siren via HA's native unifiprotect `siren` entity, not a Protect Alarm Manager webhook (the integration gained siren support; an [older forum thread](https://community.simon42.com/t/unifi-protect-poe-sirene/71929) saying it couldn't is out of date).
 - **2026-10-28 (Aaron):** unlock-to-disarm covers fingerprint (household), Home Key UWB/tap (household, the most common entry) and PIN (sitters, with a push). Thumb turn and app unlocks never disarm.
+- **2026-10-28 (Aaron):** plan all the DIY-alarm considerations (guardrails, sitter re-arm, pets, garage, smoke/CO, resilience, dispatch option, camera privacy, testing). Garage overhead is a regular entry, so it's in scope; a smart lock for the inner garage door is wanted if the alarm can drive it. Alarmo install waits.
 - **2026-10-27 (Aaron confirmed):** Alarmo is the one alarm brain; Protect's Alarm Manager only follows it, so losing Protect's Local mode (see Reference) costs a convenience, not the alarm. Consequence: window sensors stay Aeotec Zigbee, and UniFi alarm hardware is limited to the siren and cameras, because adopting UniFi sensors, relays, fobs or an Alarm Hub flips Protect to Global mode.
 
 ## Open questions
 
-- Sitter PINs: disarm and push "a code was used" now, and pick a naming route later (see Reference: U400 lock users)?
-- Back slider (lever latch): which option (see Reference: back slider)?
-
+- Garage: which Meross model (MSG100 or MSG200)? Do you use the CarPlay/Siri garage button (affects Meross LAN vs HomeKit Controller)?
+- Inner garage door: does it have a deadbolt bore, or only a knob? Decides second U400 vs a lever-style lock.
+- Smoke/CO: how many alarms, and are they hardwired and interconnected? Decides listeners vs replacing them.
+- Noonlight dispatch: yes, no, or later?
+- Cellular failover for the UDM Pro: yes, no, or later?
+- Sitter leaving: push to arm, or auto-arm?
+- Home mode at night (perimeter only)?
+- G6 Instant in Poppy's room: record only while armed, or leave as is?
+- Mother-in-law: count her for presence (needs an HA account), or fingerprint only?
+- Sitter names: generic "code used" push for now, naming later (see Reference: U400 lock users)?
 - How many 1st-floor and basement windows?
 - Where does the siren go, and which PoE port feeds it?
 - Front door camera: when the doorbell moves to Protect, a model with a fingerprint/NFC reader (see Reference) would add disarm-at-the-door. Worth it?
@@ -94,20 +129,19 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 
 **Other community tools.** [UniFi Protect Blueprints](https://community.home-assistant.io/t/unifi-protect-blueprints/362604) (detection notifications with an alarm-state condition and cooldown). [Protect Sentinel](https://community.home-assistant.io/t/add-on-protect-sentinel-overnight-unifi-protect-reports-sensitive-zone-alerts-and-critical-push-notifications/1026617), an add-on for overnight reports and "sensitive zone" critical pushes over MQTT (posted 2026-09-28, author-tested only). Both are optional, not part of the plan.
 
-## Reference: DIY-alarm considerations (2026-10-28)
+## Reference: U400 unlock sources (tested 2026-10-27)
 
-Raised by Claude when Aaron asked what else a home-grown setup needs; not yet decided.
+Matter debug logging, LockOperation events (`operationSource` raw value → HA `changed_by`, set by [matter/lock.py](https://github.com/home-assistant/core/blob/dev/homeassistant/components/matter/lock.py)):
 
-- **One box:** HA, both radios and Alarmo all run on Big Boi; a crash, reboot or the rebuild means no alarm. Mitigations: mirror Alarmo's armed state into Protect's Alarm Manager so Protect's own rules (person detection, siren, UniFi app push) keep working if HA dies while armed; pick up [Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent)](<Monitoring - off-box dead-man check (alert when Big Boi-HA goes silent).md>) (backlog).
-- **Alerts need internet:** Companion pushes go through Apple's push service; an outage means no alerts. Option: cellular failover on the UDM Pro.
-- **Nobody is dispatched:** pushes only. Option: a professional-dispatch service with an HA integration (e.g. Noonlight; price and HA support unverified). Insurer discounts usually need a monitored system; ask the insurer.
-- **Sitters leaving:** a sitter disarms with a PIN, but nobody re-arms when they leave and both phones are already away, so the "everyone left" push never fires. Needs a rule, e.g. after a PIN-disarm, the door locked from outside plus no motion for N minutes, push "Sitter left, arm Away?" or auto-arm.
-- **Pets:** pet sitters means pets; the IKEA motion sensors aren't pet-immune. Doors are the main zones; motion and camera zones Away-only, using Protect's person (not animal) detection.
-- **Garage overhead door:** no `cover` entity in HA, so it isn't monitored; only the garage entrance door is. Needs a tilt sensor or an opener integration if the garage is a way in.
-- **Smoke/CO:** no smoke or CO alarms in HA; only the G6 Instant's audio smoke detection. The keypad blueprint can sound a fire/CO siren from any smoke sensor.
-- **Control surface:** ha-mcp's `ha_call_service` isn't gated, so this Claude session can unlock the door and disarm the alarm. Proposed: a STANDARDS rule (Tier 3, Aaron's yes) that Claude never unlocks, disarms or changes alarm config without his explicit request; check voice-assistant exposure for the lock and Alarmo; Alarmo code required to disarm from HA.
-- **Indoor cameras and privacy:** tie the G6 Instant (Poppy's room) privacy/recording to Alarmo state, e.g. not recording while disarmed.
-- **Testing:** a monthly walk-test (each door, keypad, siren, lock disarm, push) like the leak test, since nothing else will tell us a zone died.
+| Unlock | Raw source | `changed_by` | userIndex |
+|---|---|---|---|
+| Thumb turn (inside) | 0 | Unspecified | none |
+| PIN code | 3 (credential type 3, #2) | Keypad | 1 |
+| Fingerprint | 128 (Aqara vendor value; confirmed by a fingerprint-only re-test) | Unknown | none |
+| Home Key (UWB approach and tap) | 10 (credential type 10, #0 and #1) | Aliro | 1 |
+| Any lock | 0 | Unspecified | none |
+
+HA sets the state to `unlocked` first and `changed_by` about 10 ms later, so automations trigger on the attribute, not the state. `Unknown` is also HA's default after a restart, so the first fingerprint unlock after a restart may not fire. Every lock event resets it to Unspecified, so repeats fire. HA drops `userIndex` (no user attribute or event entity), and fingerprints carry no user at all (similar gaps for the U200: [thread](https://community.home-assistant.io/t/aqara-u200-matter-integration/748813?page=5)). Codes and fingerprints stay managed in the Aqara app and Apple Home; HA got the lock by Matter multi-admin from Apple Home.
 
 ## Reference: U400 lock users and who-unlocked options (2026-10-28)
 
