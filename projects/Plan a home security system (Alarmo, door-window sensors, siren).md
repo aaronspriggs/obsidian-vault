@@ -71,7 +71,7 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 
 ## Open questions
 
-- Per person: what should differ? E.g. household disarms everything, a guest/cleaner code disarms but pushes a notice, someone else never disarms.
+- Sitter PINs: disarm and push "a code was used" now, and pick a naming route later (see Reference: U400 lock users)?
 - Back slider (lever latch): which option (see Reference: back slider)?
 
 - How many 1st-floor and basement windows?
@@ -91,6 +91,17 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 **Doorbell fingerprint/NFC.** On a Protect doorbell with a reader (G4 Doorbell Pro class), HA gets fingerprint events with a `ulp_id` per enrolled user (`unifiprotect.get_user_keyring_info` maps them; Full access only). Community use: [unlock a smart lock via fingerprint, with a reboot safety check](https://community.home-assistant.io/t/unifi-protect-doorbell-unlock-smart-lock-via-fingerprint-with-reboot-safety-check/1026908), which can also disarm the alarm; [a G4 Doorbell Pro NFC/fingerprint write-up](https://chrishansen.tech/posts/unifi_g4_doorbell_pro_part3/). Known gotcha: a doorbell reboot fired a false fingerprint-unlock ([core #132395](https://github.com/home-assistant/core/issues/132395)), hence the safety check.
 
 **Other community tools.** [UniFi Protect Blueprints](https://community.home-assistant.io/t/unifi-protect-blueprints/362604) (detection notifications with an alarm-state condition and cooldown). [Protect Sentinel](https://community.home-assistant.io/t/add-on-protect-sentinel-overnight-unifi-protect-reports-sensitive-zone-alerts-and-critical-push-notifications/1026617), an add-on for overnight reports and "sensitive zone" critical pushes over MQTT (posted 2026-09-28, author-tested only). Both are optional, not part of the plan.
+
+## Reference: U400 lock users and who-unlocked options (2026-10-28)
+
+Who uses the front door (Aaron, 2026-10-28): fingerprints for Aaron, his wife and his mother-in-law; several pet sitters, each with their own PIN. So the method already splits household from sitters: fingerprint = household, PIN = mostly sitters (Aaron's own PIN too).
+
+`matter.get_lock_users` (read 2026-10-28): 12 of 20 Matter users, all created by fabric 3 (Apple Home), names blank. User 1: Home Key + PIN #2 (Aaron; matches the test unlock). User 2: Home Key + PIN #1 (likely his wife). Users 3–12: one PIN each (likely the sitters, as Apple Home guests). Fingerprints aren't Matter credentials; Aqara manages them, which is why a fingerprint unlock carries no user.
+
+Ways to name the PIN user:
+- [ha-matter-lock-identity](https://github.com/alexbbt/ha-matter-lock-identity) (HACS custom): reads the existing users, adds an Operator sensor and an Unlock event per lock, names mapped by Matter user unique ID. Fits the Apple Home-managed codes as they are, but first released 2026-10-25, 0 stars.
+- [Lock Code Manager](https://github.com/raman325/lock_code_manager) (HACS, 112 stars, Matter supported with write-only PINs): named slots, calendar schedules, `lock_code_manager_credential_used` events, but only for codes it creates, so the sitter codes would move from Apple Home into HA. It won't report Apple Home users or Home Key ([issue #1754](https://github.com/raman325/lock_code_manager/issues/1754), closed not planned 2026-10-27, redirected to a core feature request).
+- Wait for HA core to expose `userIndex` (requested; see also [discussion #2611](https://github.com/orgs/home-assistant/discussions/2611)).
 
 ## Reference: per-person unlock automations in the community (2026-10-27)
 
