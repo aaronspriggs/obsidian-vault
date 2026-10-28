@@ -93,10 +93,10 @@ Plex Media Server running as a VM on TrueNAS SCALE (Big Boi). Plex Pass lifetime
 
 ## Clients & Codec Strategy
 
-- **Primary client:** Apple TV 4K (3rd generation, most recent as of 2026) — document specific model for codec compatibility reference)
+- **Primary client:** Apple TV 4K (3rd generation, A15, no AV1 hardware decode). Apple TV 4K (4th generation, A19, dedicated AV1 hardware decoder per [Apple](https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/)) ordered by Aaron, arriving 2026-11-13; Plex app direct play of AV1 on it is untested.
 - **Current encode codec:** H.265 (HEVC) 10-bit, encoded via HandBrake NVENC on workstation (RTX 3080 Ti)
 - **Audio:** TrueHD 7.1 converted to E-AC3 5.1 with Atmos compatibility; TrueHD retained as secondary track
-- **AV1:** Deferred until Apple TV client support matures. Re-encoding from existing H.265 files is possible but introduces generational quality loss — keep source files where possible.
+- **AV1:** Deferred until Plex AV1 direct play is confirmed on the 4th-gen Apple TV. Re-encoding from existing H.265 files is possible but introduces generational quality loss — keep source files where possible.
 - **EasyAudioEncoder (EAE):** installed manually to stop 429 rate-limit errors when Plex tried to download it. Lives in `/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Codecs/EasyAudioEncoder-6a4213e165f8ac3d108a346e-linux-x86_64` (verified 2026-09-28). Redo if the VM is rebuilt.
 - See Workstation (Desktop) system page for full HandBrake encoding workflow
 

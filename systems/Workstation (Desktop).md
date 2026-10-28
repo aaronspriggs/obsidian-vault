@@ -29,7 +29,7 @@ Personal desktop workstation used for media encoding (HandBrake) to build the Pl
 ## Codec Strategy
 
 - **Current:** H.265 10-bit NVENC — best fit for this environment due to Apple TV compatibility
-- **AV1:** Deferred for now. Apple TV 4K 3rd gen does support AV1 hardware decode, so the client side is ready. Main remaining question is Plex Direct Play support end-to-end. The bottleneck is GPU — RTX 3080 Ti does not support AV1 hardware encode (requires RTX 40-series+). Revisit when upgrading GPU.
+- **AV1:** Deferred for now. Apple TV 4K 3rd gen (A15) has no AV1 hardware decode (Apple requires A17/M3 or later; corrected 2026-10-28); the 4th gen (A19, arriving 2026-11-13) has one. Main remaining question is Plex Direct Play support end-to-end. The bottleneck is GPU — RTX 3080 Ti does not support AV1 hardware encode (requires RTX 40-series+). Revisit when upgrading GPU.
 - **Re-encoding existing library to AV1:** Not required to re-rip from source, but transcoding already-compressed files introduces generational quality loss. Keep highest quality source files where possible before any future migration.
 
 ## Open work

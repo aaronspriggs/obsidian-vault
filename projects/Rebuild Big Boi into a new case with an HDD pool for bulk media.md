@@ -29,7 +29,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
 | Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Ordered by 2026-10-28** |
 | CPU | Intel i9-9900 | Keep |
-| RAM | 2× 32 GB existing (CMK64GX4M2D3600C18) + 2× 32 GB to buy = 128 GB; alternative 2× 16 GB CMK32GX4M2D3600C18 = 96 GB (32s in A2/B2, 16s in A1/B1) | To buy |
+| RAM | 2× 32 GB existing (CMK64GX4M2D3600C18) = 64 GB; upgrade deferred. If ARC proves too small for the HDD pool, add a second CMK64GX4M2D3600C18 (128 GB) | Keep |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |
@@ -75,6 +75,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
 - **2026-10-28 (Aaron):** used Gigabyte Z390 Designare ordered.
 - **2026-10-28 (Aaron):** used Broadcom 9305-16i ordered on eBay (Electronic Sister, 6,536 feedback, 99.9%; $64.99). On arrival: check the label part number and, once installed, `storcli` reports SAS9305-16i.
+- **2026-10-28 (Aaron):** no RAM purchase for the rebuild; move the existing 64 GB. Last-week stats: ARC averaged ~17 GiB, available memory never below 5 GiB. More RAM mainly helps ARC for metadata in front of the HDD pool, so revisit after it's in use.
 - **2026-10-26 (Aaron):** board = Gigabyte Z390 Designare over the Supermicro X11SCA-F: i9-9900 and 128 GB documented in its manual, keeps the 82599EN, XMP for the 3600 kit, same consumer-board iGPU passthrough path as today. Trade-off accepted: no IPMI, exactly 5 usable SATA ports.
 
 ## Open questions
