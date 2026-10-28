@@ -29,7 +29,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
 | Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Ordered by 2026-10-28** |
 | CPU | Intel i9-9900 | Keep |
-| RAM | 2× 32 GB existing + 2× 32 GB to buy = 128 GB | To buy |
+| RAM | 2× 32 GB existing (CMK64GX4M2D3600C18) + 2× 32 GB to buy = 128 GB; alternative 2× 16 GB CMK32GX4M2D3600C18 = 96 GB (32s in A2/B2, 16s in A1/B1) | To buy |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable | Cable to buy |

@@ -26,7 +26,7 @@ NAS + hypervisor (Big Boi). i9-9900, 64 GB, RAIDZ1 5x 4 TB SSD. Hosts HA, Plex a
 
 **Hardware**
 - CPU Intel Core i9-9900 (8C/16T, since 2026-03-04); UHD 630 iGPU passed through to the Plex VM.
-- RAM 64 GB (non-ECC), Corsair Vengeance LPX 2×32 GB DDR4-3600.
+- RAM 64 GB (non-ECC), Corsair Vengeance LPX 2×32 GB DDR4-3600, kit CMK64GX4M2D3600C18 (XMP 18-22-22-42, 1.35 V; part number per Aaron 2026-10-28).
 - Board ASRock Z390M-ITX/ac (Mini-ITX, LGA1151) in a MyElectronics 19" 2U Mini-ITX rack case (225 mm deep); PSU Corsair SF750 Platinum, 2018 model CP-9020186 (standard SFX, 125 × 63.5 × 100 mm; takes Corsair Type 4 modular cables only; 3 "Peripheral & SATA" modular sockets, shipped with 2× 4-connector SATA cables + 1× 3-connector Molex cable; SFX-L corrected 2026-10-11 per Aaron). 10 GbE card: 10Gtek Intel 82599EN SFP+, low-profile. (From the 2026-03 build notes; not readable via the API.)
 - Boot: Patriot P300 128 GB NVMe.
 - Network: `enp1s0` 10 GbE DAC to USW Pro Max 16 PoE SFP+ 2, bridged as `br0` (192.168.1.248, gateway/DNS 192.168.1.1). Onboard `eno1` and `enp2s0` are unplugged.
