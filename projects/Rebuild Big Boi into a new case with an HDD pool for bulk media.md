@@ -106,6 +106,16 @@ LGA1151 9th gen has 16 CPU lanes, so the HBA and GPU share x8/x8 and the NIC nee
 - **Ruled out:** ASRock Z390 Pro4 (64 GB max, [manual](https://download.asrock.com/Manual/Z390%20Pro4.pdf)); ASRock Rack E3C246D4U / C246M WS (64 GB, [manual](https://download.asrock.com/Manual/C246M%20WS.pdf)); ASUS PRIME Z390-A (third slot x2, about 8 Gb/s for the PCIe 2.0 NIC, or x4 only by disabling SATA 5/6, [manual](https://dlcdnets.asus.com/pub/ASUS/mb/LGA1151/PRIME_Z390-A/F15017_PRIME_Z390-A_UM_V2_WEB.pdf); manual says 64 GB, BIOS 0805 reportedly adds 32 GB DIMMs). Fallback only if much cheaper: x4 mode, 4 SSDs on SATA, SSD #5 on the HBA's spare port via a forward breakout. ASUS WS C246 PRO not checked (manual downloads failed).
 - **GPU platform:** Intel lists Arc B-series support only for 10th gen and newer on 400-series and newer boards, with Resizable BAR on "for optimal performance". [Intel Arc system requirements](https://www.intel.com/content/www/us/en/support/articles/000091128.html)
 
+## Reference: future GPU for local LLMs (2026-10-28)
+
+Limits: Nvidia only, ≤ 250 mm long, PCIEX16 slot at PCIe 3.0 x8 (with the HBA in PCIEX8), SF750 has 2 PCIe cables. VRAM decides model size.
+
+- **RTX 2000 Ada:** 16 GB, 70 W from the slot (no power cable), 168 mm, dual slot, low-profile bracket included, PCIe 4.0 x8, launch price under $650 ([Tom's Hardware](https://www.tomshardware.com/pc-components/gpus/nvidias-new-pro-gpu-costs-less-than-dollar650-rtx-2000-ada-generation-arrives-with-2816-cuda-cores-and-16gb-ecc-vram)). 128-bit memory bus, so slower generation than wider-bus cards.
+- **RTX A4000:** 16 GB, 140 W, 241 mm, single slot (NVIDIA datasheet via search); used about $800–850 (Sept 2026, [GPU Dojo](https://gpudojo-v2.pages.dev/articles/used-gpu-prices-ai-boom)).
+- **RTX 3060 12 GB:** used about $290 (2026, [ResalePrices](https://resaleprices.com/gpu/nvidia-rtx-3060)); length varies by model, pick one ≤ 250 mm.
+- **Out:** cards over 250 mm (e.g. Tesla P40, most RTX 3090s); Intel Arc (needs 10th gen+).
+- **Pooling GPUs across machines:** llama.cpp's RPC backend runs `rpc-server` on other hosts and splits a model across them over TCP, mixing CUDA and Metal; the project calls it proof-of-concept, fragile and insecure, LAN-only. Benchmarks show faster prompt processing but slower generation when split ([llama.cpp RPC README](https://git.mitjafelicijan.com/r/llmnpc/blob/llama.cpp/tools/rpc/README.md), [benchmarks](https://github.com/kjaiswal/llama-cpp-distributed-benchmarks)). Other GPU in the house: Workstation RTX 3080 Ti (12 GB, Windows, not always on).
+
 ## Reference: power (2026-10-25)
 
 - **SF750 stock kit** per [Corsair](https://www.corsair.com/us/en/p/psu/cp-9020186-na/sf-series-sf750-750-watt-80-plus-platinum-certified-high-performance-sfx-psu-cp-9020186-na): 24-pin (300 mm), 2× EPS 4+4 (400 mm), 2× PCIe with two 6+2 each (500 mm), 2× SATA with 4 connectors each (445 mm), 1× Molex with 3 connectors (330 mm); SFX-to-ATX bracket included; 125 mm long. 3 "Peripheral & SATA" sockets (System note).
