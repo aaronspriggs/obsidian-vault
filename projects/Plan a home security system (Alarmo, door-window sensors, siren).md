@@ -6,7 +6,7 @@ system:
 - '[[Home Assistant OS (VM)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-10-27: Aaron buys a Home Assistant Connect ZWA-2 and the UP Siren PoE, (U400 is now in HA); Claude can start Phase 0 (Alarmo + door zones) on his go.'
+next_step: '2026-10-28: ZWA-2 ordered (Aaron); when it arrives, Claude passes it through to the HA VM and adds Z-Wave JS. Still to buy: UP Siren PoE. Phase 0 (Alarmo + door zones) waits on Aaron''s go.'
 ---
 
 ## Goal
@@ -63,6 +63,7 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 - **2026-10-27 (Aaron):** keypad is the 2nd gen, so the Alarmo blueprint path applies.
 - **2026-10-27 (Aaron):** arm mainly at the keypad, also from the phone. When everyone leaves: a push offering to arm, not auto-arm.
 - **2026-10-27 (Aaron):** indoor siren is enough; prefer UniFi PoE hardware for it. Chose the UP Siren PoE.
+- **2026-10-28:** ZWA-2 ordered (Aaron).
 - **2026-10-27:** Z-Wave stick = Home Assistant Connect ZWA-2 over the Zooz ZST39, for range from the basement rack to the 1st-floor front door.
 - **2026-10-27 (Aaron):** budget isn't a constraint; priority medium.
 - **2026-10-27 (Aaron):** include the Aqara U400 front-door lock. His wife counts for "everyone left" once she's in HA; their infant daughter doesn't.
