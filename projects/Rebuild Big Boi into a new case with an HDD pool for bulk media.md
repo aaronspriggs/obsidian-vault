@@ -34,7 +34,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
 | PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable: CP-8920199 (Premium Sleeved, 6-pin Type 4 to 4× Molex, 750 mm, lists SF series; [digitec](https://www.digitec.ch/en/s1/product/corsair-premium-sleeved-4-pole-molex-cable-75-cm-4-pin-pwm-internal-cables-pc-6145850)). Not on Amazon (2026-10-28); alternatives: Corsair stock Type 4 Molex CP-8920196 (4× Molex, [eBay](https://www.ebay.de/itm/115960379158)) or a CableMod C-Series (Corsair Type 4) cable. Not the Type 5 version; meter the pinout on any third-party cable | Cable to buy |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
-| HDDs | Count, size and pool layout | Open |
+| HDDs | RAIDZ2, start with 4, grow by RAIDZ expansion (see Decisions); one size for every drive, size not chosen | Size open |
 | GPU | Future, Nvidia | Later |
 
 ## Ordered: JMCD 12S4 case (2026-10-26)
@@ -77,6 +77,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-28 (Aaron):** used Broadcom 9305-16i ordered on eBay (Electronic Sister, 6,536 feedback, 99.9%; $64.99). On arrival: check the label part number and, once installed, `storcli` reports SAS9305-16i.
 - **2026-10-28 (Aaron):** AV1-encode card: Nvidia only if one with AV1 encode costs about $200, otherwise an Arc A380 (about $169 on Amazon; A310 over $200 at the time). Cheapest Nvidia AV1 encoders on 2026-10-28: RTX 5050 (MSRP $249; $419.99 at Amazon per [videocardprices](https://videocardprices.com/card/nvidia-rtx-5050/)), used RTX 4060 about $250–290 (July 2026, [videocardprices](https://videocardprices.com/card/nvidia-rtx-4060/)), so the A380 it is. Buy after the 4th-gen Apple TV (2026-11-13) confirms Plex AV1 direct play. The 2026-10-25 "Nvidia" line applies to an LLM card.
 - **2026-10-28 (Aaron):** no RAM purchase for the rebuild; move the existing 64 GB. Last-week stats: ARC averaged ~17 GiB, available memory never below 5 GiB. More RAM mainly helps ARC for metadata in front of the HDD pool, so revisit after it's in use.
+- **2026-10-29 (Aaron):** HDD pool = one RAIDZ2 vdev, started 4-wide and grown 1–2 drives at a time by RAIDZ expansion (OpenZFS 2.3, in 25.04) up to 12-wide. Every drive the same size (a vdev counts each disk at its smallest member). At full width, rewrite the data once (`zfs rewrite` on 25.10, or dataset copy-and-swap on 25.04) so old blocks move from the narrow parity ratio to 10+2; expire the media dataset's snapshots first or the rewrite costs space. Mirrors rejected (50% forever), RAIDZ1 rejected (expansion can't change parity later). Math in Reference: HDD pool layout.
 - **2026-10-26 (Aaron):** board = Gigabyte Z390 Designare over the Supermicro X11SCA-F: i9-9900 and 128 GB documented in its manual, keeps the 82599EN, XMP for the 3600 kit, same consumer-board iGPU passthrough path as today. Trade-off accepted: no IPMI, exactly 5 usable SATA ports.
 
 ## Open questions
@@ -84,11 +85,15 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - Case order details: price paid, order number, ETA.
 - Case height: the listing says 262 mm (6U), the build log below measured 272 mm (6.11U), which takes 7U in a rack. Measure on arrival.
 - Used Designare's BIOS: i9-9900 needs **F6 or newer** per [Pangoly's compatibility table](https://pangoly.com/en/compatibility/gigabyte-z390-designare/cpu) (third-party; Gigabyte's CPU list wouldn't load). The manual lists DualBIOS but no BIOS update without a CPU, so a board on older firmware needs a supported older CPU to flash it. Ask the seller.
-- HDD count, size and pool layout (RAIDZ2 vs mirrors); spin-up current from the chosen drive's datasheet.
+- HDD size (one size for the life of the vdev); spin-up current from the chosen drive's datasheet.
 - Where SSD #5 mounts (4 internal 2.5" positions for 5 SSDs) and powers (crimped Molex-to-SATA off the second Molex cable is the fallback).
 - 6U of free rack space; UPS runtime with spinning drives.
 - Whether the offsite box happens, where it would live, and how it connects (WireGuard/Tailscale).
 - Migration order: build new → move the SSD pool → create the HDD pool → replicate media across.
+
+## Reference: HDD pool layout (2026-10-29)
+
+RAIDZ2 of N drives holds (N − 2) × drive size when built fresh; with 20 TB drives: 4-wide 40 TB (50%), 6-wide 80, 8-wide 120, 10-wide 160, 12-wide 200 TB (83%), about 182 TiB as TrueNAS shows it. After expansion, existing blocks keep the ratio they were written at and new blocks use the new width ([TrueNAS docs](https://www.truenas.com/docs/tags/raidz/), [extension calculator](https://www.truenas.com/docs/references/extensioncalculator/)); parity level can't change ([forum](https://forums.truenas.com/t/does-electriceel-support-change-vdevs-parity-ratio-for-existing-vdev/23421)). Simple model (no metadata/padding), adding one drive each time the pool reaches a fill level, 20 TB drives: at 80% full the vdev ends at about 167 TB at 12-wide, at 100% about 159 TB, versus 200 TB fresh. The loss scales with data written while narrow; a rewrite recovers it. The dashboard can show less than this after expansion because free space is estimated at the original ratio.
 
 ## Reference: HBA (from vendor documents, 2026-10-25)
 
