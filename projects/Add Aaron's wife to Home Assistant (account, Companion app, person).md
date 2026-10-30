@@ -21,9 +21,10 @@ Give Aaron's wife her own Home Assistant user, the Companion app on her phone, a
 1. Create her HA user (non-admin unless Aaron says otherwise), with a person entity.
 2. She installs the Companion app, signs in, and allows location (Always) and notifications, including Critical Alerts so alarm and leak pushes break through Do Not Disturb.
 3. Attach her phone's `device_tracker` to her person; confirm home/away flips.
-4. Decide which pushes she gets: alarm, leak, maybe not homelab alerts.
+4. Decide which pushes she gets: alarm, leak, the garage door left-open alert (wanted, Aaron 2026-10-30), maybe not homelab alerts.
+5. Garage door alert to her phone: add her notifier to `notifier` on `garage_door_open` in repo `ha/alert2.yaml` (a list), and to every `notify.mobile_app_aarons_iphone_17_pro` call in `automation.garage_door_alert_buttons_and_night_check` (re-pushes, Snooze/Ignore confirmations). It's one shared alert, so a tap on either phone closes, snoozes or ignores it for both; the confirmation push should say who tapped. See [[2026-10-30 Garage door left-open alert with Close, Snooze and Ignore buttons]].
 
 ## Open questions
 
 - Admin or regular user?
-- Which alerts go to her phone?
+- Which alerts go to her phone? Garage door left-open: yes (Aaron, 2026-10-30).
