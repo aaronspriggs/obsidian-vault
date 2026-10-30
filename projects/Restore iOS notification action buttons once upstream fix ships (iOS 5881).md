@@ -24,6 +24,7 @@ Open upstream bug [home-assistant/iOS#5881](https://github.com/home-assistant/iO
 
 - `automation.water_leak_detected_notify`: **Shut Off Water** / **Dismiss** buttons (handled by `automation.water_leak_notification_handle_actions`)
 - `automation.ha_updates_ask_for_approval`: **Install** / **Release notes** buttons (handled by `automation.ha_updates_install_on_approval`)
+- Garage door left-open alert (`alert2.home_health_garage_door_open`, since 2026-10-30): **Close door** / **Snooze 2hr** / **Ignore** (handled by `automation.garage_door_alert_buttons_and_night_check`).
 - Alert2 container down/unhealthy pushes: **Restart** button (`CONTAINER_RESTART`, handled by `automation.homelab_container_restart_on_approval`). The older `DOCKHAND_RESTART` path and both its automations were deleted 2026-10-23.
 
 ## Temporary workarounds in place (2026-09-25)
