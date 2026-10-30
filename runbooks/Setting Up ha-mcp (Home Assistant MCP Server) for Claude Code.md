@@ -49,6 +49,8 @@ The Configure screen's **Authentication mode** field offers three options:
 
 Since v9.0.0 the component pins the exact server build and the two update as one unit through HACS (**HA-MCP Custom Component** → update, then restart HA). The separate server update entity and the component's self-update, release-channel and auto-update options are gone; `auto_update`/`channel` still sit in our entry's stored options but nothing reads them. If tools don't appear after the restart, restart `claude-remote-control.service` (see the auth-mode gotcha below).
 
+**Tool behavior since 9.0.0.** `ha_set_integration` and `ha_remove_helpers_integrations` refuse ha-mcp's own `ha_mcp_tools` entries ([#2749](https://github.com/homeassistant-ai/ha-mcp/pull/2749)), so changes to the HA-MCP Server or File & YAML Tools settings go through the entry's Configure screen in the HA UI. A full `ha_manage_backup(scope="snapshot")` backup with no `include_*` now runs HA's automatic-backup settings ([#2822](https://github.com/homeassistant-ai/ha-mcp/pull/2822)): it goes to the configured backup locations and counts toward their retention like a scheduled backup, so it can rotate an older automatic backup out. `ha_restart` refuses while a database upgrade is running and takes `safe_mode`, and `ha_manage_updates` installs block and may drop the MCP connection before they return.
+
 ## Connecting from Claude Code
 
 ```javascript
