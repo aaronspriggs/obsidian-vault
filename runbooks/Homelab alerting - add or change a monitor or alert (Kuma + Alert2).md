@@ -31,7 +31,7 @@ As above with `type = "push"` (no `push_token` in the file; after the first depl
 
 ## Add a container
 
-Nothing to do for health checks and image updates: the `homelab_container_unhealthy` and `homelab_container_update` generators match every `big_boi_containers_*` entity. If Kuma can't reach it (no web port), add it to the `homelab_container_down` generator list. If other services depend on it, give it its own alert with `supersedes` (see `gluetun_down`).
+Nothing to do for health checks and image updates: the `homelab_container_unhealthy`, `homelab_container_update` and `homelab_container_update_advisory` generators match every `big_boi_containers_*` entity. `homelab_container_update` (with Install) fires only when the update entity supports Install (`supported_features` odd); `homelab_container_update_advisory` (no button) fires when ha-dockhand reports a newer tag or a moved digest pin that Install can't apply. Updates Dockhand is holding for minimum image age get no alert until they turn installable. If Kuma can't reach it (no web port), add it to the `homelab_container_down` generator list. If other services depend on it, give it its own alert with `supersedes` (see `gluetun_down`).
 
 ## Add an event source (webhook, script)
 
