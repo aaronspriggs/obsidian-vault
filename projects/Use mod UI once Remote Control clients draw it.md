@@ -19,3 +19,4 @@ Ask Claude in a session to load the `plugin-authoring` skill and copy repo `clau
 - `tier3-guard`: an approval card with Approve once / Deny buttons on top of the typed `approve <code>`. That needs no change to the hold logic. The mockup is in the claude.ai artifact "Tier 3 Guard Mockup".
 - A session-start band showing `check.py --health`, the vault's last commits and the pull result, so the session-start routine runs as a script instead of costing tokens.
 - A status line showing homelab maintenance mode and whether either repo has uncommitted or unpushed work.
+- The UI-only mods noted in [Consider nine Claude Code mods from a RoboNuggets video](<Consider nine Claude Code mods from a RoboNuggets video.md>): You Should Know, Savvy Progress, Replay Theater, Filetree and Claude Skins.
