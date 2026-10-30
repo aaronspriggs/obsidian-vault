@@ -27,4 +27,4 @@ Long-press: re-tested with a test push the same day, still "Loading actions…" 
 
 Known gap: an HA restart during the day drops a pending 2 h snooze; the 21:00 check still catches it. Not yet tested end to end: a real Alert2 fire on its own notifier, the reminder wording, the critical push at night and Close door on an open door.
 
-`switch.garage_door_buzzerenable` is off, so the opener gives no warning beep when Close door runs with nobody watching it. The beep is the safety warning for an unattended close; turning it on is Aaron's call (raised 2026-10-30).
+`switch.garage_door_buzzerenable` is off, so the opener gives no warning beep when Close door runs with nobody watching it. The beep is the safety warning for an unattended close; Aaron chose to leave it off (2026-10-30).
