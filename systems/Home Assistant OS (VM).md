@@ -20,7 +20,7 @@ Related pages: [Home Health](<Home Health (HA dashboard + alerts).md>) (dashboar
 
 - **UI:** [http://192.168.1.218:8123/](http://192.168.1.218:8123/) (LAN only; remote via WireGuard). Owner account `aaronspriggs`, MFA via Proton Authenticator.
 - **Shell:** Terminal & SSH add-on, web terminal only (in the HA sidebar). Its SSH port isn't exposed and no keys are set, so there's no network SSH, including from the ClaudeCode VM (verified 2026-09-29).
-- **Claude:** ha-mcp (homeassistant-ai/ha-mcp 8.7.0 as of 2026-10-16, HACS integration `ha_mcp_tools`) on the direct-access secret URL, not OAuth, until anthropics/claude-code#89671 is fixed (Blocked task in Open work). Setup: [Setting Up ha-mcp](<../runbooks/Setting Up ha-mcp (Home Assistant MCP Server) for Claude Code.md>).
+- **Claude:** ha-mcp (homeassistant-ai/ha-mcp 9.0.0 as of 2026-10-30, HACS integration `ha_mcp_tools`, component and server versioned together) on the direct-access secret URL, not OAuth, until anthropics/claude-code#89671 is fixed (Blocked task in Open work). Setup: [Setting Up ha-mcp](<../runbooks/Setting Up ha-mcp (Home Assistant MCP Server) for Claude Code.md>).
 - **Other users:** `MQTT Dashboard` (non-admin, wall panel kiosk).
 - **Nabu Casa:** still logged in with `remote_enabled: true`, but the subscription expired 2018-01-01, so nothing connects. Left in place on purpose (Aaron, 2026-09-24); don't flag or clean it up.
 

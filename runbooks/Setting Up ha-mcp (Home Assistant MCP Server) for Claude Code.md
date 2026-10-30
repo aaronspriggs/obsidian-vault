@@ -17,7 +17,7 @@ Home Assistant's own **"Model Context Protocol Server"** integration is Assist-A
 ## Which repo to use — this matters
 
 There are several similarly-named, similarly-described community projects (`ganhammar/hass-mcp-server`, `achetronic/hass-mcp`, etc.). The one to use is **`homeassistant-ai/ha-mcp`** — confirmed as the de facto community standard by a wide margin (4,600+ GitHub stars vs. under 100 for the alternatives as of 2026-09, and it's the one discussed on the [HA Community Forum](https://community.home-assistant.io/t/brand-new-claude-ai-chatgpt-integration-ha-mcp/937847)).
-For the actual HACS install, use the **`homeassistant-ai/ha-mcp-integration`** repo path specifically — that's a dedicated mirror repo created so HACS can install it cleanly. Adding `homeassistant-ai/ha-mcp` directly as the custom repository does not work as a HACS integration install.
+Our install uses the HACS mirror **`homeassistant-ai/ha-mcp-integration`**. Since v9.0.0 ([#2784](https://github.com/homeassistant-ai/ha-mcp/pull/2784)) HACS can also install from the main `homeassistant-ai/ha-mcp` repo; the mirror receives the same releases, so there's no need to switch.
 If star counts or naming are ever unclear again, check via the GitHub API before installing:
 ```javascript
 curl -s "https://api.github.com/repos/<owner>/<repo>" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d['stargazers_count'], d['pushed_at'])"
@@ -28,7 +28,8 @@ curl -s "https://api.github.com/repos/<owner>/<repo>" | python3 -c "import json,
 1. HACS → Integrations → three-dot menu → **Custom repositories** → add `homeassistant-ai/ha-mcp-integration`, category **Integration** → Download.
 2. Restart Home Assistant fully.
 3. Settings → Devices & Services → Add Integration → search **HA-MCP Custom Component** → add the **HA-MCP Server** entry (this is the one that runs the full in-process server and starts it immediately on creation).
-4. Skip the second entry type, **HA-MCP File & YAML Tools**, unless raw YAML file editing is specifically needed later — it's beta/opt-in and not required for automation, script, scene, or dashboard authoring, which go through dedicated tools instead.
+4. Since v9.0.0, setup for a **new** entry asks for an administrator's long-lived access token (use the `claude` account below) and starts with the webhook off and the MCP port bound to loopback; set Network access to the local network so the ClaudeCode VM can reach it. Entries created before 9.0.0, ours included, keep their credentials and settings.
+5. Skip the second entry type, **HA-MCP File & YAML Tools**, unless raw YAML file editing is specifically needed later — it's beta/opt-in and not required for automation, script, scene, or dashboard authoring, which go through dedicated tools instead.
 
 ## Dedicated Home Assistant account
 
@@ -43,6 +44,10 @@ The Configure screen's **Authentication mode** field offers three options:
 **As of 2026-09, "Home Assistant sign-in (OAuth)" does not work from Claude Code**, due to an open upstream bug: [anthropics/claude-code#89671](https://github.com/anthropics/claude-code/issues/89671). Claude Code's own OAuth status-check code corrupts a freshly-issued valid token immediately after a successful browser authorization — the browser-side flow completes fine, but `claude mcp login` reports failure (`Couldn't complete authentication... no from the MCP SDK`) every time, regardless of server configuration. This affects any OAuth-protected HTTP MCP server in Claude Code, not anything ha-mcp-specific.
 **Interim workaround:** connect via the integration's **direct-access URL** instead (shown on the Configure screen, format `http://<ha-ip>:9584/private_<random>`). This bypasses OAuth entirely — the secret path itself is the credential — so it isn't blocked by the Claude Code bug. Leave **Network access** at "Local network (default)" (not "Loopback only") so a separate machine like the ClaudeCode VM can reach it.
 **Revisit once anthropics/claude-code#89671 is fixed**: switch Authentication mode back to "Home Assistant sign-in (OAuth)" and reconnect via the webhook URL (`http://<ha-ip>:8123/api/webhook/<webhook-id>`) for proper account-tied auth instead of a bare secret path.
+
+## Updates
+
+Since v9.0.0 the component pins the exact server build and the two update as one unit through HACS (**HA-MCP Custom Component** → update, then restart HA). The separate server update entity and the component's self-update, release-channel and auto-update options are gone; `auto_update`/`channel` still sit in our entry's stored options but nothing reads them. If tools don't appear after the restart, restart `claude-remote-control.service` (see the auth-mode gotcha below).
 
 ## Connecting from Claude Code
 
