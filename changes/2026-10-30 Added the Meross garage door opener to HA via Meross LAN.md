@@ -22,4 +22,4 @@ Decided 2026-10-30 in the security plan: Aaron opens and closes the door from th
 
 ## Notes
 
-Some users [report wrong door state at times](https://community.home-assistant.io/t/meross-lan-not-reliable/721313) with Meross LAN; compare `cover.garage_door` against the Home app for a few days before Alarmo or alerts rely on it. UniFi shows 192.168.1.40 as a DHCP lease, not a fixed IP. `cover.garage_door` is exposed to Assist by default, so voice can open the door.
+Some users [report wrong door state at times](https://community.home-assistant.io/t/meross-lan-not-reliable/721313) with Meross LAN; compare `cover.garage_door` against the Home app for a few days before Alarmo or alerts rely on it. Aaron set a fixed IP (192.168.1.40) for it in UniFi the same day, confirmed via the UniFi API. `cover.garage_door` is exposed to Assist by default, so voice can open the door.
