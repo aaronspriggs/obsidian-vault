@@ -20,4 +20,4 @@ The HACS mirror `homeassistant-ai/ha-mcp-integration` now reports v9.0.0 install
 
 ## Notes
 
-Before the update, nothing in automations, scripts, scenes or helpers referenced the removed server update entity. The old `auto_update`/`channel` options remain in the entry's stored options but nothing reads them any more. The new Access switch ([#2821](https://github.com/homeassistant-ai/ha-mcp/pull/2821)) is registered disabled and hasn't been enabled.
+Before the update, nothing in automations, scripts, scenes or helpers referenced the removed server update entity. The old `auto_update`/`channel` options remain in the entry's stored options but nothing reads them any more. The new Access switch ([#2821](https://github.com/homeassistant-ai/ha-mcp/pull/2821)) ships disabled, per the PR, and hasn.t been enabled here (no active switch entity for it after the upgrade).
