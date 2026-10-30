@@ -29,7 +29,7 @@ What HA already has, checked live 2026-10-27 (HA 2026.10.4):
 | Protect cameras | G6 Instant (Poppy's Bedroom) only | Front Door (doorbell), Driveway, Backyard, Downstairs are still Nest |
 | Front door lock | `lock.aqara_smart_lock_u400` | Aqara U400, shared from Apple Home to HA over Matter 2026-10-27. Entities: lock, actuator, auto-relock time (300 s), wrong-code limit, operating mode, battery (22% on pairing), firmware. No door state, no who-unlocked entity |
 | Presence | `person.aaron_spriggs` only | Aaron's wife isn't in HA yet: [Add Aaron's wife to Home Assistant (account, Companion app, person)](<Add Aaron's wife to Home Assistant (account, Companion app, person).md>) |
-| Garage overhead door | none | Meross opener, in Apple Home and the Meross app; no `cover` entity in HA |
+| Garage overhead door | none | Meross opener, in Apple Home and the Meross app; no `cover` entity in HA. HACS has `albertogeniola/meross-homeassistant` v1.3.12 (`meross_cloud`, cloud-based) installed but no config entry (checked 2026-10-30) |
 | Inner garage door lock | none | plain lock, rarely locked |
 | Smoke/CO | `binary_sensor.g6_instant_smoke_alarm_detected` only | G6 Instant audio detection; no smoke/CO alarms in HA |
 | Siren | none | |
