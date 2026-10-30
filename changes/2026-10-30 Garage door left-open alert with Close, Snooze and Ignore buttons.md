@@ -23,7 +23,7 @@ Choices are Aaron's (2026-10-30): 15-min threshold, 15-min reminders, any hour w
 
 ## Notes
 
-Long-press: not yet re-tested on this alert. Upstream [home-assistant/iOS#5881](https://github.com/home-assistant/iOS/issues/5881) is still open and the Companion 2026.10.3 release notes (2026-10-29) don't mention a fix; Aaron's phone runs 2026.10.2. A test push with the same buttons was sent 2026-10-30 to check long-press and the tap sheet. The buttons work by tapping the push, as on every other actionable alert ([[Restore iOS notification action buttons once upstream fix ships (iOS 5881)]]).
+Long-press: re-tested with a test push the same day, still "Loading actions…" on Companion 2026.10.2 (Aaron). Upstream [home-assistant/iOS#5881](https://github.com/home-assistant/iOS/issues/5881) is still open and the Companion 2026.10.3 release notes (2026-10-29) don't mention a fix; Aaron's phone runs 2026.10.2. The buttons work by tapping the push, as on every other actionable alert ([[Restore iOS notification action buttons once upstream fix ships (iOS 5881)]]).
 
 Known gap: an HA restart during the day drops a pending 2 h snooze; the 21:00 check still catches it. Not yet tested end to end: a real Alert2 fire on its own notifier, the reminder wording, the critical push at night and Close door on an open door.
 
