@@ -6,7 +6,7 @@ system:
 - '[[Home Assistant OS (VM)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-10-28: ZWA-2 ordered (Aaron); when it arrives, Claude passes it through to the HA VM and adds Z-Wave JS. Still to buy: UP Siren PoE. Phase 0 (Alarmo + door zones) waits on Aaron''s go.'
+next_step: '2026-10-28: ZWA-2 ordered (Aaron); when it arrives, Claude passes it through to the HA VM and adds Z-Wave JS. Still to buy: UP Siren PoE. Aaron has unused Ring devices to include too (Hardware on hand). Phase 0 (Alarmo + door zones) waits on Aaron''s go.'
 ---
 
 ## Goal
@@ -75,13 +75,17 @@ Grouped by workstream; numbers are a suggested order, not strict dependencies. E
 **F. Coverage**
 
 19. Smoke/CO: nothing in HA today except the G6 Instant's audio smoke detection. Option: [Ring Alarm Smoke & CO Listener](https://ring.com/products/alarm-smoke-co-listener), Z-Wave, about 3-year battery, sits inches from an existing alarm and hears its T3 smoke / T4 CO pattern (detects nothing itself). Z-Wave JS has a device config ([ring_smoke_co_listener.json](https://github.com/zwave-js/zwave-js/blob/master/packages/config/config/devices/0x0346/ring_smoke_co_listener.json), checked 2026-10-31; parameter 2 must be set to smoke & CO, default is smoke only). With interconnected alarms every listener fires at once, so one per floor is enough and none tells you where; or replace alarms with Z-Wave smoke/CO units. Hook them to the keypad's fire/CO siren and a critical push. Avoid UniFi's SuperLink smoke alarm: adopting it flips Protect to Global mode.
-20. Windows: Aeotec Multipurpose (Zigbee) on the 1st floor and maybe the basement, once Aaron counts them.
+20. Windows: Aeotec Multipurpose (Zigbee) on the 1st floor and maybe the basement, once Aaron counts them. Use the 3 unused Ring contact sensors first (Z-Wave, see Hardware on hand).
 21. Cameras: Protect person detection (not animal, because of the pets) as Away-only zones, after [Migrate cameras from Nest to UniFi Protect](<Migrate cameras from Nest to UniFi Protect.md>). G6 Instant (Poppy's room): tie its privacy/recording to Alarmo state (Aaron to choose).
 
 **G. Operations**
 
 22. Monthly walk-test runbook: each door, latch sensor, keypad, siren, each disarm method, garage, pushes to both phones. Record `last_tested`.
 23. When everything is built: change notes, a "Home alarm" System note (zones, codes kept in 1Password names only, automations), and the walk-test runbook.
+
+## Hardware on hand (2026-10-31, Aaron)
+
+Unused Ring Alarm Z-Wave devices, all to join the ZWA-2 network once Z-Wave JS is up (step 4): 1 Smoke & CO Listener (never set up), 3 contact sensors, 1 motion sensor. Z-Wave JS has configs for both generations of the contact and motion sensors ([0x0346 folder](https://github.com/zwave-js/zwave-js/tree/master/packages/config/config/devices/0x0346)). Any that were paired to a Ring base station before need a factory reset or a Z-Wave JS exclusion first. Include with S2 from the QR code on each. All are battery devices, so none repeat for the mesh. They're Z-Wave, not UniFi, so they don't affect Protect's Local mode.
 
 ## Decisions
 
