@@ -20,7 +20,7 @@ How Claude reads TrueNAS (`claude-readonlyapi`, key on disk for the relay) and d
     - `~/.local/bin/truenas-api <method> '<json params>'`: one-off read-only JSON-RPC queries. `alert.dismiss` returns EACCES, which confirms read-only. The read-only role has no file-read method (`filesystem.listdir` works; `filesystem.file_get_contents` doesn't exist for it).
     - `~/.local/bin/truenas-alert-relay`: run every 5 min by `truenas-alert-relay.timer` (system unit, `User=aspriggs`, installed by Aaron as root). Config is in `~/.config/homelab/truenas-alert-relay.json` (600: HA webhook URL and Kuma push URL); state is in `~/.local/state/truenas-alert-relay/state.json`. Depends on apt `python3-websocket`.
 - **Home Assistant:**
-    - `automation.truenas_alert_relay`: local-only webhook; sets `input_number.truenas_active_alerts` and `input_text.truenas_alert_summary`; reports each new alert to Alert2 with `alert2.report` (since 2026-10-14; repo `ha/alert2.yaml`, `tracked:` section), which handles the push, quiet hours (20:00–09:00, held for the 09:00 report) and throttling.
+    - `automation.truenas_alert_relay`: local-only webhook; sets `input_number.truenas_active_alerts` and `input_text.truenas_alert_summary`; reports each new alert to Alert2 with `alert2.report` (since 2026-10-14; repo `ha/alert2.yaml`, `tracked:` section), which handles the push, quiet hours (22:00–09:00, held for the 09:00 report) and throttling.
     - The count feeds `sensor.homelab_issue_count`, which drives the Home Health hero banner and the Homelab card.
     - Kuma push monitor **TrueNAS Alert Relay** (900 s, retries 0) is `sensor.truenas_alert_relay_status`. It's in `homelab_watch`; Alert2's `alert2.homelab_truenas_alert_relay_missed` fires when it goes down.
 
