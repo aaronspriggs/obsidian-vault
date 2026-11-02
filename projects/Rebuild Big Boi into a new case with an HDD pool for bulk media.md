@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-10-28 Order 3× 0.5 m SFF-8643 cables and 2× Corsair Type 4 Molex cables; then pick the HDDs and check 7U of free rack space.
+next_step: 2026-10-28 Order 3× 0.5 m SFF-8643 cables and 2× Corsair Type 4 Molex cables; then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -74,6 +74,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
 - **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
 - **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
+- **2026-11-02 (Aaron):** plan the 12S4 as 6U, with 1U open or a blank plate above it for airflow. Confirm by measuring the case without feet (≤ 266 mm).
 - **2026-10-28 (Aaron):** used Gigabyte Z390 Designare ordered.
 - **2026-10-28 (Aaron):** used Broadcom 9305-16i ordered on eBay (Electronic Sister, 6,536 feedback, 99.9%; $64.99). On arrival: check the label part number and, once installed, `storcli` reports SAS9305-16i.
 - **2026-10-28 (Aaron):** AV1-encode card: Nvidia only if one with AV1 encode costs about $200, otherwise an Arc A380 (about $169 on Amazon; A310 over $200 at the time). Cheapest Nvidia AV1 encoders on 2026-10-28: RTX 5050 (MSRP $249; $419.99 at Amazon per [videocardprices](https://videocardprices.com/card/nvidia-rtx-5050/)), used RTX 4060 about $250–290 (July 2026, [videocardprices](https://videocardprices.com/card/nvidia-rtx-4060/)), so the A380 it is. Buy after the 4th-gen Apple TV (2026-11-13) confirms Plex AV1 direct play. The 2026-10-25 "Nvidia" line applies to an LLM card.
@@ -146,7 +147,7 @@ Limits: Nvidia only, ≤ 250 mm long, PCIEX16 slot at PCIe 3.0 x8 (with the HBA 
 ## Reference: constraints carried over
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project; the Sliger CX3702 (18") was rejected on that basis.
-- **Rack space and weight (2026-11-02):** the 12S4 takes 7U, and the current 12U wall rack has only 8U left after the UDM Pro, Pro Max 16 and UPS 2U. Aaron is considering a 30U floor rack on casters (500 lb rating, 18" equipment depth). Estimated rack load is ~86–98 lb with 4 HDDs and ~98–110 lb with 12 (UPS 2U 30.9 lb, [UI specs](https://techspecs.ui.com/unifi/integrations/ups-2u-us); UDM Pro ~8.6 lb; Pro Max 16 ~5 lb; 12S4 build 36–50 lb). Draft layout, which still has unconfirmed shelf and patch-panel contents: ![30U proposed layout](<../attachments/Rack - 30U floor rack proposed layout.svg>)
+- **Rack space and weight (2026-11-02):** planned as 6U plus 1U open or blanked above for airflow (7U total); the current 12U wall rack has 8U left after the UDM Pro, Pro Max 16 and UPS 2U. Aaron is considering a 30U floor rack on casters (500 lb rating, 18" equipment depth). Estimated rack load is ~86–98 lb with 4 HDDs and ~98–110 lb with 12 (UPS 2U 30.9 lb, [UI specs](https://techspecs.ui.com/unifi/integrations/ups-2u-us); UDM Pro ~8.6 lb; Pro Max 16 ~5 lb; 12S4 build 36–50 lb). Draft layout, which still has unconfirmed shelf and patch-panel contents: ![30U proposed layout](<../attachments/Rack - 30U floor rack proposed layout.svg>)
 - **Network:** Big Boi is on the USW Pro Max 16 PoE over a 10 GbE SFP+ DAC.
 - **USB passthrough:** the HA VM's Sonoff ZBDongle-E (Zigbee), and soon a Z-Wave stick for [Plan a home security system (Alarmo, door-window sensors, siren)](<Plan a home security system (Alarmo, door-window sensors, siren).md>), are bound to the USB bus/port path; re-map both in the HA VM's devices after the move.
 - **UPS:** the UPS 2U carries Big Boi plus the network core (110 W now, about 1 h runtime); spinning drives add load. See [Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>).
