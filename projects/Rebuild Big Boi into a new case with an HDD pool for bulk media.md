@@ -146,6 +146,7 @@ Limits: Nvidia only, ≤ 250 mm long, PCIEX16 slot at PCIe 3.0 x8 (with the HBA 
 ## Reference: constraints carried over
 
 - **Rack depth:** 14.6" (370 mm) maximum mountable depth, per the UNAS Pro project; the Sliger CX3702 (18") was rejected on that basis.
+- **Rack space and weight (2026-11-02):** the 12S4 takes 7U, and the current 12U wall rack has only 8U left after the UDM Pro, Pro Max 16 and UPS 2U. Aaron is considering a 30U floor rack on casters (500 lb rating, 18" equipment depth). Estimated rack load is ~86–98 lb with 4 HDDs and ~98–110 lb with 12 (UPS 2U 30.9 lb, [UI specs](https://techspecs.ui.com/unifi/integrations/ups-2u-us); UDM Pro ~8.6 lb; Pro Max 16 ~5 lb; 12S4 build 36–50 lb). Draft layout, which still has unconfirmed shelf and patch-panel contents: ![30U proposed layout](<../attachments/Rack - 30U floor rack proposed layout.svg>)
 - **Network:** Big Boi is on the USW Pro Max 16 PoE over a 10 GbE SFP+ DAC.
 - **USB passthrough:** the HA VM's Sonoff ZBDongle-E (Zigbee), and soon a Z-Wave stick for [Plan a home security system (Alarmo, door-window sensors, siren)](<Plan a home security system (Alarmo, door-window sensors, siren).md>), are bound to the USB bus/port path; re-map both in the HA VM's devices after the move.
 - **UPS:** the UPS 2U carries Big Boi plus the network core (110 W now, about 1 h runtime); spinning drives add load. See [Rack Infrastructure — UPS + Power Management](<Rack Infrastructure — UPS + Power Management.md>).
