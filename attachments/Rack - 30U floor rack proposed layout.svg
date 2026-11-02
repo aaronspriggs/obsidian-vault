@@ -89,7 +89,7 @@
 <rect x="133" y="772" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320.0" y="790.0" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Vented blank (airflow, cable slack)</text>
 <rect x="133" y="802" width="374" height="206" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320.0" y="902.0" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 7U</text>
+<text x="320.0" y="902.0" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 7U (6U if ≤ 266 mm)</text>
 <text x="320.0" y="918.0" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
 <rect x="133" y="1012" width="374" height="56" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
 <text x="320.0" y="1037.0" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">UniFi UPS 2U  ·  30.9 lb</text>
@@ -123,7 +123,7 @@
 <circle cx="544" cy="905.0" r="3" fill="#7c3aed"/>
 <text x="570" y="794" font-size="13" font-weight="700" fill="#7c3aed">Big Boi just above the UPS</text>
 <text x="570" y="812" font-size="12" fill="#334155">Second-heaviest now, heaviest once the bays fill.</text>
-<text x="570" y="828" font-size="12" fill="#334155">Measured 272 mm tall, so it needs 7U; ~12&quot; deep.</text>
+<text x="570" y="828" font-size="12" fill="#334155">Listing 262 mm (6U), one owner 272 mm (7U): measure.</text>
 <text x="570" y="844" font-size="12" fill="#334155">Support it from below (L-rails or a 1U shelf, which</text>
 <text x="570" y="860" font-size="12" fill="#334155">shifts it to U4–U10). Rack ears alone aren&#x27;t meant</text>
 <text x="570" y="876" font-size="12" fill="#334155">to carry ~50 lb cantilevered off the front posts.</text>

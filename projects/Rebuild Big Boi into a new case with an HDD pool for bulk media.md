@@ -84,7 +84,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 ## Open questions
 
 - Case order details: price paid, order number, ETA.
-- Case height: the listing says 262 mm (6U), the build log below measured 272 mm (6.11U), which takes 7U in a rack. Measure on arrival.
+- Case height: the listing says 262 mm (6U), the build log below measured 272 mm (6.11U), which takes 7U in a rack. Spot-checked 2026-11-02: the post gives "height: 272mm (or 6.11U)" without saying whether that includes the 6 optional stick-on feet (left off when racked), and the author never rack-mounted it. 6U is 266.7 mm, so the listing's 262 mm fits 6U and 272 mm doesn't. Measure without feet on arrival.
 - Used Designare's BIOS: i9-9900 needs **F6 or newer** per [Pangoly's compatibility table](https://pangoly.com/en/compatibility/gigabyte-z390-designare/cpu) (third-party; Gigabyte's CPU list wouldn't load). The manual lists DualBIOS but no BIOS update without a CPU, so a board on older firmware needs a supported older CPU to flash it. Seller's listing says the BIOS was updated (Aaron, 2026-11-02), version not stated; F6 dates from 2019, so any recent update covers it. PCPartPicker (2026-11-02) also warns that some Z390 boards need a BIOS update for 32 GB DIMMs, so flash the latest BIOS, not just F6. Its "RM1000x has no −12 V" warning is generic: −12 V only fed legacy RS-232/PCI and ATX 3.x made it optional.
 - HDD size (one size for the life of the vdev); spin-up current from the chosen drive's datasheet.
 - Where SSD #5 mounts (4 internal 2.5" positions for 5 SSDs) and powers (crimped Molex-to-SATA off the second Molex cable is the fallback).
