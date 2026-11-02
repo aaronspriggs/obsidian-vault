@@ -29,6 +29,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy (base bundle has none) |
 | Board | Gigabyte Z390 DESIGNARE, used, BIOS F6 or newer | **Ordered by 2026-10-28** |
 | CPU | Intel i9-9900 | Keep |
+| CPU cooler | Candidate (2026-11-02): Noctua NH-U9S, 125 mm under the 135 mm limit, 92 mm fan (a second NF-A9 can be added), mounts for LGA115x, LGA1200, LGA1700, LGA1851, AM4, AM5 ([Noctua specs](https://noctua.at/en/nh-u9s/specification)). NH-D9L (110 mm) if the measured clearance is short. A 92 mm cooler limits sustained boost on 125 W+ chips | Open |
 | RAM | 2× 32 GB existing (CMK64GX4M2D3600C18) = 64 GB; upgrade deferred. If ARC proves too small for the HDD pool, add a second CMK64GX4M2D3600C18 (128 GB) | Keep |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
