@@ -4,7 +4,7 @@ status: active
 priority: low
 system:
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-11-02 Aaron: factory-reset each Alien (paperclip in the bottom reset hole, powered on its own) and remove it from Apple Home if it was added; then list.'
+next_step: '2026-11-02 Aaron: factory-reset each Alien (paperclip in the bottom reset hole, powered on its own) and remove it from Apple Home if it was added; then weigh one boxed unit and list on eBay.'
 ---
 
 ## Goal
@@ -19,8 +19,8 @@ Wipe and sell the three AmpliFi Alien routers that formed the mesh before the Un
 
 Reset each unit by itself with no WAN cable so nothing reconnects to the old mesh: power it on, wait for the touchscreen to finish booting, press a paperclip into the reset hole on the bottom next to the WAN port and power plug and hold until the screen shows it resetting. Done when the screen comes back at the first-time setup prompt. In-app reset (router icon → General → Factory Reset) also works if the AmpliFi app still sees them, but it isn't needed. If any unit was added to Apple Home (the Alien gained HomeKit in 2022), remove it from the Home app, or the buyer can't pair it. If the units still show in the AmpliFi app, remove/hide them there too.
 
-List after reset. Pricing checked 2026-11-02 on eBay: used Alien routers ask roughly $145 to $250, with one $159.99 buy-it-now listing showing 45 sold. Proposed: $150 each or $400 for all three on Facebook Marketplace (same channel as the Nest sale), with full box and cables noted. Ubiquiti has stopped selling AmpliFi and firmware/app updates appear to have stalled since 2024 (not officially announced), so price below the newer listings.
+List after reset on eBay as one multi-quantity listing: $100 each, quantity 3, condition Used, calculated shipping (Aaron, 2026-11-02). Pricing checked 2026-11-02: used Alien routers ask roughly $145 to $250, with one $159.99 buy-it-now listing showing 45 sold, so $100 should move quickly. Ubiquiti has stopped selling AmpliFi and firmware/app updates appear to have stalled since 2024 (not officially announced).
 
 ## Open questions
 
-Whether the boxes are three single-router boxes or a two-pack Alien Kit box plus a single, which changes the listing title.
+Whether the boxes are three single-router boxes or a two-pack Alien Kit box plus a single; a kit box can't ship as a single unit, so it may need its own listing.
