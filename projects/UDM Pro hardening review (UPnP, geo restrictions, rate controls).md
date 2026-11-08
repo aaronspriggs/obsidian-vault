@@ -4,6 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[UniFi (UDM Pro)]]'
+parent: '[[Get full use out of the UDM Pro (segmentation, security, built-in features)]]'
 notion_id: 3e97ae76-22ba-8125-be50-fc7fe58e0a22
 ---
 

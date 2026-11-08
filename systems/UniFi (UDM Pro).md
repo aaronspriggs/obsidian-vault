@@ -101,7 +101,8 @@ Adopted devices from `unifi-api stat/device`, 2026-10-17 (10 including the UDM; 
 
 - **ISP:** CenturyLink (PPPoE — UDM Pro authenticates directly, no CenturyLink router, no double NAT)
 - **WAN interface:** WAN1 "Internet 1" (port 9, GbE, PPPoE). "Internet 2" (DHCP, failover-only) is configured but no port is assigned to it, so there's no failover in practice.
-- **UniFi OS:** 5.1.33 | **Network:** 10.6.106 (re-checked 2026-10-17)
+- **UniFi OS:** 5.1.35 | **Network:** 10.6.109 (re-checked 2026-11-08)
+- **Security features (checked 2026-11-08):** IDS/IPS off, Ad Blocking off, gateway DNS not used by clients. See [Get full use out of the UDM Pro](<../projects/Get full use out of the UDM Pro (segmentation, security, built-in features).md>).
 - **Public IP:** dynamic (changed at least once, found 2026-02-16).
 - **CGNAT:** No — confirmed public/routable IP
 - **DDNS:** Cloudflare, native on the UDM Pro: [vpn.thespriggs.com](http://vpn.thespriggs.com/), verified 2026-02-16. API token scoped to [thespriggs.com](http://thespriggs.com/) Zone.DNS:Edit only.
