@@ -6,8 +6,10 @@ prints the working list HEALTH.md used to give (open work, stalled projects,
 unverified Systems, untested runbooks, gaps that are allowed but should be
 filled). With --map it prints the link graph instead: one line per System, or
 with a note name, everything linked to or from that note grouped by kind, so a
-lookup starts from one short listing instead of opening every backlink.
-No AI is involved. Usage: .kb/check.py [--health | --map [note]]
+lookup starts from one short listing instead of opening every backlink. With
+--projects it lists every active, blocked and backlog project title under each
+System it names (the SessionStart hook on the ClaudeCode VM prints this).
+No AI is involved. Usage: .kb/check.py [--health | --map [note] | --projects]
 """
 import datetime
 import pathlib
@@ -93,6 +95,22 @@ def print_overview(graph):
               f"{' ' + str(fm['ip']) if fm.get('ip') else ''}: {n('projects', 'active', 'blocked')} open,"
               f" {n('projects', 'backlog')} backlog, {n('runbooks', 'active')} runbooks,"
               f" last change {max(dates) if dates else 'none'}")
+
+
+def print_projects(graph):
+    """Every not-done project title, grouped by the Systems in its `system` property."""
+    by_system = {}
+    for node in graph.values():
+        fm = node["fm"]
+        if node["folder"] != "projects" or fm.get("status") not in ("active", "blocked", "backlog"):
+            continue
+        systems = fm.get("system") or []
+        for s in systems if isinstance(systems, list) else [systems]:
+            m = WIKILINK.fullmatch(str(s).strip())
+            by_system.setdefault(m.group(1) if m else str(s), []).append(
+                f"[{fm['status']}] {node['rel'].stem}")
+    for s in sorted(by_system):
+        print(f"- {s}: " + "; ".join(sorted(by_system[s])))
 
 
 def print_map(graph, query, recent=10):
@@ -243,6 +261,8 @@ def main():
     if "--map" in sys.argv:
         args = sys.argv[sys.argv.index("--map") + 1:]
         print_map(graph, " ".join(args)) if args else print_overview(graph)
+    if "--projects" in sys.argv:
+        print_projects(graph)
     if health:
         report["Open work"].sort(key=lambda r: (not r.startswith("[active"),
                                                 PRIORITY.get(r.split("/")[1].split("]")[0], 3)))
