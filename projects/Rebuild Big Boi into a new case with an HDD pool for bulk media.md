@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-11-08 Order 3× 0.5 m SFF-8643 cables and 1× Corsair Type 4 Molex cable (third backplane on the RM1000x; check its rear panel has enough peripheral sockets); then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
+next_step: 2026-11-08 Order 3× 0.5 m SFF-8643 cables and 1× Corsair Type 4 Molex cable (third backplane on the RM1000x); then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -32,8 +32,8 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | CPU cooler | Candidate (2026-11-02): Noctua NH-U9S, 125 mm under the 135 mm limit, 92 mm fan (a second NF-A9 can be added), mounts for LGA115x, LGA1200, LGA1700, LGA1851, AM4, AM5 ([Noctua specs](https://noctua.at/en/nh-u9s/specification)). NH-D9L (110 mm) if the measured clearance is short. Stronger option: NH-C14S in low-profile mode (140 mm fan under the fins, 115 mm tall; 142 mm with the fan on top, too tall), footprint 163 × 140 mm, so check overhang onto PCIEX16 and RAM in Noctua's compatibility centre for the Designare ([Overclockers](https://www.overclockers.co.uk/noctua-nh-c14s-top-flow-flexible-cpu-cooler-140mm-hs-030-nc.html)). A 92 mm cooler limits sustained boost on 125 W+ chips | Open |
 | RAM | 4× 32 GB = 128 GB: existing CMK64GX4M2D3600C18 plus a second identical kit (bought by Aaron, 2026-11-07). 2 DIMMs per channel at 3600 XMP isn't guaranteed on Coffee Lake (i9-9900 rated DDR4-2666, [ARK](https://www.intel.com/content/www/us/en/products/sku/191789/x/specifications.html)); plan on 3200 or lower and a memtest pass | Bought |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
-| Boot | NVMe in M2P (disables SATA3 0) | To buy |
-| PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift; sockets on the back, 160 mm, fits the 12S4's 170 mm limit; Type 4 cables). Stock 3× SATA (4 each) + 2× Molex (3 each); add 1× Corsair Type 4 Molex cable (e.g. CP-8920199 or CP-8920196) for one Molex cable per backplane, SSDs on SATA. Peripheral socket count unverified (likely 5): check the rear panel. Details under Reference: PSU. SF750 stays in the old box | Chosen (Aaron, recorded 2026-11-08); purchase not recorded |
+| Boot | Patriot P300 128 GB NVMe (today's boot drive, moves over with the boot pool) in M2P (disables SATA3 0) | Have (Aaron 2026-11-08) |
+| PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift; sockets on the back, 160 mm, fits the 12S4's 170 mm limit; Type 4 cables). Stock 3× SATA (4 each) + 2× Molex (3 each); add 1× Corsair Type 4 Molex cable (e.g. CP-8920199 or CP-8920196) for one Molex cable per backplane, SSDs on SATA. 5 peripheral (SATA/Molex) sockets (Aaron 2026-11-08), enough for 3 Molex + 2 SATA cables. Details under Reference: PSU. SF750 stays in the old box | **Bought** (Aaron, 2026-11-08) |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | RAIDZ2, start with 4, grow by RAIDZ expansion (see Decisions); one size for every drive, size not chosen | Size open |
 | GPU | Future, Nvidia | Later |
