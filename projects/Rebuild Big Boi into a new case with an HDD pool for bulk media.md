@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: 2026-10-28 Order 3× 0.5 m SFF-8643 cables and 2× Corsair Type 4 Molex cables; then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
+next_step: 2026-11-08 Order 3× 0.5 m SFF-8643 cables and 1× Corsair Type 4 Molex cable (third backplane on the RM1000x; check its rear panel has enough peripheral sockets); then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -16,7 +16,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-10-26)
 
-**Case, board and HBA ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board chosen (Gigabyte Z390 Designare, Aaron sourcing a used one); PSU stays the SF750 with one extra Molex cable; HDDs not chosen.
+**Case, board and HBA ordered** (JMCD 12S4, base 950 bundle with no cables or fans, via Alibaba.com with Trade Assurance, 2026-10-26). Price, order number and delivery estimate not yet recorded. HBA chosen (9305-16i); board chosen (Gigabyte Z390 Designare, Aaron sourcing a used one); PSU is a Corsair RM1000x (2024) and the SF750 stays with the old box (Aaron, recorded 2026-11-08); HDDs not chosen.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -33,7 +33,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | RAM | 4× 32 GB = 128 GB: existing CMK64GX4M2D3600C18 plus a second identical kit (bought by Aaron, 2026-11-07). 2 DIMMs per channel at 3600 XMP isn't guaranteed on Coffee Lake (i9-9900 rated DDR4-2666, [ARK](https://www.intel.com/content/www/us/en/products/sku/191789/x/specifications.html)); plan on 3200 or lower and a memtest pass | Bought |
 | NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
 | Boot | NVMe in M2P (disables SATA3 0) | To buy |
-| PSU | Corsair SF750 (keep) + 1× Corsair Type 4 Molex cable: CP-8920199 (Premium Sleeved, 6-pin Type 4 to 4× Molex, 750 mm, lists SF series; [digitec](https://www.digitec.ch/en/s1/product/corsair-premium-sleeved-4-pole-molex-cable-75-cm-4-pin-pwm-internal-cables-pc-6145850)). Not on Amazon (2026-10-28); alternatives: Corsair stock Type 4 Molex CP-8920196 (4× Molex, [eBay](https://www.ebay.de/itm/115960379158)) or a CableMod C-Series (Corsair Type 4) cable. Not the Type 5 version; meter the pinout on any third-party cable | Cable to buy |
+| PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift; sockets on the back, 160 mm, fits the 12S4's 170 mm limit; Type 4 cables). Stock 3× SATA (4 each) + 2× Molex (3 each); add 1× Corsair Type 4 Molex cable (e.g. CP-8920199 or CP-8920196) for one Molex cable per backplane, SSDs on SATA. Peripheral socket count unverified (likely 5): check the rear panel. Details under Reference: PSU. SF750 stays in the old box | Chosen (Aaron, recorded 2026-11-08); purchase not recorded |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | RAIDZ2, start with 4, grow by RAIDZ expansion (see Decisions); one size for every drive, size not chosen | Size open |
 | GPU | Future, Nvidia | Later |
@@ -89,6 +89,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-11-08:** owner reports on 4× 32 GB DDR4 at 3600 are mixed on both platforms (CPU memory-controller lottery). Ryzen 5950X: works for some, including 3600 at 18-22-22-42 (the same timings as our kit) on a Crosshair VIII Hero ([TechPowerUp](https://www.techpowerup.com/forums/threads/trident-z-neo-ram-4-channels-and-ryzen-5950x.284117/), [LTT](https://linustechtips.com/topic/1285160-128gb-3800mhz-on-5950x-and-dark-hero/)), fails even at 3333 for others. Z690 D4: 4× 32 GB kits often need BIOS updates, VCCSA/DRAM voltage or looser timings ([ASUS ROG forum](https://rog-forum.asus.com/t5/hardware-build-advice/help-me-understand-ram-qvl-please/m-p/920138)). AMD's official 2DPC DDR4 speed for Zen 3 not found. Plan either way: XMP first, then voltage, then 3466/3200; long memtest.
 - **2026-11-08:** 30-day TrueNAS reporting (15-min averages): CPU mean 5%, p95 11%, max 20% of the i9-9900's 16 threads; ARC mean 16 GiB, max 23 GiB; available memory min 4.1 GiB. RAM is the constraint, not CPU. Recommendation: stay on the Designare + i9-9900 with 128 GB; a DDR4 platform swap doesn't improve the 3600-on-4-sticks odds, would need an Arc for the Plex VM (iGPU passthrough is proven on the UHD 630, not on LGA1700), and is itself end-of-line; revisit on a DDR5 platform if ECC, Arc B-series or more PCIe becomes a real need. Aaron's call pending.
 - **2026-11-08 (Aaron):** staying with the Designare + i9-9900 + 128 GB; the LGA1700/AM4 platform swap is dropped. Possible later: move the Ryzen 9 5900X from the gaming PC into Big Boi when that PC is upgraded (DDR4, so the kits carry over). That would need an AM4 board that passes the slot check and an Arc card for the Plex VM (no iGPU), and costs some idle power; roughly 25–30% faster single-thread and 65–75% multi-thread than a 9900K ([cpu-benchmark.org](https://cpu-benchmark.org/index.php/compare/amd-ryzen-9-5900x/intel-core-i9-9900k/)).
+- **2026-11-08 (Aaron, decided earlier in conversation, not recorded until now):** PSU is the Corsair RM1000x (2024, non-Shift) instead of the SF750, because of the SF750's SATA/peripheral power limits (3 peripheral sockets for 3 backplanes plus 5 SSDs). The SF750 stays with the old box (ASRock Z390M-ITX/ac + i5-9400) when it's rebuilt as a separate system.
 
 ## Open questions
 
