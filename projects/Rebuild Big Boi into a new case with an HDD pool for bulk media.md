@@ -104,6 +104,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - 6U of free rack space; UPS runtime with spinning drives.
 - Whether the offsite box happens, where it would live, and how it connects (WireGuard/Tailscale).
 - Migration order: build new → move the SSD pool → create the HDD pool → replicate media across.
+  - During the media move (Aaron, 2026-11-08): put the self-ripped discs in their own `rips` dataset on the HDD pool, add it as a Plex library path, and give it a B2 Cloud Sync task (backup project phase 2). Likely rips sized 2026-11-08: 11 folders, 616 GB (list in [Plan backup strategy](<Plan backup strategy for TrueNAS and VMs.md>); Aaron to confirm). Also move `Movies/DJI_0001.MP4` (personal drone clip, on no backup) to Media Library.
 
 ## Reference: HDD pool layout (2026-10-29)
 

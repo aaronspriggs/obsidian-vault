@@ -4,7 +4,7 @@ status: active
 priority: high
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: '2026-10-23: B2 bucket estimated ~4.3 GB after one week, heading for ~10 GB at 30-day steady state (see Layer 2 status). Next: phase 2 (split rips out of plex_content/Movies); around 2026-11-16 Aaron reads the real bucket size in the B2 web UI to confirm it plateaued; nightly upload should now be ~60-70 MiB (fixed 2026-10-23).'
+next_step: '2026-10-23: B2 bucket estimated ~4.3 GB after one week, heading for ~10 GB at 30-day steady state (see Layer 2 status). Phase 2 (rips to B2) waits for the Big Boi rebuild: rips get their own dataset on the HDD pool then (Aaron 2026-11-08); around 2026-11-16 Aaron reads the real bucket size in the B2 web UI to confirm it plateaued; nightly upload should now be ~60-70 MiB (fixed 2026-10-23).'
 notion_id: 3087ae76-22ba-8115-9603-e15b0f8b9f21
 ---
 
@@ -38,7 +38,7 @@ Everything except the rips adds up to well under 10 GB.
 - **Provider: Backblaze B2** (Aaron). Box was considered because Aaron already has an unlimited Box account and TrueNAS Cloud Sync supports it. Aaron rejected it so backup volume won't trip Box usage flags on an account he relies on. R2 costs about 2× B2 per TB. Wasabi has a 1 TB / 90-day minimum.
 - **Phase 1 scope** (Aaron): Media Library, the `BIGBOI` app configs (`servarr/`, `uptime-kuma/`, `autokuma/`, `plex_config`), `vmstore/dockhand-stacks-backup` (widened to include Dockhand's own DB), a nightly TrueNAS config export and a **weekly** Plex DB export. All sync to B2 nightly, encrypted by TrueNAS, with B2 keeping prior versions for 30 days. Expected cost is $0–0.10/month (first 10 GB free). VM disks aren't sent: HA backs itself up, and the Plex and ClaudeCode VMs are rebuilt from runbooks.
 - **Phase 2:** self-ripped Blu-rays, once they're split out of `plex_content/Movies`, at $6.95/TB/month.
-- **2026-11-08 (Aaron):** re-ripping is an acceptable worst case, but back the rips up to B2 if the storage is affordable (no offsite box; see the rebuild project). Phase 2 stays planned.
+- **2026-11-08 (Aaron):** re-ripping is an acceptable worst case, but back the rips up to B2 if the storage is affordable (no offsite box; see the rebuild project). Phase 2 stays planned and waits for the Big Boi rebuild, when rips get their own `rips` dataset on the HDD pool and their own Cloud Sync task (Aaron 2026-11-08). Until then the rips have no offsite copy.
 - **Long term** (Aaron): B2 stays limited to the small irreplaceable set. Bulk media lives on a future HDD pool in a rebuilt Big Boi, and its offsite copy (if any) is ZFS replication to an offsite TrueNAS box, never paid cloud. This **supersedes the UNAS Pro architecture and Layer 3 below**. See [Rebuild Big Boi into a new case with an HDD pool](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>).
 
 ## Plan: Layer 2 phase 1 (2026-10-15)
