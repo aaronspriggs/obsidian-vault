@@ -16,7 +16,7 @@ system:
 
 **`automation.ha_updates_report_after_restart`:** the condition `states('input_text.ha_update_in_progress') | count('|') == 3` raised `TypeError: len() takes exactly one argument (2 given)` on every startup (Jinja's `count` filter is `length`, not `str.count`), so the "✅ Core updated" confirmation after an approved Core/OS update could never run. Changed to `states('input_text.ha_update_in_progress').count('|') == 3`, tested with `ha_eval_template`. No other automation uses the pattern.
 
-**Not updated:** HA Core 2026.10.4 → 2026.11.0 stays on Aaron's phone approval (decision 2026-09-25: Core/OS need his explicit approval, with a pre-update backup).
+**HA Core 2026.10.4 → 2026.11.0:** Aaron installed it by hand at 14:07 MST (Core/OS stay his call, decision 2026-09-25). Verified after: ha-mcp 9.1.2 connects, the fixed report-after-restart automation evaluates its condition without error (false, since this install didn't go through the approval flow), and startup shows only the known HomeKit "Kitchen" error plus deprecation warnings from rivian, dyson_local and chargepoint (break in 2027.5–2027.11). New repair: Nest `legacy_pubsub_topic` (left alone; Nest is being decommissioned).
 
 ## Why
 
