@@ -69,5 +69,6 @@ Edit in the repo, commit and push, then on each VM: `sudo install -m 755 -o root
 
 - "heartbeat missed": check `systemctl list-timers homelab-update.timer`, `systemctl status homelab-update.service`, and the log.
 - "update needs attention": the push names the failed step or checks. The full apt output is in `/var/log/homelab-update.log`.
+- Failed at "refreshing package lists" with `no longer has a Release file`: a third-party apt source is dead, so remove its file in `/etc/apt/sources.list.d/` (and its keyring), then rerun. A heartbeat-missed alert usually follows a run of these failures. Seen on the Plex VM Oct 25 – Nov 8 2026 with the retired Plex apt repo.
 - The installer's `systemctl list-timers … | head` pipe could abort it under `set -o pipefail`. **Fixed** in the repo version (seen once on the ClaudeCode VM on 2026-09-25; that install completed but skipped the test report).
 The webhook ID is shared by all VMs and is in the HA automation's trigger. It only accepts local POSTs (`local_only: true`). If it's ever exposed, change it in both the automation and each VM's `/etc/homelab-update.conf`.

@@ -39,7 +39,7 @@ Plex Media Server running as a VM on TrueNAS SCALE (Big Boi). Plex Pass lifetime
 - **Port forward:** TCP 32400 → 192.168.1.116:32400 (configured on UDM Pro)
 - **Remote access preference:** Bookmarked full URL (no DDNS or reverse proxy configured)
 - **Version:** 1.43.4.10903-e5521bd8c (upgraded 2026-09-24 from 1.43.0.10492)
-- **Repo:** [https://downloads.plex.tv/repo/deb](https://downloads.plex.tv/repo/deb) is still configured but **stale**: its newest build was 1.42.2 as of 2026-09-24. Upgrade Plex with `claude-maint upgrade-plex`, which installs the latest *public* .deb from [plex.tv](http://plex.tv/)'s official download API. See the "Updating the Plex VM (OS + Plex)" runbook.
+- **Repo:** none. The old Plex apt repo (`downloads.plex.tv/repo/deb`) stopped serving a Release file in late Oct 2026, which broke `apt-get update`; its source, keyring and unattended-upgrades rule were removed 2026-11-09. Upgrade Plex with `claude-maint upgrade-plex`, which installs the latest *public* .deb from [plex.tv](http://plex.tv/)'s official download API. See the "Updating the Plex VM (OS + Plex)" runbook.
 - **Plex Pass:** Lifetime
 - **Service:** plexmediaserver (systemd, active)
 
@@ -89,7 +89,7 @@ Plex Media Server running as a VM on TrueNAS SCALE (Big Boi). Plex Pass lifetime
 - **apt-daily timer:** 03:20 (RandomizedDelay disabled)
 - **apt-daily-upgrade timer:** 03:30
 - **fstrim.timer:** Enabled; fstrim -Av verified successful
-- **Plex updates:** the apt repo is stale (newest build 1.42.2), so Plex updates come from `claude-maint upgrade-plex` (weekly via homelab-update, or on request). unattended-upgrades only installs Ubuntu *security* updates; regular `noble-updates` land through homelab-update's full-upgrade.
+- **Plex updates:** there is no Plex apt repo, so Plex updates come only from `claude-maint upgrade-plex` (weekly via homelab-update, or on request). unattended-upgrades only installs Ubuntu *security* updates; regular `noble-updates` land through homelab-update's full-upgrade.
 
 ## Clients & Codec Strategy
 

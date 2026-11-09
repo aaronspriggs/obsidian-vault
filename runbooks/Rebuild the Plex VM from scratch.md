@@ -72,7 +72,6 @@ Record the new fingerprint in the Access model section of the updating runbook. 
 ```bash
 R=/home/claude/rebuild
 sudo install -m 755 -o root -g root $R/claude-maint /usr/local/sbin/
-sudo install -m 644 $R/apt/52unattended-upgrades-plex /etc/apt/apt.conf.d/
 sudo install -D -m 644 $R/systemd/apt-daily.timer.d/override.conf /etc/systemd/system/apt-daily.timer.d/override.conf
 sudo install -D -m 644 $R/systemd/apt-daily-upgrade.timer.d/override.conf /etc/systemd/system/apt-daily-upgrade.timer.d/override.conf
 printf 'APT::Periodic::Update-Package-Lists "1";\nAPT::Periodic::Unattended-Upgrade "1";\n' | sudo tee /etc/apt/apt.conf.d/20auto-upgrades >/dev/null
@@ -80,7 +79,7 @@ echo 'claude ALL=(root) NOPASSWD: /usr/local/sbin/claude-maint' > /tmp/cm && sud
 sudo systemctl daemon-reload && sudo systemctl enable --now fstrim.timer
 sudo bash $R/homelab-update/install.sh $R/plex-vm.conf
 ```
-1. **Plex** (Claude installs, *Aaron* restores). Claude: `ssh plex sudo -n /usr/local/sbin/claude-maint upgrade-plex` (latest public build from [plex.tv](http://plex.tv/); the old Plex apt repo is stale and isn't needed). Then Aaron, on the Plex VM:
+1. **Plex** (Claude installs, *Aaron* restores). Claude: `ssh plex sudo -n /usr/local/sbin/claude-maint upgrade-plex` (latest public build from [plex.tv](http://plex.tv/); the old Plex apt repo is gone; don't add it, it breaks `apt-get update`). Then Aaron, on the Plex VM:
 ```bash
 sudo usermod -aG video,render plex
 sudo systemctl stop plexmediaserver
