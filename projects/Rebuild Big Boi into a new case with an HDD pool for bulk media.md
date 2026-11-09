@@ -36,7 +36,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift; sockets on the back, 160 mm, fits the 12S4's 170 mm limit; Type 4 cables). Stock 3× SATA (4 each) + 2× Molex (3 each); add 1× Corsair Type 4 Molex cable (e.g. CP-8920199 or CP-8920196) for one Molex cable per backplane, SSDs on SATA. 5 peripheral (SATA/Molex) sockets (Aaron 2026-11-08), enough for 3 Molex + 2 SATA cables. Details under Reference: PSU. SF750 stays in the old box | **Bought** (Aaron, 2026-11-08) |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | RAIDZ2, start with 4, grow by RAIDZ expansion (see Decisions); one size for every drive, size not chosen | Size open |
-| GPU | Intel Arc A380 for AV1 encode, host-side for containers (see [[Automated AV1 re-encode pipeline for UHD Blu-ray rips on Big Boi]]). Needs BIOS F9+ for Resizable BAR (flash F11a), CSM off, UEFI boot | Planned (Aaron 2026-11-09); buy after the 2026-11-13 Apple TV AV1 check |
+| GPU | Intel Arc A380 for AV1 encode, host-side for containers (see [[Automated AV1 re-encode pipeline for UHD Blu-ray rips on Big Boi]]). Needs BIOS F9+ for Resizable BAR (flash F11a), CSM off, UEFI boot | **Ordered** (Aaron 2026-11-09, Newegg, about $200; model not recorded) |
 
 ## Ordered: JMCD 12S4 case (2026-10-26)
 

@@ -17,7 +17,7 @@ Aaron rips 4K Blu-rays on the [Workstation (Desktop)](<../systems/Workstation (D
 
 ## Status (2026-11-09)
 
-Idea stage. Hardware: an Intel Arc A380 in Big Boi for AV1 encoding (the 3080 Ti can't encode AV1), decided 2026-11-09 after confirming the Designare's BIOS F9+ has Resizable BAR. Not bought; buy after the 2026-11-13 Apple TV confirms Plex AV1 direct play.
+Idea stage. Hardware: an Intel Arc A380 in Big Boi for AV1 encoding (the 3080 Ti can't encode AV1), decided 2026-11-09 after confirming the Designare's BIOS F9+ has Resizable BAR. Ordered 2026-11-09 from Newegg (about $200; A380 street price had risen from ~$169 on 2026-10-28 as stock runs out), ahead of the 2026-11-13 Apple TV AV1 check. Test passthrough, Plex AV1 decode + tone mapping and HandBrake QSV AV1 inside the return window.
 
 ## Plan
 
