@@ -36,7 +36,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 | PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift; sockets on the back, 160 mm, fits the 12S4's 170 mm limit; Type 4 cables). Stock 3× SATA (4 each) + 2× Molex (3 each); add 1× Corsair Type 4 Molex cable (e.g. CP-8920199 or CP-8920196) for one Molex cable per backplane, SSDs on SATA. 5 peripheral (SATA/Molex) sockets (Aaron 2026-11-08), enough for 3 Molex + 2 SATA cables. Details under Reference: PSU. SF750 stays in the old box | **Bought** (Aaron, 2026-11-08) |
 | Case fans | Aaron's own, right sizes (120 × 25 / 92 × 25), 4-pin PWM | Have (confirmed by Aaron 2026-10-26) |
 | HDDs | RAIDZ2, start with 4, grow by RAIDZ expansion (see Decisions); one size for every drive, size not chosen | Size open |
-| GPU | Future, Nvidia | Later |
+| GPU | Intel Arc A380 for AV1 encode, host-side for containers (see [[Automated AV1 re-encode pipeline for UHD Blu-ray rips on Big Boi]]). Needs BIOS F9+ for Resizable BAR (flash F11a), CSM off, UEFI boot | Planned (Aaron 2026-11-09); buy after the 2026-11-13 Apple TV AV1 check |
 
 ## Ordered: JMCD 12S4 case (2026-10-26)
 
@@ -93,6 +93,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-11-08 (Aaron):** the old box (Z390M-ITX/ac, i5-9400, 8 GB, 256 GB SATA SSD, SF750) won't host Home Assistant or the ClaudeCode VM: HA downtime isn't a big concern and the box is overkill for it, and Big Boi's 128 GB is meant to carry the VMs. Keep it intact as known-good spare parts until the rebuild is stable; then offsite ZFS replication target (if a location exists) or sell. Not decided.
 - **2026-11-08:** offsite target in its current case is out: the MyElectronics 2U Mini-ITX case has no 3.5" bays (Aaron). Dataset sizes (TrueNAS API, 2026-11-08): `plex_content` 2,111 GB, `vmstore` 309 GB (Plex VM 183, ClaudeCode 70, HAOS 48), everything else under 2 GB. What's irreplaceable is already in B2; the gaps are `plex_content` and the VM disks ([B2 runbook](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>)). Only `plex_content` would justify an offsite box, and that needs 3.5" drives, so it would mean rehousing the board in a NAS case.
 - **2026-11-08 (Aaron):** no offsite box for now; re-ripping is an acceptable worst case for `plex_content`. The old box stays as known-good spare parts until the rebuild is stable, then gets sold unless another use turns up.
+- **2026-11-09 (Aaron):** GPU is an Intel Arc A380 (AV1 encode), replacing the 2026-10-25 "future GPU is Nvidia" line. The 10th-gen Arc floor is Intel's Resizable BAR validation, and the Designare has ReBAR since BIOS F9 (confirmed on Gigabyte's support page). Before first boot with CSM off, check Big Boi boots UEFI (`[ -d /sys/firmware/efi ]`).
 
 ## Open questions
 

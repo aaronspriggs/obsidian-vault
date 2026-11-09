@@ -15,19 +15,20 @@ Rip UHD Blu-rays on the Workstation, re-encode to AV1 automatically on Big Boi. 
 
 Aaron rips 4K Blu-rays on the [Workstation (Desktop)](<../systems/Workstation (Desktop).md>) (it has the Blu-ray drive), copies the rips to Big Boi, and an automated job there re-encodes them to AV1 for Plex.
 
-## Status (2026-10-28)
+## Status (2026-11-09)
 
-Idea stage. Hardware: an Intel Arc A310 in Big Boi for AV1 encoding (the 3080 Ti can't encode AV1). Not bought.
+Idea stage. Hardware: an Intel Arc A380 in Big Boi for AV1 encoding (the 3080 Ti can't encode AV1), decided 2026-11-09 after confirming the Designare's BIOS F9+ has Resizable BAR. Not bought; buy after the 2026-11-13 Apple TV confirms Plex AV1 direct play.
 
 ## Plan
 
-1. Buy an Arc A310 (new, with a return window; about $140). The A380 ($169) adds graphics cores that help tone mapping and parallel Plex transcodes, not single AV1 encodes.
-2. After the rebuild: the A310 stays with the TrueNAS host for containers (`/dev/dri`); the UHD 630 iGPU stays passed through to the Plex VM.
+1. Buy an Arc A380 (new, with a return window; about $169 on 2026-10-28; the A310 has the same AV1 encoder but cost more then). Board prep: flash F11a, CSM off, Above 4G Decoding and Re-Size BAR on; verify a large BAR with `lspci -vv`.
+2. After the rebuild: the A380 stays with the TrueNAS host for containers (`/dev/dri`); the UHD 630 iGPU stays passed through to the Plex VM.
 3. Pick the automation (see Open questions), deploy it through the repo and Dockhand.
 4. Watch folder on the HDD pool → encode → output into the Plex library.
 
 ## Decisions
 
+- **2026-11-09 (Aaron):** card is the Arc A380; Nvidia/AMD dropped (see the Arc and non-Arc notes under Open questions).
 - **2026-10-28 (Aaron):** AV1 card is for re-encoding rips, not Plex streaming transcodes; ripping stays on the Workstation.
 - **2026-10-28 (Aaron):** don't keep the original rips. Consequence: whatever the encode drops (Dolby Vision, HDR10+, lossless audio if transcoded) is gone for good unless the disc is re-ripped; the pipeline must check the output before deleting the source.
 - **2026-10-28 (Aaron):** keep Atmos: pass through the TrueHD Atmos track (HandBrake Auto Passthru, MKV output, HandBrake 1.3.2+).
