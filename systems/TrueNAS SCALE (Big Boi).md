@@ -87,6 +87,7 @@ If Big Boi goes down, all of the above go down with it.
 - **2026-09-26:** `ix-apps` isn't snapshotted; instead of snapshotting a TrueNAS-managed hidden dataset, the nightly rsync copies Dockhand's stacks into `vmstore`. `BIGBOI` was rejected as the destination because it's SMB-shared.
 - **2026-09-28:** NFS exports have always been restricted to the Plex VM by `hosts` (the 2026-09-26 note only read `networks`); no change needed.
 - **Open:** the media library (`plex_content`, `plex_recordings`) is excluded from snapshots and has no offsite copy; self-ripped discs are phase 2 of the backup strategy project.
+- **2026-11-08:** stay on native TrueNAS VMs, not Proxmox. Proxmox is ahead on backups (PBS), clustering, LXC and passthrough tooling, and TrueNAS's VM layer has been less stable (Incus switch and partial walk-back), but none of that pays off on one NAS-first box; running TrueNAS as a Proxmox VM would make storage depend on a VM booting. Revisit if a second compute box is added, the VM count outgrows TrueNAS's VM UI/backups, or a TrueNAS upgrade breaks the VMs again.
 
 ## Related
 
