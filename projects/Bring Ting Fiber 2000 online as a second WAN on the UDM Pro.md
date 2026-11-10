@@ -36,7 +36,7 @@ The UniFi UI can show the port as 10G even when the copper side negotiated 2.5G 
 
 Ting supports bringing your own router and says the ONT hands off "standard Ethernet" ([BYOR article](https://help.ting.com/internet-articles/byor-to-your-ting-internet-service)). Its static-IP page says customer equipment just needs to "acquire an IP address through DHCP", and that IPv6 is available in some markets via "standard DHCPv6" alongside IPv4 ([static IP article](https://help.ting.com/internet-articles/ting-internet-static-ip-addresses)). So the WAN is plain DHCP with no PPPoE. That's simpler than CenturyLink, and the UDM's PPPoE single-thread limit doesn't apply. The ONT goes inside the house and is installed by the tech ([Getting Ting Fiber to your home](https://help.ting.com/internet-articles/getting-ting-fiber-to-your-home)).
 
-Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404): the ONT model and port speed, any VLAN tag, whether the ONT locks to the first MAC it sees, IPv6 prefix-delegation size, and whether residential IPv4 is public or CGNAT. A public IPv4 is likely, since Ting sells static IPs, but that's an inference.
+Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404): the ONT model and port speed, any VLAN tag, whether the ONT locks to the first MAC it sees, IPv6 prefix-delegation size, and whether residential IPv4 is public or CGNAT. 2026-11-10: a Ting installer working in the neighborhood told Aaron each house gets its own public IPv4 by DHCP and Ting doesn't use CGNAT.
 
 ## Plan
 
@@ -51,7 +51,7 @@ Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404)
 4. Let the tech bring the line up and test on their own equipment. Then ask: ONT model and port speed, any VLAN tag, whether the ONT needs a power-cycle (or a call to Ting) to hand a lease to a new router MAC, and whether IPv6/DHCPv6-PD is live in this market and at what prefix size.
 5. Turn on `input_boolean.homelab_maintenance_mode`.
 6. Module into SFP+ 1, Cat6a from the ONT. In UniFi Network → Settings → Internet → Internet 2: assign port **SFP+ 1**, DHCP, VLAN off, IPv6 off for now, set the advertised speed to 2000/2000. Keep it `failover-only`, priority 2, so CenturyLink still carries everything. If no lease arrives, power-cycle the ONT. Claude confirms with `unifi-api` that WAN2 is up with an address. The 10.6 menu labels may differ slightly from these, and the API read is the check.
-7. **CGNAT gate.** Claude checks the WAN2 address: it must not be in 100.64.0.0/10 and must match what an external lookup sees when routed out WAN2. If it's CGNAT, stop before step 10 and ask Ting for a public IP. Plex remote access and WireGuard need one.
+7. **Public-IP check.** The installer said no CGNAT (2026-11-10), so this is a quick confirmation, not an expected blocker. Claude checks the WAN2 address: it must not be in 100.64.0.0/10 and must match what an external lookup sees when routed out WAN2. If it fails anyway, stop before step 10 and call Ting, because Plex remote access and WireGuard need a public IP.
 8. Add a policy-based route (Settings → Routing → Policy-Based Routes, or Policy Table) sending one wired client out Internet 2. Test from a client faster than 1G: a 1G client tops out around 940 Mbps and would look like a fault. Use Big Boi (10G), e.g. a speedtest container, or the desk machine if its NIC is 2.5G (unknown, see the Workstation note). The UDM's built-in speed test isn't reliable at multi-gig.
 
 **Cutover (same day if step 8 is clean, otherwise when Aaron chooses):**
@@ -71,11 +71,12 @@ Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404)
 ## Decisions
 
 - 2026-11-09: Ting goes on SFP+ 1 with a UACC-CM-RJ45-MG, not Port 9: Port 9 is GbE and taken by CenturyLink.
+- 2026-11-10: no CGNAT expected (Ting installer to Aaron); the step 7 check stays as a quick confirmation.
 - 2026-11-09: failover, not load balancing, while both lines run. Ting becomes primary only after the CGNAT gate and a multi-gig speed test.
 - 2026-11-09: Claude's UniFi account is read-only, so Aaron makes every UDM change in the UI and Claude verifies each one with `unifi-api`.
 
 ## Open questions
 
-- Ting ONT model and port speed, VLAN, MAC behaviour, IPv6/PD size, public vs CGNAT IPv4 (ask the tech, step 4).
+- Ting ONT model and port speed, VLAN, MAC behaviour, IPv6/PD size (ask the tech, step 4). Public IPv4 answered 2026-11-10 (yes, no CGNAT, per a Ting installer); confirmed live in step 7.
 - Is a battery-backed UPS outlet free for the ONT?
 - Alerting on WAN failover: a silent fail-back to CenturyLink would go unnoticed. Decide after cutover whether the HA UniFi integration or Uptime Kuma can see the active WAN.
