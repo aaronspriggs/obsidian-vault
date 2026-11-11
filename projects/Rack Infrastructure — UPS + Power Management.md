@@ -50,6 +50,8 @@ On a power cut, ride out short blips, and on anything longer shut Big Boi (TrueN
 - **2026-03-03:** UniFi UPS 2U chosen over the UPS Tower (bigger battery, rack mount). Goal is clean shutdown, not runtime. Mount low in the rack.
 - **2026-09-28:** use **network NUT** from TrueNAS to the UPS, not USB. It needs no extra hardware; the 2026-03 plan for a USB 3.2 PCIe card only makes sense if network NUT proves unreliable (and it's unconfirmed that the UPS 2U's USB port speaks standard NUT/HID).
 
+- **2026-11-11:** planned 30U rack (v3 layout in [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>)): UPS battery outlets feed only Big Boi (direct) and a UniFi PDU Pro, which powers the network gear, rack shelf boxes and both ONTs (Aaron confirmed the ONTs move into the rack). That closes the step 6 gap of no internet on battery. Big Boi stays off the PDU because a PDU outlet can be switched off remotely and its outlet state after power loss is unconfirmed. Neither the PDU Pro nor the 30U rack is bought yet.
+
 ## Open questions
 
 - Answered 2026-09-29: total load is 110 W (11%), UniFi estimates 1 h 7 min runtime (UniFi UI; see UPS 2U page). Runtime is not the constraint.
