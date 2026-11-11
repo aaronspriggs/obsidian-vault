@@ -15,7 +15,7 @@ UniFi UPS 2U in the rack (216 Wh, 1,500 VA / 1,000 W; about 2.3 min at full load
 ## Access
 
 - Managed in UniFi Network on the UDM Pro ([https://192.168.1.1](https://192.168.1.1/)). IP 192.168.1.12 (**static on the device since 2026-09-29**, gateway .1, DNS 1.1.1.1; it sits inside the LAN DHCP pool .6–.254, low conflict risk since the UDM checks for in-use addresses), MAC 1c:0b:8b:3a:f7:13, uplinked to **UDM Pro port 8** at 100 Mb. Model code USWDA25. **NUT server enabled 2026-09-29** on TCP 3493; UPS name `unifiups`. Credentials in 1Password "UPS 2U - NUT". Unlike stock NUT, reading variables (`LIST VAR`) needs a login (anonymous gets ERR ACCESS-DENIED); `LIST UPS` works anonymously. The UniFi API shows 8 outlets, all on and unnamed, with no battery/load data.
-- HA: `device_tracker.ups_2u`, `sensor.ups_2u_state` (connected), `update.ups_2u`. The UniFi integration exposes device health only: no battery charge, load or on-battery state.
+- HA (UniFi integration, verified live 2026-11-11): `device_tracker.ups_2u`, `sensor.ups_2u_state`, `update.ups_2u`, plus UPS sensors `sensor.ups_2u_battery_level` (100), `sensor.ups_2u_battery_runtime` (4041 s), `sensor.ups_2u_output_power` (110 W), `_output_current`, `_output_voltage`, `_output_power_factor` and `_bypass_voltage` (124.3 V). The integration now documents these for UniFi UPS devices ([HA docs](https://www.home-assistant.io/integrations/unifi)); this replaces the 2026-09-28 finding that HA saw device health only. There is still no explicit on-battery entity; whether `_bypass_voltage` drops on mains loss is untested. `sensor.ups_2u_uptime` reads 2026-11-05T10:09Z, so the UPS restarted on 2026-11-05 (cause not recorded).
 
 ## Config
 

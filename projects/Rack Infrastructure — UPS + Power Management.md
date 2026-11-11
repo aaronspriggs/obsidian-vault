@@ -59,6 +59,7 @@ On a power cut, ride out short blips, and on anything longer shut Big Boi (TrueN
 - Answered 2026-09-29: UniFi has a NUT client list (set to 192.168.1.248), and upsmon connects over TLS (no cert verification). Was: Does UniFi's NUT server offer a client allowlist, and is its traffic plain NUT (not TLS)? Treat the NUT password as low-value but keep it out of Notion.
 - 2026-09-29: the read-only `claude` TrueNAS API user can read `ups.config.monpwd` in clear text. Filter it out of any `ups.config` output.
 - Future UNAS Pro: UniFi's native graceful shutdown covers it; it doesn't use a NUT slot.
+- **2026-11-11:** HA's UniFi integration already exposes UPS 2U battery level, runtime and output power (see the UPS 2U page), so NUT in HA is only needed for an explicit on-battery status (`ups.status` OB). Check first whether `sensor.ups_2u_bypass_voltage` going to 0 during the staged test is enough.
 - **UPS data in HA via NUT** (Aaron 2026-10-15: later, as part of this project). HA has discovered a NUT server advertised by TrueNAS at 192.168.1.248:3493; the discovery card is left un-ignored on purpose. Before adding it, check whether TrueNAS actually serves upsd as a secondary. Pointing HA at TrueNAS would avoid using one of the UPS 2U's NUT client slots (capped at 3, and one user reported only one stable client). Pointing it at the UPS (192.168.1.12) would need the "UPS 2U - NUT" credential and a second slot.
 
 ## Changes
