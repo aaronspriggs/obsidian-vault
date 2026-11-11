@@ -33,7 +33,8 @@ A soil moisture sensor in each of about 30 houseplants, with per-plant watering 
 
 - Which router plugs (ThirdReality, IKEA, Sonoff) and where; depends on where the plants are.
   - 2026-11-11 IKEA: INSPELNING (E2206, Zigbee, energy monitoring) is a Zigbee router and works in ZHA; TRETAKT is Zigbee but discontinued. GRILLPLATS, its replacement, ships as Matter over Thread and only becomes Zigbee through an undocumented 8-press reset ([Z2M issue](https://github.com/Koenkk/zigbee2mqtt/issues/31474)), so don't buy it for this. After pairing, confirm the device type shows as Router in ZHA.
-  - 2026-11-11 IKEA US site (checked live): INSPELNING isn't sold in the US (its US product URL redirects to the catalogue). TRETAKT (40556511, $9.99) is still sold online and in stock but tagged "Last chance". The other US plugs, GRILLPLATS and TOFSMYGGA (outdoor), are Matter over Thread.
+  - 2026-11-11 IKEA US site (checked live): INSPELNING isn't sold in the US (its US product URL redirects to the catalogue). TRETAKT (40556511, $9.99) is still sold online and in stock but tagged "Last chance". The other US plugs, GRILLPLATS and TOFSMYGGA (outdoor), are Matter over Thread. Aaron later found TRETAKT out of stock and not shippable to him.
+  - 2026-11-11 Micro Center (from web listings; their site blocks scripted checks): Philips Hue Smart Plug (Zigbee router, the known-good option for ZHA) and Shelly Plug Gen4 (Wi-Fi/Zigbee/Matter; ZHA reports are mixed: the relay works, but pairing is flaky and some sensors need quirks, per the [HA forum thread](https://community.home-assistant.io/t/shelly-gen4-zigbee-mode/888242)). Micro Center has no ThirdReality products or Zigbee soil sensors listed; ThirdReality Zigbee plugs and the Gen2 soil sensor ship from Amazon or ThirdReality.
 
 ## Changes
 
