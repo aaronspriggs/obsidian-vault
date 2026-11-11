@@ -32,6 +32,7 @@ A soil moisture sensor in each of about 30 houseplants, with per-plant watering 
 ## Open questions
 
 - Which router plugs (ThirdReality, IKEA, Sonoff) and where; depends on where the plants are.
+  - 2026-11-11 IKEA: INSPELNING (E2206, Zigbee, energy monitoring) is a Zigbee router and works in ZHA; TRETAKT is Zigbee but discontinued. GRILLPLATS, its replacement, ships as Matter over Thread and only becomes Zigbee through an undocumented 8-press reset ([Z2M issue](https://github.com/Koenkk/zigbee2mqtt/issues/31474)), so don't buy it for this. After pairing, confirm the device type shows as Router in ZHA.
 
 ## Changes
 
