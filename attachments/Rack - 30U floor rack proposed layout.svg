@@ -78,7 +78,7 @@
 <rect x="133" y="232" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
 <text x="320" y="250" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Pro Max 16 PoE  ·  ~5 lb</text>
 <rect x="133" y="262" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="280" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">Aggregation switch  ·  bought, not installed</text>
+<text x="320" y="280" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Aggregation  ·  8× SFP+  ·  6.0 lb</text>
 <rect x="133" y="292" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
 <text x="320" y="310" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">UDM Pro  ·  8.6 lb</text>
 <rect x="133" y="322" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -119,9 +119,9 @@
 <text x="570" y="214" font-size="13" font-weight="700" fill="#2563eb">Network core at the top</text>
 <text x="570" y="232" font-size="12" fill="#334155">Patch panel A (existing wall runs) over the switch,</text>
 <text x="570" y="248" font-size="12" fill="#334155">brush plate between for short patches. Aggregation</text>
-<text x="570" y="264" font-size="12" fill="#334155">switch between Pro Max 16 and UDM Pro: short SFP+</text>
-<text x="570" y="280" font-size="12" fill="#334155">DACs to both. Big Boi&#x27;s 10 GbE DAC likely moves to</text>
-<text x="570" y="296" font-size="12" fill="#334155">the Agg switch: ~19U (≈ 33&quot;), plan on a 2 m DAC.</text>
+<text x="570" y="264" font-size="12" fill="#334155">between Pro Max 16 and UDM Pro, short SFP+ DACs to</text>
+<text x="570" y="280" font-size="12" fill="#334155">both; Big Boi&#x27;s 10 GbE likely moves to it too (3 of</text>
+<text x="570" y="296" font-size="12" fill="#334155">8 SFP+ used). That DAC runs ~19U (≈ 33&quot;): use 2 m.</text>
 <text x="570" y="312" font-size="12" fill="#334155">Panel B + brush under the UDM Pro (likely wall runs).</text>
 <line x1="544" y1="425" x2="562" y2="340" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="425" r="3" fill="#475569"/>
 <text x="570" y="340" font-size="13" font-weight="700" fill="#475569">Flex mount and two CLV shelves</text>
@@ -168,8 +168,8 @@
 <text x="420" y="1196" font-size="12" font-weight="400" fill="#0f172a">36–38 lb</text>
 <text x="540" y="1196" font-size="12" font-weight="400" fill="#0f172a">48–50 lb</text>
 <text x="50" y="1214" font-size="12" font-weight="400" fill="#0f172a">UDM Pro + Pro Max 16 + Aggregation (U26–U28)</text>
-<text x="420" y="1214" font-size="12" font-weight="400" fill="#0f172a">~17–24 lb</text>
-<text x="540" y="1214" font-size="12" font-weight="400" fill="#0f172a">~17–24 lb</text>
+<text x="420" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
+<text x="540" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
 <text x="50" y="1232" font-size="12" font-weight="400" fill="#0f172a">PDU Pro 8.2 · 2 shelves 11.0 · 3 brush plates 2.7</text>
 <text x="420" y="1232" font-size="12" font-weight="400" fill="#0f172a">~22 lb</text>
 <text x="540" y="1232" font-size="12" font-weight="400" fill="#0f172a">~22 lb</text>
@@ -177,12 +177,12 @@
 <text x="420" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
 <text x="540" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
 <text x="50" y="1268" font-size="12" font-weight="700" fill="#0f172a">Total</text>
-<text x="420" y="1268" font-size="12" font-weight="700" fill="#0f172a">~112–128 lb</text>
-<text x="540" y="1268" font-size="12" font-weight="700" fill="#0f172a">~124–140 lb</text>
-<text x="680" y="1178" font-size="12" fill="#334155">About 55–65% of the weight sits in</text>
+<text x="420" y="1268" font-size="12" font-weight="700" fill="#0f172a">~115–124 lb</text>
+<text x="540" y="1268" font-size="12" font-weight="700" fill="#0f172a">~127–136 lb</text>
+<text x="680" y="1178" font-size="12" fill="#334155">About 55–60% of the weight sits in</text>
 <text x="680" y="1194" font-size="12" fill="#334155">the bottom 8U. Rated 500 lb, so</text>
 <text x="680" y="1210" font-size="12" fill="#334155">about a quarter used. Lock the</text>
 <text x="680" y="1226" font-size="12" fill="#334155">casters once it&#x27;s in place.</text>
-<text x="680" y="1242" font-size="12" fill="#334155">Aggregation model unknown: 3–10 lb</text>
-<text x="680" y="1258" font-size="12" fill="#334155">assumed. PDU/shelf/brush: techspecs.</text>
+<text x="680" y="1242" font-size="12" fill="#334155">Agg, PDU, shelf, brush weights from</text>
+<text x="680" y="1258" font-size="12" fill="#334155">UI specs; patch panels guessed.</text>
 </svg>
