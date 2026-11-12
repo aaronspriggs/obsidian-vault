@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1380" width="980" height="1380" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1360" width="980" height="1360" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
-<rect width="980" height="1380" fill="#ffffff"/>
+<rect width="980" height="1360" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
-<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v12</text>
-<text x="30" y="80" font-size="12" fill="#475569">v12: brush plate above Big Boi at U20, server and spare shelf below, 2U over the receiver · dashed = not bought or confirmed</text>
+<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v13</text>
+<text x="30" y="80" font-size="12" fill="#475569">v13: Isobar out, receiver back to U3, shelf buffer under Big Boi, server lower · dashed = not bought or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
@@ -64,19 +64,19 @@
 <rect x="133" y="502" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
 <text x="320" y="587" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
 <text x="320" y="603" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
-<rect x="133" y="682" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="707" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
-<text x="320" y="723" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
-<rect x="133" y="742" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="767" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U10) + 1U headroom</text>
-<text x="320" y="783" font-size="11" fill="#334155" text-anchor="middle">for later, e.g. basement AV gear</text>
-<rect x="133" y="802" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="835" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open (receiver heat)</text>
-<rect x="133" y="862" width="374" height="116" rx="4" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="917" font-size="13" font-weight="700" fill="#881337" text-anchor="middle">Denon AVR-S970H on a deep shelf (U4)</text>
-<text x="320" y="933" font-size="11" fill="#881337" text-anchor="middle">167 mm with feet, antennas folded back · 21 lb</text>
-<rect x="133" y="982" width="374" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-<text x="320" y="1000" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">Tripp Lite Isobar IBAR12ULTRA  ·  wall circuit</text>
+<rect x="133" y="682" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="707" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U12) + 1U headroom</text>
+<text x="320" y="723" font-size="11" fill="#334155" text-anchor="middle">buffer between Big Boi and the server</text>
+<rect x="133" y="742" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="760" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open</text>
+<rect x="133" y="772" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="797" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
+<text x="320" y="813" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
+<rect x="133" y="832" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="865" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open (receiver heat)</text>
+<rect x="133" y="892" width="374" height="116" rx="4" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="947" font-size="13" font-weight="700" fill="#881337" text-anchor="middle">Denon AVR-S970H on a deep shelf (U3)</text>
+<text x="320" y="963" font-size="11" fill="#881337" text-anchor="middle">167 mm with feet, antennas folded back · 21 lb</text>
 <rect x="133" y="1012" width="374" height="56" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
 <text x="320" y="1037" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">UniFi UPS 2U  ·  30.9 lb</text>
 <text x="320" y="1053" font-size="11" fill="#78350f" text-anchor="middle">on rear support rails · battery outlets: Big Boi + PDU</text>
@@ -112,35 +112,30 @@
 <text x="570" y="524" font-size="12" fill="#334155">airflow and a cable path. If the 12S4 is 272 mm, not</text>
 <text x="570" y="540" font-size="12" fill="#334155">262, it hits that plate: measure before mounting.</text>
 <text x="570" y="556" font-size="12" fill="#334155">Support it from below. DAC to the Aggregation: 1 m.</text>
-<line x1="544" y1="710" x2="562" y2="576" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="710" r="3" fill="#7c3aed"/>
-<text x="570" y="576" font-size="13" font-weight="700" fill="#7c3aed">Second server (U12–U13)</text>
-<text x="570" y="594" font-size="12" fill="#334155">Right under Big Boi. On the PDU it is on battery but</text>
-<text x="570" y="610" font-size="12" fill="#334155">outside the NUT shutdown unless it gets its own NUT</text>
-<text x="570" y="626" font-size="12" fill="#334155">client (UniFi caps NUT at 3 clients).</text>
-<line x1="544" y1="770" x2="562" y2="646" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="770" r="3" fill="#475569"/>
-<text x="570" y="646" font-size="13" font-weight="700" fill="#475569">Spare shelf by the receiver</text>
-<text x="570" y="664" font-size="12" fill="#334155">CLV at U10 with 1U above. 250 mm deep, 44 lb max;</text>
-<text x="570" y="680" font-size="12" fill="#334155">handy for basement AV boxes next to the receiver.</text>
-<line x1="544" y1="920" x2="562" y2="716" stroke="#e11d48" stroke-width="1.2"/><circle cx="544" cy="920" r="3" fill="#e11d48"/>
-<text x="570" y="716" font-size="13" font-weight="700" fill="#e11d48">Denon AVR-S970H (U4–U7)</text>
+<line x1="544" y1="710" x2="562" y2="576" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="710" r="3" fill="#475569"/>
+<text x="570" y="576" font-size="13" font-weight="700" fill="#475569">Shelf under Big Boi (U12–U13)</text>
+<text x="570" y="594" font-size="12" fill="#334155">CLV at U12 with 1U above: a buffer between Big Boi</text>
+<text x="570" y="610" font-size="12" fill="#334155">and the server. 250 mm deep, 44 lb max.</text>
+<line x1="544" y1="800" x2="562" y2="630" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="800" r="3" fill="#7c3aed"/>
+<text x="570" y="630" font-size="13" font-weight="700" fill="#7c3aed">Second server (U9–U10)</text>
+<text x="570" y="648" font-size="12" fill="#334155">Shelf, headroom and U11 sit between it and Big Boi.</text>
+<text x="570" y="664" font-size="12" fill="#334155">On the PDU it is on battery but outside the NUT</text>
+<text x="570" y="680" font-size="12" fill="#334155">shutdown unless it gets its own NUT client</text>
+<text x="570" y="696" font-size="12" fill="#334155">(UniFi caps NUT at 3 clients).</text>
+<line x1="544" y1="950" x2="562" y2="716" stroke="#e11d48" stroke-width="1.2"/><circle cx="544" cy="950" r="3" fill="#e11d48"/>
+<text x="570" y="716" font-size="13" font-weight="700" fill="#e11d48">Denon AVR-S970H (U3–U6)</text>
 <text x="570" y="734" font-size="12" fill="#334155">Manual: 434 W × 341 D mm, 167 mm tall with feet,</text>
 <text x="570" y="750" font-size="12" fill="#334155">237 mm (9.3&quot;) with antennas upright. Fold them back</text>
 <text x="570" y="766" font-size="12" fill="#334155">and shelf + receiver fit 4U; upright needs 6U. 288 mm</text>
 <text x="570" y="782" font-size="12" fill="#334155">body: too deep for a CLV, so use a deeper shelf.</text>
-<text x="570" y="798" font-size="12" fill="#334155">Vents across the whole lid: U8–U9 stay open above</text>
-<text x="570" y="814" font-size="12" fill="#334155">it. 460 W rated: on the Isobar, off the UPS.</text>
+<text x="570" y="798" font-size="12" fill="#334155">Vents across the whole lid: U7–U8 stay open above</text>
+<text x="570" y="814" font-size="12" fill="#334155">it. 460 W rated: a UPS surge-only outlet, not the PDU.</text>
 <text x="570" y="830" font-size="12" fill="#334155">Wire HEOS by Ethernet; Wi-Fi is weak in a steel rack.</text>
-<line x1="544" y1="1025" x2="562" y2="850" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1025" r="3" fill="#d97706"/>
-<text x="570" y="850" font-size="13" font-weight="700" fill="#d97706">Isobar kept (U3)</text>
-<text x="570" y="868" font-size="12" fill="#334155">On the wall&#x27;s second receptacle: surge-protected</text>
-<text x="570" y="884" font-size="12" fill="#334155">power that skips the UPS. Feeds the receiver, and is</text>
-<text x="570" y="900" font-size="12" fill="#334155">the manual bypass for the PDU and Big Boi if the</text>
-<text x="570" y="916" font-size="12" fill="#334155">UPS fails or needs a battery swap.</text>
-<line x1="544" y1="1055" x2="562" y2="936" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1055" r="3" fill="#d97706"/>
-<text x="570" y="936" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
-<text x="570" y="954" font-size="12" fill="#334155">Densest item (14 kg in 2U). Battery outlets: Big Boi</text>
-<text x="570" y="970" font-size="12" fill="#334155">and the PDU Pro. Surge-only outlets free for now.</text>
-<rect x="30" y="1130" width="920" height="228" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<line x1="544" y1="1055" x2="562" y2="860" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1055" r="3" fill="#d97706"/>
+<text x="570" y="860" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
+<text x="570" y="878" font-size="12" fill="#334155">Densest item (14 kg in 2U). Battery outlets: Big Boi</text>
+<text x="570" y="894" font-size="12" fill="#334155">and the PDU Pro. Surge-only outlet: the receiver.</text>
+<rect x="30" y="1130" width="920" height="210" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
 <text x="50" y="1156" font-size="14" font-weight="700" fill="#0f172a">Weight (estimates, 2026-11-12)</text>
 <text x="440" y="1156" font-size="12" font-weight="700" fill="#475569">4 HDDs</text><text x="560" y="1156" font-size="12" font-weight="700" fill="#475569">12 HDDs</text>
 <text x="50" y="1178" font-size="12" font-weight="400" fill="#0f172a">UPS 2U (U1–U2)</text>
@@ -164,12 +159,9 @@
 <text x="50" y="1286" font-size="12" font-weight="400" fill="#0f172a">Denon AVR-S970H 21 lb + deep shelf (guess 6–10)</text>
 <text x="440" y="1286" font-size="12" font-weight="400" fill="#0f172a">27–31 lb</text>
 <text x="560" y="1286" font-size="12" font-weight="400" fill="#0f172a">27–31 lb</text>
-<text x="50" y="1304" font-size="12" font-weight="400" fill="#0f172a">Tripp Lite Isobar (guess)</text>
-<text x="440" y="1304" font-size="12" font-weight="400" fill="#0f172a">4–6 lb</text>
-<text x="560" y="1304" font-size="12" font-weight="400" fill="#0f172a">4–6 lb</text>
-<text x="50" y="1322" font-size="12" font-weight="700" fill="#0f172a">Total</text>
-<text x="440" y="1322" font-size="12" font-weight="700" fill="#0f172a">~155–181 lb</text>
-<text x="560" y="1322" font-size="12" font-weight="700" fill="#0f172a">~167–193 lb</text>
+<text x="50" y="1304" font-size="12" font-weight="700" fill="#0f172a">Total</text>
+<text x="440" y="1304" font-size="12" font-weight="700" fill="#0f172a">~151–175 lb</text>
+<text x="560" y="1304" font-size="12" font-weight="700" fill="#0f172a">~163–187 lb</text>
 <text x="690" y="1178" font-size="12" fill="#334155">UPS and receiver low, servers</text>
 <text x="690" y="1194" font-size="12" fill="#334155">mid-rack. Under 40% of the</text>
 <text x="690" y="1210" font-size="12" fill="#334155">500 lb rating. Lock the casters;</text>
