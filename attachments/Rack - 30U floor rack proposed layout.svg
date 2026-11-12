@@ -127,12 +127,12 @@
 <text x="570" y="800" font-size="12" fill="#334155">and shelf + receiver fit 4U; upright needs 6U. 288 mm</text>
 <text x="570" y="816" font-size="12" fill="#334155">body: too deep for a CLV, so use a deeper shelf.</text>
 <text x="570" y="832" font-size="12" fill="#334155">Vents across the whole lid: keep U7 open (2U if you</text>
-<text x="570" y="848" font-size="12" fill="#334155">can). 460 W rated: wall power, not the UPS-fed PDU.</text>
+<text x="570" y="848" font-size="12" fill="#334155">can). 460 W rated: a UPS surge-only outlet, not the PDU.</text>
 <text x="570" y="864" font-size="12" fill="#334155">Wire HEOS by Ethernet; Wi-Fi is weak in a steel rack.</text>
 <line x1="544" y1="1040" x2="562" y2="886" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1040" r="3" fill="#d97706"/>
 <text x="570" y="886" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
-<text x="570" y="904" font-size="12" fill="#334155">Densest item (14 kg in 2U). Two battery outlets</text>
-<text x="570" y="920" font-size="12" fill="#334155">used: Big Boi and the PDU Pro.</text>
+<text x="570" y="904" font-size="12" fill="#334155">Densest item (14 kg in 2U). Battery outlets: Big Boi</text>
+<text x="570" y="920" font-size="12" fill="#334155">and the PDU Pro. Surge-only outlet: the receiver.</text>
 <rect x="30" y="1130" width="920" height="210" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
 <text x="50" y="1156" font-size="14" font-weight="700" fill="#0f172a">Weight (estimates, 2026-11-12)</text>
 <text x="440" y="1156" font-size="12" font-weight="700" fill="#475569">4 HDDs</text><text x="560" y="1156" font-size="12" font-weight="700" fill="#475569">12 HDDs</text>
