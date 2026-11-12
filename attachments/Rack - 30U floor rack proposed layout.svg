@@ -2,8 +2,8 @@
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
 <rect width="980" height="1380" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
-<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v10</text>
-<text x="30" y="80" font-size="12" fill="#475569">v10: Isobar kept above the UPS on the wall circuit, receiver moved onto it · dashed = not bought or confirmed</text>
+<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v11</text>
+<text x="30" y="80" font-size="12" fill="#475569">v11: Big Boi up to U14–U19, brush plate under it, second server and spare shelf below · dashed = not bought or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
@@ -59,17 +59,19 @@
 <rect x="133" y="412" width="374" height="56" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="437" font-size="13" font-weight="700" fill="#14532d" text-anchor="middle">Power Distribution Pro  ·  2U  ·  8.2 lb</text>
 <text x="320" y="453" font-size="11" fill="#14532d" text-anchor="middle">16 outlets, front-facing · fed from a UPS battery outlet</text>
-<rect x="133" y="472" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="497" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
-<text x="320" y="513" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
-<rect x="133" y="532" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="557" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U17) + 1U headroom</text>
-<text x="320" y="573" font-size="11" fill="#334155" text-anchor="middle">for later · sits directly on Big Boi</text>
-<rect x="133" y="592" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="677" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
-<text x="320" y="693" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
-<rect x="133" y="772" width="374" height="56" rx="4" fill="url(#hatch)" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="805" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open</text>
+<rect x="133" y="472" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="490" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open (airflow, 12S4 height margin)</text>
+<rect x="133" y="502" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="587" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
+<text x="320" y="603" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
+<rect x="133" y="682" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="700" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  cords from the gear below</text>
+<rect x="133" y="712" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="737" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
+<text x="320" y="753" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
+<rect x="133" y="772" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="797" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U9) + 1U headroom</text>
+<text x="320" y="813" font-size="11" fill="#334155" text-anchor="middle">for later, e.g. basement AV gear</text>
 <rect x="133" y="832" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="850" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open (receiver heat)</text>
 <rect x="133" y="862" width="374" height="116" rx="4" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -84,7 +86,7 @@
 <text x="570" y="100" font-size="13" font-weight="700" fill="#a16207">USB radios</text>
 <text x="570" y="118" font-size="12" fill="#334155">ZWA-2 is too big for a shelf: top of the rack or</text>
 <text x="570" y="134" font-size="12" fill="#334155">wall-mounted beside it. Both sticks hang off Big Boi</text>
-<text x="570" y="150" font-size="12" fill="#334155">(U11–U16) on USB 2.0 extensions: Zigbee up to the hub</text>
+<text x="570" y="150" font-size="12" fill="#334155">(U14–U19) on USB 2.0 extensions: Zigbee up to the hub</text>
 <text x="570" y="166" font-size="12" fill="#334155">shelf, ZWA-2 up to the top. Re-map both in the HA VM.</text>
 <line x1="544" y1="215" x2="562" y2="196" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
 <text x="570" y="196" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch</text>
@@ -105,57 +107,57 @@
 <text x="570" y="422" font-size="12" fill="#334155">run down the rear, come forward through the brush</text>
 <text x="570" y="438" font-size="12" fill="#334155">and drop into the outlets. Fed from the UPS; powers</text>
 <text x="570" y="454" font-size="12" fill="#334155">everything but Big Boi and the receiver.</text>
-<line x1="544" y1="500" x2="562" y2="474" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="500" r="3" fill="#7c3aed"/>
-<text x="570" y="474" font-size="13" font-weight="700" fill="#7c3aed">Second server in the old 2U case</text>
-<text x="570" y="492" font-size="12" fill="#334155">For other uses; light, so mid-rack is fine. On the</text>
-<text x="570" y="508" font-size="12" fill="#334155">PDU it&#x27;s on battery but outside the NUT shutdown:</text>
-<text x="570" y="524" font-size="12" fill="#334155">it hard-stops when the UPS runs flat unless it gets</text>
-<text x="570" y="540" font-size="12" fill="#334155">its own NUT client (UniFi caps NUT at 3 clients).</text>
-<line x1="544" y1="560" x2="562" y2="576" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="560" r="3" fill="#475569"/>
-<text x="570" y="576" font-size="13" font-weight="700" fill="#475569">Spare shelf on top of Big Boi</text>
-<text x="570" y="594" font-size="12" fill="#334155">Its 1U of headroom replaces the airflow gap. Only if</text>
-<text x="570" y="610" font-size="12" fill="#334155">the 12S4 measures ≤ 266 mm without feet and its lid</text>
-<text x="570" y="626" font-size="12" fill="#334155">has no vents the shelf tray would cover.</text>
-<line x1="544" y1="680" x2="562" y2="646" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="680" r="3" fill="#7c3aed"/>
-<text x="570" y="646" font-size="13" font-weight="700" fill="#7c3aed">Big Boi (U11–U16)</text>
-<text x="570" y="664" font-size="12" fill="#334155">Drive bays roughly 21–32&quot; off the floor, depending</text>
-<text x="570" y="680" font-size="12" fill="#334155">on the base and casters. Support it from below</text>
-<text x="570" y="696" font-size="12" fill="#334155">(L-rails or a rated 1U shelf); ears alone aren&#x27;t</text>
-<text x="570" y="712" font-size="12" fill="#334155">meant to carry ~50 lb.</text>
-<line x1="544" y1="920" x2="562" y2="740" stroke="#e11d48" stroke-width="1.2"/><circle cx="544" cy="920" r="3" fill="#e11d48"/>
-<text x="570" y="740" font-size="13" font-weight="700" fill="#e11d48">Denon AVR-S970H (U4–U7)</text>
-<text x="570" y="758" font-size="12" fill="#334155">Manual: 434 W × 341 D mm, 167 mm tall with feet,</text>
-<text x="570" y="774" font-size="12" fill="#334155">237 mm (9.3&quot;) with antennas upright. Fold them back</text>
-<text x="570" y="790" font-size="12" fill="#334155">and shelf + receiver fit 4U; upright needs 6U. 288 mm</text>
-<text x="570" y="806" font-size="12" fill="#334155">body: too deep for a CLV, so use a deeper shelf.</text>
-<text x="570" y="822" font-size="12" fill="#334155">Vents across the whole lid: keep U8 open (2U if you</text>
-<text x="570" y="838" font-size="12" fill="#334155">can). 460 W rated: on the Isobar, off the UPS.</text>
-<text x="570" y="854" font-size="12" fill="#334155">Wire HEOS by Ethernet; Wi-Fi is weak in a steel rack.</text>
-<line x1="544" y1="1025" x2="562" y2="876" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1025" r="3" fill="#d97706"/>
-<text x="570" y="876" font-size="13" font-weight="700" fill="#d97706">Isobar kept (U3)</text>
-<text x="570" y="894" font-size="12" fill="#334155">On the wall&#x27;s second receptacle: surge-protected</text>
-<text x="570" y="910" font-size="12" fill="#334155">power that skips the UPS. Feeds the receiver, and is</text>
-<text x="570" y="926" font-size="12" fill="#334155">the manual bypass for the PDU and Big Boi if the</text>
-<text x="570" y="942" font-size="12" fill="#334155">UPS fails or needs a battery swap.</text>
-<line x1="544" y1="1055" x2="562" y2="962" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1055" r="3" fill="#d97706"/>
-<text x="570" y="962" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
-<text x="570" y="980" font-size="12" fill="#334155">Densest item (14 kg in 2U). Battery outlets: Big Boi</text>
-<text x="570" y="996" font-size="12" fill="#334155">and the PDU Pro. Surge-only outlets free for now.</text>
+<line x1="544" y1="590" x2="562" y2="474" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="590" r="3" fill="#7c3aed"/>
+<text x="570" y="474" font-size="13" font-weight="700" fill="#7c3aed">Big Boi (U14–U19)</text>
+<text x="570" y="492" font-size="12" fill="#334155">Drive bays roughly 27–37&quot; off the floor, depending</text>
+<text x="570" y="508" font-size="12" fill="#334155">on the base and casters. U20 open above it covers</text>
+<text x="570" y="524" font-size="12" fill="#334155">airflow and the 12S4 height question (262 vs 272 mm).</text>
+<text x="570" y="540" font-size="12" fill="#334155">Support it from below; ears alone aren&#x27;t meant to</text>
+<text x="570" y="556" font-size="12" fill="#334155">carry ~50 lb. DAC to the Aggregation: ~7U, 1 m.</text>
+<line x1="544" y1="725" x2="562" y2="576" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="725" r="3" fill="#7c3aed"/>
+<text x="570" y="576" font-size="13" font-weight="700" fill="#7c3aed">Brush plate, then the second server</text>
+<text x="570" y="594" font-size="12" fill="#334155">Second brush plate under Big Boi for the lower gear&#x27;s</text>
+<text x="570" y="610" font-size="12" fill="#334155">cords. Second server on the PDU is on battery but</text>
+<text x="570" y="626" font-size="12" fill="#334155">outside the NUT shutdown unless it gets its own NUT</text>
+<text x="570" y="642" font-size="12" fill="#334155">client (UniFi caps NUT at 3 clients).</text>
+<line x1="544" y1="800" x2="562" y2="662" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="800" r="3" fill="#475569"/>
+<text x="570" y="662" font-size="13" font-weight="700" fill="#475569">Spare shelf by the receiver</text>
+<text x="570" y="680" font-size="12" fill="#334155">CLV at U9 with 1U above. 250 mm deep, 44 lb max;</text>
+<text x="570" y="696" font-size="12" fill="#334155">handy for basement AV boxes next to the receiver.</text>
+<line x1="544" y1="920" x2="562" y2="716" stroke="#e11d48" stroke-width="1.2"/><circle cx="544" cy="920" r="3" fill="#e11d48"/>
+<text x="570" y="716" font-size="13" font-weight="700" fill="#e11d48">Denon AVR-S970H (U4–U7)</text>
+<text x="570" y="734" font-size="12" fill="#334155">Manual: 434 W × 341 D mm, 167 mm tall with feet,</text>
+<text x="570" y="750" font-size="12" fill="#334155">237 mm (9.3&quot;) with antennas upright. Fold them back</text>
+<text x="570" y="766" font-size="12" fill="#334155">and shelf + receiver fit 4U; upright needs 6U. 288 mm</text>
+<text x="570" y="782" font-size="12" fill="#334155">body: too deep for a CLV, so use a deeper shelf.</text>
+<text x="570" y="798" font-size="12" fill="#334155">Vents across the whole lid: keep U8 open (2U if you</text>
+<text x="570" y="814" font-size="12" fill="#334155">can). 460 W rated: on the Isobar, off the UPS.</text>
+<text x="570" y="830" font-size="12" fill="#334155">Wire HEOS by Ethernet; Wi-Fi is weak in a steel rack.</text>
+<line x1="544" y1="1025" x2="562" y2="850" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1025" r="3" fill="#d97706"/>
+<text x="570" y="850" font-size="13" font-weight="700" fill="#d97706">Isobar kept (U3)</text>
+<text x="570" y="868" font-size="12" fill="#334155">On the wall&#x27;s second receptacle: surge-protected</text>
+<text x="570" y="884" font-size="12" fill="#334155">power that skips the UPS. Feeds the receiver, and is</text>
+<text x="570" y="900" font-size="12" fill="#334155">the manual bypass for the PDU and Big Boi if the</text>
+<text x="570" y="916" font-size="12" fill="#334155">UPS fails or needs a battery swap.</text>
+<line x1="544" y1="1055" x2="562" y2="936" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1055" r="3" fill="#d97706"/>
+<text x="570" y="936" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
+<text x="570" y="954" font-size="12" fill="#334155">Densest item (14 kg in 2U). Battery outlets: Big Boi</text>
+<text x="570" y="970" font-size="12" fill="#334155">and the PDU Pro. Surge-only outlets free for now.</text>
 <rect x="30" y="1130" width="920" height="228" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
 <text x="50" y="1156" font-size="14" font-weight="700" fill="#0f172a">Weight (estimates, 2026-11-12)</text>
 <text x="440" y="1156" font-size="12" font-weight="700" fill="#475569">4 HDDs</text><text x="560" y="1156" font-size="12" font-weight="700" fill="#475569">12 HDDs</text>
 <text x="50" y="1178" font-size="12" font-weight="400" fill="#0f172a">UPS 2U (U1–U2)</text>
 <text x="440" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
 <text x="560" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
-<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U11–U16)</text>
+<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U14–U19)</text>
 <text x="440" y="1196" font-size="12" font-weight="400" fill="#0f172a">36–38 lb</text>
 <text x="560" y="1196" font-size="12" font-weight="400" fill="#0f172a">48–50 lb</text>
 <text x="50" y="1214" font-size="12" font-weight="400" fill="#0f172a">Pro Max 16 + UDM Pro + Aggregation (U26–U29)</text>
 <text x="440" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
 <text x="560" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
-<text x="50" y="1232" font-size="12" font-weight="400" fill="#0f172a">PDU Pro 8.2 · 2 CLV shelves 11.0 · 1 brush plate 1.0</text>
-<text x="440" y="1232" font-size="12" font-weight="400" fill="#0f172a">~20 lb</text>
-<text x="560" y="1232" font-size="12" font-weight="400" fill="#0f172a">~20 lb</text>
+<text x="50" y="1232" font-size="12" font-weight="400" fill="#0f172a">PDU Pro 8.2 · 2 CLV shelves 11.0 · 2 brush plates 1.9</text>
+<text x="440" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
+<text x="560" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
 <text x="50" y="1250" font-size="12" font-weight="400" fill="#0f172a">Second server, old 2U case (guess)</text>
 <text x="440" y="1250" font-size="12" font-weight="400" fill="#0f172a">10–20 lb</text>
 <text x="560" y="1250" font-size="12" font-weight="400" fill="#0f172a">10–20 lb</text>
@@ -169,8 +171,8 @@
 <text x="440" y="1304" font-size="12" font-weight="400" fill="#0f172a">4–6 lb</text>
 <text x="560" y="1304" font-size="12" font-weight="400" fill="#0f172a">4–6 lb</text>
 <text x="50" y="1322" font-size="12" font-weight="700" fill="#0f172a">Total</text>
-<text x="440" y="1322" font-size="12" font-weight="700" fill="#0f172a">~154–180 lb</text>
-<text x="560" y="1322" font-size="12" font-weight="700" fill="#0f172a">~166–192 lb</text>
+<text x="440" y="1322" font-size="12" font-weight="700" fill="#0f172a">~155–181 lb</text>
+<text x="560" y="1322" font-size="12" font-weight="700" fill="#0f172a">~167–193 lb</text>
 <text x="690" y="1178" font-size="12" fill="#334155">UPS and receiver low, servers</text>
 <text x="690" y="1194" font-size="12" fill="#334155">mid-rack. Under 40% of the</text>
 <text x="690" y="1210" font-size="12" fill="#334155">500 lb rating. Lock the casters;</text>
