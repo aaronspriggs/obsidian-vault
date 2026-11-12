@@ -73,7 +73,7 @@ Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404)
 - 2026-11-09: Ting goes on SFP+ 1 with a UACC-CM-RJ45-MG, not Port 9: Port 9 is GbE and taken by CenturyLink.
 - 2026-11-10: no CGNAT expected (Ting installer to Aaron); the step 7 check stays as a quick confirmation.
 - 2026-11-09: failover, not load balancing, while both lines run. Ting becomes primary only after the CGNAT gate and a multi-gig speed test.
-- 2026-11-11 (Aaron): in the planned 30U floor rack both ONTs (CenturyLink and Ting) sit on a rack shelf, powered from a PDU Pro on the UPS, so internet stays up on battery. See the v3 layout in [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>). Until that rack exists, step 2 still applies.
+- 2026-11-12 (Aaron, corrects 2026-11-11): in the planned 30U floor rack the Ting ONT sits on the U24 hub shelf, powered from a PDU Pro on the UPS, so the Ting line stays up on battery. The CenturyLink ONT is outdoors in a box and stays there, so CenturyLink drops on a power cut. See the layout in [Rebuild Big Boi into a new case with an HDD pool for bulk media](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>). Until that rack exists, step 2 still applies.
 - 2026-11-09: Claude's UniFi account is read-only, so Aaron makes every UDM change in the UI and Claude verifies each one with `unifi-api`.
 
 ## Open questions

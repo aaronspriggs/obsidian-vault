@@ -3,7 +3,7 @@
 <rect width="980" height="1360" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
 <text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v8.1</text>
-<text x="30" y="80" font-size="12" fill="#475569">v8.1: one brush plate over the PDU, both ONTs on the hub shelf, 2U second server · dashed = not bought or confirmed</text>
+<text x="30" y="80" font-size="12" fill="#475569">v8.1: one brush plate over the PDU, Ting ONT on the hub shelf, 2U second server · dashed = not bought or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
@@ -53,7 +53,7 @@
 <rect x="133" y="322" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
 <text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Flex 2.5G 8 PoE in its 1U keystone mount</text>
 <rect x="133" y="352" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Hub shelf: Hue · Lutron · HDHomeRun · 2 ONTs</text>
+<text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Hub shelf: Hue · Lutron · HDHomeRun · Ting ONT</text>
 <rect x="133" y="382" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="400" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  cords from above pass through</text>
 <rect x="133" y="412" width="374" height="56" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -95,9 +95,10 @@
 <text x="570" y="278" font-size="12" fill="#334155">(adjacent), the Pro Max (3U up) and Big Boi (1.5 m).</text>
 <line x1="544" y1="365" x2="562" y2="300" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="365" r="3" fill="#475569"/>
 <text x="570" y="300" font-size="13" font-weight="700" fill="#475569">Hub shelf, 1U only</text>
-<text x="570" y="318" font-size="12" fill="#334155">Hue, Lutron, HDHomeRun, both ONTs (CenturyLink and</text>
-<text x="570" y="334" font-size="12" fill="#334155">Ting) and the Zigbee dongle, right under the Flex</text>
-<text x="570" y="350" font-size="12" fill="#334155">mount. The tallest box must fit in about 40 mm (1.6&quot;).</text>
+<text x="570" y="318" font-size="12" fill="#334155">Hue, Lutron, HDHomeRun, Ting ONT and the Zigbee</text>
+<text x="570" y="334" font-size="12" fill="#334155">dongle, right under the Flex mount. The tallest box</text>
+<text x="570" y="350" font-size="12" fill="#334155">must fit in about 40 mm (1.6&quot;). The CenturyLink ONT</text>
+<text x="570" y="366" font-size="12" fill="#334155">stays outside in its box.</text>
 <line x1="544" y1="440" x2="562" y2="388" stroke="#16a34a" stroke-width="1.2"/><circle cx="544" cy="440" r="3" fill="#16a34a"/>
 <text x="570" y="388" font-size="13" font-weight="700" fill="#16a34a">One brush plate, over the PDU Pro</text>
 <text x="570" y="406" font-size="12" fill="#334155">The PDU outlets face front: cords from the gear above</text>
