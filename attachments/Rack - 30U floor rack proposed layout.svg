@@ -2,8 +2,8 @@
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
 <rect width="980" height="1360" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
-<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v13</text>
-<text x="30" y="80" font-size="12" fill="#475569">v13: Isobar out, receiver back to U3, shelf buffer under Big Boi, server lower · dashed = not bought or confirmed</text>
+<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v14</text>
+<text x="30" y="80" font-size="12" fill="#475569">v14: server at U8–U9, 2U open above it, 1U above the receiver · dashed = not bought or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
@@ -67,13 +67,13 @@
 <rect x="133" y="682" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="707" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U12) + 1U headroom</text>
 <text x="320" y="723" font-size="11" fill="#334155" text-anchor="middle">buffer between Big Boi and the server</text>
-<rect x="133" y="742" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="760" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open</text>
-<rect x="133" y="772" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="797" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
-<text x="320" y="813" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
-<rect x="133" y="832" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="865" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open (receiver heat)</text>
+<rect x="133" y="742" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="775" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open</text>
+<rect x="133" y="802" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="827" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Second server · old 2U Mini-ITX case</text>
+<text x="320" y="843" font-size="11" fill="#3b0764" text-anchor="middle">225 mm deep · for other uses · hardware TBD</text>
+<rect x="133" y="862" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="880" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open (receiver heat)</text>
 <rect x="133" y="892" width="374" height="116" rx="4" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="947" font-size="13" font-weight="700" fill="#881337" text-anchor="middle">Denon AVR-S970H on a deep shelf (U3)</text>
 <text x="320" y="963" font-size="11" fill="#881337" text-anchor="middle">167 mm with feet, antennas folded back · 21 lb</text>
@@ -116,9 +116,9 @@
 <text x="570" y="576" font-size="13" font-weight="700" fill="#475569">Shelf under Big Boi (U12–U13)</text>
 <text x="570" y="594" font-size="12" fill="#334155">CLV at U12 with 1U above: a buffer between Big Boi</text>
 <text x="570" y="610" font-size="12" fill="#334155">and the server. 250 mm deep, 44 lb max.</text>
-<line x1="544" y1="800" x2="562" y2="630" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="800" r="3" fill="#7c3aed"/>
-<text x="570" y="630" font-size="13" font-weight="700" fill="#7c3aed">Second server (U9–U10)</text>
-<text x="570" y="648" font-size="12" fill="#334155">Shelf, headroom and U11 sit between it and Big Boi.</text>
+<line x1="544" y1="815" x2="562" y2="630" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="815" r="3" fill="#7c3aed"/>
+<text x="570" y="630" font-size="13" font-weight="700" fill="#7c3aed">Second server (U8–U9)</text>
+<text x="570" y="648" font-size="12" fill="#334155">Shelf, headroom and U10–U11 sit between it and Big Boi.</text>
 <text x="570" y="664" font-size="12" fill="#334155">On the PDU it is on battery but outside the NUT</text>
 <text x="570" y="680" font-size="12" fill="#334155">shutdown unless it gets its own NUT client</text>
 <text x="570" y="696" font-size="12" fill="#334155">(UniFi caps NUT at 3 clients).</text>
@@ -128,7 +128,7 @@
 <text x="570" y="750" font-size="12" fill="#334155">237 mm (9.3&quot;) with antennas upright. Fold them back</text>
 <text x="570" y="766" font-size="12" fill="#334155">and shelf + receiver fit 4U; upright needs 6U. 288 mm</text>
 <text x="570" y="782" font-size="12" fill="#334155">body: too deep for a CLV, so use a deeper shelf.</text>
-<text x="570" y="798" font-size="12" fill="#334155">Vents across the whole lid: U7–U8 stay open above</text>
+<text x="570" y="798" font-size="12" fill="#334155">Vents across the whole lid: U7 stays open above</text>
 <text x="570" y="814" font-size="12" fill="#334155">it. 460 W rated: a UPS surge-only outlet, not the PDU.</text>
 <text x="570" y="830" font-size="12" fill="#334155">Wire HEOS by Ethernet; Wi-Fi is weak in a steel rack.</text>
 <line x1="544" y1="1055" x2="562" y2="860" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1055" r="3" fill="#d97706"/>
