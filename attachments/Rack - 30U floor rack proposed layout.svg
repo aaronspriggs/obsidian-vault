@@ -65,8 +65,8 @@
 <text x="320" y="587" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
 <text x="320" y="603" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
 <rect x="133" y="682" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="707" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U12) + 1U headroom</text>
-<text x="320" y="723" font-size="11" fill="#334155" text-anchor="middle">buffer between Big Boi and the server</text>
+<text x="320" y="707" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">CLV shelf (U12) + 1U headroom</text>
+<text x="320" y="723" font-size="11" fill="#334155" text-anchor="middle">Sonos Amp (patio speakers) · buffer under Big Boi</text>
 <rect x="133" y="742" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="775" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">2U open</text>
 <rect x="133" y="802" width="374" height="56" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
@@ -114,8 +114,8 @@
 <text x="570" y="556" font-size="12" fill="#334155">Support it from below. DAC to the Aggregation: 1 m.</text>
 <line x1="544" y1="710" x2="562" y2="576" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="710" r="3" fill="#475569"/>
 <text x="570" y="576" font-size="13" font-weight="700" fill="#475569">Shelf under Big Boi (U12–U13)</text>
-<text x="570" y="594" font-size="12" fill="#334155">CLV at U12 with 1U above: a buffer between Big Boi</text>
-<text x="570" y="610" font-size="12" fill="#334155">and the server. 250 mm deep, 44 lb max.</text>
+<text x="570" y="594" font-size="12" fill="#334155">Sonos Amp (64 mm tall) fits the ~86 mm under Big Boi.</text>
+<text x="570" y="610" font-size="12" fill="#334155">A Mac Studio (95 mm) does not: drop the shelf to U11.</text>
 <line x1="544" y1="815" x2="562" y2="630" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="815" r="3" fill="#7c3aed"/>
 <text x="570" y="630" font-size="13" font-weight="700" fill="#7c3aed">Second server (U8–U9)</text>
 <text x="570" y="648" font-size="12" fill="#334155">Shelf, headroom and U10–U11 sit between it and Big Boi.</text>
