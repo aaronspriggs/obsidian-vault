@@ -74,6 +74,7 @@ Ordered through Alibaba.com (checkout on biz.alibaba.com, Trade Assurance). Same
 - **2026-10-25:** SSDs stay on board SATA, HDDs on the HBA.
 - **2026-10-25:** keep the SF750, power the backplanes with 2 Molex cables (seller's method 2), not one.
 - **2026-10-26 (Aaron):** JMCD 12S4 ordered, base bundle; fans from Aaron's stock.
+- **2026-11-12 (Aaron):** ordered the remaining rack accessories for the v15 layout (itemised list not recorded), except the UniFi PDU Pro. The Tripp Lite Isobar (IBAR12ULTRA, 1U) stands in for the PDU until then. Open: whether the Isobar is fed from a UPS battery outlet (everything on battery, but Tripp Lite's UPS manuals advise against surge suppressors on a UPS output; UniFi's stance unchecked) or from the wall, with the 4 battery outlets on Big Boi, UDM Pro, Pro Max 16 and the Aggregation (the NUT path once Big Boi's 10 GbE moves to the Aggregation).
 - **2026-11-12 (Aaron):** 30U layout v15 is settled: it accounts for every current and planned piece of hardware (see Reference: constraints carried over). U10 stays open so the second server could later move to a 3U Sliger GPU case at U8–U10; check that case's depth against the rack's 18" equipment depth (the CX3702 is 18") and power a GPU box from a UPS surge-only outlet, not the UPS-fed PDU.
 - **2026-11-02 (Aaron):** plan the 12S4 as 6U, with 1U open or a blank plate above it for airflow. Confirm by measuring the case without feet (≤ 266 mm).
 - **2026-10-28 (Aaron):** used Gigabyte Z390 Designare ordered.
