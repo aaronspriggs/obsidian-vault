@@ -2,8 +2,8 @@
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
 <rect width="980" height="1330" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
-<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · rebuilt Big Boi in the JMCD 12S4 · 2026-11-12 draft v5</text>
-<text x="30" y="80" font-size="12" fill="#475569">v5: patch panels directly above and below the Pro Max 16; 2 brush plates · dashed = not bought, installed or confirmed</text>
+<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · rebuilt Big Boi in the JMCD 12S4 · 2026-11-12 draft v6</text>
+<text x="30" y="80" font-size="12" fill="#475569">v6: Big Boi raised to U10–U15 for hot-swap access, growth zone below it, ONT on shelf 1 · dashed = not bought, installed or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
@@ -87,23 +87,23 @@
 <text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  DACs, power cords to the rear</text>
 <rect x="133" y="382" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="407" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">CLV shelf 1 (U22) + 1U headroom</text>
-<text x="320" y="423" font-size="11" fill="#334155" text-anchor="middle">Hue Bridge · Lutron hub · HDHomeRun · Zigbee dongle</text>
+<text x="320" y="423" font-size="11" fill="#334155" text-anchor="middle">Hue · Lutron · HDHomeRun · ONT · Zigbee dongle</text>
 <rect x="133" y="442" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="467" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">CLV shelf 2 (U20) + 1U headroom</text>
-<text x="320" y="483" font-size="11" fill="#334155" text-anchor="middle">ONTs: CenturyLink + Ting</text>
+<text x="320" y="483" font-size="11" fill="#334155" text-anchor="middle">second ONT (Ting) · spare room</text>
 <rect x="133" y="502" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="520" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  cords down to the PDU</text>
 <rect x="133" y="532" width="374" height="56" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="557" font-size="13" font-weight="700" fill="#14532d" text-anchor="middle">Power Distribution Pro  ·  2U  ·  8.2 lb</text>
 <text x="320" y="573" font-size="11" fill="#14532d" text-anchor="middle">replaces the Tripp Lite Isobar · fed from the UPS</text>
-<rect x="133" y="592" width="374" height="206" rx="4" fill="url(#hatch)" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="692" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">7U open for growth</text>
-<text x="320" y="708" font-size="11" fill="#334155" text-anchor="middle">heavy additions go at the bottom of this zone</text>
-<rect x="133" y="802" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="820" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open or blank plate (airflow above Big Boi)</text>
-<rect x="133" y="832" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="917" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
-<text x="320" y="933" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
+<rect x="133" y="592" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="610" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open or blank plate (airflow above Big Boi)</text>
+<rect x="133" y="622" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="707" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
+<text x="320" y="723" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
+<rect x="133" y="802" width="374" height="206" rx="4" fill="url(#hatch)" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="902" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">7U open for growth</text>
+<text x="320" y="918" font-size="11" fill="#334155" text-anchor="middle">heavy additions fill this zone from the bottom up</text>
 <rect x="133" y="1012" width="374" height="56" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
 <text x="320" y="1037" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">UniFi UPS 2U  ·  30.9 lb</text>
 <text x="320" y="1053" font-size="11" fill="#78350f" text-anchor="middle">on rear support rails · battery outlets: Big Boi + PDU</text>
@@ -111,7 +111,7 @@
 <text x="570" y="100" font-size="13" font-weight="700" fill="#a16207">USB radios</text>
 <text x="570" y="118" font-size="12" fill="#334155">ZWA-2 is too big for a shelf: top of the rack or</text>
 <text x="570" y="134" font-size="12" fill="#334155">wall-mounted beside it. Both sticks hang off Big Boi</text>
-<text x="570" y="150" font-size="12" fill="#334155">(U3–U8) on USB 2.0 extensions: Zigbee up to shelf 1,</text>
+<text x="570" y="150" font-size="12" fill="#334155">(U10–U15) on USB 2.0 extensions: Zigbee up to shelf 1,</text>
 <text x="570" y="166" font-size="12" fill="#334155">ZWA-2 up to the top. Re-map both in the HA VM.</text>
 <line x1="544" y1="215" x2="562" y2="200" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
 <text x="570" y="200" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch</text>
@@ -121,13 +121,13 @@
 <text x="570" y="266" font-size="12" fill="#334155">so its LAN ports (patched to the panel today) also</text>
 <text x="570" y="282" font-size="12" fill="#334155">get 6&quot; runs. No brush plates in this stack.</text>
 <text x="570" y="298" font-size="12" fill="#334155">Aggregation under the UDM: SFP+ DACs to the UDM</text>
-<text x="570" y="314" font-size="12" fill="#334155">(adjacent) and Pro Max (3U up); Big Boi ~18U, 2 m.</text>
+<text x="570" y="314" font-size="12" fill="#334155">(adjacent) and Pro Max (3U up); Big Boi ~11U, 1.5 m.</text>
 <line x1="544" y1="365" x2="562" y2="330" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="365" r="3" fill="#475569"/>
 <text x="570" y="330" font-size="13" font-weight="700" fill="#475569">Brush plate, then the shelves</text>
 <text x="570" y="348" font-size="12" fill="#334155">First brush plate under the Flex mount: DACs and</text>
 <text x="570" y="364" font-size="12" fill="#334155">power cords go to the rear here. Shelf 1: Hue,</text>
-<text x="570" y="380" font-size="12" fill="#334155">Lutron, HDHomeRun, Zigbee dongle. Shelf 2: both</text>
-<text x="570" y="396" font-size="12" fill="#334155">ONTs. CLV: 250 mm deep, 44 lb max, small boxes</text>
+<text x="570" y="380" font-size="12" fill="#334155">Lutron, HDHomeRun, ONT, Zigbee dongle. Shelf 2:</text>
+<text x="570" y="396" font-size="12" fill="#334155">the other ONT. CLV: 250 mm deep, 44 lb max, small boxes</text>
 <text x="570" y="412" font-size="12" fill="#334155">only; each needs ~1U clear above it.</text>
 <line x1="544" y1="560" x2="562" y2="456" stroke="#16a34a" stroke-width="1.2"/><circle cx="544" cy="560" r="3" fill="#16a34a"/>
 <text x="570" y="456" font-size="13" font-weight="700" fill="#16a34a">Second brush plate over the PDU Pro</text>
@@ -137,19 +137,20 @@
 <text x="570" y="522" font-size="12" fill="#334155">the Isobar. Fed from a UPS battery outlet, powers</text>
 <text x="570" y="538" font-size="12" fill="#334155">everything except Big Boi, which stays on the UPS</text>
 <text x="570" y="554" font-size="12" fill="#334155">directly. A 0U vertical mount is listed (unverified).</text>
-<line x1="544" y1="740" x2="562" y2="606" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="740" r="3" fill="#475569"/>
-<text x="570" y="606" font-size="13" font-weight="700" fill="#475569">Growth zone (U10–U16)</text>
-<text x="570" y="624" font-size="12" fill="#334155">7U for a GPU box, second server or JBOD later.</text>
-<text x="570" y="640" font-size="12" fill="#334155">Fill it bottom-up so weight stays low.</text>
-<line x1="544" y1="920" x2="562" y2="794" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="920" r="3" fill="#7c3aed"/>
-<text x="570" y="794" font-size="13" font-weight="700" fill="#7c3aed">Big Boi just above the UPS</text>
-<text x="570" y="812" font-size="12" fill="#334155">Second-heaviest now, heaviest once the bays fill.</text>
-<text x="570" y="828" font-size="12" fill="#334155">Planned as 6U (listing 262 mm; measure, no feet).</text>
-<text x="570" y="844" font-size="12" fill="#334155">Keep U9 open or blanked for airflow above it.</text>
-<text x="570" y="860" font-size="12" fill="#334155">Support it from below (L-rails or a rated 1U shelf,</text>
-<text x="570" y="876" font-size="12" fill="#334155">which shifts it to U4–U9, gap U10, growth U11–U16).</text>
-<text x="570" y="892" font-size="12" fill="#334155">Ears alone aren&#x27;t meant to carry ~50 lb</text>
-<text x="570" y="908" font-size="12" fill="#334155">cantilevered off the front posts.</text>
+<line x1="544" y1="710" x2="562" y2="600" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="710" r="3" fill="#7c3aed"/>
+<text x="570" y="600" font-size="13" font-weight="700" fill="#7c3aed">Big Boi at waist height</text>
+<text x="570" y="618" font-size="12" fill="#334155">Drive bays roughly 20–31&quot; off the floor (depends on</text>
+<text x="570" y="634" font-size="12" fill="#334155">the base and casters): hot-swap without crouching.</text>
+<text x="570" y="650" font-size="12" fill="#334155">Drives pull out the front, so swaps don&#x27;t extend the</text>
+<text x="570" y="666" font-size="12" fill="#334155">chassis. Planned as 6U (listing 262 mm; measure, no</text>
+<text x="570" y="682" font-size="12" fill="#334155">feet). U16 open for airflow under the PDU. Support it</text>
+<text x="570" y="698" font-size="12" fill="#334155">from below (L-rails or a rated 1U shelf); ears alone</text>
+<text x="570" y="714" font-size="12" fill="#334155">aren&#x27;t meant to carry ~50 lb.</text>
+<line x1="544" y1="895" x2="562" y2="812" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="895" r="3" fill="#475569"/>
+<text x="570" y="812" font-size="13" font-weight="700" fill="#475569">Growth zone (U3–U9)</text>
+<text x="570" y="830" font-size="12" fill="#334155">7U under Big Boi for a JBOD, GPU box or second</text>
+<text x="570" y="846" font-size="12" fill="#334155">server. Heavy gear fills it bottom-up, keeping</text>
+<text x="570" y="862" font-size="12" fill="#334155">weight low.</text>
 <line x1="544" y1="1040" x2="562" y2="949" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1040" r="3" fill="#d97706"/>
 <text x="570" y="949" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
 <text x="570" y="967" font-size="12" fill="#334155">Densest item (14 kg in 2U). Lowest centre of gravity,</text>
@@ -163,7 +164,7 @@
 <text x="50" y="1178" font-size="12" font-weight="400" fill="#0f172a">UPS 2U (U1–U2)</text>
 <text x="420" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
 <text x="540" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
-<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U3–U8)</text>
+<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U10–U15)</text>
 <text x="420" y="1196" font-size="12" font-weight="400" fill="#0f172a">36–38 lb</text>
 <text x="540" y="1196" font-size="12" font-weight="400" fill="#0f172a">48–50 lb</text>
 <text x="50" y="1214" font-size="12" font-weight="400" fill="#0f172a">Pro Max 16 + UDM Pro + Aggregation (U26–U29)</text>
@@ -178,10 +179,10 @@
 <text x="50" y="1268" font-size="12" font-weight="700" fill="#0f172a">Total</text>
 <text x="420" y="1268" font-size="12" font-weight="700" fill="#0f172a">~114–123 lb</text>
 <text x="540" y="1268" font-size="12" font-weight="700" fill="#0f172a">~126–135 lb</text>
-<text x="680" y="1178" font-size="12" fill="#334155">About 55–60% of the weight sits in</text>
-<text x="680" y="1194" font-size="12" fill="#334155">the bottom 8U. Rated 500 lb, so</text>
-<text x="680" y="1210" font-size="12" fill="#334155">about a quarter used. Lock the</text>
-<text x="680" y="1226" font-size="12" fill="#334155">casters once it&#x27;s in place.</text>
-<text x="680" y="1242" font-size="12" fill="#334155">Agg, PDU, shelf, brush weights from</text>
-<text x="680" y="1258" font-size="12" fill="#334155">UI specs; patch panels guessed.</text>
+<text x="680" y="1178" font-size="12" fill="#334155">UPS stays lowest. Big Boi mid-rack</text>
+<text x="680" y="1194" font-size="12" fill="#334155">raises the centre of gravity a little;</text>
+<text x="680" y="1210" font-size="12" fill="#334155">fine on a 500 lb frame. Lock the</text>
+<text x="680" y="1226" font-size="12" fill="#334155">casters; pull the drives before</text>
+<text x="680" y="1242" font-size="12" fill="#334155">rolling it any distance. Weights</text>
+<text x="680" y="1258" font-size="12" fill="#334155">from UI specs; panels guessed.</text>
 </svg>
