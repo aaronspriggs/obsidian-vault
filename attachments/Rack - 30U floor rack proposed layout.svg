@@ -1,74 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1330" width="980" height="1330" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1350" width="980" height="1350" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
-<rect width="980" height="1330" fill="#ffffff"/>
-<text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
-<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · rebuilt Big Boi in the JMCD 12S4 · 2026-11-12 draft v6</text>
-<text x="30" y="80" font-size="12" fill="#475569">v6: Big Boi raised to U10–U15 for hot-swap access, growth zone below it, ONT on shelf 1 · dashed = not bought, installed or confirmed</text>
+<rect width="980" height="1350" fill="#ffffff"/>
+<text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — v7 option A: Big Boi in the JMCD 12S4</text>
+<text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v7</text>
+<text x="30" y="80" font-size="12" fill="#475569">v7: Big Boi up 2U, 1U hub shelf, spare shelf under Big Boi, future Denon AVR shelf · dashed = not bought, installed or confirmed</text>
 <rect x="130" y="92" width="380" height="58" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-dasharray="6 4"/>
 <text x="320" y="114" font-size="13" font-weight="700" fill="#713f12" text-anchor="middle">On top of the rack, or wall-mounted beside it</text>
 <text x="320" y="134" font-size="12" fill="#713f12" text-anchor="middle">ZWA-2 Z-Wave stick on a USB extension from Big Boi</text>
-<rect x="96" y="160" width="448" height="920" rx="6" fill="#1e293b"/>
-<rect x="130" y="170" width="380" height="900" fill="#f8fafc"/>
-<text x="120" y="1059" font-size="11" fill="#cbd5e1" text-anchor="end">1</text>
-<line x1="130" y1="1040" x2="510" y2="1040" stroke="#e2e8f0"/>
-<text x="120" y="1029" font-size="11" fill="#cbd5e1" text-anchor="end">2</text>
-<line x1="130" y1="1010" x2="510" y2="1010" stroke="#e2e8f0"/>
-<text x="120" y="999" font-size="11" fill="#cbd5e1" text-anchor="end">3</text>
-<line x1="130" y1="980" x2="510" y2="980" stroke="#e2e8f0"/>
-<text x="120" y="969" font-size="11" fill="#cbd5e1" text-anchor="end">4</text>
-<line x1="130" y1="950" x2="510" y2="950" stroke="#e2e8f0"/>
-<text x="120" y="939" font-size="11" fill="#cbd5e1" text-anchor="end">5</text>
-<line x1="130" y1="920" x2="510" y2="920" stroke="#e2e8f0"/>
-<text x="120" y="909" font-size="11" fill="#cbd5e1" text-anchor="end">6</text>
-<line x1="130" y1="890" x2="510" y2="890" stroke="#e2e8f0"/>
-<text x="120" y="879" font-size="11" fill="#cbd5e1" text-anchor="end">7</text>
-<line x1="130" y1="860" x2="510" y2="860" stroke="#e2e8f0"/>
-<text x="120" y="849" font-size="11" fill="#cbd5e1" text-anchor="end">8</text>
-<line x1="130" y1="830" x2="510" y2="830" stroke="#e2e8f0"/>
-<text x="120" y="819" font-size="11" fill="#cbd5e1" text-anchor="end">9</text>
-<line x1="130" y1="800" x2="510" y2="800" stroke="#e2e8f0"/>
-<text x="120" y="789" font-size="11" fill="#cbd5e1" text-anchor="end">10</text>
-<line x1="130" y1="770" x2="510" y2="770" stroke="#e2e8f0"/>
-<text x="120" y="759" font-size="11" fill="#cbd5e1" text-anchor="end">11</text>
-<line x1="130" y1="740" x2="510" y2="740" stroke="#e2e8f0"/>
-<text x="120" y="729" font-size="11" fill="#cbd5e1" text-anchor="end">12</text>
-<line x1="130" y1="710" x2="510" y2="710" stroke="#e2e8f0"/>
-<text x="120" y="699" font-size="11" fill="#cbd5e1" text-anchor="end">13</text>
-<line x1="130" y1="680" x2="510" y2="680" stroke="#e2e8f0"/>
-<text x="120" y="669" font-size="11" fill="#cbd5e1" text-anchor="end">14</text>
-<line x1="130" y1="650" x2="510" y2="650" stroke="#e2e8f0"/>
-<text x="120" y="639" font-size="11" fill="#cbd5e1" text-anchor="end">15</text>
-<line x1="130" y1="620" x2="510" y2="620" stroke="#e2e8f0"/>
-<text x="120" y="609" font-size="11" fill="#cbd5e1" text-anchor="end">16</text>
-<line x1="130" y1="590" x2="510" y2="590" stroke="#e2e8f0"/>
-<text x="120" y="579" font-size="11" fill="#cbd5e1" text-anchor="end">17</text>
-<line x1="130" y1="560" x2="510" y2="560" stroke="#e2e8f0"/>
-<text x="120" y="549" font-size="11" fill="#cbd5e1" text-anchor="end">18</text>
-<line x1="130" y1="530" x2="510" y2="530" stroke="#e2e8f0"/>
-<text x="120" y="519" font-size="11" fill="#cbd5e1" text-anchor="end">19</text>
-<line x1="130" y1="500" x2="510" y2="500" stroke="#e2e8f0"/>
-<text x="120" y="489" font-size="11" fill="#cbd5e1" text-anchor="end">20</text>
-<line x1="130" y1="470" x2="510" y2="470" stroke="#e2e8f0"/>
-<text x="120" y="459" font-size="11" fill="#cbd5e1" text-anchor="end">21</text>
-<line x1="130" y1="440" x2="510" y2="440" stroke="#e2e8f0"/>
-<text x="120" y="429" font-size="11" fill="#cbd5e1" text-anchor="end">22</text>
-<line x1="130" y1="410" x2="510" y2="410" stroke="#e2e8f0"/>
-<text x="120" y="399" font-size="11" fill="#cbd5e1" text-anchor="end">23</text>
-<line x1="130" y1="380" x2="510" y2="380" stroke="#e2e8f0"/>
-<text x="120" y="369" font-size="11" fill="#cbd5e1" text-anchor="end">24</text>
-<line x1="130" y1="350" x2="510" y2="350" stroke="#e2e8f0"/>
-<text x="120" y="339" font-size="11" fill="#cbd5e1" text-anchor="end">25</text>
-<line x1="130" y1="320" x2="510" y2="320" stroke="#e2e8f0"/>
-<text x="120" y="309" font-size="11" fill="#cbd5e1" text-anchor="end">26</text>
-<line x1="130" y1="290" x2="510" y2="290" stroke="#e2e8f0"/>
-<text x="120" y="279" font-size="11" fill="#cbd5e1" text-anchor="end">27</text>
-<line x1="130" y1="260" x2="510" y2="260" stroke="#e2e8f0"/>
-<text x="120" y="249" font-size="11" fill="#cbd5e1" text-anchor="end">28</text>
-<line x1="130" y1="230" x2="510" y2="230" stroke="#e2e8f0"/>
-<text x="120" y="219" font-size="11" fill="#cbd5e1" text-anchor="end">29</text>
-<line x1="130" y1="200" x2="510" y2="200" stroke="#e2e8f0"/>
-<text x="120" y="189" font-size="11" fill="#cbd5e1" text-anchor="end">30</text>
-<line x1="130" y1="170" x2="510" y2="170" stroke="#e2e8f0"/>
+<rect x="96" y="160" width="448" height="920" rx="6" fill="#1e293b"/><rect x="130" y="170" width="380" height="900" fill="#f8fafc"/>
+<text x="120" y="1059" font-size="11" fill="#cbd5e1" text-anchor="end">1</text><line x1="130" y1="1040" x2="510" y2="1040" stroke="#e2e8f0"/>
+<text x="120" y="1029" font-size="11" fill="#cbd5e1" text-anchor="end">2</text><line x1="130" y1="1010" x2="510" y2="1010" stroke="#e2e8f0"/>
+<text x="120" y="999" font-size="11" fill="#cbd5e1" text-anchor="end">3</text><line x1="130" y1="980" x2="510" y2="980" stroke="#e2e8f0"/>
+<text x="120" y="969" font-size="11" fill="#cbd5e1" text-anchor="end">4</text><line x1="130" y1="950" x2="510" y2="950" stroke="#e2e8f0"/>
+<text x="120" y="939" font-size="11" fill="#cbd5e1" text-anchor="end">5</text><line x1="130" y1="920" x2="510" y2="920" stroke="#e2e8f0"/>
+<text x="120" y="909" font-size="11" fill="#cbd5e1" text-anchor="end">6</text><line x1="130" y1="890" x2="510" y2="890" stroke="#e2e8f0"/>
+<text x="120" y="879" font-size="11" fill="#cbd5e1" text-anchor="end">7</text><line x1="130" y1="860" x2="510" y2="860" stroke="#e2e8f0"/>
+<text x="120" y="849" font-size="11" fill="#cbd5e1" text-anchor="end">8</text><line x1="130" y1="830" x2="510" y2="830" stroke="#e2e8f0"/>
+<text x="120" y="819" font-size="11" fill="#cbd5e1" text-anchor="end">9</text><line x1="130" y1="800" x2="510" y2="800" stroke="#e2e8f0"/>
+<text x="120" y="789" font-size="11" fill="#cbd5e1" text-anchor="end">10</text><line x1="130" y1="770" x2="510" y2="770" stroke="#e2e8f0"/>
+<text x="120" y="759" font-size="11" fill="#cbd5e1" text-anchor="end">11</text><line x1="130" y1="740" x2="510" y2="740" stroke="#e2e8f0"/>
+<text x="120" y="729" font-size="11" fill="#cbd5e1" text-anchor="end">12</text><line x1="130" y1="710" x2="510" y2="710" stroke="#e2e8f0"/>
+<text x="120" y="699" font-size="11" fill="#cbd5e1" text-anchor="end">13</text><line x1="130" y1="680" x2="510" y2="680" stroke="#e2e8f0"/>
+<text x="120" y="669" font-size="11" fill="#cbd5e1" text-anchor="end">14</text><line x1="130" y1="650" x2="510" y2="650" stroke="#e2e8f0"/>
+<text x="120" y="639" font-size="11" fill="#cbd5e1" text-anchor="end">15</text><line x1="130" y1="620" x2="510" y2="620" stroke="#e2e8f0"/>
+<text x="120" y="609" font-size="11" fill="#cbd5e1" text-anchor="end">16</text><line x1="130" y1="590" x2="510" y2="590" stroke="#e2e8f0"/>
+<text x="120" y="579" font-size="11" fill="#cbd5e1" text-anchor="end">17</text><line x1="130" y1="560" x2="510" y2="560" stroke="#e2e8f0"/>
+<text x="120" y="549" font-size="11" fill="#cbd5e1" text-anchor="end">18</text><line x1="130" y1="530" x2="510" y2="530" stroke="#e2e8f0"/>
+<text x="120" y="519" font-size="11" fill="#cbd5e1" text-anchor="end">19</text><line x1="130" y1="500" x2="510" y2="500" stroke="#e2e8f0"/>
+<text x="120" y="489" font-size="11" fill="#cbd5e1" text-anchor="end">20</text><line x1="130" y1="470" x2="510" y2="470" stroke="#e2e8f0"/>
+<text x="120" y="459" font-size="11" fill="#cbd5e1" text-anchor="end">21</text><line x1="130" y1="440" x2="510" y2="440" stroke="#e2e8f0"/>
+<text x="120" y="429" font-size="11" fill="#cbd5e1" text-anchor="end">22</text><line x1="130" y1="410" x2="510" y2="410" stroke="#e2e8f0"/>
+<text x="120" y="399" font-size="11" fill="#cbd5e1" text-anchor="end">23</text><line x1="130" y1="380" x2="510" y2="380" stroke="#e2e8f0"/>
+<text x="120" y="369" font-size="11" fill="#cbd5e1" text-anchor="end">24</text><line x1="130" y1="350" x2="510" y2="350" stroke="#e2e8f0"/>
+<text x="120" y="339" font-size="11" fill="#cbd5e1" text-anchor="end">25</text><line x1="130" y1="320" x2="510" y2="320" stroke="#e2e8f0"/>
+<text x="120" y="309" font-size="11" fill="#cbd5e1" text-anchor="end">26</text><line x1="130" y1="290" x2="510" y2="290" stroke="#e2e8f0"/>
+<text x="120" y="279" font-size="11" fill="#cbd5e1" text-anchor="end">27</text><line x1="130" y1="260" x2="510" y2="260" stroke="#e2e8f0"/>
+<text x="120" y="249" font-size="11" fill="#cbd5e1" text-anchor="end">28</text><line x1="130" y1="230" x2="510" y2="230" stroke="#e2e8f0"/>
+<text x="120" y="219" font-size="11" fill="#cbd5e1" text-anchor="end">29</text><line x1="130" y1="200" x2="510" y2="200" stroke="#e2e8f0"/>
+<text x="120" y="189" font-size="11" fill="#cbd5e1" text-anchor="end">30</text><line x1="130" y1="170" x2="510" y2="170" stroke="#e2e8f0"/>
 <rect x="100" y="1080" width="20" height="14" fill="#334155"/><circle cx="110" cy="1106" r="12" fill="#334155"/>
 <rect x="520" y="1080" width="20" height="14" fill="#334155"/><circle cx="530" cy="1106" r="12" fill="#334155"/>
 <rect x="133" y="172" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -85,25 +54,30 @@
 <text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Flex 2.5G 8 PoE in its 1U keystone mount</text>
 <rect x="133" y="352" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  DACs, power cords to the rear</text>
-<rect x="133" y="382" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="407" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">CLV shelf 1 (U22) + 1U headroom</text>
-<text x="320" y="423" font-size="11" fill="#334155" text-anchor="middle">Hue · Lutron · HDHomeRun · ONT · Zigbee dongle</text>
-<rect x="133" y="442" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="467" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">CLV shelf 2 (U20) + 1U headroom</text>
-<text x="320" y="483" font-size="11" fill="#334155" text-anchor="middle">second ONT (Ting) · spare room</text>
+<rect x="133" y="382" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="400" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Hub shelf (1U): Hue · Lutron · HDHomeRun · ONT</text>
+<rect x="133" y="412" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="430" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  cords down to the PDU</text>
+<rect x="133" y="442" width="374" height="56" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="467" font-size="13" font-weight="700" fill="#14532d" text-anchor="middle">Power Distribution Pro  ·  2U  ·  8.2 lb</text>
+<text x="320" y="483" font-size="11" fill="#14532d" text-anchor="middle">replaces the Tripp Lite Isobar · fed from the UPS</text>
 <rect x="133" y="502" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="520" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Brush plate  ·  cords down to the PDU</text>
-<rect x="133" y="532" width="374" height="56" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="557" font-size="13" font-weight="700" fill="#14532d" text-anchor="middle">Power Distribution Pro  ·  2U  ·  8.2 lb</text>
-<text x="320" y="573" font-size="11" fill="#14532d" text-anchor="middle">replaces the Tripp Lite Isobar · fed from the UPS</text>
-<rect x="133" y="592" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="610" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open or blank plate (airflow above Big Boi)</text>
-<rect x="133" y="622" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-<text x="320" y="707" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
-<text x="320" y="723" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
-<rect x="133" y="802" width="374" height="206" rx="4" fill="url(#hatch)" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="902" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">7U open for growth</text>
-<text x="320" y="918" font-size="11" fill="#334155" text-anchor="middle">heavy additions fill this zone from the bottom up</text>
+<text x="320" y="520" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open</text>
+<rect x="133" y="532" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="550" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open or blank plate (airflow above Big Boi)</text>
+<rect x="133" y="562" width="374" height="176" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="320" y="647" font-size="13" font-weight="700" fill="#3b0764" text-anchor="middle">Big Boi · JMCD 12S4 · 6U</text>
+<text x="320" y="663" font-size="11" fill="#3b0764" text-anchor="middle">36–38 lb with 4 HDDs · 48–50 lb with 12 · on rails/shelf</text>
+<rect x="133" y="742" width="374" height="56" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="767" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Spare CLV shelf (U10) + 1U headroom</text>
+<text x="320" y="783" font-size="11" fill="#334155" text-anchor="middle">for later</text>
+<rect x="133" y="802" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="820" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open</text>
+<rect x="133" y="832" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="850" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">1U open (heat from the receiver)</text>
+<rect x="133" y="862" width="374" height="146" rx="4" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="320" y="932" font-size="13" font-weight="700" fill="#881337" text-anchor="middle">Future: Denon AV receiver on a deep shelf</text>
+<text x="320" y="948" font-size="11" fill="#881337" text-anchor="middle">~4U receiver on a 1U shelf · basement AV</text>
 <rect x="133" y="1012" width="374" height="56" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
 <text x="320" y="1037" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">UniFi UPS 2U  ·  30.9 lb</text>
 <text x="320" y="1053" font-size="11" fill="#78350f" text-anchor="middle">on rear support rails · battery outlets: Big Boi + PDU</text>
@@ -111,78 +85,81 @@
 <text x="570" y="100" font-size="13" font-weight="700" fill="#a16207">USB radios</text>
 <text x="570" y="118" font-size="12" fill="#334155">ZWA-2 is too big for a shelf: top of the rack or</text>
 <text x="570" y="134" font-size="12" fill="#334155">wall-mounted beside it. Both sticks hang off Big Boi</text>
-<text x="570" y="150" font-size="12" fill="#334155">(U10–U15) on USB 2.0 extensions: Zigbee up to shelf 1,</text>
-<text x="570" y="166" font-size="12" fill="#334155">ZWA-2 up to the top. Re-map both in the HA VM.</text>
-<line x1="544" y1="215" x2="562" y2="200" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
-<text x="570" y="200" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch</text>
-<text x="570" y="218" font-size="12" fill="#334155">Patch panel A directly above the Pro Max 16 and B</text>
-<text x="570" y="234" font-size="12" fill="#334155">directly below it: every switch port patches 1U up</text>
-<text x="570" y="250" font-size="12" fill="#334155">or down with 6&quot; cables. The UDM Pro sits under B,</text>
-<text x="570" y="266" font-size="12" fill="#334155">so its LAN ports (patched to the panel today) also</text>
-<text x="570" y="282" font-size="12" fill="#334155">get 6&quot; runs. No brush plates in this stack.</text>
-<text x="570" y="298" font-size="12" fill="#334155">Aggregation under the UDM: SFP+ DACs to the UDM</text>
-<text x="570" y="314" font-size="12" fill="#334155">(adjacent) and Pro Max (3U up); Big Boi ~11U, 1.5 m.</text>
-<line x1="544" y1="365" x2="562" y2="330" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="365" r="3" fill="#475569"/>
-<text x="570" y="330" font-size="13" font-weight="700" fill="#475569">Brush plate, then the shelves</text>
-<text x="570" y="348" font-size="12" fill="#334155">First brush plate under the Flex mount: DACs and</text>
-<text x="570" y="364" font-size="12" fill="#334155">power cords go to the rear here. Shelf 1: Hue,</text>
-<text x="570" y="380" font-size="12" fill="#334155">Lutron, HDHomeRun, ONT, Zigbee dongle. Shelf 2:</text>
-<text x="570" y="396" font-size="12" fill="#334155">the other ONT. CLV: 250 mm deep, 44 lb max, small boxes</text>
-<text x="570" y="412" font-size="12" fill="#334155">only; each needs ~1U clear above it.</text>
-<line x1="544" y1="560" x2="562" y2="456" stroke="#16a34a" stroke-width="1.2"/><circle cx="544" cy="560" r="3" fill="#16a34a"/>
-<text x="570" y="456" font-size="13" font-weight="700" fill="#16a34a">Second brush plate over the PDU Pro</text>
-<text x="570" y="474" font-size="12" fill="#334155">Cords drop through the brush to the PDU, out of</text>
-<text x="570" y="490" font-size="12" fill="#334155">sight. Outlet side (front or rear) is unconfirmed;</text>
-<text x="570" y="506" font-size="12" fill="#334155">the brush helps most if they face front. Replaces</text>
-<text x="570" y="522" font-size="12" fill="#334155">the Isobar. Fed from a UPS battery outlet, powers</text>
-<text x="570" y="538" font-size="12" fill="#334155">everything except Big Boi, which stays on the UPS</text>
-<text x="570" y="554" font-size="12" fill="#334155">directly. A 0U vertical mount is listed (unverified).</text>
-<line x1="544" y1="710" x2="562" y2="600" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="710" r="3" fill="#7c3aed"/>
-<text x="570" y="600" font-size="13" font-weight="700" fill="#7c3aed">Big Boi at waist height</text>
-<text x="570" y="618" font-size="12" fill="#334155">Drive bays roughly 20–31&quot; off the floor (depends on</text>
-<text x="570" y="634" font-size="12" fill="#334155">the base and casters): hot-swap without crouching.</text>
-<text x="570" y="650" font-size="12" fill="#334155">Drives pull out the front, so swaps don&#x27;t extend the</text>
-<text x="570" y="666" font-size="12" fill="#334155">chassis. Planned as 6U (listing 262 mm; measure, no</text>
-<text x="570" y="682" font-size="12" fill="#334155">feet). U16 open for airflow under the PDU. Support it</text>
-<text x="570" y="698" font-size="12" fill="#334155">from below (L-rails or a rated 1U shelf); ears alone</text>
-<text x="570" y="714" font-size="12" fill="#334155">aren&#x27;t meant to carry ~50 lb.</text>
-<line x1="544" y1="895" x2="562" y2="812" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="895" r="3" fill="#475569"/>
-<text x="570" y="812" font-size="13" font-weight="700" fill="#475569">Growth zone (U3–U9)</text>
-<text x="570" y="830" font-size="12" fill="#334155">7U under Big Boi for a JBOD, GPU box or second</text>
-<text x="570" y="846" font-size="12" fill="#334155">server. Heavy gear fills it bottom-up, keeping</text>
-<text x="570" y="862" font-size="12" fill="#334155">weight low.</text>
-<line x1="544" y1="1040" x2="562" y2="949" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1040" r="3" fill="#d97706"/>
-<text x="570" y="949" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
-<text x="570" y="967" font-size="12" fill="#334155">Densest item (14 kg in 2U). Lowest centre of gravity,</text>
-<text x="570" y="983" font-size="12" fill="#334155">and the convention for battery units. Only two</text>
-<text x="570" y="999" font-size="12" fill="#334155">battery outlets used: Big Boi and the PDU Pro.</text>
-<text x="570" y="1015" font-size="12" fill="#334155">Check whether it shipped with rails; if not, add</text>
-<text x="570" y="1031" font-size="12" fill="#334155">rear supports.</text>
-<rect x="30" y="1130" width="920" height="180" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="570" y="150" font-size="12" fill="#334155">(U12–U17) on USB 2.0 extensions: Zigbee up to the hub</text>
+<text x="570" y="166" font-size="12" fill="#334155">shelf, ZWA-2 up to the top. Re-map both in the HA VM.</text>
+<line x1="544" y1="215" x2="562" y2="196" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
+<text x="570" y="196" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch</text>
+<text x="570" y="214" font-size="12" fill="#334155">Patch panel A directly above the Pro Max 16 and B</text>
+<text x="570" y="230" font-size="12" fill="#334155">directly below: every port patches 1U with 6&quot; cables.</text>
+<text x="570" y="246" font-size="12" fill="#334155">UDM Pro under B, so its LAN ports get 6&quot; runs too.</text>
+<text x="570" y="262" font-size="12" fill="#334155">Aggregation under the UDM: SFP+ DACs to the UDM</text>
+<text x="570" y="278" font-size="12" fill="#334155">(adjacent), the Pro Max (3U up) and Big Boi (1.5 m).</text>
+<line x1="544" y1="395" x2="562" y2="300" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="395" r="3" fill="#475569"/>
+<text x="570" y="300" font-size="13" font-weight="700" fill="#475569">Hub shelf, 1U only</text>
+<text x="570" y="318" font-size="12" fill="#334155">Hue, Lutron, HDHomeRun, ONT and the Zigbee dongle.</text>
+<text x="570" y="334" font-size="12" fill="#334155">No headroom: the brush plate sits right above, so</text>
+<text x="570" y="350" font-size="12" fill="#334155">the tallest box must fit in about 40 mm (1.6&quot;). Check</text>
+<text x="570" y="366" font-size="12" fill="#334155">the HDHomeRun and ONT. Ting ONT: here if it fits.</text>
+<line x1="544" y1="470" x2="562" y2="388" stroke="#16a34a" stroke-width="1.2"/><circle cx="544" cy="470" r="3" fill="#16a34a"/>
+<text x="570" y="388" font-size="13" font-weight="700" fill="#16a34a">Brush plate over the PDU Pro</text>
+<text x="570" y="406" font-size="12" fill="#334155">Cords drop through the brush to the PDU (outlet side</text>
+<text x="570" y="422" font-size="12" fill="#334155">unconfirmed). Fed from a UPS battery outlet; powers</text>
+<text x="570" y="438" font-size="12" fill="#334155">everything except Big Boi and the receiver. Replaces</text>
+<text x="570" y="454" font-size="12" fill="#334155">the Isobar. U18 open for airflow, U19 spare.</text>
+<line x1="544" y1="650" x2="562" y2="474" stroke="#7c3aed" stroke-width="1.2"/><circle cx="544" cy="650" r="3" fill="#7c3aed"/>
+<text x="570" y="474" font-size="13" font-weight="700" fill="#7c3aed">Big Boi up 2U (U12–U17)</text>
+<text x="570" y="492" font-size="12" fill="#334155">Drive bays roughly 23–34&quot; off the floor, depending</text>
+<text x="570" y="508" font-size="12" fill="#334155">on the base and casters. Support it from below</text>
+<text x="570" y="524" font-size="12" fill="#334155">(L-rails or a rated 1U shelf); ears alone aren&#x27;t</text>
+<text x="570" y="540" font-size="12" fill="#334155">meant to carry ~50 lb. Measure the 12S4 without</text>
+<text x="570" y="556" font-size="12" fill="#334155">feet to confirm 6U.</text>
+<line x1="544" y1="770" x2="562" y2="590" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="770" r="3" fill="#475569"/>
+<text x="570" y="590" font-size="13" font-weight="700" fill="#475569">Spare shelf under Big Boi</text>
+<text x="570" y="608" font-size="12" fill="#334155">CLV shelf at U10 with 1U above it, kept for later.</text>
+<text x="570" y="624" font-size="12" fill="#334155">250 mm deep, 44 lb max: small boxes only.</text>
+<line x1="544" y1="905" x2="562" y2="660" stroke="#e11d48" stroke-width="1.2"/><circle cx="544" cy="905" r="3" fill="#e11d48"/>
+<text x="570" y="660" font-size="13" font-weight="700" fill="#e11d48">Future Denon receiver (U3–U7)</text>
+<text x="570" y="678" font-size="12" fill="#334155">Heavy, so it goes low. Typical X-series AVRs are about</text>
+<text x="570" y="694" font-size="12" fill="#334155">4U tall and ~390 mm deep: too deep for a CLV (250</text>
+<text x="570" y="710" font-size="12" fill="#334155">mm), so use a deeper vented shelf, and check rear</text>
+<text x="570" y="726" font-size="12" fill="#334155">room for speaker wire in the 18&quot; rack. Keep U8 open</text>
+<text x="570" y="742" font-size="12" fill="#334155">for its heat. Power it from the wall, not the PDU:</text>
+<text x="570" y="758" font-size="12" fill="#334155">it can draw hundreds of watts and would drain the</text>
+<text x="570" y="774" font-size="12" fill="#334155">UPS. Size from the actual model before buying.</text>
+<line x1="544" y1="1040" x2="562" y2="832" stroke="#d97706" stroke-width="1.2"/><circle cx="544" cy="1040" r="3" fill="#d97706"/>
+<text x="570" y="832" font-size="13" font-weight="700" fill="#d97706">UPS at the very bottom</text>
+<text x="570" y="850" font-size="12" fill="#334155">Densest item (14 kg in 2U). Only two battery</text>
+<text x="570" y="866" font-size="12" fill="#334155">outlets used: Big Boi and the PDU Pro. Check</text>
+<text x="570" y="882" font-size="12" fill="#334155">whether it shipped with rails; if not, add rear</text>
+<text x="570" y="898" font-size="12" fill="#334155">supports.</text>
+<rect x="30" y="1130" width="920" height="200" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
 <text x="50" y="1156" font-size="14" font-weight="700" fill="#0f172a">Weight (estimates, 2026-11-12)</text>
-<text x="420" y="1156" font-size="12" font-weight="700" fill="#475569">4 HDDs</text><text x="540" y="1156" font-size="12" font-weight="700" fill="#475569">12 HDDs</text>
+<text x="440" y="1156" font-size="12" font-weight="700" fill="#475569">4 HDDs</text><text x="560" y="1156" font-size="12" font-weight="700" fill="#475569">12 HDDs</text>
 <text x="50" y="1178" font-size="12" font-weight="400" fill="#0f172a">UPS 2U (U1–U2)</text>
-<text x="420" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
-<text x="540" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
-<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U10–U15)</text>
-<text x="420" y="1196" font-size="12" font-weight="400" fill="#0f172a">36–38 lb</text>
-<text x="540" y="1196" font-size="12" font-weight="400" fill="#0f172a">48–50 lb</text>
+<text x="440" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
+<text x="560" y="1178" font-size="12" font-weight="400" fill="#0f172a">30.9 lb</text>
+<text x="50" y="1196" font-size="12" font-weight="400" fill="#0f172a">Big Boi in 12S4 (U12–U17)</text>
+<text x="440" y="1196" font-size="12" font-weight="400" fill="#0f172a">36–38 lb</text>
+<text x="560" y="1196" font-size="12" font-weight="400" fill="#0f172a">48–50 lb</text>
 <text x="50" y="1214" font-size="12" font-weight="400" fill="#0f172a">Pro Max 16 + UDM Pro + Aggregation (U26–U29)</text>
-<text x="420" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
-<text x="540" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
-<text x="50" y="1232" font-size="12" font-weight="400" fill="#0f172a">PDU Pro 8.2 · 2 shelves 11.0 · 2 brush plates 1.9</text>
-<text x="420" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
-<text x="540" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
+<text x="440" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
+<text x="560" y="1214" font-size="12" font-weight="400" fill="#0f172a">~19.6 lb</text>
+<text x="50" y="1232" font-size="12" font-weight="400" fill="#0f172a">PDU Pro 8.2 · 2 CLV shelves 11.0 · 2 brush plates 1.9</text>
+<text x="440" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
+<text x="560" y="1232" font-size="12" font-weight="400" fill="#0f172a">~21 lb</text>
 <text x="50" y="1250" font-size="12" font-weight="400" fill="#0f172a">Patch panels, Flex mount, small boxes, cables (guess)</text>
-<text x="420" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
-<text x="540" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
-<text x="50" y="1268" font-size="12" font-weight="700" fill="#0f172a">Total</text>
-<text x="420" y="1268" font-size="12" font-weight="700" fill="#0f172a">~114–123 lb</text>
-<text x="540" y="1268" font-size="12" font-weight="700" fill="#0f172a">~126–135 lb</text>
-<text x="680" y="1178" font-size="12" fill="#334155">UPS stays lowest. Big Boi mid-rack</text>
-<text x="680" y="1194" font-size="12" fill="#334155">raises the centre of gravity a little;</text>
-<text x="680" y="1210" font-size="12" fill="#334155">fine on a 500 lb frame. Lock the</text>
-<text x="680" y="1226" font-size="12" fill="#334155">casters; pull the drives before</text>
-<text x="680" y="1242" font-size="12" fill="#334155">rolling it any distance. Weights</text>
-<text x="680" y="1258" font-size="12" fill="#334155">from UI specs; panels guessed.</text>
+<text x="440" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
+<text x="560" y="1250" font-size="12" font-weight="400" fill="#0f172a">6–13 lb</text>
+<text x="50" y="1268" font-size="12" font-weight="400" fill="#0f172a">Future Denon AVR + deep shelf (guess, by model)</text>
+<text x="440" y="1268" font-size="12" font-weight="400" fill="#0f172a">~25–40 lb</text>
+<text x="560" y="1268" font-size="12" font-weight="400" fill="#0f172a">~25–40 lb</text>
+<text x="50" y="1286" font-size="12" font-weight="700" fill="#0f172a">Total</text>
+<text x="440" y="1286" font-size="12" font-weight="700" fill="#0f172a">~139–163 lb</text>
+<text x="560" y="1286" font-size="12" font-weight="700" fill="#0f172a">~151–175 lb</text>
+<text x="690" y="1178" font-size="12" fill="#334155">UPS and receiver low, Big Boi</text>
+<text x="690" y="1194" font-size="12" fill="#334155">mid-rack. Under a third of the</text>
+<text x="690" y="1210" font-size="12" fill="#334155">500 lb rating. Lock the casters;</text>
+<text x="690" y="1226" font-size="12" fill="#334155">pull the drives before rolling it.</text>
+<text x="690" y="1242" font-size="12" fill="#334155">Agg, PDU, shelf, brush weights</text>
+<text x="690" y="1258" font-size="12" fill="#334155">from UI specs; the rest guessed.</text>
 </svg>
