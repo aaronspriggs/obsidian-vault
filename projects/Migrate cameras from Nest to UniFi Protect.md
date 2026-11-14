@@ -30,3 +30,7 @@ Don't diagnose or fix Nest camera problems in HA (missing or unavailable camera 
 ## Note 2026-09-26
 
 HA auto-discovered **UniFi Protect** on the Dream Machine Pro (Settings → Integrations → Discovered). ~~Leave it un-added until this migration.~~ **Superseded 2026-10-17 (Aaron):** UniFi Protect is being added to HA now (API key only mode) as part of the Scrypted project, for the existing G6 Instant. This migration is still Deferred; only the HA integration moved earlier.
+
+## Current Nest hardware (Aaron, 2026-11-14)
+
+Driveway and Backyard are **Nest Cam Outdoor (1st gen, NC2400ES)**, bought as a 2-pack in 2022: 1080p, 130° diagonal FOV, powered by a wall adapter (no Ethernet at either mount, so UniFi replacements need new cable runs). Downstairs is a Nest camera, model not recorded; Front Door is a Nest Doorbell. HA's Nest integration only reports "Camera"/"Doorbell", not the model.
