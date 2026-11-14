@@ -1,13 +1,15 @@
 ---
-type: idea
-status: backlog
-priority: low
+type: project
+status: active
+priority: medium
 system:
 - '[[Home Assistant OS (VM)]]'
+- '[[UniFi (UDM Pro)]]'
+next_step: '2026-11-14: Aaron picks up 2× G5 Turret Ultra + 1× G5 Bullet + ~800 ft Cat6 today; Claude helps plan the cable runs and adopts the cameras into Protect once they are powered.'
 notion_id: 3e57ae76-22ba-8116-bd2b-c9886cacd1dd
 ---
 
-Deferred for cost; target before the Nest subscription lapses (~2027-09, renewed ~2026-10). Driver: leaving Google/Nest (HA integration unreliable). Blocks the Nest GCP teardown task. Until then, don't spend effort fixing Nest camera issues in HA.
+**Activated 2026-11-14:** Aaron bought 2× G5 Turret Ultra, 1× G5 Bullet and ~800 ft of Cat6 from a neighbor for $325 (new: ~$453 before shipping/tax), which removes the cost blocker. Previously deferred for cost; target before the Nest subscription lapses (~2027-09, renewed ~2026-10). Driver: leaving Google/Nest (HA integration unreliable). Blocks the Nest GCP teardown task. Until then, don't spend effort fixing Nest camera issues in HA.
 
 ## Why
 
@@ -34,3 +36,7 @@ HA auto-discovered **UniFi Protect** on the Dream Machine Pro (Settings → Inte
 ## Current Nest hardware (Aaron, 2026-11-14)
 
 Driveway and Backyard are **Nest Cam Outdoor (1st gen, NC2400ES)**, bought as a 2-pack in 2022: 1080p, 130° diagonal FOV, powered by a wall adapter (no Ethernet at either mount, so UniFi replacements need new cable runs). Downstairs is a Nest camera, model not recorded; Front Door is a Nest Doorbell. HA's Nest integration only reports "Camera"/"Doorbell", not the model.
+
+## Hardware bought 2026-11-14
+
+Two **G5 Turret Ultra** (2K 2688×1512, 102.4° H / 54.9° V / 120.6° D, 10/100, ~4 W 802.3af) are the planned replacements for the Driveway and Backyard Nests; they frame slightly tighter than the Nest's 130° D. One **G5 Bullet** (2K, ~84° H, narrower) is for a long, narrow view; placement TBD. The cable is an ATS Cables EZ-Pull box (SKU on label CMP/2286-W…, white, 23AWG UTP "plenum"); ATS lists ATS2286 as copper-clad aluminum, so treat it as CCA until a scrape test says otherwise. CCA is fine for these ~4 W, 100 Mbps cameras up to ~150–250 ft with solid-wire-rated plugs and sealed outdoor ends; don't reuse it for APs, uplinks or high-power PoE.
