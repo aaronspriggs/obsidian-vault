@@ -35,8 +35,12 @@ HA auto-discovered **UniFi Protect** on the Dream Machine Pro (Settings → Inte
 
 ## Current Nest hardware (Aaron, 2026-11-14)
 
-Driveway and Backyard are **Nest Cam Outdoor (1st gen, NC2400ES)**, bought as a 2-pack in 2022: 1080p, 130° diagonal FOV, powered by a wall adapter (no Ethernet at either mount, so UniFi replacements need new cable runs). Downstairs is a Nest camera, model not recorded; Front Door is a Nest Doorbell. HA's Nest integration only reports "Camera"/"Doorbell", not the model.
+Driveway and Backyard are **Nest Cam Outdoor (1st gen, NC2400ES)**, bought as a 2-pack in 2022: 1080p, 130° diagonal FOV, powered by a wall adapter (no Ethernet at either mount, so UniFi replacements need new cable runs). Downstairs is a Nest camera, model not recorded; Front Door is a **Nest Hello** (1st-gen wired doorbell, identified from Aaron's photo 2026-11-14), powered from the existing low-voltage doorbell wiring on Wi-Fi. HA's Nest integration only reports "Camera"/"Doorbell", not the model.
 
 ## Hardware bought 2026-11-14
 
 Two **G5 Turret Ultra** (2K 2688×1512, 102.4° H / 54.9° V / 120.6° D, 10/100, ~4 W 802.3af) are the planned replacements for the Driveway and Backyard Nests; they frame slightly tighter than the Nest's 130° D. One **G5 Bullet** (2K, ~84° H, narrower) is for a long, narrow view; placement TBD. The cable is an ATS Cables EZ-Pull box (SKU on label CMP/2286-W…, white, 23AWG UTP "plenum"); ATS lists ATS2286 as copper-clad aluminum, so treat it as CCA until a scrape test says otherwise. CCA is fine for these ~4 W, 100 Mbps cameras up to ~150–250 ft with solid-wire-rated plugs and sealed outdoor ends; don't reuse it for APs, uplinks or high-power PoE.
+
+## Doorbell option: G6 Entry (researched 2026-11-14)
+
+[UVC-G6-Entry](https://techspecs.ui.com/unifi/door-access/uvc-g6-entry): 5MP 1920×2560 portrait main camera (100° H / 135° V / 180° D) plus an 8MP downward package camera (3 fps), on-device face recognition, IP55, GbE. PoE+ only (16 W max); no Wi-Fi or doorbell-transformer power listed, so it needs a Cat6 run to the front door. Use copper for that run, not the CCA box. Chime compatibility isn't on the spec page; check before buying. The NFC, Wallet and face-unlock features need a UniFi Access Hub, but the doorbell and camera functions don't. US price $249 ($291 with surcharges).
