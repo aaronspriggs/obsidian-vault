@@ -8,8 +8,10 @@ filled). With --map it prints the link graph instead: one line per System, or
 with a note name, everything linked to or from that note grouped by kind, so a
 lookup starts from one short listing instead of opening every backlink. With
 --projects it lists every active, blocked and backlog project title under each
-System it names (the SessionStart hook on the ClaudeCode VM prints this).
-No AI is involved. Usage: .kb/check.py [--health | --map [note] | --projects]
+System it names. With --session [budget] it prints the compact block the
+SessionStart hook on the ClaudeCode VM puts in context: open work, stalled,
+gaps and each backlog title once, kept under `budget` characters (default 8500).
+No AI is involved. Usage: .kb/check.py [--health | --map [note] | --projects | --session [budget]]
 """
 import datetime
 import pathlib
@@ -66,10 +68,54 @@ def last_commit(rel):
     return datetime.date.fromisoformat(out) if out else None
 
 
-def project_line(name, fm):
+def project_line(name, fm, limit=120):
     line = f"[{fm.get('status')}/{fm.get('priority')}] {name}"
-    step = str(fm.get("next_step") or "")
-    return line + (f" -> {step[:117] + '...' if len(step) > 120 else step}" if step else "")
+    step = str(fm.get("next_step") or "") if limit else ""
+    return line + (f" -> {step[:limit - 3] + '...' if len(step) > limit else step}" if step else "")
+
+
+def open_order(item):
+    name, fm = item
+    return (fm.get("status") != "active", PRIORITY.get(fm.get("priority"), 3), name)
+
+
+def print_session(graph, report, gaps, budget):
+    """The SessionStart block: open work, stalled, gaps, then every backlog title once.
+
+    Claude Code only puts hook output of up to 10,000 characters in context; anything longer
+    is cut to a 2 KB preview (found 2026-11-15: every session since the hook was added got
+    the preview). So this drops detail in steps until the block fits `budget`: next steps
+    shortened, then removed. Systems to verify and untested runbooks are counted, not listed;
+    --health lists them.
+    """
+    projects = [(n["rel"].stem, n["fm"]) for n in graph.values() if n["folder"] == "projects"]
+    open_items = sorted((p for p in projects if p[1].get("status") in ("active", "blocked")), key=open_order)
+    backlog = {}
+    for name, fm in sorted(projects):
+        if fm.get("status") != "backlog":
+            continue
+        systems = fm.get("system") or ["(no system)"]
+        m = WIKILINK.fullmatch(str(systems[0] if isinstance(systems, list) else systems).strip())
+        backlog.setdefault(m.group(1) if m else "(no system)", []).append(name)
+    for limit in (120, 80, 50, 0):
+        out = [f"## Open work ({len(open_items)})"]
+        out += [f"- {project_line(n, fm, limit)}" for n, fm in open_items] or ["- none"]
+        if not limit:
+            out.append("(next steps left out to fit the hook's size limit; check.py --health shows them)")
+        for heading in ("Stalled projects",):
+            out += [f"\n## {heading} ({len(report[heading])})"] + ([f"- {r}" for r in report[heading]] or ["- none"])
+        out += [f"\n## Gaps ({len(gaps)})"] + ([f"- {g}" for g in gaps] or ["- none"])
+        out.append(f"\nNot listed here (check.py --health): {len(report['Systems to verify'])} systems to verify, "
+                   f"{len(report['Untested runbooks'])} untested runbooks.")
+        out.append(f"\n## Backlog ({sum(map(len, backlog.values()))}), each title once under its first System")
+        out += [f"- {s}: " + "; ".join(backlog[s]) for s in sorted(backlog)]
+        text = "\n".join(out)
+        if len(text) <= budget:
+            break
+    print(text)
+    if len(text) > budget:
+        print(f"\nWARNING: this block is {len(text)} characters, over its {budget} budget. "
+              "Trim print_session in .kb/check.py before the hook output passes 10,000 and gets cut.")
 
 
 def backlinks(graph):
@@ -158,7 +204,8 @@ def print_map(graph, query, recent=10):
 
 
 def main():
-    health = "--health" in sys.argv
+    session = "--session" in sys.argv
+    health = "--health" in sys.argv or session
     errors, gaps, graph = [], [], {}
     files = list(notes())
     by_name = {}
@@ -263,7 +310,10 @@ def main():
         print_map(graph, " ".join(args)) if args else print_overview(graph)
     if "--projects" in sys.argv:
         print_projects(graph)
-    if health:
+    if session:
+        args = sys.argv[sys.argv.index("--session") + 1:]
+        print_session(graph, report, gaps, int(args[0]) if args and args[0].isdigit() else 8500)
+    elif health:
         report["Open work"].sort(key=lambda r: (not r.startswith("[active"),
                                                 PRIORITY.get(r.split("/")[1].split("]")[0], 3)))
         for heading, rows in report.items():
