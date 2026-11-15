@@ -11,7 +11,7 @@ commit: https://github.com/aaronspriggs/spriggs-homelab/commit/8654a3b
 
 # B2 vmstore sync stages consistent servarr DBs and skips logs
 
-The one-week B2 bucket check found `B2 offsite: vmstore` re-uploading ~705 files / ~205 MiB every night (details in [[Plan backup strategy for TrueNAS and VMs]]). Sonarr, Radarr, Prowlarr, NZBGet and Gluetun keep their live config in Dockhand's stack dir (compose `./<app>:/config`), so the 23:30 TrueNAS cron is their only backup. Its rsync copied rotating debug logs (~290 MiB, renumbered on every rollover) and Prowlarr's 670 indexer definitions (rewritten daily), and copied the apps' WAL-mode SQLite DBs while they were running, so the raw DB copies could be torn. The Plex export was also re-staged with a fresh mtime every night.
+The one-week B2 bucket check found `B2 offsite: vmstore` re-uploading ~705 files / ~205 MiB every night (details in [[2026-10-23 Estimated the B2 bucket size after one week and recorded the Layer 2 sizes and phase 1 steps]], moved from [[Plan backup strategy for TrueNAS and VMs]] on 2026-11-15). Sonarr, Radarr, Prowlarr, NZBGet and Gluetun keep their live config in Dockhand's stack dir (compose `./<app>:/config`), so the 23:30 TrueNAS cron is their only backup. Its rsync copied rotating debug logs (~290 MiB, renumbered on every rollover) and Prowlarr's 670 indexer definitions (rewritten daily), and copied the apps' WAL-mode SQLite DBs while they were running, so the raw DB copies could be torn. The Plex export was also re-staged with a fresh mtime every night.
 
 Aaron approved the fix 2026-10-23. Claude changed the repo ([8654a3b](https://github.com/aaronspriggs/spriggs-homelab/commit/8654a3b)) and Aaron applied it in the TrueNAS UI (`claude-maint` has no cron or Cloud Sync rights):
 
