@@ -89,9 +89,9 @@
 <line x1="544" y1="215" x2="562" y2="196" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
 <text x="570" y="196" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch (map at the bottom)</text>
 <text x="570" y="214" font-size="12" fill="#334155">A (U30) mirrors the Pro Max below it (A1–A16) and</text>
-<text x="570" y="230" font-size="12" fill="#334155">A17–A24 are free for future runs. B (U28) mirrors the UDM</text>
-<text x="570" y="246" font-size="12" fill="#334155">under it (B1–B10) and holds rear-port rack gear and</text>
-<text x="570" y="262" font-size="12" fill="#334155">DAC pass-throughs to the Aggregation (B11–B16).</text>
+<text x="570" y="230" font-size="12" fill="#334155">A17–A24 are free for future runs. B (U28) feeds the UDM</text>
+<text x="570" y="246" font-size="12" fill="#334155">from B15–B24, right above its ports; B9–B14 carry</text>
+<text x="570" y="262" font-size="12" fill="#334155">rack gear and DAC pass-throughs to the Aggregation.</text>
 <text x="570" y="278" font-size="12" fill="#334155">Aggregation: UDM, Pro Max, Big Boi, Basement Flex.</text>
 <line x1="544" y1="365" x2="562" y2="300" stroke="#475569" stroke-width="1.2"/><circle cx="544" cy="365" r="3" fill="#475569"/>
 <text x="570" y="300" font-size="13" font-weight="700" fill="#475569">Hub shelf, 1U only</text>
@@ -171,7 +171,7 @@
 <text x="690" y="1258" font-size="12" fill="#334155">from UI specs; the rest guessed.</text>
 <line x1="30" y1="1365" x2="950" y2="1365" stroke="#cbd5e1"/>
 <text x="30" y="1390" font-size="20" font-weight="700" fill="#0f172a" text-anchor="start" >Patch panels — front view</text>
-<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
+<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft v4 · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
 <rect x="30" y="1424" width="14" height="14" rx="2" fill="#f97316" stroke="#f97316"/>
 <text x="50" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Security</text>
 <rect x="127.6" y="1424" width="14" height="14" rx="2" fill="#dc2626" stroke="#dc2626"/>
@@ -260,80 +260,80 @@
 <text x="930.8" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >24</text>
 <text transform="translate(934.8,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <text x="30" y="1721" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Patch panel B (U28), rack gear and WAN</text>
-<text x="30" y="1738" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >B1–B10 patch down to the UDM Pro; B11–B16 are rear-port gear and DAC pass-throughs to the Aggregation</text>
+<text x="30" y="1738" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >B15–B24 drop to the UDM Pro right below them (LAN port = position − 14); B9–B14 are gear and DAC pass-throughs; B1–B8 free</text>
 <rect x="30" y="1748" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
-<rect x="35.2" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
-<text x="49.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >1</text>
-<text transform="translate(53.2,1812) rotate(60)" font-size="11" fill="#0f172a">Sonos Amp (U11)</text>
-<rect x="73.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="87.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >2</text>
-<text transform="translate(91.5,1812) rotate(60)" font-size="11" fill="#0f172a">Hue Bridge</text>
-<rect x="111.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="125.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >3</text>
-<text transform="translate(129.8,1812) rotate(60)" font-size="11" fill="#0f172a">Lutron hub</text>
-<rect x="150.2" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="164.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >4</text>
-<text transform="translate(168.2,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
-<rect x="188.5" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
-<text x="202.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >5</text>
-<text transform="translate(206.5,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U3)</text>
-<rect x="226.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="240.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >6</text>
-<text transform="translate(244.8,1812) rotate(60)" font-size="11" fill="#0f172a">PDU Pro mgmt</text>
+<rect x="35.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="49.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >1</text>
+<text transform="translate(53.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="73.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="87.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >2</text>
+<text transform="translate(91.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="111.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="125.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >3</text>
+<text transform="translate(129.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="150.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="164.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >4</text>
+<text transform="translate(168.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="188.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="202.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >5</text>
+<text transform="translate(206.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="226.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="240.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >6</text>
+<text transform="translate(244.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="265.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="279.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >7</text>
-<text transform="translate(283.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="303.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="317.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >8</text>
-<text transform="translate(321.5,1812) rotate(60)" font-size="11" fill="#0f172a">UPS 2U</text>
-<rect x="341.8" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#dc2626"/>
+<text transform="translate(283.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="303.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="317.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >8</text>
+<text transform="translate(321.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="341.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="355.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
-<text transform="translate(359.8,1812) rotate(60)" font-size="11" fill="#0f172a">WAN1 CenturyLink</text>
-<rect x="380.2" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text transform="translate(359.8,1812) rotate(60)" font-size="11" fill="#0f172a">Big Boi 10G DAC</text>
+<rect x="380.2" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="394.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >10</text>
-<text transform="translate(398.2,1812) rotate(60)" font-size="11" fill="#0f172a">WAN2 Ting ONT</text>
-<rect x="418.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text transform="translate(398.2,1812) rotate(60)" font-size="11" fill="#0f172a">Second server</text>
+<rect x="418.5" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="432.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >11</text>
-<text transform="translate(436.5,1812) rotate(60)" font-size="11" fill="#0f172a">Big Boi 10G DAC</text>
-<rect x="456.8" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="470.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >12</text>
-<text transform="translate(474.8,1812) rotate(60)" font-size="11" fill="#0f172a">Second server</text>
-<rect x="495.2" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="509.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >13</text>
-<text transform="translate(513.2,1812) rotate(60)" font-size="11" fill="#0f172a">Mac Studio (future)</text>
+<text transform="translate(436.5,1812) rotate(60)" font-size="11" fill="#0f172a">Mac Studio (future)</text>
+<rect x="456.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="470.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >12</text>
+<text transform="translate(474.8,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
+<rect x="495.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="509.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >13</text>
+<text transform="translate(513.2,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
 <rect x="533.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="547.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >14</text>
 <text transform="translate(551.5,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
-<rect x="571.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="585.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >15</text>
-<text transform="translate(589.8,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
-<rect x="610.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="624.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >16</text>
-<text transform="translate(628.2,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
-<rect x="648.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="662.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >17</text>
-<text transform="translate(666.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="686.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="700.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >18</text>
-<text transform="translate(704.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="725.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="739.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >19</text>
-<text transform="translate(743.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="763.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="777.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >20</text>
-<text transform="translate(781.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="571.8" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
+<text x="585.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >15</text>
+<text transform="translate(589.8,1812) rotate(60)" font-size="11" fill="#0f172a">Sonos Amp (U11)</text>
+<rect x="610.2" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="624.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >16</text>
+<text transform="translate(628.2,1812) rotate(60)" font-size="11" fill="#0f172a">Hue Bridge</text>
+<rect x="648.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="662.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >17</text>
+<text transform="translate(666.5,1812) rotate(60)" font-size="11" fill="#0f172a">Lutron hub</text>
+<rect x="686.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="700.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >18</text>
+<text transform="translate(704.8,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
+<rect x="725.2" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
+<text x="739.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >19</text>
+<text transform="translate(743.2,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U3)</text>
+<rect x="763.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="777.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >20</text>
+<text transform="translate(781.5,1812) rotate(60)" font-size="11" fill="#0f172a">PDU Pro mgmt</text>
 <rect x="801.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="815.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >21</text>
-<text transform="translate(819.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="840.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="854.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >22</text>
-<text transform="translate(858.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="878.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="892.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >23</text>
-<text transform="translate(896.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="916.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="930.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >24</text>
-<text transform="translate(934.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<text transform="translate(819.8,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="840.2" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="854.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >22</text>
+<text transform="translate(858.2,1812) rotate(60)" font-size="11" fill="#0f172a">UPS 2U</text>
+<rect x="878.5" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#dc2626"/>
+<text x="892.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >23</text>
+<text transform="translate(896.5,1812) rotate(60)" font-size="11" fill="#0f172a">WAN1 CenturyLink</text>
+<rect x="916.8" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="930.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >24</text>
+<text transform="translate(934.8,1812) rotate(60)" font-size="11" fill="#0f172a">WAN2 Ting ONT</text>
 <text x="30" y="1972" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Flex mount keystones (U25), basement drops</text>
 <text x="30" y="1989" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >F1–F8 patch sideways to Basement Flex ports 1–8 in the same 1U mount</text>
 <rect x="30" y="1999" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
@@ -495,91 +495,91 @@
 <text x="548" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Run / device</text>
 <text x="710" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Switch port</text>
 <text x="845" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Status</text>
-<rect x="500" y="2240" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="516" y="2251" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B1</text>
-<text x="548" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Sonos Amp (U11)</text>
-<text x="710" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 1</text>
-<text x="845" y="2251" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
+<rect x="500" y="2240" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="516" y="2251" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B1–8</text>
+<text x="548" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Future house runs (B1–B8)</text>
+<text x="710" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >—</text>
+<text x="845" y="2251" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
 <rect x="500" y="2258" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2269" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B2</text>
-<text x="548" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Hue Bridge</text>
-<text x="710" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 2</text>
+<text x="516" y="2269" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B9</text>
+<text x="548" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Big Boi 10G DAC</text>
+<text x="710" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (pass-through)</text>
 <text x="845" y="2269" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2276" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2287" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B3</text>
-<text x="548" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Lutron hub</text>
-<text x="710" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 3</text>
-<text x="845" y="2287" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2294" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2305" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B4</text>
-<text x="548" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >HDHomeRun</text>
-<text x="710" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 4</text>
-<text x="845" y="2305" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2312" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="516" y="2323" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B5</text>
-<text x="548" y="2323" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Denon AVR (U3)</text>
-<text x="710" y="2323" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 5</text>
-<text x="845" y="2323" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2330" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2341" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B6</text>
-<text x="548" y="2341" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PDU Pro mgmt</text>
-<text x="710" y="2341" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 6</text>
-<text x="845" y="2341" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
+<rect x="500" y="2276" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="516" y="2287" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B10</text>
+<text x="548" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Second server</text>
+<text x="710" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (DAC or RJ45 mod)</text>
+<text x="845" y="2287" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
+<rect x="500" y="2294" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="516" y="2305" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B11</text>
+<text x="548" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Mac Studio (future)</text>
+<text x="710" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (RJ45 mod)</text>
+<text x="845" y="2305" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
+<rect x="500" y="2312" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="516" y="2323" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B12</text>
+<text x="548" y="2323" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
+<text x="710" y="2323" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
+<text x="845" y="2323" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="500" y="2330" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="516" y="2341" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B13</text>
+<text x="548" y="2341" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
+<text x="710" y="2341" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
+<text x="845" y="2341" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
 <rect x="500" y="2348" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2359" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B7</text>
-<text x="548" y="2359" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare</text>
-<text x="710" y="2359" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 7</text>
+<text x="516" y="2359" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B14</text>
+<text x="548" y="2359" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
+<text x="710" y="2359" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
 <text x="845" y="2359" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="500" y="2366" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2377" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B8</text>
-<text x="548" y="2377" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UPS 2U</text>
-<text x="710" y="2377" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 8</text>
+<rect x="500" y="2366" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
+<text x="516" y="2377" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B15</text>
+<text x="548" y="2377" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Sonos Amp (U11)</text>
+<text x="710" y="2377" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 1</text>
 <text x="845" y="2377" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2384" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
-<text x="516" y="2395" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B9</text>
-<text x="548" y="2395" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >WAN1 CenturyLink</text>
-<text x="710" y="2395" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 9</text>
-<text x="845" y="2395" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
-<rect x="500" y="2402" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
-<text x="516" y="2413" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B10</text>
-<text x="548" y="2413" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >WAN2 Ting ONT</text>
-<text x="710" y="2413" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM SFP+1 (RJ45 mod)</text>
-<text x="845" y="2413" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
+<rect x="500" y="2384" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="516" y="2395" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B16</text>
+<text x="548" y="2395" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Hue Bridge</text>
+<text x="710" y="2395" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 2</text>
+<text x="845" y="2395" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
+<rect x="500" y="2402" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="516" y="2413" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B17</text>
+<text x="548" y="2413" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Lutron hub</text>
+<text x="710" y="2413" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 3</text>
+<text x="845" y="2413" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2420" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="516" y="2431" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B11</text>
-<text x="548" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Big Boi 10G DAC</text>
-<text x="710" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (pass-through)</text>
+<text x="516" y="2431" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B18</text>
+<text x="548" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >HDHomeRun</text>
+<text x="710" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 4</text>
 <text x="845" y="2431" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2438" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="516" y="2449" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B12</text>
-<text x="548" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Second server</text>
-<text x="710" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (DAC or RJ45 mod)</text>
-<text x="845" y="2449" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
-<rect x="500" y="2456" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="516" y="2467" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B13</text>
-<text x="548" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Mac Studio (future)</text>
-<text x="710" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (RJ45 mod)</text>
+<text x="516" y="2449" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B19</text>
+<text x="548" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Denon AVR (U3)</text>
+<text x="710" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 5</text>
+<text x="845" y="2449" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
+<rect x="500" y="2456" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="516" y="2467" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B20</text>
+<text x="548" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PDU Pro mgmt</text>
+<text x="710" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 6</text>
 <text x="845" y="2467" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
 <rect x="500" y="2474" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2485" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B14</text>
-<text x="548" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
-<text x="710" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
+<text x="516" y="2485" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B21</text>
+<text x="548" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare</text>
+<text x="710" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 7</text>
 <text x="845" y="2485" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="500" y="2492" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2503" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B15</text>
-<text x="548" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
-<text x="710" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
-<text x="845" y="2503" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="500" y="2510" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2521" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B16</text>
-<text x="548" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Pass-through</text>
-<text x="710" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg</text>
-<text x="845" y="2521" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="500" y="2528" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2539" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B17+</text>
-<text x="548" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Future house runs (B17–B24)</text>
-<text x="710" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >—</text>
-<text x="845" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="500" y="2492" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="516" y="2503" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B22</text>
+<text x="548" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UPS 2U</text>
+<text x="710" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 8</text>
+<text x="845" y="2503" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
+<rect x="500" y="2510" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
+<text x="516" y="2521" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B23</text>
+<text x="548" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >WAN1 CenturyLink</text>
+<text x="710" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM 9</text>
+<text x="845" y="2521" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<rect x="500" y="2528" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
+<text x="516" y="2539" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B24</text>
+<text x="548" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >WAN2 Ting ONT</text>
+<text x="710" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM SFP+1 (RJ45 mod)</text>
+<text x="845" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
 <text x="30" y="2711" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >PM = USW Pro Max 16 PoE: on the UPS; ports 13–16 are 2.5 GbE. Flex = Basement USW Flex 2.5G 8 PoE: every port 2.5 GbE PoE,</text>
 <text x="30" y="2727" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >on its own adapter (on battery once the PDU Pro arrives); its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12.</text>
 <text x="30" y="2743" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Agg = USW Aggregation (8× SFP+). Doorbell run in copper; cameras can use the CCA box. Rear-port rack gear enters panel B from the back.</text>
