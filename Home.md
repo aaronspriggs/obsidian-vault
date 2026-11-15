@@ -4,7 +4,7 @@ The knowledge base for the Spriggs homelab: every system, service and network de
 
 ## Infrastructure overview
 
-A UniFi network (UDM Pro, USW Pro Max 16 PoE, three U7 APs) and a TrueNAS SCALE server, **Big Boi** (i9-9900, 64 GB, RAIDZ1 of 5× 4 TB SSD), that is both the NAS and the hypervisor. Big Boi runs three VMs, **Plex**, **Home Assistant** and **ClaudeCode** (Claude Code's LAN foothold), plus **Dockhand**, which runs the **servarr** media stack and **Uptime Kuma**. HA is the automation hub and the single alert endpoint: Kuma, TrueNAS alerts and the weekly VM update jobs all report into it, and it pushes to Aaron's iPhone only when something needs attention. **Home Health** is the HA dashboard for leaks, batteries and sensors. A Raspberry Pi wall panel shows an HA kiosk dashboard. A **UniFi UPS 2U** is installed but graceful shutdown isn't configured yet.
+A UniFi network (UDM Pro, USW Pro Max 16 PoE, three U7 APs) and a TrueNAS SCALE server, **Big Boi** (i9-9900, 64 GB, RAIDZ1 of 5× 4 TB SSD), that is both the NAS and the hypervisor. Big Boi runs three VMs, **Plex**, **Home Assistant** and **ClaudeCode** (Claude Code's LAN foothold), plus **Dockhand**, which runs the **servarr** media stack and **Uptime Kuma**. HA is the automation hub and the single alert endpoint: Kuma, TrueNAS alerts and the weekly VM update jobs all report into it, and it pushes to Aaron's iPhone only when something needs attention. **Home Health** is the HA dashboard for leaks, batteries and sensors. A Raspberry Pi wall panel shows an HA kiosk dashboard. A **UniFi UPS 2U** powers the rack; Big Boi shuts down 300 s after it goes on battery (live since 2026-09-29, not yet tested end to end).
 
 **Flat network:** 192.168.1.0/24, no VLANs, one SSID. DHCP-reserved: TrueNAS .248, HA .218, Plex .116, ClaudeCode .156, wall panel .84, HDHomeRun .106.
 
@@ -12,7 +12,7 @@ A UniFi network (UDM Pro, USW Pro Max 16 PoE, three U7 APs) and a TrueNAS SCALE 
 
 | System | Aaron | Claude (from the ClaudeCode VM) |
 | --- | --- | --- |
-| [TrueNAS](<systems/TrueNAS SCALE (Big Boi).md>) (192.168.1.248) | Web UI :9443 as `truenas_admin` (1Password "TrueNAS - Admin"); SSH `aspriggs` | `truenas-api`: reads as the API user `claude-readonlyapi`, allowlisted maintenance writes (`--write`) as `claude-maint`. No SSH (never set up; checked 2026-11-15) |
+| [TrueNAS](<systems/TrueNAS SCALE (Big Boi).md>) (192.168.1.248); pool, shares and backups: [Big Boi storage](<systems/Big Boi storage (pool, datasets, shares, backups).md>) | Web UI :9443 as `truenas_admin` (1Password "TrueNAS - Admin"); SSH `aspriggs` | `truenas-api`: reads as the API user `claude-readonlyapi`, allowlisted maintenance writes (`--write`) as `claude-maint`. No SSH (never set up; checked 2026-11-15) |
 | [Home Assistant](<systems/Home Assistant (integrations and automations).md>) (192.168.1.218), on the [HAOS VM](<systems/Home Assistant OS (VM).md>) | UI :8123 as `aaronspriggs` (MFA); shell via the Terminal & SSH add-on's web terminal (no network SSH port) | ha-mcp (full control through HA's API). No SSH |
 | [Plex VM](<systems/Plex Media Server.md>) (192.168.1.116) | SSH `plexadmin` | SSH `ssh plex` as `claude`; root only through `claude-maint` |
 | [ClaudeCode VM](<systems/ClaudeCode (VM).md>) (192.168.1.156) | SSH `aspriggs` (key only); Claude Remote Control from claude.ai/code or the app | Local |

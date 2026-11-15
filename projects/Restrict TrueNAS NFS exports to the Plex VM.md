@@ -3,7 +3,7 @@ type: task
 status: done
 priority: low
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 - '[[Plex Media Server]]'
 completed: 2026-09-28
 notion_id: 3e77ae76-22ba-8138-b5bc-cb7522df65e3

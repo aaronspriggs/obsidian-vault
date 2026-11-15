@@ -4,6 +4,7 @@ status: done
 priority: low
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 completed: 2026-10-15
 notion_id: 3fa7ae76-22ba-81e5-94e2-c06740a9c371
 ---

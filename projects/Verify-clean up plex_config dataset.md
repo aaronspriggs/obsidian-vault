@@ -3,7 +3,7 @@ type: task
 status: backlog
 priority: low
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 - '[[Plex Media Server]]'
 notion_id: 3087ae76-22ba-812f-9f4d-f98d31e4ce3e
 ---

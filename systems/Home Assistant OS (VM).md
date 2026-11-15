@@ -23,7 +23,7 @@ Home Assistant OS in a VM on [Big Boi](<TrueNAS SCALE (Big Boi).md>). This note 
 
 ## Config
 
-**VM definition (TrueNAS VM `HomeAssistant`):** 2 vCPU threads (1 core × 2 threads, host-passthrough), 4 GiB RAM, UEFI, autostart, clock UTC. Disk: VirtIO on the zvol `Big Boi/vmstore/haos_disk`; HA sees 125.3 GB with 14.4 GB used. NIC: VirtIO on `br0`, MAC 00:a0:98:61:a7:c1, fixed IP 192.168.1.218 in UniFi. USB passthrough of the Sonoff ZBDongle-E (Zigbee; TrueNAS shows it as "CP210x UART Bridge", Silicon Labs `10c4:ea60`, device `usb_1_5`) on a `qemu-xhci` controller.
+**VM definition (TrueNAS VM `HomeAssistant`):** 2 vCPU threads (1 core × 2 threads, host-passthrough), 4 GiB RAM, UEFI, autostart, clock UTC. Disk: VirtIO on the zvol `Big Boi/vmstore/haos_disk` ([Big Boi storage](<Big Boi storage (pool, datasets, shares, backups).md>)); HA sees 125.3 GB with 14.4 GB used. NIC: VirtIO on `br0`, MAC 00:a0:98:61:a7:c1, fixed IP 192.168.1.218 in UniFi. USB passthrough of the Sonoff ZBDongle-E (Zigbee; TrueNAS shows it as "CP210x UART Bridge", Silicon Labs `10c4:ea60`, device `usb_1_5`) on a `qemu-xhci` controller.
 
 **Versions:** HAOS 18.4, Supervisor 2026.11.0, kernel 6.18.58-haos, Docker 29.8.2. Core's version is in the application note. Re-check with ha-mcp rather than trusting this line.
 

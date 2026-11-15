@@ -3,7 +3,7 @@ type: task
 status: done
 priority: low
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 completed: 2026-03-07
 notion_id: 31c7ae76-22ba-8196-b6bd-cedabe069049
 ---
@@ -12,7 +12,7 @@ Audited 2026-03-07 — only two path references: TrueNAS middleware and /etc/lib
 
 ## Outcome
 
-Done 2026-03-07: the HA OS disk zvol was renamed from `Big Boi/haos_disk` to `Big Boi/vmstore/haos_disk`, so all three VM disks sit under `vmstore` and its daily snapshot task covers them. Confirmed via the TrueNAS API 2026-09-28: `vmstore/haos_disk` exists and the `@pre-rename` safety snapshot is gone. Current layout: [TrueNAS SCALE (Big Boi)](<../systems/TrueNAS SCALE (Big Boi).md>) → Datasets and zvols.
+Done 2026-03-07: the HA OS disk zvol was renamed from `Big Boi/haos_disk` to `Big Boi/vmstore/haos_disk`, so all three VM disks sit under `vmstore` and its daily snapshot task covers them. Confirmed via the TrueNAS API 2026-09-28: `vmstore/haos_disk` exists and the `@pre-rename` safety snapshot is gone. Current layout: [TrueNAS SCALE (Big Boi)](<../systems/Big Boi storage (pool, datasets, shares, backups).md>) → Datasets and zvols.
 
 ## Decisions and lessons (2026-03-07)
 

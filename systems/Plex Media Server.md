@@ -64,7 +64,7 @@ Plex Media Server running as a VM on TrueNAS SCALE (Big Boi). Plex Pass lifetime
 
 ## Media Storage (NFS)
 
-- **NFS source:** TrueNAS dataset at /mnt/Big Boi/BIGBOI/plex_content
+- **NFS source:** TrueNAS dataset at /mnt/Big Boi/BIGBOI/plex_content (exports and datasets: [Big Boi storage](<Big Boi storage (pool, datasets, shares, backups).md>))
 - **NFS export allowed:** 192.168.1.116 only (TrueNAS `hosts`; verified via the API 2026-09-28)
 - **VM mount point:** /mnt/media
 - **fstab:** Persistent entry with space escaped as 040 (Big040Boi)

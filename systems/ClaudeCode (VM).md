@@ -60,7 +60,7 @@ Ubuntu Server VM on [Big Boi](<TrueNAS SCALE (Big Boi).md>) that gives Claude di
 
 ## Dependencies
 
-Runs on Big Boi (zvol on `vmstore`, bridge `br0`) and needs the UDM for its address, GitHub for both repos, and 1Password for the helpers' credentials. What depends on it: Claude Code; TrueNAS alerts reaching HA (if the VM is down they aren't forwarded, and the relay's Kuma push monitor catches that within 15 min); the weekly Plex DB export (if it stops, Big Boi's Cloud Sync pre-script fails after 9 days and TrueNAS alerts).
+Runs on Big Boi (zvol on `vmstore`, see [Big Boi storage](<Big Boi storage (pool, datasets, shares, backups).md>); bridge `br0`) and needs the UDM for its address, GitHub for both repos, and 1Password for the helpers' credentials. What depends on it: Claude Code; TrueNAS alerts reaching HA (if the VM is down they aren't forwarded, and the relay's Kuma push monitor catches that within 15 min); the weekly Plex DB export (if it stops, Big Boi's Cloud Sync pre-script fails after 9 days and TrueNAS alerts).
 
 ## Decisions
 

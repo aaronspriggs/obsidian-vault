@@ -3,7 +3,7 @@ kind: troubleshooting
 status: active
 system:
 - '[[Plex Media Server]]'
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 last_tested: 2026-09-29
 notion_id: 3087ae76-22ba-8136-84af-f11ce0989d41
 ---

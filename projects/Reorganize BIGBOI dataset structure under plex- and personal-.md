@@ -3,7 +3,7 @@ type: project
 status: backlog
 priority: medium
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 notion_id: 31c7ae76-22ba-8181-a9af-ed735fb9c968
 ---
 

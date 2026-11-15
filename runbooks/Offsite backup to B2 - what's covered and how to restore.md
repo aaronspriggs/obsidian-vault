@@ -2,7 +2,7 @@
 kind: recovery
 status: active
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 - '[[Plex Media Server]]'
 last_tested: 2026-10-16
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/backup

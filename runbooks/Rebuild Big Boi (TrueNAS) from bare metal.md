@@ -3,6 +3,7 @@ kind: recovery
 status: active
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/backup
 notion_id: 3fb7ae76-22ba-81d0-a8b0-f8b71a952427
 ---

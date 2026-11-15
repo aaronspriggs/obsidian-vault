@@ -4,6 +4,7 @@ status: active
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 next_step: 2026-11-08 Order 3× 0.5 m SFF-8643 cables and 1× Corsair Type 4 Molex cable (third backplane on the RM1000x); then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
@@ -81,7 +82,7 @@ Build new, move the SSD pool, create the HDD pool, replicate the media across. D
 
 ## Constraints carried over
 
-- **SSD pool today:** see [Big Boi](<../systems/TrueNAS SCALE (Big Boi).md>); about 2.1 TB of it is Plex media, which moves to the HDD pool.
+- **SSD pool today:** see [Big Boi storage](<../systems/Big Boi storage (pool, datasets, shares, backups).md>); about 2.1 TB of it is Plex media, which moves to the HDD pool.
 - **Backup** ([Plan backup strategy](<Plan backup strategy for TrueNAS and VMs.md>)): B2 keeps only the small irreplaceable set; bulk media never goes to paid cloud. Groundwork: split datasets by protection class via [Reorganize BIGBOI dataset structure under plex- and personal-](<Reorganize BIGBOI dataset structure under plex- and personal-.md>).
 
 ## Changes

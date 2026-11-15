@@ -4,7 +4,7 @@ status: done
 priority: medium
 system:
 - '[[Plex Media Server]]'
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 completed: 2026-03-05
 notion_id: 3087ae76-22ba-81de-86db-cfb8b6d88734
 ---

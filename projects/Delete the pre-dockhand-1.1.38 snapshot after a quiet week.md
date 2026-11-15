@@ -3,7 +3,7 @@ type: task
 status: backlog
 priority: low
 system:
-- '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Big Boi storage (pool, datasets, shares, backups)]]'
 - '[[Dockhand]]'
 parent: '[[Decide backup for the Dockhand TrueNAS app upgrade, then upgrade it]]'
 next_step: 'From 2026-10-22: if Dockhand v1.0.53 has been fine, Claude deletes the three snapshots (Tier 2: say it, then do it).'
