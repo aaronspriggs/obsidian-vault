@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: Aaron reviews map v12 and rack v16 on the page, then decides on buying the Enterprise 48 and returning the Aggregation. When the map settles, redraw the doc''s two widgets; then Aaron re-terminates to the map during the 30U move.'
+next_step: '2026-11-15: map v12 and rack v16 agreed. Aaron buys the Enterprise 48 and returns the Aggregation inside its return window; confirm the switch''s port and SFP+ cage numbering on arrival (update top_port/bottom_port in rack-panels.py if it isn''t odd-top/even-bottom); then he re-terminates, colours and labels to v12 during the 30U move, Claude moves the UniFi port settings, and the Pro Max 16 and Basement Flex get sold.'
 ---
 
 ## Goal
@@ -34,9 +34,9 @@ Existing runs (14), all home-run to the basement utility room:
 
 Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front hallway doorbell speaker or chime (maybe); outside entry G6 Entry doorbell (PoE+, 16 W, copper); basement guest room (desk or TV spot); basement gym/flex room; basement entertainment space (1 run to a Flex is the lean, since most AV goes in the rack); outside backyard camera; outside front camera (current Driveway Nest spot); outside side-of-house gate and walkway camera.
 
-## Plan v12 (draft, if the Enterprise 48 is bought; 2026-11-15)
+## Plan v12 (agreed 2026-11-15; applies once the Enterprise 48 is bought)
 
-Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Nothing is bought or returned yet; v6 below stays the plan until then. Rack layout v16 goes with it (see [[Rebuild Big Boi into a new case with an HDD pool for bulk media]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
+Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Aaron approved v12 on 2026-11-15 after a review; nothing is bought or returned yet, and v6 below is the fallback if the Enterprise 48 isn't bought. Rack layout v16 goes with it (see [[Rebuild Big Boi into a new case with an HDD pool for bulk media]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
 
 Cord colours (Aaron, v12): orange security, red UniFi networking (APs, downstream switches, UPS and PDU management, WAN), green other hardware inside the rack, blue everything else. DACs are whatever colour they ship in.
 
@@ -144,6 +144,7 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 
 - **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
 - **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
+- **2026-11-15 (Aaron): v12 agreed.** Reviewed against practice (panel-switch-panel 1:1, router only on the UDM, function groups with spares, 33 of 48 positions used). Caveats noted: placement now follows function and colour rather than house-versus-rack, so labels should say so; the Enterprise 48 is the hottest device and sits at U29, so the rack needs top venting or a roof fan; one switch is a single point of failure, and Aaron will still sell the Pro Max 16 rather than keep it as a cold spare.
 - **2026-11-15 (Aaron): map v12.** Rack gear starts at B1; UPS and PDU management turn red (UniFi networking gear), so red runs B13–B24 and B7–B12 are free.
 - **2026-11-15 (Aaron): map v11.** All networking red (APs, downstream switches, WAN), grouped at the right end of panel B: APs B15–B18 beside UPS/PDU management, switches B19–B22, WAN B23–B24. Security back to A1–A8. The Kitchen 3 run becomes the main-floor Presence Pro, grouped with the basement sensor at A17–A19.
 - **2026-11-15 (Aaron): map v10 and new cord colours.** Orange security, red Wi-Fi and WAN, green in-rack hardware, blue everything else; replaces the earlier scheme (black infrastructure, white APs). APs to B19–B22 next to WAN, server links to A22–A24 over the switch's SFP+ cages, UPS and PDU management beside the APs. Confirmed: the 2nd-floor Presence Pro goes on the Upstairs Flex; the PDU Pro plugs into the 4th UPS battery outlet, so everything on it (hub shelf, second server, Sonos Amp) is on battery and no battery outlet is spare.
