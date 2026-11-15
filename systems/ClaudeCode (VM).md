@@ -41,7 +41,7 @@ Ubuntu Server VM on [Big Boi](<TrueNAS SCALE (Big Boi).md>) that gives Claude di
 
 - KB vault at `~/obsidian-vault`: pushes with the deploy key `~/.ssh/id_ed25519_github_obsidian_vault` (write, that repo only) through the SSH alias `github-obsidian-vault`. Its pre-commit hook (`core.hooksPath .kb/hooks`) runs gitleaks and `.kb/check.py`. Aaron's reading copy is on his Mac at `~/Documents/Claude/obsidian-vault.nosync`, pulled from GitHub.
 - Code repo at `~/homelab`: pushes with the deploy key `~/.ssh/id_ed25519_github_spriggs_homelab` (write, that repo only), mapped to `github.com` in `~/.ssh/config`. Layout, `deployed.tsv` and `make check`: [spriggs-homelab repo](<spriggs-homelab repo.md>).
-- `~/kb-export`: the last Notion export (branch `kb-export`), kept as an archive. Its timer is disabled since 2026-10-22; the unit files are still in place.
+- `~/kb-export`: the last Notion export (branch `kb-export`), kept as an archive. The export was retired on 2026-10-22 and its script and units were removed from the VM on 2026-11-15; they stay in the repo under `kb-export/`.
 
 **Timers and helpers** (system units that run as aspriggs; no AI)
 
