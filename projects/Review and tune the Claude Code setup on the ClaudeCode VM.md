@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
-next_step: '2026-11-15: steps 1 to 5 done. Next, in a fresh session: step 6 (drift sweep), step 7 (loose files; deletes need Aaron''s yes), step 8 (backlog triage with Aaron, slim the four largest project notes).'
+next_step: '2026-11-15: steps 1 to 5 done. Next, in a fresh session: step 6 (drift sweep) and step 7 (loose files; deletes need Aaron''s yes). Step 8 (slim the four largest project notes, backlog triage with Aaron) gets its own session after that (Aaron, 2026-11-15).'
 ---
 
 ## Goal
@@ -13,7 +13,7 @@ Review the whole Claude Code setup on this VM (settings, hooks, the tier3-guard 
 
 ## Status (2026-11-15)
 
-Steps 1 to 5 are done, each with a change note. Steps 1 and 3 were verified live in a session started after their deploys; step 2 waits for the first session to pass 400k; steps 4 and 5 take effect in the next session (new CLAUDE.md, three memory files, rulebook, over-size count in the session block). Steps 6 to 8 are open and go in a fresh session, because long sessions are the main token cost. This note was slimmed on 2026-11-15 under the new size rule; the longer working-out of steps 1 to 3 is in its git history before that date's last commit.
+Steps 1 to 5 are done, each with a change note. Steps 1 and 3 were verified live in a session started after their deploys; step 2 waits for the first session to pass 400k; steps 4 and 5 take effect in the next session (new CLAUDE.md, three memory files, rulebook, over-size count in the session block). Steps 6 to 8 are open, because long sessions are the main token cost: 6 and 7 go in one fresh session and step 8 in its own after that (Aaron, 2026-11-15). This note was slimmed on 2026-11-15 under the new size rule; the longer working-out of steps 1 to 3 is in its git history before that date's last commit.
 
 ## Findings (measured 2026-11-15)
 
