@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: map v12 and rack v17 agreed. Aaron buys the Enterprise 48 and returns the Aggregation inside its return window; confirm the switch''s port and SFP+ cage numbering on arrival (update top_port/bottom_port in rack-panels.py if it isn''t odd-top/even-bottom); then he re-terminates, colours and labels to v12 during the 30U move, Claude moves the UniFi port settings, and the Pro Max 16 and Basement Flex get sold.'
+next_step: '2026-11-15: Enterprise 48 ordered. On arrival confirm its port and SFP+ cage numbering; then during the 30U move Aaron re-terminates, colours and labels to v12, and Claude moves the UniFi port settings to their new ports after checking HA automations for port-specific PoE entities.'
 ---
 
 ## Goal
@@ -34,9 +34,9 @@ Existing runs (14), all home-run to the basement utility room:
 
 Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front hallway doorbell speaker or chime (maybe); outside entry G6 Entry doorbell (PoE+, 16 W, copper); basement guest room (desk or TV spot); basement gym/flex room; basement entertainment space (1 run to a Flex is the lean, since most AV goes in the rack); outside backyard camera; outside front camera (current Driveway Nest spot); outside side-of-house gate and walkway camera.
 
-## Plan v12 (agreed 2026-11-15; applies once the Enterprise 48 is bought)
+## Plan v12 (agreed 2026-11-15; Enterprise 48 ordered 2026-11-15)
 
-Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Aaron approved v12 on 2026-11-15 after a review; nothing is bought or returned yet, and v6 below is the fallback if the Enterprise 48 isn't bought. Rack layout v17 goes with it (see [[Rebuild Big Boi into a new case with an HDD pool for bulk media]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
+Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Aaron approved v12 on 2026-11-15 after a review and ordered the Enterprise 48 the same day; the Aggregation goes back to the store. Rack layout v17 goes with it (see [[Rebuild Big Boi into a new case with an HDD pool for bulk media]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
 
 Cord colours (Aaron, v12): orange security, red UniFi networking (APs, downstream switches, UPS and PDU management, WAN), green other hardware inside the rack, blue everything else. DACs are whatever colour they ship in.
 
@@ -54,74 +54,6 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 | A22–A24 | Server links over the SFP+ cages: Big Boi, second server, Mac Studio | B22 | Spare (switch) |
 | | | B23–B24 | WAN1 CenturyLink → UDM 9, WAN2 Ting ONT → UDM SFP+ 10 |
 
-## Plan: port map (v6, 2026-11-15; current until the Enterprise 48 is bought)
-
-Working copy for collaborating on placement: the Claude artifact [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp) (2026-11-15); changes agreed there get copied back here. Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
-
-Rules: each panel position sits over the switch port with the same number, and devices are grouped by function so cord colours run in blocks and UniFi port profiles can cover a range. Each switch gets the gear that uses what it's good at: the Basement Flex (8× 2.5 GbE PoE, 196 W, own adapter; off battery in the 30U until the PDU Pro arrives, since the 4 UPS battery outlets go to Big Boi, UDM, Pro Max and Aggregation) is the 2.5 GbE PoE switch, taking the APs and the desk Flex through its mount keystones F1–F4 (F5–F8 spare for future APs or 2.5G PoE gear), with a 10G SFP+ uplink to the Aggregation. The Pro Max takes the 1 GbE gear through panel A (U30): security A1–A7, everything else A8–A12, infra A13–A15 on its 2.5 GbE PoE++ ports (Living TV Flex, basement entertainment Flex, and the Upstairs Flex, which runs off PM 15's PoE), A16 a spare 2.5G port. A17–A20 hold dark runs (Kitchen 3, office spares 1–3) with no switch port; A21–A24 are free. Panel B (U28) holds rack gear and WAN: B15–B24 sit directly above the UDM Pro's ports and patch down to them (B15–B22 = UDM LAN 1–8, so LAN port = position − 14: infra B15–B19, AV B20–B21, spare B22; B23 = WAN 9; B24 = SFP+ WAN, port 10), B9–B14 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B1–B8 are free for future house runs. Security gear goes on the Pro Max (on the UPS). The Aggregation's 8 SFP+ cages are identical (any cage can take any link), so they're picked to keep the DACs from crossing: top row left to right Big Boi (via B9), second server (B10), Mac Studio (B11), Pro Max; bottom row Basement Flex at the far left, UDM SFP+ LAN (port 11) at the far right straight below it, middle two spare.
-
-Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure (switch uplinks, hubs, UPS, PDU, DACs), white APs, blue everything else.
-
-### Panel A
-
-| Pos | Run / device | Switch port | Cord | Status |
-| --- | --- | --- | --- | --- |
-| A1 | Cam front (G5 Turret) | PM 1 | orange | to pull |
-| A2 | Cam backyard (G5 Turret) | PM 2 | orange | to pull |
-| A3 | Cam side gate (G5 Bullet) | PM 3 | orange | to pull |
-| A4 | Doorbell G6 Entry | PM 4 | orange | to pull |
-| A5 | Siren (hallway) | PM 5 | orange | to pull |
-| A6 | Chime (hallway) | PM 6 | orange | to pull |
-| A7 | Ring keypad PoE | PM 7 | orange | in place |
-| A8 | Living wall Pi | PM 8 | blue | in place |
-| A9 | Kitchen Sonos 1 | PM 9 | blue | in place |
-| A10 | Kitchen Sonos 2 | PM 10 | blue | in place |
-| A11 | Basement guest room | PM 11 | blue | to pull |
-| A12 | Basement gym / flex room | PM 12 | blue | to pull |
-| A13 | Living TV → USW Flex | PM 13 · 2.5G | black | in place |
-| A14 | Basement entertainment → Flex (PoE) | PM 14 · 2.5G | black | to pull |
-| A15 | 2nd fl → Upstairs Flex (PoE-powered) | PM 15 · 2.5G | black | in place |
-| A16 | Spare | PM 16 · 2.5G | — | spare |
-| A17 | Kitchen 3 | — | blue | dark |
-| A18 | Office spare 1 | — | blue | dark |
-| A19 | Office spare 2 | — | blue | dark |
-| A20 | Office spare 3 | — | blue | dark |
-| A21–A24 | Future house runs | — | — | spare |
-
-### Flex mount keystones (U25)
-
-The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron 2026-11-15). Since v6 they carry the 2.5 GbE PoE gear and patch sideways to the switch with 1–1.5 ft cords.
-
-| Pos | Run / device | Switch port | Cord | Status |
-| --- | --- | --- | --- | --- |
-| F1 | Office → U7-Pro-Wall-Front | Flex 1 | white | in place |
-| F2 | Bar → U7-Pro-Wall-Back | Flex 2 | white | in place |
-| F3 | Basement AP (U7 Pro) | Flex 3 | white | run in, AP not yet |
-| F4 | Office → desk Flex 2.5G 5 | Flex 4 | black | in place |
-| F5–F8 | Spare (future APs, 2.5G PoE gear) | Flex 5–8 | — | spare |
-
-### Panel B
-
-| Pos | Run / device | Switch port | Cord | Status |
-| --- | --- | --- | --- | --- |
-| B1–B8 | Future house runs | — | — | spare |
-| B9 | Big Boi 10G DAC | Agg top row (pass-through) | black | rack gear |
-| B10 | Second server | Agg top row (DAC or RJ45 mod) | blue | not bought |
-| B11 | Mac Studio (future) | Agg top row (RJ45 mod) | blue | not bought |
-| B12 | Pass-through | Agg | — | spare |
-| B13 | Pass-through | Agg | — | spare |
-| B14 | Pass-through | Agg | — | spare |
-| B15 | PDU Pro mgmt | UDM 1 | black | not bought |
-| B16 | Hue Bridge | UDM 2 | black | rack gear |
-| B17 | Lutron hub | UDM 3 | black | rack gear |
-| B18 | HDHomeRun | UDM 4 | black | rack gear |
-| B19 | UPS 2U | UDM 5 | black | rack gear |
-| B20 | Sonos Amp (U11) | UDM 6 | blue | rack gear |
-| B21 | Denon AVR (U3) | UDM 7 | blue | rack gear |
-| B22 | Spare | UDM 8 | — | spare |
-| B23 | WAN1 CenturyLink | UDM 9 | red | in place |
-| B24 | WAN2 Ting ONT | UDM SFP+ port 10 (RJ45 mod) | red | not bought |
-
 ## Artifacts (2026-11-15)
 
 - Doc artifact (editable from any VM session via the Claude Docs connector): [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp).
@@ -131,9 +63,8 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 
 ## Open questions
 
-- **Pro Max 16 → Pro Max 24 PoE? (raised 2026-11-15)** The 16-port Pro Max is the root of the layout squeeze: panel A has 24 positions but only 16 switch ports behind it, the twelve 1 GbE PoE+ ports can't hold all 14 1 GbE runs, and the APs went to the Basement Flex, which is off battery until the PDU Pro arrives. UI lists the [USW Pro Max 24 PoE](https://techspecs.ui.com/unifi/switching/usw-pro-max-24-poe) as 16× 1 GbE (8 PoE+, 8 PoE++) + 8× 2.5 GbE PoE++, 2× SFP+, 400 W, 1U, versus the [Pro Max 16 PoE](https://techspecs.ui.com/unifi/switching/usw-pro-max-16-poe)'s 12× 1 GbE PoE+ + 4× 2.5 GbE PoE++, 180 W. It would match panel A port for port and put the APs back on a battery-backed switch. Aaron decides. Also considered (2026-11-15): the [USW Enterprise 48 PoE (Vintage)](https://techspecs.ui.com/unifi/switching/usw-enterprise-48-poe) at $799 on the UI store (Aaron's screenshot): 48× 2.5 GbE PoE+ (32 W/port, no PoE++), 4× SFP+, 720 W, L3, 150 W draw without PoE, 400 mm deep. It would replace the Pro Max, the Basement Flex and the Aggregation, and the current APs are PoE+ (U7 Pro 21 W, U7 Pro Wall 22 W max per UI), but on PoE+ input the Upstairs Flex's budget drops from 46 W to 16 W (UI spec), the idle draw adds about 110 W to the UPS, and it is 400 mm deep against the 30U's 18" (457 mm, Aaron 2026-11-15), so the rear power cord needs the remaining clearance. Aaron's variant (2026-11-15): return the Aggregation, buy the Enterprise 48, move the Basement Flex 2.5G 8 PoE to his desk on PoE, keep the desk Flex 2.5G 5 for the basement entertainment space, and move the 210 W adapter to the Upstairs Flex (which then leaves the UPS). Its 4 SFP+ would all be used (UDM, Big Boi, second server, Mac Studio). Cost (Aaron 2026-11-15): Enterprise 48 $851 with shipping and tax; Aggregation return $297 before tax; Aaron would also sell the Pro Max 16 with its rack mount and adapter, and the Basement Flex with its 210 W adapter, keeping the desk Flex 2.5G 5 at the desk. UI US list prices: Pro Max 16 PoE $399, Pro Max 16 rack mount $49, Flex 2.5G 8 PoE $199, 210 W adapter $79. Estimated net: roughly break-even to $150 out of pocket depending on resale. Noise: UI publishes no acoustic figure and no measured review was found (2026-11-15); owner reports say it is quiet at light load and loud when the fans ramp. Without the 210 W adapter the Upstairs Flex runs on PoE+ from the Enterprise 48 with a 16 W budget (U7 Pro max 21 W). UniFi gear that needs PoE++ per UI spec pages: E7 and U7 Pro XGS APs, the Access/Door/Gate hubs, and the Alarm Hub.
-- Which switch goes in the basement entertainment space (1 GbE Flex keeps A14; a Flex 2.5G 5 moves it to F5).
-- Interim AP battery gap: buy the PDU Pro before the move, put one AP on A16, or accept it.
+- Port and SFP+ cage numbering on the Enterprise 48: the map assumes odd ports on the top row, even on the bottom. Check on arrival; if different, change `top_port`/`bottom_port` in [rack-panels.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-panels.py) and regenerate.
+- Rack top venting or a roof fan: the switch (150 W before PoE) sits at U29.
 
 ## Decisions
 
@@ -145,6 +76,7 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 - **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
 - **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
 - **2026-11-15:** the doc artifact (tables, text and both widgets) redrawn to v12 / rack v16; widget code comes from [unifi/rack-docwidget.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-docwidget.py).
+- **2026-11-15 (Aaron): Enterprise 48 PoE ordered.** v12 / rack v17 are the plan; the v6 tables were removed from this note (git history has them). Surplus gear (Pro Max 16, Basement Flex, Aggregation return) is tracked in [[Sell the network gear retired by the 30U rack move]].
 - **2026-11-15 (Aaron): v12 agreed.** Reviewed against practice (panel-switch-panel 1:1, router only on the UDM, function groups with spares, 33 of 48 positions used). Caveats noted: placement now follows function and colour rather than house-versus-rack, so labels should say so; the Enterprise 48 is the hottest device and sits at U29, so the rack needs top venting or a roof fan; one switch is a single point of failure, and Aaron will still sell the Pro Max 16 rather than keep it as a cold spare.
 - **2026-11-15 (Aaron): map v12.** Rack gear starts at B1; UPS and PDU management turn red (UniFi networking gear), so red runs B13–B24 and B7–B12 are free.
 - **2026-11-15 (Aaron): map v11.** All networking red (APs, downstream switches, WAN), grouped at the right end of panel B: APs B15–B18 beside UPS/PDU management, switches B19–B22, WAN B23–B24. Security back to A1–A8. The Kitchen 3 run becomes the main-floor Presence Pro, grouped with the basement sensor at A17–A19.
