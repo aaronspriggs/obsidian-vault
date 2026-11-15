@@ -6,7 +6,7 @@ system:
 - '[[USW Pro Max 16 PoE]]'
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
-parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
+parent: '[[Move the homelab into the 30U floor rack]]'
 next_step: '2026-11-15: Enterprise 48 ordered. On arrival confirm its port and SFP+ cage numbering; then during the 30U move Aaron re-terminates, colours and labels to v12, and Claude moves the UniFi port settings to their new ports after checking HA automations for port-specific PoE entities.'
 ---
 
@@ -36,7 +36,7 @@ Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front
 
 ## Plan v12 (agreed 2026-11-15; Enterprise 48 ordered 2026-11-15)
 
-Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Aaron approved v12 on 2026-11-15 after a review and ordered the Enterprise 48 the same day; the Aggregation goes back to the store. Rack layout v17 goes with it (see [[Rebuild Big Boi into a new case with an HDD pool for bulk media]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
+Drafted on Aaron's go-ahead to rebuild around a USW Enterprise 48 PoE (48× 2.5 GbE PoE+, 4× SFP+) that replaces the Pro Max 16, the Aggregation and the Basement Flex. Aaron approved v12 on 2026-11-15 after a review and ordered the Enterprise 48 the same day; the Aggregation goes back to the store. Rack layout v17 goes with it (see [[Move the homelab into the 30U floor rack]]). Same-day iterations v7–v11 are in git history. v11 (Aaron) made all networking red and grouped it at the right end of panel B, moved security back to A1–A8, and turned the Kitchen 3 run into the main-floor Presence Pro; v12 starts the rack gear at B1 and makes UPS and PDU management red, since they're UniFi networking gear.
 
 Cord colours (Aaron, v12): orange security, red UniFi networking (APs, downstream switches, UPS and PDU management, WAN), green other hardware inside the rack, blue everything else. DACs are whatever colour they ship in.
 
@@ -64,7 +64,6 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 ## Open questions
 
 - Port and SFP+ cage numbering on the Enterprise 48: the map assumes odd ports on the top row, even on the bottom. Check on arrival; if different, change `top_port`/`bottom_port` in [rack-panels.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-panels.py) and regenerate.
-- Rack top venting or a roof fan: the switch (150 W before PoE) sits at U29.
 
 ## Decisions
 

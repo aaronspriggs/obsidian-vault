@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[USW Pro Max 16 PoE]]'
 - '[[USW Flex 2.5G 8 PoE]]'
-parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
+parent: '[[Move the homelab into the 30U floor rack]]'
 next_step: '2026-11-15: Aaron returns the USW Aggregation inside its return window and answers the open questions below (boxes, Flex mount model, Isobar and 12U rack, where to sell); listings go up once the 30U rack has run cleanly on the Enterprise 48 for a week.'
 ---
 
