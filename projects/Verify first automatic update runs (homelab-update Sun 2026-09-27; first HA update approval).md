@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[Plex Media Server]]'
 - '[[ClaudeCode (VM)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 completed: 2026-09-28
 notion_id: 3e77ae76-22ba-8137-84cb-e869500c06a3
 ---

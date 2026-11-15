@@ -2,7 +2,7 @@
 type: project
 status: done
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 - '[[Uptime Kuma]]'
 parent: '[[Homelab health monitoring with Home Assistant alerts (silent when nominal)]]'

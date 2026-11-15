@@ -3,7 +3,7 @@ type: project
 status: done
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[ClaudeCode (VM)]]'
 completed: 2026-09-03
 notion_id: 3ca7ae76-22ba-8183-8a27-e0c1daf0236b

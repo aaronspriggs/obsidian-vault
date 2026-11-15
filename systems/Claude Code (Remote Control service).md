@@ -33,7 +33,7 @@ Claude Code runs on the [ClaudeCode VM](<ClaudeCode (VM).md>) in Remote Control 
 
 ## Dependencies
 
-Runs on the ClaudeCode VM and needs outbound HTTPS to Anthropic. The launcher needs 1Password (service account `claudecode-vm`) for the ha-mcp URL; if 1Password is down, Remote Control starts without the HA tools. The HA tools need the ha-mcp add-on on [Home Assistant](<Home Assistant OS (VM).md>). The session hook needs the vault clone at `~/obsidian-vault`. What depends on it: all homelab work Aaron does with Claude, and the "Fix with Claude" action on HA alerts.
+Runs on the ClaudeCode VM and needs outbound HTTPS to Anthropic. The launcher needs 1Password (service account `claudecode-vm`) for the ha-mcp URL; if 1Password is down, Remote Control starts without the HA tools. The HA tools need the ha-mcp integration in [Home Assistant](<Home Assistant (integrations and automations).md>). The session hook needs the vault clone at `~/obsidian-vault`. What depends on it: all homelab work Aaron does with Claude, and the "Fix with Claude" action on HA alerts.
 
 ## Decisions
 

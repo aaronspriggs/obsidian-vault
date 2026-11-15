@@ -3,6 +3,7 @@ kind: setup
 status: active
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+- '[[Home Assistant OS (VM)]]'
 notion_id: 3087ae76-22ba-812d-a84f-e6d129f9d89f
 ---
 

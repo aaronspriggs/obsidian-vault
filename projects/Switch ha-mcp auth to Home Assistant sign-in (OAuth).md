@@ -3,9 +3,10 @@ type: task
 status: blocked
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
+next_step: '2026-11-15: anthropics/claude-code#89671 is still open (GitHub API; last updated 2026-11-14). Re-check it at each quarterly triage; once it is fixed, do the switch described below.'
 notion_id: 3d07ae76-22ba-8167-b38c-d6a751156cda
 ---
 

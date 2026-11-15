@@ -10,7 +10,7 @@ Raspberry Pi running TouchKio kiosk display. Shows HA dashboard on Official RPi 
 
 ## Overview
 
-Raspberry Pi configured as a wall-mounted home automation dashboard. Runs TouchKio in kiosk mode displaying a dedicated Home Assistant Lovelace dashboard. Publishes touch activity and brightness control via MQTT.
+Raspberry Pi configured as a wall-mounted home automation dashboard. Runs TouchKio in kiosk mode displaying a dedicated [Home Assistant](<Home Assistant (integrations and automations).md>) Lovelace dashboard. Publishes touch activity and brightness control via MQTT to the Mosquitto broker on the [Home Assistant OS VM](<Home Assistant OS (VM).md>).
 
 ## Hardware
 

@@ -4,7 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[UniFi (UDM Pro)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 notion_id: 3e97ae76-22ba-8108-889f-fda0434b6513
 ---
 

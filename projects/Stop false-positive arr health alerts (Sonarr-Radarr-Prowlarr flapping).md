@@ -3,7 +3,7 @@ type: task
 status: done
 priority: high
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Uptime Kuma]]'
 parent: '[[Homelab health monitoring with Home Assistant alerts (silent when nominal)]]'
 completed: 2026-10-15

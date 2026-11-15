@@ -4,7 +4,7 @@ status: active
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[ClaudeCode (VM)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 last_tested: 2026-10-15
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/truenas
 notion_id: 3e77ae76-22ba-8146-97f8-e11b11905670

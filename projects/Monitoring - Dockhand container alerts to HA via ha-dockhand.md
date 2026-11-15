@@ -4,7 +4,7 @@ status: done
 priority: low
 system:
 - '[[Dockhand]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Dockhand - give Claude API access and build out Dockhand as the Docker platform]]'
 completed: 2026-10-07
 notion_id: 3e77ae76-22ba-816d-93f5-ec463f018153

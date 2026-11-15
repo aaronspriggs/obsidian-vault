@@ -3,7 +3,7 @@ type: idea
 status: backlog
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Build out water leak sensor automations (notifications, alerts)]]'
 notion_id: 3fa7ae76-22ba-8122-90a4-e28ceb69d121
 ---

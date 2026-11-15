@@ -4,7 +4,7 @@ status: active
 system:
 - '[[Plex Media Server]]'
 - '[[ClaudeCode (VM)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 last_tested: 2026-09-25
 notion_id: 3e67ae76-22ba-8115-9432-f8d5ef638e31
 ---

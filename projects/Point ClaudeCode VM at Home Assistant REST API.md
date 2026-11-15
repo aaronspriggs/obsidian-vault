@@ -4,7 +4,7 @@ status: done
 priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 completed: 2026-09-03
 notion_id: 3cf7ae76-22ba-8160-a4b6-d611d1322c8e
 ---

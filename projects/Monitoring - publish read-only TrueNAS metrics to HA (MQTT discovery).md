@@ -4,7 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 notion_id: 3e77ae76-22ba-8145-9b17-cb5875e9d87d
 ---
 

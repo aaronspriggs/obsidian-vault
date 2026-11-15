@@ -2,7 +2,7 @@
 kind: setup
 status: active
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
 last_tested: 2026-09-03

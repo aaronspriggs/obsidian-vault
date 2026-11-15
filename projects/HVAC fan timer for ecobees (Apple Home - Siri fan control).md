@@ -3,7 +3,7 @@ type: idea
 status: backlog
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Migrate thermostats from Nest to ecobee]]'
 next_step: Revisit only if room temperatures drift; then confirm design with Aaron.
 notion_id: 3fc7ae76-22ba-8161-9470-d2ff1d6da51e

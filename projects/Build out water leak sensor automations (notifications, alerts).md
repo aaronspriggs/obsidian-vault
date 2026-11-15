@@ -3,7 +3,7 @@ type: project
 status: done
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 completed: 2026-10-15
 notion_id: 3c87ae76-22ba-8169-ad75-f5dd135bfb73

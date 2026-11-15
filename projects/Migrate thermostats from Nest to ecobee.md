@@ -3,7 +3,7 @@ type: project
 status: done
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 completed: 2026-10-17
 notion_id: 3f17ae76-22ba-8155-8e37-f22bdd7ae0a1
 ---
@@ -12,7 +12,7 @@ Done 2026-10-17: ecobees native in Apple Home, HA via ecobee cloud integration; 
 
 ## Outcome
 
-Done 2026-10-17. Both Nest thermostats replaced by ecobee Smart Thermostat Premiums (installed 2026-10-13). They're paired natively to Apple Home, and HA runs them through the ecobee cloud integration (entry 01M4VTY9KJYZH20GBZ8VPB8ZPZ) as `climate.upstairs` / `climate.downstairs`, with six SmartSensors in their HA areas. The wall-panel and `lovelace` climate cards point at the ecobees. The HomeKit Bridge that carried the Nest thermostats is disabled in HA and removed from Apple Home. Both Nests are removed from the Google Home app, and HA's Nest integration dropped their devices on its own, leaving only the cameras. Current config lives on the [Home Assistant OS (VM)](<../systems/Home Assistant OS (VM).md>) System page. Upstairs wiring was conventional 1H/1C on Y1/G/W1/C/R, with a C-wire present and no PEK needed.
+Done 2026-10-17. Both Nest thermostats replaced by ecobee Smart Thermostat Premiums (installed 2026-10-13). They're paired natively to Apple Home, and HA runs them through the ecobee cloud integration (entry 01M4VTY9KJYZH20GBZ8VPB8ZPZ) as `climate.upstairs` / `climate.downstairs`, with six SmartSensors in their HA areas. The wall-panel and `lovelace` climate cards point at the ecobees. The HomeKit Bridge that carried the Nest thermostats is disabled in HA and removed from Apple Home. Both Nests are removed from the Google Home app, and HA's Nest integration dropped their devices on its own, leaving only the cameras. Current config lives on the [Home Assistant](<../systems/Home Assistant (integrations and automations).md>) System page. Upstairs wiring was conventional 1H/1C on Y1/G/W1/C/R, with a C-wire present and no PEK needed.
 Follow-ups (sub-items): fan timer (Deferred Idea; Apple Home has no standalone fan control), factory-reset and sell the Nests (Aaron's Backlog task), and Nest/GCP teardown (Blocked until the cameras move).
 
 ## Decisions

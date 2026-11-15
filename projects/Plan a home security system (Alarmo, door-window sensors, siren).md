@@ -4,6 +4,7 @@ status: active
 priority: medium
 system:
 - '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
 next_step: '2026-10-28: ZWA-2 ordered (Aaron); when it arrives, Claude passes it through to the HA VM and adds Z-Wave JS. Still to buy: UP Siren PoE. Aaron has unused Ring devices to include too (Hardware on hand). Phase 0 (Alarmo + door zones) waits on Aaron''s go.'

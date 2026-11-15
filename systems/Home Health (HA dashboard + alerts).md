@@ -3,7 +3,7 @@ status: active
 category: software
 url: http://192.168.1.218:8123/home-health/overview
 runs_on:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 last_verified: 2026-10-17
 notion_id: 3ea7ae76-22ba-81ff-9924-fe27308ed491
 ---
@@ -12,7 +12,7 @@ HA dashboard + alerts for house health: water leaks and shutoff, device batterie
 
 ## Overview
 
-The house-health layer built in Home Assistant: one dashboard plus the alerts behind it, covering water leaks and the whole-home shutoff valve, device batteries, Zigbee signal, stale/offline sensors, and pending HA updates. Built 2026-09-04, redesigned as a "status board" 2026-09-05. Split out of the [Home Assistant OS (VM)](<Home Assistant OS (VM).md>) page on 2026-09-29. Homelab/server monitoring (TrueNAS, Kuma, VMs) is separate: see "Homelab health monitoring with Home Assistant alerts" in Projects.
+The house-health layer built in Home Assistant: one dashboard plus the alerts behind it, covering water leaks and the whole-home shutoff valve, device batteries, Zigbee signal, stale/offline sensors, and pending HA updates. Built 2026-09-04, redesigned as a "status board" 2026-09-05. Split out of the Home Assistant OS (VM) page on 2026-09-29; it runs in [Home Assistant](<Home Assistant (integrations and automations).md>). Homelab/server monitoring (TrueNAS, Kuma, VMs) is separate: see "Homelab health monitoring with Home Assistant alerts" in Projects.
 
 ## Access
 

@@ -2,7 +2,7 @@
 kind: reference
 status: active
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 notion_id: 3ea7ae76-22ba-8138-bbc1-f4a8be300a8a
 ---

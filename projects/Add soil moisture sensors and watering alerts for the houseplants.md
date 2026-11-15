@@ -3,7 +3,7 @@ type: project
 status: active
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 next_step: '2026-11-09: Aaron orders 3–4 Zigbee router plugs and 2 ThirdReality Gen2 soil sensors as a pilot; Claude installs Plant Monitor + OpenPlantbook + flower-card when they arrive.'
 ---
 

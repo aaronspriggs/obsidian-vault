@@ -4,6 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Homelab health monitoring with Home Assistant alerts (silent when nominal)]]'
 next_step: 'Not scheduled. When picked up: compare a free external heartbeat (e.g. Healthchecks.io pinged by HA every few minutes) with the alternatives, and decide how it reaches Aaron when HA is down.'
 notion_id: 3f47ae76-22ba-81ff-b6cf-fc6c3cb04f87

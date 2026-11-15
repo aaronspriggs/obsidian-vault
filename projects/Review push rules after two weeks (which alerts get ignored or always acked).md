@@ -3,7 +3,7 @@ type: task
 status: backlog
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 next_step: '~2026-10-28: pull Alert2 fire counts + logbook taps, propose changes to Aaron.'
 notion_id: 3f97ae76-22ba-817e-a15d-d50f2910f1bc
 ---

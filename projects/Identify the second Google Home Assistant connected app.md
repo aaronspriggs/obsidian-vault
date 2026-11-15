@@ -3,7 +3,7 @@ type: task
 status: done
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 completed: 2026-10-17
 notion_id: 3e97ae76-22ba-81bb-bbbf-f05bf59ee704
 ---

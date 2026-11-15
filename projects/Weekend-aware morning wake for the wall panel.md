@@ -4,7 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[Raspberry Pi Wall Panel]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 notion_id: 3e97ae76-22ba-818a-a6f9-eb5d3609c87c
 ---
 

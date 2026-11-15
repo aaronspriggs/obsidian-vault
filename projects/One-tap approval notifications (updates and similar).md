@@ -3,7 +3,7 @@ type: project
 status: done
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 completed: 2026-10-14
 notion_id: 3f97ae76-22ba-8120-9bf0-c5b2a524bc50
 ---

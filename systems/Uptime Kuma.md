@@ -37,7 +37,7 @@ Uptime Kuma watches every homelab service and host, plus push heartbeats from sc
 
 ## Dependencies
 
-Runs on [Dockhand](<Dockhand.md>) on [TrueNAS SCALE (Big Boi)](<TrueNAS SCALE (Big Boi).md>): if Big Boi is down, Kuma is too and HA sees the integration go unavailable (one "Kuma unreachable" alert rather than one per monitor). Alerts are delivered by [Home Assistant OS (VM)](<Home Assistant OS (VM).md>).
+Runs on [Dockhand](<Dockhand.md>) on [TrueNAS SCALE (Big Boi)](<TrueNAS SCALE (Big Boi).md>): if Big Boi is down, Kuma is too and HA sees the integration go unavailable (one "Kuma unreachable" alert rather than one per monitor). Alerts are delivered by [Home Assistant](<Home Assistant (integrations and automations).md>).
 
 ## Decisions
 

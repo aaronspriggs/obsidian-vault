@@ -2,7 +2,7 @@
 kind: recovery
 status: active
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 notion_id: 3087ae76-22ba-81a4-851f-facbc7e2ec23
 ---
 

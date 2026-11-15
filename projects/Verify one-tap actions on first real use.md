@@ -3,7 +3,7 @@ type: task
 status: active
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 next_step: '2026-10-23: (1) done: real Install (10-16) and real Update all incl. NZBGet/Prowlarr NetworkMode check (10-23) both passed. (2) real Snooze re-push and (3) leak buttons still waiting on first real use.'
 notion_id: 3f97ae76-22ba-818f-b59b-e4211a9a30dd
 ---

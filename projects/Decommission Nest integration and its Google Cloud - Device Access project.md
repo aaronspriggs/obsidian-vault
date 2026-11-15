@@ -3,7 +3,7 @@ type: task
 status: blocked
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Migrate thermostats from Nest to ecobee]]'
 next_step: '2026-10-06: blocked until both thermostats are on ecobee AND the Nest cameras move off Nest (Migrate cameras from Nest to UniFi Protect, deferred for cost; Nest subscription renewed ~2026-10, runs about 11 months).'
 notion_id: 3f17ae76-22ba-818f-a915-c77ac812f523

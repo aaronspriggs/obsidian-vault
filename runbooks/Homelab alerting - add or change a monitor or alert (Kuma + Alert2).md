@@ -3,7 +3,7 @@ kind: procedure
 status: active
 system:
 - '[[Uptime Kuma]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 last_tested: 2026-10-17
 repo: https://github.com/aaronspriggs/spriggs-homelab/blob/main/ha/alert2.yaml
 notion_id: 3f97ae76-22ba-81fe-aa1a-f5b8cf87357b

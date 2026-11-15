@@ -4,7 +4,7 @@ status: done
 priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Plex Media Server]]'
 - '[[Uptime Kuma]]'
 completed: 2026-10-07

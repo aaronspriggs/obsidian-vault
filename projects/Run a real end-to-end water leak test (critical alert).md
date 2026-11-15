@@ -3,7 +3,7 @@ type: task
 status: active
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 next_step: Aaron wants to run it later (said 2026-10-14). Before the test, he confirms iPhone Settings → Notifications → Home Assistant → Critical Alerts is on. Then wipe a sensor, check the critical push, tap Dismiss.
 notion_id: 3e77ae76-22ba-812f-8a4f-e2aa8128fe23

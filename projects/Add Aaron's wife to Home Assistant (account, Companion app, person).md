@@ -3,7 +3,7 @@ type: task
 status: active
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 parent: '[[Plan a home security system (Alarmo, door-window sensors, siren)]]'
 next_step: '2026-10-27: Aaron and Claude create her HA user together when Aaron is ready; Aaron gives the name and admin choice, Claude needs his explicit yes (Tier 3, users).'
 ---

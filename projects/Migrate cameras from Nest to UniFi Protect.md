@@ -3,7 +3,7 @@ type: project
 status: active
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[UniFi (UDM Pro)]]'
 next_step: '2026-11-14: Aaron picks up 2× G5 Turret Ultra + 1× G5 Bullet + ~800 ft Cat6 today; Claude helps plan the cable runs and adopts the cameras into Protect once they are powered.'
 notion_id: 3e57ae76-22ba-8116-bd2b-c9886cacd1dd

@@ -13,7 +13,7 @@ A UniFi network (UDM Pro, USW Pro Max 16 PoE, three U7 APs) and a TrueNAS SCALE 
 | System | Aaron | Claude (from the ClaudeCode VM) |
 | --- | --- | --- |
 | [TrueNAS](<systems/TrueNAS SCALE (Big Boi).md>) (192.168.1.248) | Web UI :9443 as `truenas_admin` (1Password "TrueNAS - Admin"); SSH `aspriggs` | `truenas-api`: reads as the API user `claude-readonlyapi`, allowlisted maintenance writes (`--write`) as `claude-maint`. No SSH (never set up; checked 2026-11-15) |
-| [Home Assistant](<systems/Home Assistant OS (VM).md>) (192.168.1.218) | UI :8123 as `aaronspriggs` (MFA); shell via the Terminal & SSH app's web terminal (no network SSH port) | ha-mcp (full control through HA's API). No SSH |
+| [Home Assistant](<systems/Home Assistant (integrations and automations).md>) (192.168.1.218), on the [HAOS VM](<systems/Home Assistant OS (VM).md>) | UI :8123 as `aaronspriggs` (MFA); shell via the Terminal & SSH add-on's web terminal (no network SSH port) | ha-mcp (full control through HA's API). No SSH |
 | [Plex VM](<systems/Plex Media Server.md>) (192.168.1.116) | SSH `plexadmin` | SSH `ssh plex` as `claude`; root only through `claude-maint` |
 | [ClaudeCode VM](<systems/ClaudeCode (VM).md>) (192.168.1.156) | SSH `aspriggs` (key only); Claude Remote Control from claude.ai/code or the app | Local |
 | [UniFi](<systems/UniFi (UDM Pro).md>) (UDM Pro, 192.168.1.1) | UniFi UI | Read-only local account `claude-readonly` via `unifi-api` (Network View Only) |

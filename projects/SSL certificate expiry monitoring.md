@@ -3,7 +3,7 @@ type: idea
 status: backlog
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Uptime Kuma]]'
 notion_id: 3e97ae76-22ba-8174-ac2d-e86d590bdc2e
 ---

@@ -3,7 +3,7 @@ type: task
 status: done
 priority: low
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 parent: '[[Build out water leak sensor automations (notifications, alerts)]]'
 completed: 2026-10-17

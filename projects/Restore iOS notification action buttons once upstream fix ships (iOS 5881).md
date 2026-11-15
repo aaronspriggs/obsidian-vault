@@ -3,7 +3,7 @@ type: task
 status: blocked
 priority: medium
 system:
-- '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 - '[[Home Health (HA dashboard + alerts)]]'
 next_step: '2026-10-30: still broken on Companion 2026.10.2. Wait for upstream long-press fix, then follow ''When a fix ships''. (Dockhand Restart test dropped: homelab_container_restart_on_tap was deleted 2026-10-23.)'
 notion_id: 3e67ae76-22ba-8122-9734-d7553f58b8a6

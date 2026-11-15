@@ -6,6 +6,7 @@ system:
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
 - '[[Home Assistant OS (VM)]]'
+- '[[Home Assistant (integrations and automations)]]'
 next_step: 'Verify HKSV: Aaron sets Recording Options in Home and walks past the G6; Claude checks Scrypted''s log for a recording session, then closes the project'
 notion_id: 3997ae76-22ba-81d8-bf4b-c2c82629b5f2
 ---
