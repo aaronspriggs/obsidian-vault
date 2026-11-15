@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
-next_step: '2026-11-15: step 1 done. Waiting on Aaron: (a) step 2, his yes to autoCompactWindow 400000 with compact instructions in CLAUDE.md (plan question settled: stays on Pro); (b) step 3, he runs the commit-and-deploy line for the prepared tier3-guard change (uncommitted in ~/homelab) once the rest is settled. Then confirm in a new session that the hook block arrives whole.'
+next_step: '2026-11-15: steps 1 and 2 done. Aaron runs the step 3 commit-and-deploy line (in Status) for the tier3-guard change. Next session: check the hook block arrived whole and, if step 3 is deployed, verify and log it; then step 4 (CLAUDE.md rewrite as a diff for Aaron) and step 5 (rulebook update, Tier 3).'
 ---
 
 ## Goal
@@ -13,7 +13,13 @@ Review the whole Claude Code setup on this VM (settings, hooks, the tier3-guard 
 
 ## Status (2026-11-15)
 
-Survey done, plan agreed by Aaron ("this all sounds good to me… let's do it"). Step 1 is done and deployed. Step 2 is analysed and waits for Aaron's decision. Step 3 is written and tested in `~/homelab` but not committed or deployed: changing the guard is Tier 3, and the auto mode classifier has blocked Claude from deploying its own guard before (2026-10-23), so Aaron runs that line. Steps 4 to 8 are open; they go in fresh sessions (4–5, then 6–8) because long sessions are the main token cost.
+Survey done, plan agreed by Aaron ("this all sounds good to me… let's do it"). Steps 1 and 2 are done and deployed. Step 3 is written and tested in `~/homelab` but not committed or deployed: Aaron said yes, the classifier refused Claude's commit of its own guard, so Aaron runs this from the Mac:
+
+```
+ssh aspriggs@192.168.1.156 'cd ~/homelab && git add claudecode-vm/mods/tier3-guard && git commit -m "claudecode-vm: tier3-guard holds a guarded path only where the command writes it" && git push && install -m 644 claudecode-vm/mods/tier3-guard/hooks/register.ts ~/.claude/mods/tier3-guard/hooks/register.ts && make check | grep -v "^ok"'
+```
+
+Until he does, `make check` shows drift on `register.ts`, which is expected. Once it's deployed, the next session writes the change note, sets the backlog idea it closes to done, and updates the guard line in the System note. Steps 4 to 8 are open; they go in fresh sessions (4–5, then 6–8) because long sessions are the main token cost.
 
 ## Findings (measured 2026-11-15)
 
@@ -30,8 +36,8 @@ Sound and left alone: `make check` clean, vault and repo pushed, memory symlinke
 ## Plan
 
 1. **Session hook fits the cap** (Tier 1). Done 2026-11-15, see [change](<../changes/2026-11-15 Trimmed the session-start hook to fit the 10,000-character cap.md>).
-2. **Session length.** Proposed 2026-11-15, waiting for Aaron: `"autoCompactWindow": 200000` in repo `claudecode-vm/claude/settings.local.json`, so a session compacts at 200k instead of about 967k. Replaces the warning hook first planned here. Default model policy is Aaron's call.
-3. **tier3-guard Bash matching** (Tier 3: the guard's own code). Written and tested 2026-11-15, uncommitted in `~/homelab/claudecode-vm/mods/tier3-guard` (`hooks/register.ts`, `tests/guard.test.ts`); Aaron commits and deploys. A guarded path is held only where the command writes it. Closes [this idea](<Stop tier3-guard holding Bash commands that only mention the rulebook.md>) once deployed.
+2. **Session length.** Done 2026-11-15: `"autoCompactWindow": 400000` plus "Compact instructions" in CLAUDE.md, see [change](<../changes/2026-11-15 Set Claude Code sessions to compact at 400k tokens.md>). Replaced the warning hook first planned here. No default-model change: Aaron starts chats on Opus.
+3. **tier3-guard Bash matching** (Tier 3: the guard's own code). Written and tested 2026-11-15, uncommitted in `~/homelab/claudecode-vm/mods/tier3-guard` (`hooks/register.ts`, `tests/guard.test.ts`). Aaron approved it on 2026-11-15, but the auto mode classifier refused Claude's commit ("Undermining Oversight"), as on 2026-10-23, so Aaron runs the commit-and-deploy line himself. A guarded path is held only where the command writes it. Closes [this idea](<Stop tier3-guard holding Bash commands that only mention the rulebook.md>) once deployed.
 4. **CLAUDE.md rewrite**, reviewed by Aaron as a diff: retitle, fold stable memories in as one-liners, cut memory from 15 files to about 9.
 5. **STANDARDS.md** (Tier 3): update the Claude Code section, add a size rule for project notes.
 6. **Drift sweep:** READMEs, `truenas-api` docstring, the quarterly triage note, split the ClaudeCode System note.
@@ -53,8 +59,7 @@ Sound and left alone: `make check` clean, vault and repo pushed, memory symlinke
 
 ## Open questions
 
-- Step 2: Aaron's yes to `autoCompactWindow` 400000 plus a "Compact instructions" section in CLAUDE.md (Claude's recommendation after his 2026-11-15 questions).
+- Step 2 still needs its live check: the first session past 400k should compact, keep what the compact instructions list, and reload the KB block.
 - Plan: settled for now. Aaron has gone into usage credits only 3 times, so he stays on Pro (2026-11-15). Revisit if that becomes regular.
-- Aaron will deploy step 3 once the rest is settled (said 2026-11-15).
 - Step 3 verify after Aaron deploys: `make check` clean, and in a new session a read loop over `~/.claude/settings.json` followed by `python3 -c "print('<x>')"` runs without a hold, while `echo x >> ~/.claude/settings.json` is held.
 - Step 1 still needs its live check: the next new session should start with the whole block and no "Output too large" line.
