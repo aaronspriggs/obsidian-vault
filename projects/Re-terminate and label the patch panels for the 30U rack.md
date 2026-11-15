@@ -36,7 +36,7 @@ Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front
 
 ## Plan: port map (draft v2, 2026-11-15)
 
-Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
+Working copy for collaborating on placement: the Claude artifact [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp) (2026-11-15); changes agreed there get copied back here. Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
 
 Rules: Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords); A17–A24 go to Basement Flex ports 1–8. Panel B (U28) holds rack gear and WAN: B1–B10 patch down to the UDM Pro (B1–B8 = UDM LAN 1–8, B9 = WAN1, B10 = SFP+1 WAN2), B11–B16 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B17–B24 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. Live ports that already match (PM 4, 6, 8, 9, 13–16; UDM 2–4, 8, 9) don't move.
 
