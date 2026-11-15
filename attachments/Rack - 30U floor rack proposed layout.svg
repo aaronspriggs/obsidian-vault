@@ -51,7 +51,7 @@
 <rect x="133" y="292" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="310" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Aggregation  ·  8× SFP+  ·  6.0 lb</text>
 <rect x="133" y="322" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
-<text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">Basement Flex 2.5G 8 PoE  ·  F1–F8 keystones in its mount</text>
+<text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">Basement Flex 2.5G 8 PoE  ·  keystones F1–F8</text>
 <rect x="133" y="352" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Hub shelf: Hue · Lutron · HDHomeRun · Ting ONT</text>
 <rect x="133" y="382" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
