@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: Aaron reviews the draft port map below (A1–A24) and answers the open questions; then Claude finalises it and Aaron re-terminates and labels during the 30U move.'
+next_step: '2026-11-15: Aaron and Claude adjust drop placement on the A/B diagram (draft v2); then Aaron re-terminates, colours and labels during the 30U move and sets matching UniFi port names.'
 ---
 
 ## Goal
@@ -34,46 +34,75 @@ Existing runs (14), all home-run to the basement utility room:
 
 Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front hallway doorbell speaker or chime (maybe); outside entry G6 Entry doorbell (PoE+, 16 W, copper); basement guest room (desk or TV spot); basement gym/flex room; basement entertainment space (1 run to a Flex is the lean, since most AV goes in the rack); outside backyard camera; outside front camera (current Driveway Nest spot); outside side-of-house gate and walkway camera.
 
-## Plan: draft port map
+## Plan: port map (draft v2, 2026-11-15)
 
-Rules: Panel A (U30) mirrors the Pro Max 16 below it, so A1–A16 patch straight down to ports 1–16 with 6" cords; A17–A24 mirror the Basement Flex 2.5G 8 PoE ports 1–8. Panel B (U28) is left for future runs. In-rack devices patch direct, never through a panel. The Pro Max is on the UPS, so everything security-related and every PoE-powered switch or AP lands there; non-PoE drops go to the Basement Flex. Ports 13–16 are the Pro Max's 2.5 GbE ports.
+Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
 
-| Pos | Run | Switch port | Cord | Notes |
+Rules: Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords); A17–A24 go to Basement Flex ports 1–8. Panel B (U28) holds rack gear and WAN: B1–B10 patch down to the UDM Pro (B1–B8 = UDM LAN 1–8, B9 = WAN1, B10 = SFP+1 WAN2), B11–B16 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B17–B24 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. Live ports that already match (PM 4, 6, 8, 9, 13–16; UDM 2–4, 8, 9) don't move.
+
+Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure (switch uplinks, hubs, UPS, PDU, DACs), white APs, blue everything else.
+
+### Panel A
+
+| Pos | Run / device | Switch port | Cord | Status |
 | --- | --- | --- | --- | --- |
-| A1 | Outside front camera (G5 Turret Ultra) | Pro Max 1 | yellow | CCA ok |
-| A2 | Outside backyard camera (G5 Turret Ultra) | Pro Max 2 | yellow | CCA ok |
-| A3 | Outside side gate/walkway camera (G5 Bullet) | Pro Max 3 | yellow | Narrow FOV suits the walkway |
-| A4 | Outside entry doorbell (G6 Entry) | Pro Max 4 | yellow | PoE+, copper run |
-| A5 | Hallway UniFi Siren | Pro Max 5 | yellow | |
-| A6 | Living wall Pi panel | Pro Max 6 | blue | Already on port 6 |
-| A7 | Hallway Ring keypad PoE converter | Pro Max 7 | yellow | |
-| A8 | Hallway doorbell speaker/chime (if pulled) | Pro Max 8 | yellow | |
-| A9 | Living TV → spare USW Flex | Pro Max 9 | blue | USW Flex is PoE-powered |
-| A10 | Basement entertainment → Flex | Pro Max 10 | blue | PoE lets a Flex there run without an adapter |
-| A11 | Basement ceiling AP | Pro Max 11 | white | 1 GbE until a 2.5G port frees up |
-| A12 | Spare | Pro Max 12 | | Basement Flex uplink moves to its SFP+ port → Aggregation |
-| A13 | Office single run → desk Flex 2.5G 5 | Pro Max 13 | blue | 2.5 GbE, already port 13 |
-| A14 | Office → U7-Pro-Wall-Front | Pro Max 14 | white | 2.5 GbE, already port 14 |
-| A15 | 2nd floor → upstairs Flex 2.5G 8 PoE | Pro Max 15 | black | 2.5 GbE, PoE-powered, already port 15 |
-| A16 | Bar → U7-Pro-Wall-Back | Pro Max 16 | white | 2.5 GbE, already port 16 |
-| A17 | Kitchen Sonos 1 | Basement Flex 1 | blue | Moves off the Pro Max (no PoE, no UPS need) |
-| A18 | Kitchen Sonos 2 | Basement Flex 2 | blue | |
-| A19 | Kitchen 3 | Basement Flex 3 | blue | Dark |
-| A20 | Basement guest room | Basement Flex 4 | blue | |
-| A21 | Basement gym/flex room | Basement Flex 5 | blue | |
-| A22 | Office spare 1 | Basement Flex 6 | blue | Dark |
-| A23 | Office spare 2 | Basement Flex 7 | blue | Dark |
-| A24 | Office spare 3 | Basement Flex 8 | blue | Dark |
+| A1 | Cam front (G5 Turret) | PM 1 | orange | to pull |
+| A2 | Cam backyard (G5 Turret) | PM 2 | orange | to pull |
+| A3 | Cam side gate (G5 Bullet) | PM 3 | orange | to pull |
+| A4 | Ring keypad PoE | PM 4 | orange | in place |
+| A5 | Doorbell G6 Entry | PM 5 | orange | to pull |
+| A6 | Living wall Pi | PM 6 | blue | in place |
+| A7 | Siren (hallway) | PM 7 | orange | to pull |
+| A8 | Kitchen Sonos 1 | PM 8 | blue | in place |
+| A9 | Kitchen Sonos 2 | PM 9 | blue | in place |
+| A10 | Living TV → USW Flex | PM 10 | black | in place |
+| A11 | Chime (hallway) | PM 11 | orange | to pull |
+| A12 | Kitchen 3 | PM 12 | blue | dark |
+| A13 | Office → desk Flex | PM 13 · 2.5G | black | in place |
+| A14 | Office → Front AP | PM 14 · 2.5G | white | in place |
+| A15 | 2nd fl → Upstairs Flex | PM 15 · 2.5G | black | in place |
+| A16 | Bar → Back AP | PM 16 · 2.5G | white | in place |
+| A17 | Basement AP (U7 Pro) | Flex 1 | white | run in, AP not yet |
+| A18 | Bsmt ent. → Flex (PoE) | Flex 2 | black | to pull |
+| A19 | Guest room | Flex 3 | blue | to pull |
+| A20 | Gym / flex room | Flex 4 | blue | to pull |
+| A21 | Office spare 1 | Flex 5 | blue | dark |
+| A22 | Office spare 2 | Flex 6 | blue | dark |
+| A23 | Office spare 3 | Flex 7 | blue | dark |
+| A24 | Spare | Flex 8 | — | spare |
 
-Cord colors: blue room and wall drops, white APs, yellow cameras and security, red WAN/ISP (UDM WAN ports, Ting ONT), black infrastructure (uplinks, in-rack devices). Label every run with its position ID (A01–A24, B01–B24) on the panel, on a wrap label behind the keystone, at the far end, and as the UniFi port name (Aaron sets those; Claude's UniFi account is read-only).
+### Panel B
+
+| Pos | Run / device | Switch port | Cord | Status |
+| --- | --- | --- | --- | --- |
+| B1 | Sonos Amp (U11) | UDM 1 | blue | rack gear |
+| B2 | Hue Bridge | UDM 2 | black | rack gear |
+| B3 | Lutron hub | UDM 3 | black | rack gear |
+| B4 | HDHomeRun | UDM 4 | black | rack gear |
+| B5 | Denon AVR (U3) | UDM 5 | blue | rack gear |
+| B6 | PDU Pro mgmt | UDM 6 | black | not bought |
+| B7 | Spare | UDM 7 | — | spare |
+| B8 | UPS 2U | UDM 8 | black | rack gear |
+| B9 | WAN1 CenturyLink | UDM 9 | red | in place |
+| B10 | WAN2 Ting ONT | UDM SFP+1 (RJ45 mod) | red | not bought |
+| B11 | Big Boi 10G DAC | Agg (pass-through) | black | rack gear |
+| B12 | Second server | Agg (DAC or RJ45 mod) | blue | not bought |
+| B13 | Mac Studio (future) | Agg (RJ45 mod) | blue | not bought |
+| B14 | Pass-through | Agg | — | spare |
+| B15 | Pass-through | Agg | — | spare |
+| B16 | Pass-through | Agg | — | spare |
+
+B17–B24: free for future house runs.
 
 ## Decisions
 
 - **2026-11-14 (Aaron):** Panel A is a UniFi 24-port keystone panel; all labels get redone. Cameras can land on the Pro Max (on UPS); the Basement Flex is acceptable once it's on battery.
-- **2026-11-15 (Aaron):** basement entertainment space leans to 1 run feeding a small switch, since most AV gear goes in the rack.
+- **2026-11-15 (Aaron):** basement entertainment space gets 1 run feeding a PoE-powered switch, since most AV gear goes in the rack.
+- **2026-11-15 (Aaron):** cord colours as above. The hallway "doorbell speaker" run is for an indoor chime. In-rack gear (Lutron, Hue, HDHomeRun and so on) also patches through the keystone panels, and keystone pass-through plates (arrived) carry 10G DACs where needed.
+- **2026-11-15 (Aaron):** the Basement Flex 2.5G 8 PoE runs on the official UniFi adapter, so all 8 ports give 2.5 GbE with PoE; use it more. The basement ceiling AP is a U7 Pro on 2.5 GbE PoE like the other three (Ubiquiti lists the U7 Pro as PoE+, 21 W max: [techspecs](https://techspecs.ui.com/unifi/wifi/u7-pro)), so it goes on Flex 1.
 
 ## Open questions
 
-- Is the "doorbell speaker" an indoor chime (e.g. Ubiquiti's PoE chime)? Pull the run either way while walls are open.
-- The 4th 2.5 GbE need (basement AP) has no 2.5G port: fine on 1 GbE for now; once Big Boi moves to the Aggregation, a Pro Max SFP+ frees up for a 10GBASE-T module if needed.
+- Pro Max port 4 draws ~0.6 W with no link (2026-11-14): is that the Ring keypad's PoE converter? The map assumes yes.
+- Does the CenturyLink WAN (UDM port 9) come in as a house run from the outdoor ONT? The map puts it on B9.
 - UPS runtime: the new PoE load (doorbell 16 W, cameras ~12 W, AP, siren) all sits on the UPS through the Pro Max.
