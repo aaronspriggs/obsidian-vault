@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: Aaron reviews map v3 (doc artifact or the republished HTML page) and answers the three open questions (Pro Max port 4, the CenturyLink WAN run, UPS runtime); then Aaron re-terminates, colours and labels during the 30U move and Claude sets the matching UniFi port names.'
+next_step: '2026-11-15: Aaron reviews the physical patching drawing on the rack page and decides whether panel B moves its UDM positions above the UDM ports (v4); then Aaron re-terminates, colours and labels during the 30U move and Claude sets the matching UniFi port names.'
 ---
 
 ## Goal
@@ -117,9 +117,4 @@ B17–B24: free for future house runs.
 
 - **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
 - **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
-
-## Open questions
-
-- Pro Max port 4 draws ~0.6 W with no link (2026-11-14): is that the Ring keypad's PoE converter? The map assumes yes.
-- Does the CenturyLink WAN (UDM port 9) come in as a house run from the outdoor ONT? The map puts it on B9.
-- UPS runtime: the new PoE load (doorbell 16 W, cameras ~12 W, AP, siren) all sits on the UPS through the Pro Max.
+- **2026-11-15 (Aaron), open questions answered:** (1) Pro Max port 4 is the Ring keypad's PoE converter: Aaron believes so; not verified, so A4 stays as mapped. (2) The CenturyLink ONT is outdoors; its run comes into the rack as a house run, ends on a keystone and is patched to UDM WAN (port 9), so B9 stands. (3) UPS runtime: live HA reading 2026-11-15 is 110 W with 4,040 s (67 min) left at 100% battery. Assumed new PoE load: G6 Entry 16 W, 3 cameras at up to 12 W each, basement U7 Pro up to 21 W (the Basement Flex is already on a battery outlet), siren plus chime about 10 W, plus about 10% PoE loss: about 90 W, so about 200 W total. Scaling the 123 Wh the UPS implies today gives roughly 35 min, well past the 300 s TrueNAS shutdown. These are assumed maximums, not measurements; the HDD-pool rebuild of Big Boi (separate project) adds load this doesn't include.
