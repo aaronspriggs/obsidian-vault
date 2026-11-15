@@ -4,6 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 ---
 
 # Consider nine Claude Code mods from a RoboNuggets video

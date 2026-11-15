@@ -12,12 +12,12 @@ A UniFi network (UDM Pro, USW Pro Max 16 PoE, three U7 APs) and a TrueNAS SCALE 
 
 | System | Aaron | Claude (from the ClaudeCode VM) |
 | --- | --- | --- |
-| [TrueNAS](<systems/TrueNAS SCALE (Big Boi).md>) (192.168.1.248) | Web UI :9443 as `truenas_admin` (1Password "TrueNAS - Admin"); SSH `aspriggs` | Read-only API user `claude` via `truenas-api` (no writes). No SSH (never set up; checked 2026-09-29) |
+| [TrueNAS](<systems/TrueNAS SCALE (Big Boi).md>) (192.168.1.248) | Web UI :9443 as `truenas_admin` (1Password "TrueNAS - Admin"); SSH `aspriggs` | `truenas-api`: reads as the API user `claude-readonlyapi`, allowlisted maintenance writes (`--write`) as `claude-maint`. No SSH (never set up; checked 2026-11-15) |
 | [Home Assistant](<systems/Home Assistant OS (VM).md>) (192.168.1.218) | UI :8123 as `aaronspriggs` (MFA); shell via the Terminal & SSH app's web terminal (no network SSH port) | ha-mcp (full control through HA's API). No SSH |
 | [Plex VM](<systems/Plex Media Server.md>) (192.168.1.116) | SSH `plexadmin` | SSH `ssh plex` as `claude`; root only through `claude-maint` |
 | [ClaudeCode VM](<systems/ClaudeCode (VM).md>) (192.168.1.156) | SSH `aspriggs` (key only); Claude Remote Control from claude.ai/code or the app | Local |
 | [UniFi](<systems/UniFi (UDM Pro).md>) (UDM Pro, 192.168.1.1) | UniFi UI | Read-only local account `claude-readonly` via `unifi-api` (Network View Only) |
-| [Dockhand](<systems/Dockhand.md>) (:3001) / [Uptime Kuma](<systems/Uptime Kuma.md>) (:3002) | Web UIs on 192.168.1.248 | No direct access; state via the TrueNAS API and HA's Kuma integration |
+| [Dockhand](<systems/Dockhand.md>) (:3001) / [Uptime Kuma](<systems/Uptime Kuma.md>) (:3002) | Web UIs on 192.168.1.248 | `dockhand-api` (the `claude` token is full admin on Big Boi's Docker; writes need `--write` and follow the tiers) and `kuma-api` |
 | [Wall panel Pi](<systems/Raspberry Pi Wall Panel.md>) (192.168.1.84) | SSH `raspberrypidashboard` | None yet (backlog task) |
 | [Repo](<systems/spriggs-homelab repo.md>) (GitHub, private) | Owner | Push via a repo-only deploy key; clone at `~/homelab` |
 

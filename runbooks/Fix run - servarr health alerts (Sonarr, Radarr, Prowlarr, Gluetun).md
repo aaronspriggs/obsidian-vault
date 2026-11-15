@@ -4,6 +4,7 @@ status: active
 system:
 - '[[Servarr Stack (Docker Compose)]]'
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 last_tested: 2026-10-17
 repo: https://github.com/aaronspriggs/spriggs-homelab/blob/main/claudecode-vm/claude-fix-runbooks.json
 notion_id: 3fb7ae76-22ba-8102-82fb-f2afc84cc940

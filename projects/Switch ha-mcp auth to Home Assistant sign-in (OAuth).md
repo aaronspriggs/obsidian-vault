@@ -5,6 +5,7 @@ priority: low
 system:
 - '[[Home Assistant OS (VM)]]'
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 notion_id: 3d07ae76-22ba-8167-b38c-d6a751156cda
 ---
 

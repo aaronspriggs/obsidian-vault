@@ -4,6 +4,7 @@ status: active
 priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 next_step: '2026-11-15: steps 1 to 5 done. Next, in a fresh session: step 6 (drift sweep) and step 7 (loose files; deletes need Aaron''s yes). Step 8 (slim the four largest project notes, backlog triage with Aaron) gets its own session after that (Aaron, 2026-11-15).'
 ---
 

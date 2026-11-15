@@ -4,6 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 ---
 
 # Use mod UI once Remote Control clients draw it

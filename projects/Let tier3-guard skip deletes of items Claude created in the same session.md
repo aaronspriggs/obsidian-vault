@@ -4,6 +4,7 @@ status: backlog
 priority: low
 system:
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 parent: '[[Build a Tier 3 guard mod for Claude Code]]'
 ---
 

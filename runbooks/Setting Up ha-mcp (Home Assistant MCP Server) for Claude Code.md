@@ -4,6 +4,7 @@ status: active
 system:
 - '[[Home Assistant OS (VM)]]'
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 last_tested: 2026-09-03
 notion_id: 3d07ae76-22ba-81f1-9879-d21fa7584b3b
 ---

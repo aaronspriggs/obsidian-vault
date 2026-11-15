@@ -3,6 +3,7 @@ kind: recovery
 status: active
 system:
 - '[[ClaudeCode (VM)]]'
+- '[[Claude Code (Remote Control service)]]'
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/claudecode-vm
 notion_id: 3fb7ae76-22ba-8175-90ce-daff7329032d
 ---
@@ -108,7 +109,7 @@ sudo systemctl daemon-reload && sudo systemctl enable --now claude-remote-contro
 - In a Remote Control session, the Home Assistant (ha-mcp) tools load.
 - `ssh plex sudo claude-maint unattended-dry-run` succeeds; `truenas-api system.info` returns; `git -C ~/homelab push --dry-run` and `git -C ~/obsidian-vault push --dry-run` succeed.
 - Uptime Kuma: `ClaudeCode VM` is up, and `TrueNAS Alert Relay` and `KB Vault Sync` turn green within about 15 minutes. `ClaudeCode VM Updates` is weekly, so check it after the next Sunday.
-- Log the rebuild as a change note and update the ClaudeCode VM System note (Claude Code version, any spec changes).
+- Log the rebuild as a change note and update the System notes: [ClaudeCode (VM)](<../systems/ClaudeCode (VM).md>) for spec changes and [Claude Code (Remote Control service)](<../systems/Claude Code (Remote Control service).md>) for the Claude Code version.
 
 ## Rollback
 
