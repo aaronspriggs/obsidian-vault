@@ -167,7 +167,7 @@
 <text x="690" y="1258" font-size="12" font-weight="400" fill="#334155" text-anchor="start">from UI specs; the rest guessed.</text>
 <line x1="30" y1="1365" x2="950" y2="1365" stroke="#cbd5e1"/>
 <text x="30" y="1390" font-size="20" font-weight="700" fill="#0f172a" text-anchor="start" >Patch panels — front view</text>
-<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft v11 · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
+<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft v12 · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
 <rect x="30" y="1424" width="14" height="14" rx="2" fill="#f97316" stroke="#f97316"/>
 <text x="50" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Security</text>
 <rect x="127.6" y="1424" width="14" height="14" rx="2" fill="#dc2626" stroke="#dc2626"/>
@@ -254,48 +254,48 @@
 <text x="930.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >24</text>
 <text transform="translate(934.9,1561) rotate(60)" font-size="11" fill="#0f172a">Mac Studio (future)</text>
 <text x="30" y="1721" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Patch panel B (U28) → Enterprise 48 bottom row: rack gear and networking</text>
-<text x="30" y="1738" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >B1–B6 free, rack gear B7–B12 (from the rear), UPS and PDU B13–B14, APs B15–B18, switches B19–B22, WAN B23–B24 down to the UDM</text>
+<text x="30" y="1738" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >Rack gear B1–B6 (from the rear), B7–B12 free, UniFi networking B13–B24: UPS and PDU, APs, switches, WAN down to the UDM</text>
 <rect x="30" y="1748" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
-<rect x="35.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="49.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >1</text>
-<text transform="translate(53.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="73.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="87.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >2</text>
-<text transform="translate(91.5,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="111.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="125.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >3</text>
-<text transform="translate(129.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="150.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="164.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >4</text>
-<text transform="translate(168.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="188.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="202.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >5</text>
-<text transform="translate(206.5,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="35.2" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text x="49.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >1</text>
+<text transform="translate(53.2,1812) rotate(60)" font-size="11" fill="#0f172a">Hue Bridge</text>
+<rect x="73.5" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text x="87.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >2</text>
+<text transform="translate(91.5,1812) rotate(60)" font-size="11" fill="#0f172a">Lutron hub</text>
+<rect x="111.9" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text x="125.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >3</text>
+<text transform="translate(129.9,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
+<rect x="150.2" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text x="164.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >4</text>
+<text transform="translate(168.2,1812) rotate(60)" font-size="11" fill="#0f172a">Sonos Amp (U12)</text>
+<rect x="188.5" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text x="202.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >5</text>
+<text transform="translate(206.5,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U4)</text>
 <rect x="226.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="240.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >6</text>
-<text transform="translate(244.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
-<rect x="265.2" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
-<text x="279.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >7</text>
-<text transform="translate(283.2,1812) rotate(60)" font-size="11" fill="#0f172a">Hue Bridge</text>
-<rect x="303.5" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
-<text x="317.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >8</text>
-<text transform="translate(321.5,1812) rotate(60)" font-size="11" fill="#0f172a">Lutron hub</text>
-<rect x="341.9" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
-<text x="355.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
-<text transform="translate(359.9,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
-<rect x="380.2" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
-<text x="394.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >10</text>
-<text transform="translate(398.2,1812) rotate(60)" font-size="11" fill="#0f172a">Sonos Amp (U12)</text>
-<rect x="418.5" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
-<text x="432.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >11</text>
-<text transform="translate(436.5,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U4)</text>
+<text transform="translate(244.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare (rack)</text>
+<rect x="265.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="279.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >7</text>
+<text transform="translate(283.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="303.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="317.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >8</text>
+<text transform="translate(321.5,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="341.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="355.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >9</text>
+<text transform="translate(359.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="380.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="394.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >10</text>
+<text transform="translate(398.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="418.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="432.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >11</text>
+<text transform="translate(436.5,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
 <rect x="456.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="470.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >12</text>
-<text transform="translate(474.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare (rack)</text>
-<rect x="495.2" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#16a34a"/>
+<text transform="translate(474.9,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<rect x="495.2" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#dc2626"/>
 <text x="509.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >13</text>
 <text transform="translate(513.2,1812) rotate(60)" font-size="11" fill="#0f172a">UPS 2U</text>
-<rect x="533.5" y="1756" width="28" height="38" rx="3" fill="#16a34a" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<rect x="533.5" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="547.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >14</text>
 <text transform="translate(551.5,1812) rotate(60)" font-size="11" fill="#0f172a">PDU Pro mgmt</text>
 <rect x="571.9" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#dc2626"/>
@@ -447,47 +447,47 @@
 <text x="78" y="2398" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Mac Studio (future)</text>
 <text x="240" y="2398" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >SFP+ RJ45 module (coupler)</text>
 <text x="375" y="2398" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
-<rect x="500" y="2009" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2020" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B1–6</text>
-<text x="548" y="2020" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare</text>
-<text x="710" y="2020" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 2–12</text>
-<text x="845" y="2020" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="500" y="2009" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
+<text x="516" y="2020" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B1</text>
+<text x="548" y="2020" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Hue Bridge</text>
+<text x="710" y="2020" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 2</text>
+<text x="845" y="2020" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2027" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
-<text x="516" y="2038" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B7</text>
-<text x="548" y="2038" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Hue Bridge</text>
-<text x="710" y="2038" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 14</text>
+<text x="516" y="2038" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B2</text>
+<text x="548" y="2038" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Lutron hub</text>
+<text x="710" y="2038" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 4</text>
 <text x="845" y="2038" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2045" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
-<text x="516" y="2056" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B8</text>
-<text x="548" y="2056" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Lutron hub</text>
-<text x="710" y="2056" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 16</text>
+<text x="516" y="2056" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B3</text>
+<text x="548" y="2056" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >HDHomeRun</text>
+<text x="710" y="2056" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 6</text>
 <text x="845" y="2056" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2063" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
-<text x="516" y="2074" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B9</text>
-<text x="548" y="2074" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >HDHomeRun</text>
-<text x="710" y="2074" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 18</text>
+<text x="516" y="2074" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B4</text>
+<text x="548" y="2074" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Sonos Amp (U12)</text>
+<text x="710" y="2074" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 8</text>
 <text x="845" y="2074" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2081" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
-<text x="516" y="2092" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B10</text>
-<text x="548" y="2092" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Sonos Amp (U12)</text>
-<text x="710" y="2092" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 20</text>
+<text x="516" y="2092" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B5</text>
+<text x="548" y="2092" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Denon AVR (U4)</text>
+<text x="710" y="2092" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 10</text>
 <text x="845" y="2092" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2099" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
-<text x="516" y="2110" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B11</text>
-<text x="548" y="2110" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Denon AVR (U4)</text>
-<text x="710" y="2110" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 22</text>
-<text x="845" y="2110" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
+<rect x="500" y="2099" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="516" y="2110" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B6</text>
+<text x="548" y="2110" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (rack)</text>
+<text x="710" y="2110" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 12</text>
+<text x="845" y="2110" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
 <rect x="500" y="2117" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="516" y="2128" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B12</text>
-<text x="548" y="2128" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (rack)</text>
-<text x="710" y="2128" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 24</text>
+<text x="516" y="2128" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B7–12</text>
+<text x="548" y="2128" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare</text>
+<text x="710" y="2128" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 14–24</text>
 <text x="845" y="2128" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="500" y="2135" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
+<rect x="500" y="2135" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
 <text x="516" y="2146" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B13</text>
 <text x="548" y="2146" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UPS 2U</text>
 <text x="710" y="2146" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 26</text>
-<text x="845" y="2146" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
-<rect x="500" y="2153" width="12" height="12" rx="2" fill="#16a34a" stroke="#16a34a"/>
+<text x="845" y="2146" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<rect x="500" y="2153" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
 <text x="516" y="2164" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B14</text>
 <text x="548" y="2164" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PDU Pro mgmt</text>
 <text x="710" y="2164" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Port 28</text>
@@ -545,5 +545,5 @@
 <text x="30" y="2433" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Switch = USW Enterprise 48 PoE (on the UPS): 48× 2.5 GbE PoE+ (32 W per port, 720 W), 4× SFP+. Panel A position n sits over column n (top row),</text>
 <text x="30" y="2449" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >panel B position n under column n (bottom row). Port numbers assume odd on top, even below (UniFi convention; confirm on the switch).</text>
 <text x="30" y="2465" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Switch ports behind A22–A24 and B23–B24 stay free: A22–A24 carry server links to the SFP+ cages, B23–B24 patch down to the UDM. Rack gear enters panel B from the back.</text>
-<text x="30" y="2481" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Dark = run exists, port reserved, left unpatched until used. Each group keeps a spare at its end; A20–A21 and B1–B6 are free.</text>
+<text x="30" y="2481" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Dark = run exists, port reserved, left unpatched until used. Each group keeps a spare at its end; A20–A21 and B7–B12 are free.</text>
 </svg>
