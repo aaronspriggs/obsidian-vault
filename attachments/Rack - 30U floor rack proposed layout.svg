@@ -586,7 +586,7 @@
 <text x="710" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM SFP+ 10 (RJ45 mod)</text>
 <text x="845" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
 <text x="30" y="2736" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >PM = USW Pro Max 16 PoE (on the UPS): ports 1–12 are 1 GbE PoE+, 13–16 are 2.5 GbE PoE++; the Upstairs Flex runs off PM 15's PoE.</text>
-<text x="30" y="2752" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Flex = Basement USW Flex 2.5G 8 PoE (196 W, own adapter, on UPS power): 2.5 GbE PoE gear only; uplink by SFP+ to the Aggregation (10G).</text>
+<text x="30" y="2752" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Flex = Basement USW Flex 2.5G 8 PoE (196 W, own adapter; off battery until the PDU Pro arrives): 2.5 GbE PoE gear only; uplink by SFP+ to the Aggregation (10G).</text>
 <text x="30" y="2768" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Agg = USW Aggregation (8× SFP+). Doorbell run in copper; cameras can use the CCA box. Rear-port rack gear enters panel B from the back.</text>
 <text x="30" y="2784" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Dark = run exists but stays unpatched until used.</text>
 </svg>
