@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: map v4 is final unless Aaron changes it; Aaron re-terminates, colours and labels during the 30U move (6-inch cords for panels A and B, 1–1.5 ft for F1–F8), then Claude sets the matching UniFi port names.'
+next_step: '2026-11-15: map v5 agreed; during the 30U move Aaron re-terminates, colours and labels to v5 (6-inch cords for panels A and B, 1–1.5 ft for F1–F8), then Claude moves each re-patched port''s UniFi settings (name, VLAN, PoE) to its new port, after checking HA automations for port-specific PoE entities.'
 ---
 
 ## Goal
@@ -34,11 +34,11 @@ Existing runs (14), all home-run to the basement utility room:
 
 Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front hallway doorbell speaker or chime (maybe); outside entry G6 Entry doorbell (PoE+, 16 W, copper); basement guest room (desk or TV spot); basement gym/flex room; basement entertainment space (1 run to a Flex is the lean, since most AV goes in the rack); outside backyard camera; outside front camera (current Driveway Nest spot); outside side-of-house gate and walkway camera.
 
-## Plan: port map (v4, 2026-11-15)
+## Plan: port map (v5, 2026-11-15)
 
 Working copy for collaborating on placement: the Claude artifact [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp) (2026-11-15); changes agreed there get copied back here. Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
 
-Rules: Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords); A17–A24 are free for future house runs; basement drops use the Flex mount keystones F1–F8 (below). Panel B (U28) holds rack gear and WAN: B15–B24 sit directly above the UDM Pro's ports and patch down to them (B15–B22 = UDM LAN 1–8, so LAN port = position − 14; B23 = WAN 9; B24 = SFP+ WAN, port 10), B9–B14 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B1–B8 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. Live ports that already match (PM 4, 6, 8, 9, 13–16; UDM 2–4, 8, 9) don't move.
+Rules: each panel position sits over the switch port with the same number, and devices are grouped by function so cord colours run in blocks and UniFi port profiles can cover a range. Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords): security A1–A7, everything else A8–A11, infra A12–A14, APs A15–A16 (ports 13–16 are the 2.5 GbE ones). That fills the Pro Max's twelve 1 GbE ports, so A17–A24 (free for future house runs) have no Pro Max port behind them: a new run goes to UDM LAN 8, Basement Flex 8 or a bigger switch; basement drops use the Flex mount keystones F1–F8 (below). Panel B (U28) holds rack gear and WAN: B15–B24 sit directly above the UDM Pro's ports and patch down to them (B15–B22 = UDM LAN 1–8, so LAN port = position − 14: infra B15–B19, AV B20–B21, spare B22; B23 = WAN 9; B24 = SFP+ WAN, port 10), B9–B14 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B1–B8 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. The Aggregation's top row of SFP+ cages takes the uplinks (UDM SFP+ LAN port 11, Pro Max, Basement Flex), the bottom row the hosts (Big Boi via B9, second server and Mac Studio via B10–B11).
 
 Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure (switch uplinks, hubs, UPS, PDU, DACs), white APs, blue everything else.
 
@@ -49,18 +49,18 @@ Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure
 | A1 | Cam front (G5 Turret) | PM 1 | orange | to pull |
 | A2 | Cam backyard (G5 Turret) | PM 2 | orange | to pull |
 | A3 | Cam side gate (G5 Bullet) | PM 3 | orange | to pull |
-| A4 | Ring keypad PoE | PM 4 | orange | in place |
-| A5 | Doorbell G6 Entry | PM 5 | orange | to pull |
-| A6 | Living wall Pi | PM 6 | blue | in place |
-| A7 | Siren (hallway) | PM 7 | orange | to pull |
-| A8 | Kitchen Sonos 1 | PM 8 | blue | in place |
-| A9 | Kitchen Sonos 2 | PM 9 | blue | in place |
-| A10 | Living TV → USW Flex | PM 10 | black | in place |
-| A11 | Chime (hallway) | PM 11 | orange | to pull |
-| A12 | Kitchen 3 | PM 12 | blue | dark |
+| A4 | Doorbell G6 Entry | PM 4 | orange | to pull |
+| A5 | Siren (hallway) | PM 5 | orange | to pull |
+| A6 | Chime (hallway) | PM 6 | orange | to pull |
+| A7 | Ring keypad PoE | PM 7 | orange | in place |
+| A8 | Living wall Pi | PM 8 | blue | in place |
+| A9 | Kitchen Sonos 1 | PM 9 | blue | in place |
+| A10 | Kitchen Sonos 2 | PM 10 | blue | in place |
+| A11 | Kitchen 3 | PM 11 | blue | dark |
+| A12 | Living TV → USW Flex | PM 12 | black | in place |
 | A13 | Office → desk Flex | PM 13 · 2.5G | black | in place |
-| A14 | Office → Front AP | PM 14 · 2.5G | white | in place |
-| A15 | 2nd fl → Upstairs Flex | PM 15 · 2.5G | black | in place |
+| A14 | 2nd fl → Upstairs Flex | PM 14 · 2.5G | black | in place |
+| A15 | Office → Front AP | PM 15 · 2.5G | white | in place |
 | A16 | Bar → Back AP | PM 16 · 2.5G | white | in place |
 | A17–A24 | Future house runs | — | — | spare |
 
@@ -90,14 +90,14 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 | B12 | Pass-through | Agg | — | spare |
 | B13 | Pass-through | Agg | — | spare |
 | B14 | Pass-through | Agg | — | spare |
-| B15 | Sonos Amp (U11) | UDM 1 | blue | rack gear |
+| B15 | PDU Pro mgmt | UDM 1 | black | not bought |
 | B16 | Hue Bridge | UDM 2 | black | rack gear |
 | B17 | Lutron hub | UDM 3 | black | rack gear |
 | B18 | HDHomeRun | UDM 4 | black | rack gear |
-| B19 | Denon AVR (U3) | UDM 5 | blue | rack gear |
-| B20 | PDU Pro mgmt | UDM 6 | black | not bought |
-| B21 | Spare | UDM 7 | — | spare |
-| B22 | UPS 2U | UDM 8 | black | rack gear |
+| B19 | UPS 2U | UDM 5 | black | rack gear |
+| B20 | Sonos Amp (U11) | UDM 6 | blue | rack gear |
+| B21 | Denon AVR (U3) | UDM 7 | blue | rack gear |
+| B22 | Spare | UDM 8 | — | spare |
 | B23 | WAN1 CenturyLink | UDM 9 | red | in place |
 | B24 | WAN2 Ting ONT | UDM SFP+ port 10 (RJ45 mod) | red | not bought |
 
@@ -106,7 +106,7 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 - Doc artifact (editable from any VM session via the Claude Docs connector): [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp).
 - HTML page [30U floor rack, draft v15](https://claude.ai/artifact/WGjYYkQUgNJvS256sGvmDG): republished 2026-11-15 from `attachments/Rack - 30U rack layout page.html` with patch panel map v4 and the physical patching view (same link). Republishing needs a session that has the `Artifact` tool (not every VM session gets it); edit the vault file first, then publish it to that URL.
 - The diagram source of truth is `attachments/Rack - 30U floor rack proposed layout.svg`.
-- Physical patching view (2026-11-15): ![Top of rack patching](<../attachments/Rack - 30U top of rack patching front view.svg>), U30–U24 with every cord drawn; also on the HTML page. Generated by [unifi/rack-patching.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-patching.py), which hard-codes the map, so regenerate it and re-splice the page (between the `patching:start`/`patching:end` markers, which sit between the panel front view and port map figures) when the map changes. Under v4 it shows panels A and B both taking 6-inch cords (lean of 2.2 in or less) and F1–F8 spanning 9–11 in sideways to the Flex's ports.
+- Physical patching view (2026-11-15): ![Top of rack patching](<../attachments/Rack - 30U top of rack patching front view.svg>), U30–U24 with every cord drawn; also on the HTML page. Generated by [unifi/rack-patching.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-patching.py), which hard-codes the map, so regenerate it and re-splice the page (between the `patching:start`/`patching:end` markers, which sit between the panel front view and port map figures) when the map changes. Under v5 it shows panels A and B both taking 6-inch cords (lean of 2.2 in or less) and F1–F8 spanning 9–11 in sideways to the Flex's ports.
 
 ## Decisions
 
@@ -117,6 +117,7 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 
 - **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
 - **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
+- **2026-11-15 (Aaron): map v5.** Since everything moves from the 12U to the 30U anyway, keeping live cables on their current ports no longer matters; regroup both panels by function so cord colours run in blocks (Aaron flagged the wall Pi sitting among the security runs). Pro Max ports that change: Ring keypad 4 → 7, wall Pi 6 → 8, Sonos 8/9 → 9/10, Living TV Flex 10 → 12, Upstairs Flex 15 → 14, Front AP 14 → 15; UDM: UPS 8 → 5. Each port's UniFi settings move with its cable.
 - **2026-11-15 (Aaron):** the USW Aggregation is bought. Its 8 SFP+ cages are on the right of the front panel, 4 on top and 4 below (the drawings showed one row; port numbering within the 2×4 block not yet checked).
 - **2026-11-15 (Aaron): map v4.** The physical drawing showed v3's B1–B10 sitting at the left of panel B while the UDM Pro's LAN, WAN and SFP+ ports are at the far right (8–12 in sideways cords). Aaron approved moving the UDM positions to B15–B24 above those ports, pass-throughs to B9–B14 and free slots to B1–B8; each device keeps its UDM port. Port positions came from the 2026-11-12 12U photo; UI's quick start guide gives UDM port 9 = RJ45 WAN, 10 = SFP+ WAN, 11 = SFP+ LAN, but not how the 2×4 LAN block is numbered.
 - **2026-11-15 (Aaron), open questions answered:** (1) Pro Max port 4 is the Ring keypad's PoE converter: Aaron believes so; not verified, so A4 stays as mapped. (2) The CenturyLink ONT is outdoors; its run comes into the rack as a house run, ends on a keystone and is patched to UDM WAN (port 9), so B9 stands. (3) UPS runtime: live HA reading 2026-11-15 is 110 W with 4,040 s (67 min) left at 100% battery. Assumed new PoE load: G6 Entry 16 W, 3 cameras at up to 12 W each, basement U7 Pro up to 21 W (the Basement Flex is already on a battery outlet), siren plus chime about 10 W, plus about 10% PoE loss: about 90 W, so about 200 W total. Scaling the 123 Wh the UPS implies today gives roughly 35 min, well past the 300 s TrueNAS shutdown. These are assumed maximums, not measurements; the HDD-pool rebuild of Big Boi (separate project) adds load this doesn't include.
