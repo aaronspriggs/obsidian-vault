@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
-next_step: '2026-11-15: steps 1 to 7 done. Next, in a fresh session: step 8 (slim the four largest project notes, then the backlog triage with Aaron, following the quarterly triage note). Step 8 also splits the Home Assistant OS and Big Boi System notes (Aaron, 2026-11-15).'
+next_step: '2026-11-15: step 8 part 1 done (the four project notes slimmed). Next: part 2, propose the line of the split for the Home Assistant OS and Big Boi System notes and wait for Aaron''s OK on both; then part 3, the triage, following the quarterly triage note.'
 ---
 
 ## Goal
@@ -14,15 +14,17 @@ Review the whole Claude Code setup on this VM (settings, hooks, the tier3-guard 
 
 ## Status (2026-11-15)
 
-Steps 1 to 7 are done, each with a change note. Steps 1, 3, 4 and 5 were verified live in sessions started after their deploys; step 2 waits for the first session to pass 400k. Step 8 is open and gets its own fresh session, because long sessions are the main token cost (Aaron, 2026-11-15). This note was slimmed on 2026-11-15 under the new size rule; the longer working-out of steps 1 to 3 and the step 7 inventory are in its git history from that date.
+Steps 1 to 7 are done, each with a change note. Steps 1, 3, 4 and 5 were verified live in sessions started after their deploys; step 2 waits for the first session to pass 400k. Step 8 runs in its own session, because long sessions are the main token cost (Aaron, 2026-11-15): part 1, slimming the four project notes, is done; the System note splits and the triage are open. This note was slimmed on 2026-11-15 under the new size rule; the longer working-out of steps 1 to 3 and the step 7 inventory are in its git history from that date.
 
 ## Findings (measured 2026-11-15)
 
 The measurement behind the token decisions: 68 transcripts hold 4,916 main-thread requests that processed 1.16 billion tokens of context, 236k per request on average. 12 sessions account for 67%, 28 passed 200k and 11 passed 400k. In the 12 heaviest, 67% of what entered context was tool output, 26% tool input and about 7% conversation. The whole vault is about 230k tokens and the largest note about 10k.
 
+Sound and left alone: `make check` clean, vault and repo pushed, memory symlinked into the repo, `truenas-api --write` has its own method allowlist.
+
 Still open:
 
-- **Large project notes and backlog (step 8).** Four open project notes are over the 2,000-word limit: Rebuild Big Boi (7,167), home security (3,660), backup strategy (3,112), patch panels (2,537). Backlog: 42 notes, 17 of them ideas.
+- **System notes and backlog (step 8).** The Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are over their 1,500-word limit. Backlog: 42 notes, 17 of them ideas. The four over-size project notes were slimmed on 2026-11-15.
 
 ## Plan
 
@@ -51,7 +53,7 @@ Still open:
 - **2026-11-15, step 7 (Aaron: "yes and kb-export"): delete everything, version nothing.** Each item was superseded by the vault or git, or (the work brief) wasn't homelab material. Rejected: an archive folder in the repo (it is what `.archive/` was, and nothing read it in two months) and keeping the two skills in the repo (never used; the built-in `artifact-design` skill covers page design).
 - **2026-11-15, a false hold on a note edit was not worked around.** The step 6 update of this note named the SSH authorized-keys file and was held; it waited for Aaron's yes and was retried unchanged, as CLAUDE.md says.
 - **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on. He wants them "organized well and properly linked between everything": done the way the ClaudeCode split was, with the line of the split proposed to him first, every fact checked live and given one home, both notes on the Systems skeleton, and the projects, runbooks and other notes that point at a moved part relinked.
-- **2026-11-15, step 8, slimming: decisions stay, research moves to change notes, a phase with its own plan becomes a project.** Research is moved word for word into research change notes dated when it was done and linked from the decision it supports, because the work will need it and git history can't be found from the note. Rejected: one large change note dated today, a reference runbook (it would sit in untested runbooks for good, as in step 6), and git history alone. Rebuild Big Boi (7,167 to 1,949 words): six change notes, and the rack move became [its own project](<Move the homelab into the 30U floor rack.md>), now the `parent` of the patch panel and gear-sale projects. Home security (3,660 to 1,975): two change notes; its table of what HA has was re-checked live. Backup strategy (3,112 to 1,225): two change notes (the March 2026 design in full; the one-week bucket estimate with the phase 1 steps), finished steps keep a line and a link, and the snapshot and B2 task state was re-checked live.
+- **2026-11-15, step 8, slimming the four project notes: decisions stay, research moves word for word to change notes dated when it was done, a phase with its own plan becomes a project.** The work will need the research, and git history can't be found from a note. Rejected: one large change note dated today, a reference runbook (it would sit in untested runbooks for good, as in step 6), git history alone. Per note, what went where: [change](<../changes/2026-11-15 Slimmed the four over-size project notes.md>).
 
 ## Open questions
 
