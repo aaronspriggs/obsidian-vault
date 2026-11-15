@@ -35,7 +35,7 @@ The storage side of [Big Boi](<TrueNAS SCALE (Big Boi).md>): one ZFS pool of fiv
 | `Big Boi/BIGBOI` | filesystem | 2.11 TB | Shared data (NFSv4 ACL), SMB share `BIGBOI` |
 | `BIGBOI/plex_content` | filesystem | 2.11 TB | Plex media library; servarr downloads into it |
 | `BIGBOI/plex_recordings` | filesystem | 0.9 GB | Plex DVR recordings, and the weekly Plex database export |
-| `BIGBOI/plex_config` | filesystem | 0.3 GB | Left from when Plex ran as a TrueNAS app; [cleanup](<../projects/Verify-clean up plex_config dataset.md>) is in the backlog |
+| `BIGBOI/plex_config` | filesystem | 0.3 GB | Left from when Plex ran as a TrueNAS app (`Library/`, `Codecs/`; nothing mounts it, checked 2026-11-15); [cleanup](<../projects/Verify-clean up plex_config dataset.md>) is in the backlog |
 | `Big Boi/ix-apps` | hidden | — | TrueNAS apps (Dockhand); in no snapshot task (see Decisions) |
 
 `BIGBOI` also holds plain directories: `Media Library` (personal photos and videos), `servarr` (only `overseerr/`, Seerr's live config, since 2026-10-16), `uptime-kuma` and `autokuma`.
@@ -48,7 +48,7 @@ The storage side of [Big Boi](<TrueNAS SCALE (Big Boi).md>): one ZFS pool of fiv
 
 **ACLs:** apps and Plex get in through the group `apps`, which has traverse on `BIGBOI` and read plus traverse on `plex_content`, applied recursively in the UI's ACL editor. `chmod -R` on these datasets fails with "Operation not permitted"; use the UI.
 
-**Snapshots:** two periodic tasks, both recursive, daily at 00:00, named `auto-%Y-%m-%d_%H-%M`, kept 30 days: `Big Boi/vmstore`, and `Big Boi/BIGBOI` without `plex_content` and `plex_recordings`. 208 snapshots exist. Manual ones still held: `BIGBOI@pre-servarr-cleanup-2026-10-16` (the stale servarr copy removed that day), and on `ix-apps` `pre-dockhand-1.1.38` ([deletion](<../projects/Delete the pre-dockhand-1.1.38 snapshot after a quiet week.md>) is in the backlog), `pre-dockhand-update-2026-09-26`, and TrueNAS's own `1.1.4`, `1.1.34` and `ix-apps-backup-system-update--2026-01-19`.
+**Snapshots:** two periodic tasks, both recursive, daily at 00:00, named `auto-%Y-%m-%d_%H-%M`, kept 30 days: `Big Boi/vmstore`, and `Big Boi/BIGBOI` without `plex_content` and `plex_recordings`. 208 snapshots exist. Manual ones still held: only TrueNAS's own on `ix-apps` (`1.1.4`, `1.1.34` and `ix-apps-backup-system-update--2026-01-19`). The three `pre-dockhand-1.1.38`, the three `pre-dockhand-update-2026-09-26` and `BIGBOI@pre-servarr-cleanup-2026-10-16` were deleted on 2026-11-15.
 
 **Offsite (since 2026-10-16):** two Cloud Sync tasks push to B2, both PUSH/SYNC with remote encryption on and filename encryption off: `B2 offsite: BIGBOI` daily at 01:00 and `B2 offsite: vmstore` daily at 01:15. Both succeeded on 2026-11-15. The vmstore task runs a pre-script (repo [backup/](https://github.com/aaronspriggs/spriggs-homelab/tree/main/backup)) that stages the TrueNAS config and the app databases into `vmstore/offsite-staging`. What each task uploads and how to restore it: [Offsite backup to B2 runbook](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>).
 

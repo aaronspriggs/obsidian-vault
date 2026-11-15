@@ -28,3 +28,7 @@ Two limits decide most of the fit. First, over Remote Control only mod hooks wor
 ## When to pick this up
 
 Aaron hasn't said yet which mods he liked; ask before starting. Blast Radius' impact report (folded into tier3-guard) and the Cache Tax guard without keepwarm are worth doing now, since they work by text. The UI-only mods wait on the mod UI project above. Install third-party mods only after reading their source, since a mod's hooks see every tool call.
+
+## Status (2026-11-15, quarterly triage)
+
+Kept. The VM now runs Claude Code 2.1.321, so the version floors above (2.1.287, and 2.1.306 for Filetree) no longer rule anything out. Still waiting on Aaron saying which mods he liked, and on the mod UI re-test for the UI-only ones.

@@ -1,11 +1,11 @@
 ---
 type: task
-status: backlog
+status: active
 priority: low
 system:
 - '[[Home Assistant (integrations and automations)]]'
 parent: '[[Migrate thermostats from Nest to ecobee]]'
-next_step: 'Aaron: reset the second display the same way (Nest base fully wired with an ecobee''s wires), then put the ecobee back; Claude verifies it in HA.'
+next_step: '2026-11-15: made active at the quarterly triage; it was already under way (first unit reset 2026-10-31, the pair listed). Aaron: reset the second display the same way (Nest base fully wired with an ecobee''s wires), then put the ecobee back; Claude verifies it in HA.'
 notion_id: 3fc7ae76-22ba-81eb-8c79-fa1b3b77479c
 ---
 

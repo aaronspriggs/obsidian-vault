@@ -1,9 +1,10 @@
 ---
 type: task
-status: backlog
+status: active
 priority: low
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
+next_step: '2026-11-15: made active at the quarterly triage. Rotate by 2026-12-20 in the same sitting as the Dockhand API token (Tier 3; Aaron in the TrueNAS UI and 1Password), following the API runbook''s Key rotation steps.'
 notion_id: 3fa7ae76-22ba-8121-93c3-f18ce9f72b2b
 ---
 

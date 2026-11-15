@@ -54,7 +54,6 @@ Ubuntu Server VM on [Big Boi](<TrueNAS SCALE (Big Boi).md>) that gives Claude di
 
 - `~/.config/homelab/op-service-account-token` (600): the token of the 1Password service account `claudecode-vm`, which can only read the vault `Homelab - Claude`. `homelab-secret "<item>/<field>"` reads one field with it, and the API helpers call it on every run (`truenas-api` only for `--write`). Aaron adds and rotates items. Revoking the service account cuts all of them off at once.
 - Kept as local files because the Families plan allows 1,000 requests a day per account and these are read by timers: `~/.config/homelab/truenas-api-key`, `kb-sync-check-push-url`, `truenas-alert-relay.json` and `/etc/homelab-update.conf`.
-- `~/.config/kb-export/notion-token`: read-only Notion token, unused except by the vault's `.kb/migrate.py --dry-run`. See [Revoke the unused kb-export Notion integration token](<../projects/Revoke the unused kb-export Notion integration token.md>).
 
 **Outbound SSH** (checked 2026-11-15): only to Plex (`ssh plex`, user `claude`) and GitHub (the two deploy keys). Not to TrueNAS (never set up; Claude uses the API), not to HA (the SSH add-on exposes no port; Claude uses ha-mcp), and not to the wall panel Pi ([backlog task](<../projects/Give the ClaudeCode VM SSH access to the wall panel Pi.md>)).
 

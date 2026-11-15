@@ -1,39 +1,32 @@
 ---
 type: project
-status: active
-priority: medium
+status: done
 system:
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
-next_step: '2026-11-15: step 8 part 3, the triage: the reading and the live checks are done and the recommendations are with Aaron (42 backlog notes, 12 untested runbooks, the memory fold, the items the two split change notes left). Waiting on his answers. Then apply them, write one change note (type doc), update the triage note''s Status, and close this project.'
+completed: 2026-11-15
 ---
 
-## Goal
+## Outcome
 
-Review the whole Claude Code setup on this VM (settings, hooks, the tier3-guard mod, CLAUDE.md, memory, the KB tooling and how projects are organized) and fix what costs tokens, hides information or has drifted. Aaron asked for it on 2026-11-15 and wants each step checked as it goes, with the reasoning written down so later sessions know what was done and why.
+Done 2026-11-15, in eight steps over several sessions. Aaron asked for a review of the whole Claude Code setup on this VM (settings, hooks, the tier3-guard mod, CLAUDE.md, memory, the KB tooling and how projects are organized), with each step checked as it went and the reasoning written down.
 
-## Status (2026-11-15)
+The measurement behind the token decisions: 68 transcripts held 4,916 main-thread requests that processed 1.16 billion tokens of context, 236k per request on average. 12 sessions accounted for 67%, 28 passed 200k and 11 passed 400k. In the 12 heaviest, 67% of what entered context was tool output, 26% tool input and about 7% conversation. The whole vault is about 230k tokens. So the cost is context carried through long sessions, not reading the KB.
 
-Steps 1 to 7 are done, each with a change note. Steps 1 to 5 were verified live. Step 8 runs in its own sessions, because long sessions are the main token cost (Aaron, 2026-11-15): parts 1 (the four project notes) and 2 (the two System note splits) are done, part 3 (the triage) is open. This note was slimmed on 2026-11-15; the longer working-out of steps 1 to 3 and the step 7 inventory are in its git history.
+What changed, each with its change note:
 
-## Findings (measured 2026-11-15)
+1. The session-start hook fits the 10,000-character cap ([change](<../changes/2026-11-15 Trimmed the session-start hook to fit the 10,000-character cap.md>)).
+2. Sessions compact at 400k tokens ([change](<../changes/2026-11-15 Set Claude Code sessions to compact at 400k tokens.md>)). Checked live: a session compacted by itself at 372,638 tokens down to 32,375, kept Aaron's decisions and the open work, and reloaded the KB block; ToolSearch schemas need loading again afterwards.
+3. tier3-guard's Bash rule holds only commands that write a guarded path ([change](<../changes/2026-11-15 Narrowed the tier3-guard Bash rule to commands that write a guarded path.md>)).
+4. CLAUDE.md holds every settled rule and memory went from 14 files to 3 ([change](<../changes/2026-11-15 Rewrote CLAUDE.md and cut Claude Code memory from 14 files to 3.md>)).
+5. The rulebook got its Claude Code section and a size rule for project notes ([change](<../changes/2026-11-15 Updated the rulebook - Claude Code section and a size rule for project notes.md>)).
+6. Repo docs point at the vault and the ClaudeCode System note is split in two ([change](<../changes/2026-11-15 Split the ClaudeCode System note and pointed the repo docs at the vault.md>)).
+7. The loose files on the VM and the retired kb-export copies are gone ([change](<../changes/2026-11-15 Deleted the loose files on the ClaudeCode VM and the retired kb-export copies.md>)).
+8. The four largest project notes are slimmed ([change](<../changes/2026-11-15 Slimmed the four over-size project notes.md>)), the Home Assistant and Big Boi System notes are split ([Home Assistant](<../changes/2026-11-15 Split the Home Assistant System note into the VM and the application.md>), [Big Boi](<../changes/2026-11-15 Split the Big Boi System note into the box and its storage.md>)), and the first quarterly triage has run ([change](<../changes/2026-11-15 Ran the first quarterly KB triage.md>)).
 
-The measurement behind the token decisions: 68 transcripts hold 4,916 main-thread requests that processed 1.16 billion tokens of context, 236k per request on average. 12 sessions account for 67%, 28 passed 200k and 11 passed 400k. In the 12 heaviest, 67% of what entered context was tool output, 26% tool input and about 7% conversation. The whole vault is about 230k tokens and the largest note about 10k.
+Sound and left alone: `make check` clean, vault and repo pushed, memory symlinked into the repo, `truenas-api --write` with its own method allowlist. The longer working-out of steps 1 to 3 and the step 7 inventory are in this note's git history.
 
-Sound and left alone: `make check` clean, vault and repo pushed, memory symlinked into the repo, `truenas-api --write` has its own method allowlist.
-
-Still open: the backlog (step 8, part 3), 42 notes, 17 of them ideas.
-
-## Plan
-
-1. **Session hook fits the cap.** Done 2026-11-15, [change](<../changes/2026-11-15 Trimmed the session-start hook to fit the 10,000-character cap.md>).
-2. **Session length.** Done 2026-11-15: sessions compact at 400k, [change](<../changes/2026-11-15 Set Claude Code sessions to compact at 400k tokens.md>).
-3. **tier3-guard Bash matching.** Done 2026-11-15, [change](<../changes/2026-11-15 Narrowed the tier3-guard Bash rule to commands that write a guarded path.md>). Closed [this idea](<Stop tier3-guard holding Bash commands that only mention the rulebook.md>).
-4. **CLAUDE.md rewrite.** Done 2026-11-15, [change](<../changes/2026-11-15 Rewrote CLAUDE.md and cut Claude Code memory from 14 files to 3.md>).
-5. **Rulebook update** (Tier 3). Done 2026-11-15, [change](<../changes/2026-11-15 Updated the rulebook - Claude Code section and a size rule for project notes.md>).
-6. **Drift sweep.** Done 2026-11-15, [change](<../changes/2026-11-15 Split the ClaudeCode System note and pointed the repo docs at the vault.md>): repo docs point at the vault, [the quarterly triage note](<Quarterly KB triage with Aaron (Deferred items and Ideas).md>) has the memory fold, and the ClaudeCode System note is split in two.
-7. **Loose files.** Done 2026-11-15, [change](<../changes/2026-11-15 Deleted the loose files on the ClaudeCode VM and the retired kb-export copies.md>): all deleted on Aaron's yes, none versioned, plus the retired kb-export's deployed copies.
-8. **Slim the four largest project notes, split the Home Assistant OS and Big Boi System notes, then the backlog triage** with Aaron (pulls the quarterly triage forward).
+Follow-ups, each its own note: [the `deprecated` status and the seven drops](<Allow deprecated on project notes in the rulebook, then drop the seven notes from the 2026-11-15 triage.md>), [the guard's ssh-keygen and authorized_keys rules](<Narrow tier3-guard's ssh-keygen and authorized_keys rules to commands that run or write them.md>), [the two runbook tests](<Test the Home Assistant restore and ClaudeCode VM rebuild runbooks before the February 2027 triage.md>), and the untested fix runs as item 4 of [Verify one-tap actions on first real use](<Verify one-tap actions on first real use.md>). The triage itself recurs from [its own note](<Quarterly KB triage with Aaron (Deferred items and Ideas).md>), next due February 2027.
 
 ## Decisions
 
@@ -52,9 +45,13 @@ Still open: the backlog (step 8, part 3), 42 notes, 17 of them ideas.
 - **2026-11-15, a false hold on a note edit was not worked around.** The step 6 update of this note named the SSH authorized-keys file and was held; it waited for Aaron's yes and was retried unchanged, as CLAUDE.md says.
 - **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on; he wants them "organized well and properly linked between everything", done the way the ClaudeCode split was. Lines he approved: Home Assistant into machine (VM, HAOS, add-ons, backups) and application (access, integrations, automations, alerting); Big Boi into box (hardware, TrueNAS, guests, Claude's API access) and storage (pool, datasets, shares, snapshots, B2). Rejected: a separate alerting or Scrypted note, hardware against TrueNAS, hypervisor against NAS, three notes. Done: [Home Assistant](<../changes/2026-11-15 Split the Home Assistant System note into the VM and the application.md>), [Big Boi](<../changes/2026-11-15 Split the Big Boi System note into the box and its storage.md>). Done projects were relinked too; change notes were not.
 - **2026-11-15, step 8, slimming the four project notes: decisions stay, research moves word for word to change notes dated when it was done, a phase with its own plan becomes a project.** The work will need the research, which git history hides. Rejected: one large change note dated today, a reference runbook (as in step 6), git history alone. Per note, what went where: [change](<../changes/2026-11-15 Slimmed the four over-size project notes.md>).
+- **2026-11-15, step 8, triage (Aaron: "Yes to all"): one message with a recommendation per note and nine numbered decisions.** Of 42 backlog notes, 3 closed as done, 5 made active with dated next steps, 27 kept and 7 to drop; 2 of 12 untested runbooks get tested before February 2027. Rejected: a list without recommendations (his 15 minutes are for deciding, not reading) and asking note by note. Detail: [change](<../changes/2026-11-15 Ran the first quarterly KB triage.md>).
+- **2026-11-15, triage: check live before recommending.** It changed four recommendations (the DVR test was already done, a snapshot deletion was three weeks overdue, the weekday wake was a one-line change, the Yu Yu Hakusho cause was findable) and settled the Denon model without asking Aaron. Cost: more reading than the 13,000 tokens estimated; the one waste was a whole-file read of `configuration.yaml` where a key lookup would have done.
+- **2026-11-15, memory fold: nothing moved, two lines added to CLAUDE.md** (the map-first examples name the split Systems; "say why, say what you rejected, record the decision"). Rejected: moving the Remote Control surfaces rule into CLAUDE.md while it is still changing. The second line is Claude's reading of Aaron's repeated "as before" instruction as a standing rule; he approved it as proposed.
+- **2026-11-15, removals in Home Assistant: verify, then remove, no full backup.** Each of the five store integrations was checked for a config entry and a YAML key first, and the Dyson integration in use was read to confirm it doesn't import the removed Dyson Cloud one. Every removal has a named inverse (in the change note) and the add-on held no credentials, so a backup would have added a restart-sized safety net to changes that are undone by reinstalling.
+- **2026-11-15, the seven drops were not forced through.** `deprecated` isn't an allowed status for project notes in the rulebook's table or in `check.py`, though the Lifecycle section and the triage note both use it. Rejected: writing them as `done` (wrong meaning, and it would be redone later), changing `check.py` alone (the tool would then disagree with the table it enforces) and editing the rulebook under "Yes to all" (Tier 3, and he wasn't asked that). It became [its own task](<Allow deprecated on project notes in the rulebook, then drop the seven notes from the 2026-11-15 triage.md>).
+- **2026-11-15, closed with that one follow-up open** rather than held open: everything else in step 8 is applied and logged, the follow-up stands on its own note, and Aaron asked for follow-ups to become task notes.
 
-## Open questions
+## Links
 
-- Step 2 checked live 2026-11-15: the step 8 session compacted by itself at 372,638 tokens, down to 32,375, kept Aaron's decisions and the open work, and reloaded the KB block. ToolSearch schemas need loading again afterwards.
-- False holds from the guard's word rules, four on 2026-11-15: `keygenChangesKeys` matches `ssh-keygen` anywhere in a command (a `cat` of a change note, a heredoc editing this note), and the rule on `authorized_keys` does the same (a read-only check, a heredoc editing this note). The fix is to match both only where a simple command starts or names the file as an argument of a write: another Tier 3 guard change and deploy by Aaron. Recommended: bundle it with the next guard change; Aaron to say if he wants it sooner.
-- Fix runs haven't run since 2026-10-17. Their tools were switched from Notion to the vault at the 2026-10-22 cutover and have only been through a dry run, so the first real tap is the test. [Verify one-tap actions on first real use](<Verify one-tap actions on first real use.md>) is the place to track it.
+![[Changes.base#For this project]]

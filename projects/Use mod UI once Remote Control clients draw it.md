@@ -21,3 +21,7 @@ Ask Claude in a session to load the `plugin-authoring` skill and copy repo `clau
 - A session-start band showing `check.py --health`, the vault's last commits and the pull result, so the session-start routine runs as a script instead of costing tokens.
 - A status line showing homelab maintenance mode and whether either repo has uncommitted or unpushed work.
 - The UI-only mods noted in [Consider nine Claude Code mods from a RoboNuggets video](<Consider nine Claude Code mods from a RoboNuggets video.md>): You Should Know, Savvy Progress, Replay Theater, Filetree and Claude Skins.
+
+## Status (2026-11-15, quarterly triage)
+
+Kept. The VM now runs Claude Code 2.1.321 (the last test was on 2.1.286), so the re-check under "How to re-check" is due. It needs Aaron to send `/ui-test` from the desktop app and from the phone.

@@ -36,13 +36,12 @@ Home Assistant OS in a VM on [Big Boi](<TrueNAS SCALE (Big Boi).md>). This note 
 | Matter Server | 9.3.0 | Matter and Thread devices need it |
 | Studio Code Server | 7.2.0 | |
 | Terminal & SSH | 10.6.0 | Auto-update on |
-| Spotify Connect | 0.19.0 | Still running though the Spotify integration was removed on 2026-09-03; a candidate for removal |
 
 **Sizing:** Scrypted's load lands on this VM, so resize it as UniFi cameras are added: 4 vCPU and 8 GiB before passing about 3 HomeKit Secure Video cameras.
 
 **Updates:** HAOS isn't in homelab-update. OS, Core and add-on updates wait for Aaron's tap on the phone and install with a backup first; the flow, and which entities it covers, are in the application note under Update approvals.
 
-**Backups:** native automatic backups, daily around 05:00 (last 2026-11-15 05:07), to `hassio.local` and to Google Drive through the native `google_drive` integration (since 2026-09-04). About 400 MB each, encrypted. Each holds the settings, the recorder database, all six add-ons with their data, and the `ssl` folder (no `share` or `media`; `ssl` wasn't included when last read on 2026-10-16). Scrypted's backup leaves out only plugin code and NVR storage (2026-10-17). Retention is 7 days locally and 30 on Drive (settings read 2026-10-16; ha-mcp can't read them, and the 39 backups listed today fit). The encryption key (emergency kit) is in 1Password (Aaron confirmed 2026-09-29). Restore: [Restore Home Assistant from backup](<../runbooks/Restore Home Assistant from backup (new VM or in place).md>). Setup: [native Google Drive backup](<../runbooks/Set up native Google Drive backup integration for Home Assistant (retire the add-on).md>).
+**Backups:** native automatic backups, daily around 05:00 (last 2026-11-15 05:07), to `hassio.local` and to Google Drive through the native `google_drive` integration (since 2026-09-04). About 400 MB each, encrypted. Each holds the settings, the recorder database, all add-ons with their data (five since Spotify Connect was uninstalled on 2026-11-15), and the `ssl` folder (no `share` or `media`; `ssl` wasn't included when last read on 2026-10-16). Scrypted's backup leaves out only plugin code and NVR storage (2026-10-17). Retention is 7 days locally and 30 on Drive (settings read 2026-10-16; ha-mcp can't read them, and the 39 backups listed today fit). The encryption key (emergency kit) is in 1Password (Aaron confirmed 2026-09-29). Restore: [Restore Home Assistant from backup](<../runbooks/Restore Home Assistant from backup (new VM or in place).md>). Setup: [native Google Drive backup](<../runbooks/Set up native Google Drive backup integration for Home Assistant (retire the add-on).md>).
 
 ## Dependencies
 

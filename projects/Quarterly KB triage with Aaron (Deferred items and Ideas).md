@@ -13,7 +13,9 @@ A recurring pass with Aaron, about 15 minutes every three months, over what othe
 
 ## Status
 
-Not run yet. The first run is step 8 of [Review and tune the Claude Code setup on the ClaudeCode VM](<Review and tune the Claude Code setup on the ClaudeCode VM.md>), which pulls it forward from late December 2026; after that it is due every three months. This note stays in the backlog between runs. After each run, the date of that run and the month the next is due replace this paragraph.
+Last run: 2026-11-15, pulled forward as step 8 of the setup review ([change](<../changes/2026-11-15 Ran the first quarterly KB triage.md>)). Next due: February 2027. This note stays in the backlog between runs.
+
+Still open from this run: the seven notes Aaron agreed to drop are waiting on a rulebook fix, because `deprecated` isn't an allowed status for project notes yet (see Decisions).
 
 ## Plan
 
@@ -29,3 +31,5 @@ Claude does the reading for steps 1 to 3 before asking Aaron anything, so his 15
 - **2026-11-15: rewritten for the vault.** The 2026-09-29 version had Claude list "Deferred projects and Ideas from the local export" and skim `HEALTH.md`. The Notion export was retired on 2026-10-22, deferred was merged into backlog the same day, and `check.py --health` replaced `HEALTH.md`. The note keeps its name because notes are never renamed.
 - **2026-11-15: the memory fold is a step here, not its own task.** CLAUDE.md → Memory names the quarterly triage as when it happens, a second recurring task would be one more thing to remember, and three memory files add about 1,500 tokens of reading.
 - **2026-11-15: only untested runbooks go to Aaron from the upkeep lists.** Testing a runbook can need him or a disruption he has to agree to. Verifying a System is Claude's own work against the live system, and the rulebook already says when an over-size note gets slimmed.
+- **2026-11-15, first run: the reading cost more than the 13,000 tokens estimated,** because checking notes against the live systems is what made the recommendations right (a DVR test already done, a snapshot deletion three weeks overdue, the cause of the Yu Yu Hakusho mix-up). Keep the live checks, but ask each tool for the field needed: one whole-file read of `configuration.yaml` cost more than the 42 notes together.
+- **2026-11-15: "drop" can't be written yet.** Step 1 says a dropped note gets `status: deprecated`, and the rulebook's Lifecycle section says the same for any note, but its property table and `check.py` allow only active, blocked, backlog and done on project notes. Adding the value is a rulebook change (Tier 3), asked of Aaron on 2026-11-15.

@@ -1,7 +1,7 @@
 ---
 type: project
 status: backlog
-priority: medium
+priority: low
 system:
 - '[[Servarr Stack (Docker Compose)]]'
 notion_id: 31b7ae76-22ba-8155-96c9-c1c7d1463786

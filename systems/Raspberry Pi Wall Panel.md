@@ -65,7 +65,7 @@ Raspberry Pi configured as a wall-mounted home automation dashboard. Runs TouchK
     - `automation.wall_panel_wake_on_activity`: MQTT `wallpanel/activity` → display on, brightness 100% (gated to avoid spam), leave the screensaver view, restart both timers.
     - `automation.wall_panel_dim_after_60s_idle`: dim timer active → idle → 15% by day; display off 01:00–07:00.
     - `automation.wall_panel_screensaver_after_10m_idle`: screensaver timer active → idle → go to the screensaver view at 15% (skipped 01:00–07:00).
-    - `automation.wall_panel_morning_wake`: 07:00 daily → display on at 15%.
+    - `automation.wall_panel_morning_wake`: 07:00 on weekdays (time condition, since 2026-11-15) → display on at 15%.
     - `automation.wall_panel_start_idle_timers_on_ha_startup`: restarts the idle timers after an HA restart.
 - **Gotcha:** trigger on the timer's state change (active → idle), not the `timer.finished` event, which proved unreliable.
 

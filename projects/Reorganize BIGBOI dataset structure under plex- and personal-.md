@@ -4,12 +4,17 @@ status: backlog
 priority: medium
 system:
 - '[[Big Boi storage (pool, datasets, shares, backups)]]'
+parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
 notion_id: 31c7ae76-22ba-8181-a9af-ed735fb9c968
 ---
 
 # Reorganize BIGBOI dataset structure under plex/ and personal/
 
 Agreed structure finalized 2026-03-07. Do not execute until ZFS snapshots are configured on current layout.
+
+## Status (2026-11-15, quarterly triage)
+
+Kept in the backlog and tied to the [rebuild](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>): the layout is decided when the media moves to the HDD pool, not before. The prerequisite below is met (two daily snapshot tasks run, see [Big Boi storage](<../systems/Big Boi storage (pool, datasets, shares, backups).md>)). Parts of the plan below are stale and get rewritten at that point: the servarr configs now live under `ix-apps/app_mounts/dockhand`, not `BIGBOI/servarr`; `rips` goes to the HDD pool as its own dataset (Aaron, 2026-11-08); and `plex_config` is a leftover to delete, not to move ([cleanup](<Verify-clean up plex_config dataset.md>)).
 
 ## Goal
 
