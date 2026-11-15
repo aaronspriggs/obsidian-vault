@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
-next_step: '2026-11-15: step 8 parts 1 and 2 are done (four project notes slimmed, the Home Assistant and Big Boi System notes split). Next, best in a fresh session: part 3, the triage, following the quarterly triage note: do the reading, then ask Aaron for all decisions in one go. Then close this project.'
+next_step: '2026-11-15: step 8 part 3, the triage: the reading and the live checks are done and the recommendations are with Aaron (42 backlog notes, 12 untested runbooks, the memory fold, the items the two split change notes left). Waiting on his answers. Then apply them, write one change note (type doc), update the triage note''s Status, and close this project.'
 ---
 
 ## Goal
