@@ -37,7 +37,7 @@ Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM
 | PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift); add 1× Corsair Type 4 Molex cable (CP-8920199 or CP-8920196) to its stock 2 | **Bought** (Aaron, 2026-11-08); Molex cable to buy |
 | Case fans | Aaron's own, 120 × 25 and 92 × 25, 4-pin PWM | Have (Aaron 2026-10-26) |
 | HDDs | RAIDZ2, start with 4, one size for every drive | Size open |
-| GPU | ASRock Challenger A380 ITX 6GB OC (Arc A380, 190 mm long, 2-slot, one 8-pin from the RM1000x), for AV1 encode on the host for containers ([[Automated AV1 re-encode pipeline for UHD Blu-ray rips on Big Boi]]) | **Ordered** 2026-11-09 (Newegg, about $200) |
+| GPU | ASRock Challenger A380 ITX 6GB OC (Arc A380, 190 mm long, 2-slot, one 8-pin from the RM1000x), for AV1 encode on the host for containers ([[Automated AV1 re-encode pipeline for UHD Blu-ray rips on Big Boi]]) | **Arrived** (Aaron, 2026-11-15: "early this week"; ordered 2026-11-09, Newegg, about $200). Return window date not recorded |
 
 Slots: GPU in PCIEX16 and HBA in PCIEX8 (x8/x8), NIC in PCIEX4, NVMe boot in M2P (disables SATA3 0), the 5 SSDs on SATA3 1–5, none spare. Power: one Molex cable per backplane and 2 SATA cables for the SSDs, filling the RM1000x's 5 peripheral sockets (counted by Aaron, 2026-11-08).
 

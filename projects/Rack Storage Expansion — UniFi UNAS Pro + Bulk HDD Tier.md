@@ -1,11 +1,14 @@
 ---
 type: project
-status: backlog
+status: deprecated
 priority: low
 system:
 - '[[Big Boi storage (pool, datasets, shares, backups)]]'
 notion_id: 3187ae76-22ba-81dc-965c-d8a7c7f00759
+superseded_by: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
 ---
+
+**Dropped 2026-11-15** at the quarterly triage (Aaron's yes; [change](<../changes/2026-11-15 Allowed deprecated on project notes and dropped seven backlog notes.md>)). Aaron chose the Big Boi rebuild with an HDD pool over a UNAS Pro on 2026-10-15. The research below stays for reference.
 
 Superseded 2026-10-15: Aaron chose to rebuild Big Boi with an HDD pool instead of buying a UNAS Pro. Kept for the research (rack depth, drive pricing).
 

@@ -15,8 +15,6 @@ A recurring pass with Aaron, about 15 minutes every three months, over what othe
 
 Last run: 2026-11-15, pulled forward as step 8 of the setup review ([change](<../changes/2026-11-15 Ran the first quarterly KB triage.md>)). Next due: February 2027. This note stays in the backlog between runs.
 
-Still open from this run: the seven notes Aaron agreed to drop are waiting on a rulebook fix, because `deprecated` isn't an allowed status for project notes yet (see Decisions).
-
 ## Plan
 
 Claude does the reading for steps 1 to 3 before asking Aaron anything, so his 15 minutes go to decisions. Measured 2026-11-15, that reading is about 13,000 tokens a run (42 backlog notes, 8,485 words; 3 memory files, 1,061 words).
@@ -32,4 +30,4 @@ Claude does the reading for steps 1 to 3 before asking Aaron anything, so his 15
 - **2026-11-15: the memory fold is a step here, not its own task.** CLAUDE.md → Memory names the quarterly triage as when it happens, a second recurring task would be one more thing to remember, and three memory files add about 1,500 tokens of reading.
 - **2026-11-15: only untested runbooks go to Aaron from the upkeep lists.** Testing a runbook can need him or a disruption he has to agree to. Verifying a System is Claude's own work against the live system, and the rulebook already says when an over-size note gets slimmed.
 - **2026-11-15, first run: the reading cost more than the 13,000 tokens estimated,** because checking notes against the live systems is what made the recommendations right (a DVR test already done, a snapshot deletion three weeks overdue, the cause of the Yu Yu Hakusho mix-up). Keep the live checks, but ask each tool for the field needed: one whole-file read of `configuration.yaml` cost more than the 42 notes together.
-- **2026-11-15: "drop" can't be written yet.** Step 1 says a dropped note gets `status: deprecated`, and the rulebook's Lifecycle section says the same for any note, but its property table and `check.py` allow only active, blocked, backlog and done on project notes. Adding the value is a rulebook change (Tier 3), asked of Aaron on 2026-11-15.
+- **2026-11-15: "drop" can't be written yet.** Step 1 says a dropped note gets `status: deprecated`, and the rulebook's Lifecycle section says the same for any note, but its property table and `check.py` allow only active, blocked, backlog and done on project notes. Adding the value is a rulebook change (Tier 3); Aaron approved it the same day and the seven notes were dropped ([change](<../changes/2026-11-15 Allowed deprecated on project notes and dropped seven backlog notes.md>)).

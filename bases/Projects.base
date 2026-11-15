@@ -42,7 +42,7 @@ views:
     filters:
       and:
         - system.contains(this)
-        - 'status != "done"'
+        - 'status != "done" && status != "deprecated"'
     order:
       - file.name
       - note.status

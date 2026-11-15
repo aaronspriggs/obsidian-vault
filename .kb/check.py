@@ -34,7 +34,7 @@ SCHEMA = {  # folder -> {property: (required, allowed values or kind)}
                 "category": (True, {"hardware", "vm", "docker", "network", "software"}),
                 "runs_on": (False, "links"), "last_verified": (False, "date"), "superseded_by": (False, "link")},
     "projects": {"type": (True, {"task", "project", "idea"}),
-                 "status": (True, {"active", "blocked", "backlog", "done"}),
+                 "status": (True, {"active", "blocked", "backlog", "done", "deprecated"}),
                  "priority": (True, {"high", "medium", "low"}), "system": (True, "links"),
                  "parent": (False, "link"), "completed": (False, "date"), "superseded_by": (False, "link")},
     "changes": {"date": (True, "date"), "type": (True, {"fix", "upgrade", "config", "install", "doc", "research"}),

@@ -30,7 +30,7 @@ Frontmatter holds short values and links only; anything longer than a line goes 
 | Folder | Required | Optional |
 | --- | --- | --- |
 | systems/ | `status` (active, spare, planned, deprecated), `category` (hardware, vm, docker, network, software) | `runs_on` (the host it runs on), `ip`, `port`, `url`, `repo`, `last_verified` (set whenever checked live), `superseded_by` |
-| projects/ | `type` (task, project, idea), `status` (active, blocked, backlog, done), `priority` (high, medium, low; not needed once done), `system` | `next_step` (one dated line; expected while active/blocked), `completed` (expected when done), `parent` (for phases and sub-tasks), `superseded_by` |
+| projects/ | `type` (task, project, idea), `status` (active, blocked, backlog, done, deprecated), `priority` (high, medium, low; not needed once done), `system` | `next_step` (one dated line; expected while active/blocked), `completed` (expected when done), `parent` (for phases and sub-tasks), `superseded_by` |
 | changes/ | `date`, `type` (fix, upgrade, config, install, doc, research), `system` | `project`, `commit` (repo commit URL) |
 | runbooks/ | `kind` (setup, procedure, troubleshooting, recovery, reference), `status` (active, deprecated), `system` | `last_tested` (set whenever used), `repo`, `superseded_by` |
 

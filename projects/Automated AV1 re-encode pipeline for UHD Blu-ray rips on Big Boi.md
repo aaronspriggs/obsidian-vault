@@ -6,7 +6,7 @@ system:
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[Workstation (Desktop)]]'
 - '[[Plex Media Server]]'
-next_step: '2026-11-15: made active at the quarterly triage because the A380''s tests are tied to a return window. Aaron says whether the card (ordered 2026-11-09, Newegg) has arrived and when the window closes; he was asked at the triage and hasn''t answered yet. The three tests (passthrough with a large BAR, Plex AV1 decode and tone mapping, HandBrake QSV AV1) have to fit inside it, on the bench if the rebuild isn''t finished by then. The Apple TV 4K 4th gen was due 2026-11-13; once it is in, check Plex direct play of AV1 on it.'
+next_step: '2026-11-15: made active at the quarterly triage because the A380''s tests are tied to a return window. The card has arrived (Aaron, 2026-11-15: "early this week"; ordered 2026-11-09 from Newegg). Aaron checks the order for the date the return window closes; it isn''t recorded yet. The three tests (passthrough with a large BAR, Plex AV1 decode and tone mapping, HandBrake QSV AV1) have to fit inside it, on the bench if the rebuild isn''t finished by then. The Apple TV 4K 4th gen was due 2026-11-13; once it is in, check Plex direct play of AV1 on it.'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
 ---
 

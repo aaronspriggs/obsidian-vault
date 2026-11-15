@@ -1,12 +1,14 @@
 ---
 type: idea
-status: backlog
+status: deprecated
 priority: low
 system:
 - '[[Plex Media Server]]'
 - '[[ClaudeCode (VM)]]'
 notion_id: 31a7ae76-22ba-8174-ac5b-e4676e3a3631
 ---
+
+**Dropped 2026-11-15** at the quarterly triage (Aaron's yes; [change](<../changes/2026-11-15 Allowed deprecated on project notes and dropped seven backlog notes.md>)). `homelab-update` has covered both Ubuntu VMs since 2026-09-26 and HAOS has update approvals. Revisit only if the number of VMs grows enough that per-VM installs become a burden.
 
 ## Problem
 
