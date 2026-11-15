@@ -34,11 +34,11 @@ Existing runs (14), all home-run to the basement utility room:
 
 Planned runs (8 or 9): front hallway UniFi Siren (PoE, near the doorbell); front hallway doorbell speaker or chime (maybe); outside entry G6 Entry doorbell (PoE+, 16 W, copper); basement guest room (desk or TV spot); basement gym/flex room; basement entertainment space (1 run to a Flex is the lean, since most AV goes in the rack); outside backyard camera; outside front camera (current Driveway Nest spot); outside side-of-house gate and walkway camera.
 
-## Plan: port map (draft v2, 2026-11-15)
+## Plan: port map (draft v3, 2026-11-15)
 
 Working copy for collaborating on placement: the Claude artifact [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp) (2026-11-15); changes agreed there get copied back here. Diagram: the "Patch panels — front view" section at the bottom of ![30U rack layout](<../attachments/Rack - 30U floor rack proposed layout.svg>).
 
-Rules: Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords); A17–A24 go to Basement Flex ports 1–8. Panel B (U28) holds rack gear and WAN: B1–B10 patch down to the UDM Pro (B1–B8 = UDM LAN 1–8, B9 = WAN1, B10 = SFP+1 WAN2), B11–B16 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B17–B24 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. Live ports that already match (PM 4, 6, 8, 9, 13–16; UDM 2–4, 8, 9) don't move.
+Rules: Panel A (U30) holds house runs. A1–A16 patch straight down to Pro Max ports 1–16 (6" cords); A17–A24 are free for future house runs; basement drops use the Flex mount keystones F1–F8 (below). Panel B (U28) holds rack gear and WAN: B1–B10 patch down to the UDM Pro (B1–B8 = UDM LAN 1–8, B9 = WAN1, B10 = SFP+1 WAN2), B11–B16 are rear-port gear and DAC pass-throughs (keystone pass-through plates) to the Aggregation, B17–B24 are free for future house runs. Security and PoE-powered gear go on the Pro Max (on the UPS). The Basement Flex (every port 2.5 GbE PoE on its own adapter) takes the 2.5G-capable basement and spare drops; its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12. Live ports that already match (PM 4, 6, 8, 9, 13–16; UDM 2–4, 8, 9) don't move.
 
 Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure (switch uplinks, hubs, UPS, PDU, DACs), white APs, blue everything else.
 
@@ -62,14 +62,22 @@ Cord colours (Aaron, 2026-11-15): orange security, red WAN, black infrastructure
 | A14 | Office → Front AP | PM 14 · 2.5G | white | in place |
 | A15 | 2nd fl → Upstairs Flex | PM 15 · 2.5G | black | in place |
 | A16 | Bar → Back AP | PM 16 · 2.5G | white | in place |
-| A17 | Basement AP (U7 Pro) | Flex 1 | white | run in, AP not yet |
-| A18 | Bsmt ent. → Flex (PoE) | Flex 2 | black | to pull |
-| A19 | Guest room | Flex 3 | blue | to pull |
-| A20 | Gym / flex room | Flex 4 | blue | to pull |
-| A21 | Office spare 1 | Flex 5 | blue | dark |
-| A22 | Office spare 2 | Flex 6 | blue | dark |
-| A23 | Office spare 3 | Flex 7 | blue | dark |
-| A24 | Spare | Flex 8 | — | spare |
+| A17–A24 | Future house runs | — | — | spare |
+
+### Flex mount keystones (U25)
+
+The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron 2026-11-15), so basement drops land there and patch sideways with short cords instead of crossing the UDM and Aggregation from panel A.
+
+| Pos | Run / device | Switch port | Cord | Status |
+| --- | --- | --- | --- | --- |
+| F1 | Basement AP (U7 Pro) | Flex 1 | white | run in, AP not yet |
+| F2 | Bsmt ent. → Flex (PoE) | Flex 2 | black | to pull |
+| F3 | Guest room | Flex 3 | blue | to pull |
+| F4 | Gym / flex room | Flex 4 | blue | to pull |
+| F5 | Office spare 1 | Flex 5 | blue | dark |
+| F6 | Office spare 2 | Flex 6 | blue | dark |
+| F7 | Office spare 3 | Flex 7 | blue | dark |
+| F8 | Spare | Flex 8 | — | spare |
 
 ### Panel B
 
@@ -100,6 +108,9 @@ B17–B24: free for future house runs.
 - **2026-11-15 (Aaron):** basement entertainment space gets 1 run feeding a PoE-powered switch, since most AV gear goes in the rack.
 - **2026-11-15 (Aaron):** cord colours as above. The hallway "doorbell speaker" run is for an indoor chime. In-rack gear (Lutron, Hue, HDHomeRun and so on) also patches through the keystone panels, and keystone pass-through plates (arrived) carry 10G DACs where needed.
 - **2026-11-15 (Aaron):** the Basement Flex 2.5G 8 PoE runs on the official UniFi adapter, so all 8 ports give 2.5 GbE with PoE; use it more. The basement ceiling AP is a U7 Pro on 2.5 GbE PoE like the other three (Ubiquiti lists the U7 Pro as PoE+, 21 W max: [techspecs](https://techspecs.ui.com/unifi/wifi/u7-pro)), so it goes on Flex 1.
+
+- **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
+- **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
 
 ## Open questions
 
