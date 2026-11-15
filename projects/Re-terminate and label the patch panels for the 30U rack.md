@@ -16,7 +16,7 @@ Every house run lands on a labelled patch panel position in the 30U rack (layout
 
 ## Status (2026-11-15)
 
-Aaron listed every run in the house, existing and planned (inventory below). Port map v4 agreed (panel B moved over the UDM after the physical drawing); nothing re-terminated yet. The 30U rack goes where the 12U is now, and every run has at least 6 ft of slack (Aaron 2026-11-14).
+Aaron listed every run in the house, existing and planned (inventory below). Port map v5 agreed (panel B over the UDM since v4; both panels grouped by function since v5); nothing re-terminated yet. The 30U rack goes where the 12U is now, and every run has at least 6 ft of slack (Aaron 2026-11-14).
 
 ## Run inventory (Aaron, 2026-11-15)
 
