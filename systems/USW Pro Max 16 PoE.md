@@ -17,25 +17,26 @@ Core distribution switch for the homelab network. Uplinked to the UDM Pro via SF
 - **Model:** UniFi USW Pro Max 16 PoE
 - **IP Address:** 192.168.1.250
 - **Uplink:** SFP+ 1 (10 GbE) to Dream Machine Pro SFP+ 2 (UDM port 11)
-- **Firmware:** 7.5.15.17146. IP by DHCP (controller-managed). Total PoE draw 44.6 W; temperature 48 °C.
+- **Firmware:** 7.5.15.17146. IP by DHCP (controller-managed). Total PoE draw 44.6 W (2026-09-28) of a 180 W budget; temperature 48 °C.
 
-## Port Assignments (verified via UniFi API 2026-09-28)
+## Port Assignments (verified via UniFi API 2026-09-28; rows 4, 12, 13 and 15 re-checked 2026-11-15)
 
 | Port | Link | PoE | Connected |
 | --- | --- | --- | --- |
+| 4 | down | 0.6 W | Ring keypad PoE converter (Aaron believes; 0.6 W with no data link) |
 | 6 | 1 GbE | 5.0 W | Raspberry Pi wall panel `hadashboard` (192.168.1.84), PoE-powered |
 | 8 | 100 Mb | 0 | Sonos (192.168.1.32) |
 | 9 | 100 Mb | 0 | Sonos ×2 (192.168.1.205, .171), so something daisy-chained or a small switch |
 | 10 | down | — | USW Flex (spare, offline by design) |
-| 12 | 1 GbE | 0 | Unidentified non-adopted switch (LLDP chassis 74:f9:2c:26:d1:73, its "Port 9") |
-| 13 | 2.5 GbE | 3.6 W | Unidentified non-adopted switch (LLDP chassis 74:f9:2c:96:b6:fe, its "Port 5"); Aaron's MacBook `mbp-017446` sits behind it |
+| 12 | 1 GbE | 0 | USW Flex 2.5G 8 PoE - Basement (its port 9; adopted, on its own adapter) |
+| 13 | 2.5 GbE | 3.5 W | USW Flex 2.5G 5 - Aaron's Desk (its port 5; PoE-powered); Aaron's MacBook `mbp-017446` sits behind it |
 | 14 | 2.5 GbE | 11.2 W | U7-Pro-Wall-Front AP |
-| 15 | 2.5 GbE | 15.5 W | USW Flex 2.5G 8 PoE |
+| 15 | 2.5 GbE | 15.5 W | [[USW Flex 2.5G 8 PoE]] - Upstairs (PoE-powered from this port) |
 | 16 | 2.5 GbE | 9.3 W | U7-Pro-Wall-Back AP |
 | 17 (SFP+ 1) | 10 GbE | — | Uplink to UDM Pro |
 | 18 (SFP+ 2) | 10 GbE | — | Big Boi / TrueNAS `br0` (TrueNAS, HA, Plex and ClaudeCode VMs all appear here) |
 
-Ports 1–5, 7 and 11 are unused.
+Ports 1–3, 5, 7 and 11 are unused.
 
 ## Open work
 

@@ -2,28 +2,28 @@
 status: active
 category: network
 ip: 192.168.1.24
-last_verified: 2026-09-28
+last_verified: 2026-11-15
 notion_id: 3087ae76-22ba-81b9-a191-ebeeb66ad5df
 ---
 
-Secondary switch. Uplinked to USW Pro Max Port 15 via 2.5 GbE. Hosts U7 Pro AP.
+Upstairs switch (UniFi name "USW Flex 2.5G 8 PoE - Upstairs"), in the upstairs utility room. Uplinked to USW Pro Max port 15 at 2.5 GbE and powered by PoE from it. Hosts the U7 Pro - Upstairs AP.
 
 ## Overview
 
-Secondary switch that feeds the U7 Pro AP. Uplinked to the USW Pro Max 16 PoE. Physical location not yet recorded.
+Feeds the second floor: the U7 Pro - Upstairs AP and the other 2nd-floor runs. It takes its power from Pro Max port 15 (15.5 W drawn, 2026-11-15), which caps its own PoE budget at 46 W. A second, identical model sits in the rack: "USW Flex 2.5G 8 PoE - Basement" (verified live 2026-11-15) runs on its own adapter with a 196 W PoE budget, uplinked at 1 GbE to Pro Max port 12 with nothing else connected yet; it has no note of its own yet, and its planned use is in [[Re-terminate and label the patch panels for the 30U rack]].
 
 ## Hardware
 
 - **Model:** UniFi USW Flex 2.5G 8 PoE
 - **IP Address:** 192.168.1.24
 - **Uplink:** its port 9 (2.5 GbE) to USW Pro Max port 15
-- **Firmware:** 2.1.8.971. IP by DHCP (controller-managed). Total PoE draw 8.6 W.
+- **Firmware:** 2.1.8.971. IP by DHCP (controller-managed). PoE draw 8.4 W of a 46 W budget (2026-11-15).
 
-## Port Assignments (verified via UniFi API 2026-09-28)
+## Port Assignments (verified via UniFi API 2026-11-15)
 
 - Port 1: link up at 100 Mb, no PoE draw, no client identified (a device without an IP, or a dumb device)
-- Port 3: U7 Pro AP, 2.5 GbE, 8.6 W PoE
-- Port 9: uplink
+- Port 3: U7 Pro - Upstairs AP, 2.5 GbE, 8.4 W PoE
+- Port 9: uplink to Pro Max port 15, 2.5 GbE
 - Other ports unused
 
 ## Open work
