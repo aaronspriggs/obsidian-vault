@@ -41,7 +41,7 @@
 <rect x="100" y="1080" width="20" height="14" fill="#334155"/><circle cx="110" cy="1106" r="12" fill="#334155"/>
 <rect x="520" y="1080" width="20" height="14" fill="#334155"/><circle cx="530" cy="1106" r="12" fill="#334155"/>
 <rect x="133" y="172" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="320" y="190" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Patch panel A  ·  house runs → Pro Max + Basement Flex</text>
+<text x="320" y="190" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Patch panel A  ·  house runs → Pro Max 16</text>
 <rect x="133" y="202" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
 <text x="320" y="220" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Pro Max 16 PoE  ·  ~5 lb</text>
 <rect x="133" y="232" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -51,7 +51,7 @@
 <rect x="133" y="292" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="310" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Aggregation  ·  8× SFP+  ·  6.0 lb</text>
 <rect x="133" y="322" width="374" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
-<text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">USW Flex 2.5G 8 PoE in its 1U keystone mount</text>
+<text x="320" y="340" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">Basement Flex 2.5G 8 PoE  ·  F1–F8 keystones in its mount</text>
 <rect x="133" y="352" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="320" y="370" font-size="13" font-weight="700" fill="#334155" text-anchor="middle">Hub shelf: Hue · Lutron · HDHomeRun · Ting ONT</text>
 <rect x="133" y="382" width="374" height="26" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
@@ -89,7 +89,7 @@
 <line x1="544" y1="215" x2="562" y2="196" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
 <text x="570" y="196" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch (map at the bottom)</text>
 <text x="570" y="214" font-size="12" fill="#334155">A (U30) mirrors the Pro Max below it (A1–A16) and</text>
-<text x="570" y="230" font-size="12" fill="#334155">the Basement Flex (A17–A24). B (U28) mirrors the UDM</text>
+<text x="570" y="230" font-size="12" fill="#334155">A17–A24 are free for future runs. B (U28) mirrors the UDM</text>
 <text x="570" y="246" font-size="12" fill="#334155">under it (B1–B10) and holds rear-port rack gear and</text>
 <text x="570" y="262" font-size="12" fill="#334155">DAC pass-throughs to the Aggregation (B11–B16).</text>
 <text x="570" y="278" font-size="12" fill="#334155">Aggregation: UDM, Pro Max, Big Boi, Basement Flex.</text>

@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: Aaron reviews map v3 (doc artifact) and answers the open questions; in a session that has the Artifact tool, republish the HTML page (attachments/Rack - 30U rack layout page.html); then Aaron re-terminates, colours and labels during the 30U move and sets matching UniFi port names.'
+next_step: '2026-11-15: Aaron reviews map v3 (doc artifact or the republished HTML page) and answers the three open questions (Pro Max port 4, the CenturyLink WAN run, UPS runtime); then Aaron re-terminates, colours and labels during the 30U move and Claude sets the matching UniFi port names.'
 ---
 
 ## Goal
@@ -105,7 +105,7 @@ B17–B24: free for future house runs.
 ## Artifacts (2026-11-15)
 
 - Doc artifact (editable from any VM session via the Claude Docs connector): [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp).
-- HTML page from the 2026-11-11 session ([30U floor rack, draft v15](https://claude.ai/artifact/WGjYYkQUgNJvS256sGvmDG)) is stale. An updated copy with the patch panel map is at `attachments/Rack - 30U rack layout page.html`; publishing it needs a session that has the `Artifact` tool (not every VM session gets it).
+- HTML page [30U floor rack, draft v15](https://claude.ai/artifact/WGjYYkQUgNJvS256sGvmDG): republished 2026-11-15 from `attachments/Rack - 30U rack layout page.html` with patch panel map v3 (same link). Republishing needs a session that has the `Artifact` tool (not every VM session gets it); edit the vault file first, then publish it to that URL.
 - The diagram source of truth is `attachments/Rack - 30U floor rack proposed layout.svg`.
 
 ## Decisions
