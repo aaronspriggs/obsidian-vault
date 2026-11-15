@@ -18,15 +18,11 @@ Steps 1 to 7 are done, each with a change note. Steps 1, 3, 4 and 5 were verifie
 
 ## Findings (measured 2026-11-15)
 
-Fixed by steps 1 to 5: the session hook never arrived whole (output over Claude Code's 10,000-character hook cap); sessions ran to about 967k before compacting; tier3-guard held reads (6 of 15 holds); the rulebook's Claude Code section predated the hook and `--map`; four memories restated CLAUDE.md while other rules lived only in memory.
-
 The measurement behind the token decisions: 68 transcripts hold 4,916 main-thread requests that processed 1.16 billion tokens of context, 236k per request on average. 12 sessions account for 67%, 28 passed 200k and 11 passed 400k. In the 12 heaviest, 67% of what entered context was tool output, 26% tool input and about 7% conversation. The whole vault is about 230k tokens and the largest note about 10k.
 
 Still open:
 
 - **Large project notes and backlog (step 8).** Four open project notes are over the 2,000-word limit: Rebuild Big Boi (7,167), home security (3,660), backup strategy (3,112), patch panels (2,537). Backlog: 42 notes, 17 of them ideas.
-
-Sound and left alone: `make check` clean, vault and repo pushed, memory symlinked into the repo, `truenas-api --write` has its own method allowlist.
 
 ## Plan
 
@@ -55,7 +51,7 @@ Sound and left alone: `make check` clean, vault and repo pushed, memory symlinke
 - **2026-11-15, step 7 (Aaron: "yes and kb-export"): delete everything, version nothing.** Each item was superseded by the vault or git, or (the work brief) wasn't homelab material. Rejected: an archive folder in the repo (it is what `.archive/` was, and nothing read it in two months) and keeping the two skills in the repo (never used; the built-in `artifact-design` skill covers page design).
 - **2026-11-15, a false hold on a note edit was not worked around.** The step 6 update of this note named the SSH authorized-keys file and was held; it waited for Aaron's yes and was retried unchanged, as CLAUDE.md says.
 - **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on. He wants them "organized well and properly linked between everything": done the way the ClaudeCode split was, with the line of the split proposed to him first, every fact checked live and given one home, both notes on the Systems skeleton, and the projects, runbooks and other notes that point at a moved part relinked.
-- **2026-11-15, step 8, Rebuild Big Boi slimmed (7,167 to 1,949 words).** Every dated decision stays in the note with its outcome, reason and what was rejected. The research behind them (case specs, HBA and boards, PSUs, GPUs, pool math, the platform swap) moved word for word into six research change notes dated when the research was done and linked from the decision they support: the build will need it, and git history can't be found from the note. The rack move became its own project, [Move the homelab into the 30U floor rack](<Move the homelab into the 30U floor rack.md>), because it has its own plan (layout v17); the patch panel and gear-sale projects now have it as `parent`. Layout drafts v3 to v15 stay in git history. Rejected: one large change note dated today (six topics, longer than any note in the vault, the wrong date), a reference runbook (it would sit in untested runbooks for good, as in step 6), and git history alone.
+- **2026-11-15, step 8, slimming: decisions stay, research moves to change notes, a phase with its own plan becomes a project.** Research is moved word for word into research change notes dated when it was done and linked from the decision it supports, because the work will need it and git history can't be found from the note. Rejected: one large change note dated today, a reference runbook (it would sit in untested runbooks for good, as in step 6), and git history alone. Rebuild Big Boi (7,167 to 1,949 words): six change notes, and the rack move became [its own project](<Move the homelab into the 30U floor rack.md>), now the `parent` of the patch panel and gear-sale projects. Home security (3,660 to 1,975): two change notes; its table of what HA has was re-checked live.
 
 ## Open questions
 
