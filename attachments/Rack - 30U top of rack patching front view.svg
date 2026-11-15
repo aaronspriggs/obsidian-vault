@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 700" width="1180" height="700" role="img" aria-label="Top of the 30U rack, U30 to U25, with patch cords as mapped in v9" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 700" width="1180" height="700" role="img" aria-label="Top of the 30U rack, U30 to U25, with patch cords as mapped in v10" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
 <rect x="0.0" y="0.0" width="1180.0" height="700.0" rx="0" fill="#ffffff" stroke="none"/>
-<text x="30.0" y="36.0" font-size="20" font-weight="700" fill="#0f172a" text-anchor="start">Top of the rack, patched as mapped (v9)</text>
+<text x="30.0" y="36.0" font-size="20" font-weight="700" fill="#0f172a" text-anchor="start">Top of the rack, patched as mapped (v10)</text>
 <text x="30.0" y="58.0" font-size="12" font-weight="400" fill="#475569" text-anchor="start">Front view, U30–U25 · 2026-11-15 · cord colour = patch cord colour · dashed = run not pulled or gear not bought · heavy black = DAC</text>
 <rect x="150.0" y="80.0" width="660.0" height="440.0" rx="6" fill="#1e293b" stroke="none"/>
 <text x="140.0" y="122.0" font-size="12" font-weight="700" fill="#0f172a" text-anchor="end">U30  Patch panel A</text>
@@ -26,19 +26,19 @@
 <circle cx="165" cy="102" r="3" fill="#475569"/><circle cx="795" cy="102" r="3" fill="#475569"/>
 <circle cx="165" cy="148" r="3" fill="#475569"/><circle cx="795" cy="148" r="3" fill="#475569"/>
 <rect x="180.0" y="94.0" width="600.0" height="62.0" rx="3" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
-<rect x="197.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#ffffff" stroke="#64748b"/>
+<rect x="197.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
 <text x="204.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A1</text>
-<rect x="221.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#ffffff" stroke="#64748b"/>
+<rect x="221.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
 <text x="228.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A2</text>
-<rect x="245.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#ffffff" stroke="#64748b"/>
+<rect x="245.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
 <text x="252.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A3</text>
 <rect x="269.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="276.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A4</text>
-<rect x="293.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="293.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
 <text x="300.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A5</text>
-<rect x="317.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="317.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
 <text x="324.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A6</text>
-<rect x="341.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="341.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="348.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A7</text>
 <rect x="365.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="372.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A8</text>
@@ -58,9 +58,9 @@
 <text x="540.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A15</text>
 <rect x="557.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="564.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A16</text>
-<rect x="581.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
+<rect x="581.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="588.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A17</text>
-<rect x="605.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
+<rect x="605.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="612.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A18</text>
 <rect x="629.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="636.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A19</text>
@@ -68,11 +68,14 @@
 <text x="660.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A20</text>
 <rect x="677.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="684.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A21</text>
-<rect x="701.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="701.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
+<text x="708.0" y="134.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
 <text x="708.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A22</text>
-<rect x="725.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="725.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
+<text x="732.0" y="134.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
 <text x="732.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A23</text>
-<rect x="749.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="749.0" y="122.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
+<text x="756.0" y="134.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
 <text x="756.0" y="110.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">A24</text>
 <rect x="180.0" y="234.0" width="600.0" height="62.0" rx="3" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
 <rect x="197.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f97316" stroke="#64748b"/>
@@ -91,36 +94,33 @@
 <text x="348.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B7</text>
 <rect x="365.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="372.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B8</text>
-<rect x="389.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="389.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="396.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B9</text>
-<rect x="413.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="413.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="420.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B10</text>
-<rect x="437.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="437.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="444.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B11</text>
-<rect x="461.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="461.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="468.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B12</text>
-<rect x="485.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#111827" stroke="#64748b"/>
+<rect x="485.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="492.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B13</text>
-<rect x="509.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
+<rect x="509.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="516.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B14</text>
-<rect x="533.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b"/>
+<rect x="533.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="540.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B15</text>
 <rect x="557.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="564.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B16</text>
-<rect x="581.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="581.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="588.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B17</text>
-<rect x="605.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="605.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#16a34a" stroke="#64748b"/>
 <text x="612.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B18</text>
-<rect x="629.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<rect x="629.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#dc2626" stroke="#64748b"/>
 <text x="636.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B19</text>
-<rect x="653.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
-<text x="660.0" y="274.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
+<rect x="653.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#dc2626" stroke="#64748b"/>
 <text x="660.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B20</text>
-<rect x="677.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
-<text x="684.0" y="274.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
+<rect x="677.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#dc2626" stroke="#64748b"/>
 <text x="684.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B21</text>
-<rect x="701.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#cbd5e1" stroke="#64748b"/>
-<text x="708.0" y="274.0" font-size="7" font-weight="700" fill="#475569" text-anchor="middle">PT</text>
+<rect x="701.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="708.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B22</text>
 <rect x="725.0" y="262.0" width="14.0" height="18.0" rx="2" fill="#dc2626" stroke="#64748b"/>
 <text x="732.0" y="250.0" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">B23</text>
@@ -223,21 +223,16 @@
 <text x="612.0" y="456.0" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">Ting ONT</text>
 <rect x="684.0" y="410.0" width="66.0" height="84.0" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-dasharray="4 3"/>
 <text x="717.0" y="456.0" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">Zigbee</text>
-<path d="M204.0,140.0 C204.0,165.0 238.2,156.0 238.2,181.0" fill="none" stroke="#64748b" stroke-width="5.2" stroke-linecap="round"/>
-<path d="M204.0,140.0 C204.0,165.0 238.2,156.0 238.2,181.0" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="233.7" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#ffffff" stroke="#64748b"/>
-<path d="M228.0,140.0 C228.0,165.0 257.9,156.0 257.9,181.0" fill="none" stroke="#64748b" stroke-width="5.2" stroke-linecap="round"/>
-<path d="M228.0,140.0 C228.0,165.0 257.9,156.0 257.9,181.0" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="253.4" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#ffffff" stroke="#64748b"/>
-<path d="M252.0,140.0 C252.0,165.0 277.6,156.0 277.6,181.0" fill="none" stroke="#64748b" stroke-width="5.2" stroke-linecap="round"/>
-<path d="M252.0,140.0 C252.0,165.0 277.6,156.0 277.6,181.0" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="273.1" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#ffffff" stroke="#64748b"/>
-<path d="M300.0,140.0 C300.0,165.0 317.1,156.0 317.1,181.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="312.6" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M324.0,140.0 C324.0,165.0 336.8,156.0 336.8,181.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="332.3" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M348.0,140.0 C348.0,165.0 356.5,156.0 356.5,181.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="352.0" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
+<path d="M204.0,140.0 C204.0,165.0 238.2,156.0 238.2,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="233.7" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
+<path d="M228.0,140.0 C228.0,165.0 257.9,156.0 257.9,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="253.4" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
+<path d="M252.0,140.0 C252.0,165.0 277.6,156.0 277.6,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="273.1" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
+<path d="M300.0,140.0 C300.0,165.0 317.1,156.0 317.1,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
+<rect x="312.6" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
+<path d="M324.0,140.0 C324.0,165.0 336.8,156.0 336.8,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
+<rect x="332.3" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
 <path d="M396.0,140.0 C396.0,165.0 396.0,156.0 396.0,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
 <rect x="391.5" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
 <path d="M420.0,140.0 C420.0,165.0 415.7,156.0 415.7,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
@@ -248,10 +243,6 @@
 <rect x="470.4" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
 <path d="M516.0,140.0 C516.0,165.0 494.6,156.0 494.6,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
 <rect x="490.1" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
-<path d="M588.0,140.0 C588.0,165.0 553.7,156.0 553.7,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
-<rect x="549.2" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
-<path d="M612.0,140.0 C612.0,165.0 573.5,156.0 573.5,181.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
-<rect x="569.0" y="177.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
 <path d="M204.0,262.0 C204.0,237.0 238.2,234.0 238.2,209.0" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
 <rect x="233.7" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#f97316" stroke="none"/>
 <path d="M228.0,262.0 C228.0,237.0 257.9,234.0 257.9,209.0" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
@@ -266,23 +257,29 @@
 <rect x="332.3" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#f97316" stroke="none"/>
 <path d="M348.0,262.0 C348.0,237.0 356.5,234.0 356.5,209.0" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round"/>
 <rect x="352.0" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#f97316" stroke="none"/>
-<path d="M396.0,262.0 C396.0,237.0 396.0,234.0 396.0,209.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="391.5" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M420.0,262.0 C420.0,237.0 415.7,234.0 415.7,209.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="411.2" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M444.0,262.0 C444.0,237.0 435.4,234.0 435.4,209.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="430.9" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M468.0,262.0 C468.0,237.0 455.1,234.0 455.1,209.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="450.6" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M492.0,262.0 C492.0,237.0 474.9,234.0 474.9,209.0" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
-<rect x="470.4" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#111827" stroke="none"/>
-<path d="M516.0,262.0 C516.0,237.0 494.6,234.0 494.6,209.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="490.1" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
-<path d="M540.0,262.0 C540.0,237.0 514.3,234.0 514.3,209.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
-<rect x="509.8" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#2563eb" stroke="none"/>
-<path d="M720.6,186.0 C720.6,226.0 660.0,222.0 660.0,262.0" fill="none" stroke="#111827" stroke-width="4.4" stroke-linecap="round"/>
-<path d="M742.8,186.0 C742.8,226.0 684.0,222.0 684.0,262.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
-<path d="M720.6,204.0 C720.6,244.0 708.0,222.0 708.0,262.0" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
+<path d="M396.0,262.0 C396.0,237.0 396.0,234.0 396.0,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="391.5" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M420.0,262.0 C420.0,237.0 415.7,234.0 415.7,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="411.2" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M444.0,262.0 C444.0,237.0 435.4,234.0 435.4,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="430.9" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M468.0,262.0 C468.0,237.0 455.1,234.0 455.1,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="450.6" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M492.0,262.0 C492.0,237.0 474.9,234.0 474.9,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="470.4" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M588.0,262.0 C588.0,237.0 553.7,234.0 553.7,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="549.2" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M612.0,262.0 C612.0,237.0 573.5,234.0 573.5,209.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
+<rect x="569.0" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#16a34a" stroke="none"/>
+<path d="M636.0,262.0 C636.0,237.0 593.2,234.0 593.2,209.0" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="588.7" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#dc2626" stroke="none"/>
+<path d="M660.0,262.0 C660.0,237.0 612.9,234.0 612.9,209.0" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="608.4" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#dc2626" stroke="none"/>
+<path d="M684.0,262.0 C684.0,237.0 632.6,234.0 632.6,209.0" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="628.1" y="201.5" width="9.0" height="11.0" rx="1.5" fill="#dc2626" stroke="none"/>
+<path d="M720.6,204.0 C720.6,164.0 708.0,180.0 708.0,140.0" fill="none" stroke="#111827" stroke-width="4.4" stroke-linecap="round"/>
+<path d="M720.6,186.0 C720.6,146.0 732.0,180.0 732.0,140.0" fill="none" stroke="#111827" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="7 4"/>
+<path d="M742.8,186.0 C742.8,146.0 756.0,180.0 756.0,140.0" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
 <path d="M742.8,204.0 C742.8,244.0 741.0,303.0 741.0,343.0" fill="none" stroke="#111827" stroke-width="4.4" stroke-linecap="round"/>
 <path d="M732.0,280.0 C732.0,301.0 715.2,312.0 715.2,334.0" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
 <rect x="710.7" y="330.5" width="9.0" height="11.0" rx="1.5" fill="#dc2626" stroke="none"/>
@@ -290,23 +287,23 @@
 <rect x="736.5" y="317.5" width="9.0" height="11.0" rx="1.5" fill="#dc2626" stroke="none"/>
 <line x1="812" y1="125.0" x2="836" y2="84.0" stroke="#2563eb" stroke-width="1.2"/><circle cx="812" cy="125.0" r="3" fill="#2563eb"/>
 <text x="842.0" y="88.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start">Panel A → top row: house runs</text>
-<text x="842.0" y="105.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">One group per 8-column switch block, each with a</text>
-<text x="842.0" y="120.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">spare: APs and switches A1–A8, endpoints A9–A16,</text>
-<text x="842.0" y="135.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">presence sensors A17–A19; A20–A24 free. Lean at</text>
-<text x="842.0" y="150.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">most 1.1 in: 6-inch cords.</text>
+<text x="842.0" y="105.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Switches and presence sensors A1–A8, endpoints</text>
+<text x="842.0" y="120.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">A9–A16, A17–A21 free for new runs. Lean at most</text>
+<text x="842.0" y="135.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">1.0 in: 6-inch cords. A22–A24 sit over the SFP+</text>
+<text x="842.0" y="150.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">cages and carry the server links.</text>
 <line x1="812" y1="195.0" x2="836" y2="210.0" stroke="#111827" stroke-width="1.2"/><circle cx="812" cy="195.0" r="3" fill="#111827"/>
 <text x="842.0" y="214.0" font-size="13" font-weight="700" fill="#111827" text-anchor="start">Enterprise 48: SFP+ cages</text>
-<text x="842.0" y="231.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Top left: Big Boi DAC down through B20. Top right:</text>
-<text x="842.0" y="246.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">second server via B21. Bottom left: Mac Studio via</text>
-<text x="842.0" y="261.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">B22 (RJ45 module, Cat6a through a coupler). Bottom</text>
+<text x="842.0" y="231.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Bottom left: Big Boi DAC up through A22. Top left:</text>
+<text x="842.0" y="246.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">second server via A23. Top right: Mac Studio via</text>
+<text x="842.0" y="261.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">A24 (RJ45 module, Cat6a through a coupler). Bottom</text>
 <text x="842.0" y="276.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">right: 10G DAC down to UDM SFP+ 11. Cage numbering</text>
 <text x="842.0" y="291.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">unconfirmed.</text>
 <line x1="812" y1="265.0" x2="836" y2="336.0" stroke="#2563eb" stroke-width="1.2"/><circle cx="812" cy="265.0" r="3" fill="#2563eb"/>
 <text x="842.0" y="340.0" font-size="13" font-weight="700" fill="#2563eb" text-anchor="start">Panel B → bottom row</text>
-<text x="842.0" y="357.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Security B1–B8 (first block), rack gear B9–B16</text>
-<text x="842.0" y="372.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">entering from the rear (second block), B17–B19</text>
-<text x="842.0" y="387.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">spare. Cords go up to the column above; lean at</text>
-<text x="842.0" y="402.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">most 1.0 in. B20–B24's switch ports stay free.</text>
+<text x="842.0" y="357.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Security B1–B8, rack gear B9–B16 from the rear,</text>
+<text x="842.0" y="372.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">UPS and PDU B17–B18 beside the APs B19–B22; cords</text>
+<text x="842.0" y="387.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">go up to the column above (lean at most 1.5 in).</text>
+<text x="842.0" y="402.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">WAN B23–B24 drop to the UDM.</text>
 <line x1="812" y1="335.0" x2="836" y2="446.0" stroke="#dc2626" stroke-width="1.2"/><circle cx="812" cy="335.0" r="3" fill="#dc2626"/>
 <text x="842.0" y="450.0" font-size="13" font-weight="700" fill="#dc2626" text-anchor="start">UDM Pro: routing only</text>
 <text x="842.0" y="467.0" font-size="12" font-weight="400" fill="#334155" text-anchor="start">B23 (CenturyLink) drops to WAN 9, B24 (Ting ONT)</text>
@@ -320,18 +317,17 @@
 <path d="M30,636 L56,636" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round"/>
 <text x="62.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Security</text>
 <path d="M144,636 L170,636" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
-<text x="176.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">WAN</text>
-<path d="M223,636 L249,636" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
-<text x="255.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Infra</text>
-<path d="M316,636 L342,636" fill="none" stroke="#64748b" stroke-width="5.2" stroke-linecap="round"/>
-<path d="M316,636 L342,636" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
-<text x="348.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Access points</text>
-<path d="M465,636 L491,636" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
-<text x="497.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Everything else</text>
-<path d="M628,636 L654,636" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
-<text x="660.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">to pull / not bought</text>
-<rect x="818.0" y="627.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b" fill-opacity="0.45"/>
-<text x="838.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">dark run, unpatched</text>
+<text x="176.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Wi-Fi + WAN</text>
+<path d="M279,636 L305,636" fill="none" stroke="#16a34a" stroke-width="3.2" stroke-linecap="round"/>
+<text x="311.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Rack hardware</text>
+<path d="M428,636 L454,636" fill="none" stroke="#2563eb" stroke-width="3.2" stroke-linecap="round"/>
+<text x="460.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">Everything else</text>
+<path d="M591,636 L617,636" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round"/>
+<text x="623.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">DAC</text>
+<path d="M670,636 L696,636" fill="none" stroke="#111827" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="7 4"/>
+<text x="702.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">to pull / not bought</text>
+<rect x="860.0" y="627.0" width="14.0" height="18.0" rx="2" fill="#2563eb" stroke="#64748b" fill-opacity="0.45"/>
+<text x="880.0" y="640.0" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start">dark run, unpatched</text>
 <text x="30.0" y="670.0" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Horizontal positions scaled from the 12U photo, UI's UDM Pro image and UI's Enterprise 48 store image. Enterprise 48 port and SFP+ cage numbering is assumed</text>
 <text x="30.0" y="685.0" font-size="11" font-weight="400" fill="#475569" text-anchor="start">(odd ports on the top row); confirm on the switch. UDM port 9 = RJ45 WAN, 10 = SFP+ WAN, 11 = SFP+ LAN (UI quick start guide).</text>
 </svg>
