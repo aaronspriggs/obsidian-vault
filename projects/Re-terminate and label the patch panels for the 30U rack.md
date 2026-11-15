@@ -144,6 +144,7 @@ The Basement Flex's 1U mount has its own keystone holes beside the switch (Aaron
 
 - **2026-11-15 (Aaron):** the Basement Flex mount's keystones take the basement drops (F1–F8), patched sideways.
 - **2026-11-15:** the existing "30U rack layout" artifact is not a doc type, so this VM session can't read or edit it; the doc artifact above is the working copy.
+- **2026-11-15:** the doc artifact (tables, text and both widgets) redrawn to v12 / rack v16; widget code comes from [unifi/rack-docwidget.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-docwidget.py).
 - **2026-11-15 (Aaron): v12 agreed.** Reviewed against practice (panel-switch-panel 1:1, router only on the UDM, function groups with spares, 33 of 48 positions used). Caveats noted: placement now follows function and colour rather than house-versus-rack, so labels should say so; the Enterprise 48 is the hottest device and sits at U29, so the rack needs top venting or a roof fan; one switch is a single point of failure, and Aaron will still sell the Pro Max 16 rather than keep it as a cold spare.
 - **2026-11-15 (Aaron): map v12.** Rack gear starts at B1; UPS and PDU management turn red (UniFi networking gear), so red runs B13–B24 and B7–B12 are free.
 - **2026-11-15 (Aaron): map v11.** All networking red (APs, downstream switches, WAN), grouped at the right end of panel B: APs B15–B18 beside UPS/PDU management, switches B19–B22, WAN B23–B24. Security back to A1–A8. The Kitchen 3 run becomes the main-floor Presence Pro, grouped with the basement sensor at A17–A19.
