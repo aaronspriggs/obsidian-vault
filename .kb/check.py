@@ -25,6 +25,9 @@ import yaml
 VAULT = pathlib.Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".git", ".kb", ".obsidian", ".trash", "templates", "attachments"}
 STALLED_DAYS, VERIFY_DAYS, TEST_DAYS = 30, 90, 180
+# Writing rules -> Size. Over the limit is reported by --health, never an error: a long design
+# session mustn't be blocked from committing.
+SIZE_WORDS = {"systems": 1500, "projects": 2000}
 
 SCHEMA = {  # folder -> {property: (required, allowed values or kind)}
     "systems": {"status": (True, {"active", "spare", "planned", "deprecated"}),
@@ -85,7 +88,7 @@ def print_session(graph, report, gaps, budget):
     Claude Code only puts hook output of up to 10,000 characters in context; anything longer
     is cut to a 2 KB preview (found 2026-11-15: every session since the hook was added got
     the preview). So this drops detail in steps until the block fits `budget`: next steps
-    shortened, then removed. Systems to verify and untested runbooks are counted, not listed;
+    shortened, then removed. Systems to verify, untested runbooks and over-size notes are counted, not listed;
     --health lists them.
     """
     projects = [(n["rel"].stem, n["fm"]) for n in graph.values() if n["folder"] == "projects"]
@@ -106,7 +109,7 @@ def print_session(graph, report, gaps, budget):
             out += [f"\n## {heading} ({len(report[heading])})"] + ([f"- {r}" for r in report[heading]] or ["- none"])
         out += [f"\n## Gaps ({len(gaps)})"] + ([f"- {g}" for g in gaps] or ["- none"])
         out.append(f"\nNot listed here (check.py --health): {len(report['Systems to verify'])} systems to verify, "
-                   f"{len(report['Untested runbooks'])} untested runbooks.")
+                   f"{len(report['Untested runbooks'])} untested runbooks, {len(report['Over-size notes'])} over-size notes.")
         out.append(f"\n## Backlog ({sum(map(len, backlog.values()))}), each title once under its first System")
         out += [f"- {s}: " + "; ".join(backlog[s]) for s in sorted(backlog)]
         text = "\n".join(out)
@@ -220,12 +223,14 @@ def main():
         return target.lower() in by_name or target.lower().removesuffix(".md") in by_name
 
     today = datetime.date.today()
-    report = {"Open work": [], "Stalled projects": [], "Systems to verify": [], "Untested runbooks": []}
+    report = {"Open work": [], "Stalled projects": [], "Systems to verify": [], "Untested runbooks": [],
+              "Over-size notes": []}
     for p, rel in files:
         if p.suffix != ".md":
             continue
         text = p.read_text()
         fm_text, body = split(text)
+        words = len(body.split())
         folder = rel.parts[0] if len(rel.parts) > 1 else ""
         fm = {}
         if folder in SCHEMA:
@@ -284,6 +289,9 @@ def main():
         if not health or not fm:
             continue
         status = fm.get("status")
+        sized = status in ("active", "blocked") if folder == "projects" else status != "deprecated"
+        if sized and words > SIZE_WORDS.get(folder, words):
+            report["Over-size notes"].append(f"{rel} ({words} words, limit {SIZE_WORDS[folder]})")
         if folder == "projects":
             if status in ("active", "blocked"):
                 report["Open work"].append(project_line(rel.stem, fm))

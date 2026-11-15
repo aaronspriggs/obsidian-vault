@@ -35,7 +35,7 @@ Frontmatter holds short values and links only; anything longer than a line goes 
 | runbooks/ | `kind` (setup, procedure, troubleshooting, recovery, reference), `status` (active, deprecated), `system` | `last_tested` (set whenever used), `repo`, `superseded_by` |
 
 `notion_id` on migrated notes maps them back to the Notion archive; don't add it to new notes. Last-edited dates come from git history, not properties. Open work = status active or blocked.
-**Derived checks, never set by hand:** stalled project (active, no commit touching it in 30+ days), system to verify (not deprecated, `last_verified` empty or 90+ days old), untested runbook (not deprecated, `last_tested` empty or 180+ days old), recent change (`date` within 14 days). `.kb/check.py --health` lists them, plus gaps (active without `next_step`, done without `completed`). Committing a project resets its stalled clock, so don't touch stalled projects just to backfill; decide active or backlog first.
+**Derived checks, never set by hand:** stalled project (active, no commit touching it in 30+ days), system to verify (not deprecated, `last_verified` empty or 90+ days old), untested runbook (not deprecated, `last_tested` empty or 180+ days old), recent change (`date` within 14 days), over-size note (Writing rules → Size). `.kb/check.py --health` lists them, plus gaps (active without `next_step`, done without `completed`). Committing a project resets its stalled clock, so don't touch stalled projects just to backfill; decide active or backlog first.
 
 ## Writing rules
 
@@ -45,7 +45,7 @@ Frontmatter holds short values and links only; anything longer than a line goes 
 - **Absolute dates only:** "verified 2026-09-27", never "yesterday", "recently", or "last week".
 - **Rewrite, don't append.** When a fact changes, replace the old line; the history belongs in changes/ and git. No "supersedes … described above" layers.
 - **Write when it happens**, in the same session as the work, not at the end. Commit and push each KB write; the VM's disk isn't backed up, GitHub is.
-- **Size:** a System note over about 1,500 words gets split into its own system note or a reference runbook.
+- **Size:** a System note over about 1,500 words gets split into its own system note or a reference runbook. An open project note over about 2,000 words gets slimmed the next time it's worked on: a finished step keeps one line and a link to its change note, a settled decision keeps its outcome, its reason and what was rejected in a few sentences, and a phase with its own plan becomes its own project note with `parent`. Detail beyond that goes in the step's change note or stays in git history.
 - **No new files nobody asked for**, and never edit `.obsidian/` except `app.json` and `types.json` on purpose.
 
 ## Secrets policy
@@ -86,4 +86,11 @@ Claude Code is gated by how reversible an action is and what it affects, not by 
 
 ## How Claude Code works the KB
 
-At session start, run `~/obsidian-vault/.kb/check.py --health` and `git -C ~/obsidian-vault log --oneline -5`, and fix findings that touch the task at hand. Read the relevant notes before answering questions about the environment, open work or past decisions; where the live system can be checked (ha-mcp, SSH, TrueNAS API), verify the note against it and fix the note when it's wrong. Search with grep; read only the notes the task needs. Changes to these standards are made here, with explicit approval from Aaron, and logged in changes/ (type doc).
+Claude's working procedure, with the commands, lives in [CLAUDE.md](https://github.com/aaronspriggs/spriggs-homelab/blob/main/claudecode-vm/CLAUDE.md) in the repo, which every session loads. The parts of it that are KB rules:
+
+- **Session start.** A SessionStart hook pulls the vault and puts `.kb/check.py --session` and the last 5 commits in context: open work with next steps, stalled projects, gaps and every backlog title. Claude fixes findings that touch the task at hand and checks that list for an existing project before proposing one. `--health` is the full report, including the upkeep lists the session block only counts.
+- **Lookups start from the map.** `.kb/check.py --map "<note>"` lists what is linked to a note (open projects, backlog, runbooks, newest changes), generated from the links. Claude runs it for every System a question touches.
+- **Read in full, verify live.** Claude reads every note the task touches in full before answering about the environment, open work or past decisions. Where the live system can be checked (ha-mcp, SSH, TrueNAS API), it verifies the note against it and fixes the note when it's wrong. Reading the KB is cheap; what costs is context carried through a long session (measured 2026-11-15), so tokens are saved by ending sessions at task boundaries, never by reading less.
+- **A note stands on its own.** An open project's `next_step` and Status are kept complete enough that a fresh session can pick the work up from the note alone.
+
+Changes to these standards are made here, with explicit approval from Aaron, and logged in changes/ (type doc).
