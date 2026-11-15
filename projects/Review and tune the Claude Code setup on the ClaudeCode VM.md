@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
-next_step: '2026-11-15: step 8 part 1 done (the four project notes slimmed). Next: part 2, propose the line of the split for the Home Assistant OS and Big Boi System notes and wait for Aaron''s OK on both; then part 3, the triage, following the quarterly triage note.'
+next_step: '2026-11-15: step 8 part 2 in progress: Aaron approved both split lines (see Decisions) and the live checks are done; write the two Home Assistant notes, then the two Big Boi notes, each with relinking and a change note. Then part 3, the triage, following the quarterly triage note.'
 ---
 
 ## Goal
@@ -52,7 +52,7 @@ Still open:
 - **2026-11-15, step 6, triage note: the memory fold is a step in it,** since CLAUDE.md → Memory names the triage as when it happens. Only untested runbooks go to Aaron from the upkeep lists. A run reads about 13,000 tokens.
 - **2026-11-15, step 7 (Aaron: "yes and kb-export"): delete everything, version nothing.** Each item was superseded by the vault or git, or (the work brief) wasn't homelab material. Rejected: an archive folder in the repo (it is what `.archive/` was, and nothing read it in two months) and keeping the two skills in the repo (never used; the built-in `artifact-design` skill covers page design).
 - **2026-11-15, a false hold on a note edit was not worked around.** The step 6 update of this note named the SSH authorized-keys file and was held; it waited for Aaron's yes and was retried unchanged, as CLAUDE.md says.
-- **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on. He wants them "organized well and properly linked between everything": done the way the ClaudeCode split was, with the line of the split proposed to him first, every fact checked live and given one home, both notes on the Systems skeleton, and the projects, runbooks and other notes that point at a moved part relinked.
+- **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on; he wants them "organized well and properly linked between everything", done the way the ClaudeCode split was. Lines he approved: Home Assistant into machine (VM, HAOS, add-ons, backups) and application (access, integrations, automations, alerting); Big Boi into box (hardware, TrueNAS, guests, Claude's API access) and storage (pool, datasets, shares, snapshots, B2). Rejected: a separate alerting or Scrypted note, hardware against TrueNAS, hypervisor against NAS, three notes.
 - **2026-11-15, step 8, slimming the four project notes: decisions stay, research moves word for word to change notes dated when it was done, a phase with its own plan becomes a project.** The work will need the research, which git history hides. Rejected: one large change note dated today, a reference runbook (as in step 6), git history alone. Per note, what went where: [change](<../changes/2026-11-15 Slimmed the four over-size project notes.md>).
 
 ## Open questions
