@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 2800" width="980" height="2800" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 2820" width="980" height="2820" font-family="-apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif">
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#e2e8f0" stroke-width="3"/></pattern></defs>
-<rect width="980" height="2800" fill="#ffffff"/>
+<rect width="980" height="2820" fill="#ffffff"/>
 <text x="30" y="40" font-size="22" font-weight="700" fill="#0f172a">30U floor rack — proposed layout</text>
 <text x="30" y="62" font-size="13" fill="#475569">Front elevation, U1 at the bottom · 2026-11-12 draft v15</text>
 <text x="30" y="80" font-size="12" fill="#475569">v15: shelf at U11 with 3U clear for a Sonos Amp and later a Mac Studio · dashed = not bought or confirmed</text>
@@ -89,7 +89,7 @@
 <line x1="544" y1="215" x2="562" y2="196" stroke="#2563eb" stroke-width="1.2"/><circle cx="544" cy="215" r="3" fill="#2563eb"/>
 <text x="570" y="196" font-size="13" font-weight="700" fill="#2563eb">Panels sandwich the switch (map at the bottom)</text>
 <text x="570" y="214" font-size="12" fill="#334155">A (U30) mirrors the Pro Max below it (A1–A16) and</text>
-<text x="570" y="230" font-size="12" fill="#334155">A17–A24 are free for future runs. B (U28) feeds the UDM</text>
+<text x="570" y="230" font-size="12" fill="#334155">A17–A20 dark runs, A21–A24 free. B (U28) feeds the UDM</text>
 <text x="570" y="246" font-size="12" fill="#334155">from B15–B24, right above its ports; B9–B14 carry</text>
 <text x="570" y="262" font-size="12" fill="#334155">rack gear and DAC pass-throughs to the Aggregation.</text>
 <text x="570" y="278" font-size="12" fill="#334155">Aggregation: UDM, Pro Max, Big Boi, Basement Flex.</text>
@@ -171,21 +171,21 @@
 <text x="690" y="1258" font-size="12" fill="#334155">from UI specs; the rest guessed.</text>
 <line x1="30" y1="1365" x2="950" y2="1365" stroke="#cbd5e1"/>
 <text x="30" y="1390" font-size="20" font-weight="700" fill="#0f172a" text-anchor="start" >Patch panels — front view</text>
-<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft v5 · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
+<text x="30" y="1411" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >2026-11-15 draft v6 · both are UniFi 24-port keystone panels · fill = patch cord colour · dashed = run not pulled or gear not bought</text>
 <rect x="30" y="1424" width="14" height="14" rx="2" fill="#f97316" stroke="#f97316"/>
 <text x="50" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Security</text>
 <rect x="127.6" y="1424" width="14" height="14" rx="2" fill="#dc2626" stroke="#dc2626"/>
 <text x="147.6" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >WAN</text>
 <rect x="189.2" y="1424" width="14" height="14" rx="2" fill="#111827" stroke="#111827"/>
 <text x="209.2" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Infra (uplinks, hubs, UPS, DACs)</text>
-<rect x="459.59999999999997" y="1424" width="14" height="14" rx="2" fill="#ffffff" stroke="#94a3b8"/>
-<text x="479.59999999999997" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Access points</text>
+<rect x="459.6" y="1424" width="14" height="14" rx="2" fill="#ffffff" stroke="#94a3b8"/>
+<text x="479.6" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Access points</text>
 <rect x="593.2" y="1424" width="14" height="14" rx="2" fill="#2563eb" stroke="#2563eb"/>
 <text x="613.2" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Everything else</text>
 <rect x="741.2" y="1424" width="14" height="14" rx="2" fill="#f1f5f9" stroke="#94a3b8"/>
 <text x="761.2" y="1435" font-size="12" font-weight="400" fill="#0f172a" text-anchor="start" >Spare / pass-through</text>
-<text x="30" y="1470" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Patch panel A (U30), house runs</text>
-<text x="30" y="1487" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >A1–A16 drop straight to Pro Max 1–16, grouped: security 1–7, other 8–11, infra 12–14, APs 15–16; A17–A24 free</text>
+<text x="30" y="1470" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Patch panel A (U30), house runs → Pro Max</text>
+<text x="30" y="1487" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >A1–A16 drop to Pro Max 1–16: security 1–7, other 8–12, infra 13–15 (2.5G), spare 16; A17–A20 dark runs, no port; A21–A24 free</text>
 <rect x="30" y="1497" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
 <rect x="35.2" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="49.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >1</text>
@@ -193,72 +193,72 @@
 <rect x="73.5" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="87.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >2</text>
 <text transform="translate(91.5,1561) rotate(60)" font-size="11" fill="#0f172a">Cam backyard (G5 Turret)</text>
-<rect x="111.8" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="125.8" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >3</text>
-<text transform="translate(129.8,1561) rotate(60)" font-size="11" fill="#0f172a">Cam side gate (G5 Bullet)</text>
+<rect x="111.9" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="125.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >3</text>
+<text transform="translate(129.9,1561) rotate(60)" font-size="11" fill="#0f172a">Cam side gate (G5 Bullet)</text>
 <rect x="150.2" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="164.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >4</text>
 <text transform="translate(168.2,1561) rotate(60)" font-size="11" fill="#0f172a">Doorbell G6 Entry</text>
 <rect x="188.5" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="202.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >5</text>
 <text transform="translate(206.5,1561) rotate(60)" font-size="11" fill="#0f172a">Siren (hallway)</text>
-<rect x="226.8" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="240.8" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >6</text>
-<text transform="translate(244.8,1561) rotate(60)" font-size="11" fill="#0f172a">Chime (hallway)</text>
+<rect x="226.9" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="240.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >6</text>
+<text transform="translate(244.9,1561) rotate(60)" font-size="11" fill="#0f172a">Chime (hallway)</text>
 <rect x="265.2" y="1505" width="28" height="38" rx="3" fill="#f97316" stroke="#f97316"/>
 <text x="279.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >7</text>
 <text transform="translate(283.2,1561) rotate(60)" font-size="11" fill="#0f172a">Ring keypad PoE</text>
 <rect x="303.5" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
 <text x="317.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >8</text>
 <text transform="translate(321.5,1561) rotate(60)" font-size="11" fill="#0f172a">Living wall Pi</text>
-<rect x="341.8" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
-<text x="355.8" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
-<text transform="translate(359.8,1561) rotate(60)" font-size="11" fill="#0f172a">Kitchen Sonos 1</text>
+<rect x="341.9" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
+<text x="355.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
+<text transform="translate(359.9,1561) rotate(60)" font-size="11" fill="#0f172a">Kitchen Sonos 1</text>
 <rect x="380.2" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
 <text x="394.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >10</text>
 <text transform="translate(398.2,1561) rotate(60)" font-size="11" fill="#0f172a">Kitchen Sonos 2</text>
-<rect x="418.5" y="1505" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<rect x="418.5" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="432.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >11</text>
-<text transform="translate(436.5,1561) rotate(60)" font-size="11" fill="#0f172a">Kitchen 3</text>
-<rect x="456.8" y="1505" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="470.8" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >12</text>
-<text transform="translate(474.8,1561) rotate(60)" font-size="11" fill="#0f172a">Living TV → USW Flex</text>
+<text transform="translate(436.5,1561) rotate(60)" font-size="11" fill="#0f172a">Basement guest room</text>
+<rect x="456.9" y="1505" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="470.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >12</text>
+<text transform="translate(474.9,1561) rotate(60)" font-size="11" fill="#0f172a">Basement gym / flex</text>
 <rect x="495.2" y="1505" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="509.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >13</text>
-<text transform="translate(513.2,1561) rotate(60)" font-size="11" fill="#0f172a">Office → desk Flex</text>
-<rect x="533.5" y="1505" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text transform="translate(513.2,1561) rotate(60)" font-size="11" fill="#0f172a">Living TV → USW Flex</text>
+<rect x="533.5" y="1505" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="547.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >14</text>
-<text transform="translate(551.5,1561) rotate(60)" font-size="11" fill="#0f172a">2nd fl → Upstairs Flex</text>
-<rect x="571.8" y="1505" width="28" height="38" rx="3" fill="#ffffff" stroke="#64748b"/>
-<text x="585.8" y="1529" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" >15</text>
-<text transform="translate(589.8,1561) rotate(60)" font-size="11" fill="#0f172a">Office → Front AP</text>
-<rect x="610.2" y="1505" width="28" height="38" rx="3" fill="#ffffff" stroke="#64748b"/>
-<text x="624.2" y="1529" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" >16</text>
-<text transform="translate(628.2,1561) rotate(60)" font-size="11" fill="#0f172a">Bar → Back AP</text>
-<rect x="648.5" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="662.5" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >17</text>
-<text transform="translate(666.5,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="686.8" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="700.8" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >18</text>
-<text transform="translate(704.8,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="725.2" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="739.2" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >19</text>
-<text transform="translate(743.2,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="763.5" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="777.5" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >20</text>
-<text transform="translate(781.5,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="801.8" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="815.8" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >21</text>
-<text transform="translate(819.8,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<text transform="translate(551.5,1561) rotate(60)" font-size="11" fill="#0f172a">Bsmt ent. → Flex (PoE)</text>
+<rect x="571.9" y="1505" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="585.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >15</text>
+<text transform="translate(589.9,1561) rotate(60)" font-size="11" fill="#0f172a">2nd fl → Upstairs Flex</text>
+<rect x="610.2" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="624.2" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >16</text>
+<text transform="translate(628.2,1561) rotate(60)" font-size="11" fill="#0f172a">Spare (2.5G)</text>
+<rect x="648.5" y="1505" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<text x="662.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >17</text>
+<text transform="translate(666.5,1561) rotate(60)" font-size="11" fill="#0f172a">Kitchen 3</text>
+<rect x="686.9" y="1505" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<text x="700.9" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >18</text>
+<text transform="translate(704.9,1561) rotate(60)" font-size="11" fill="#0f172a">Office spare 1</text>
+<rect x="725.2" y="1505" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<text x="739.2" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >19</text>
+<text transform="translate(743.2,1561) rotate(60)" font-size="11" fill="#0f172a">Office spare 2</text>
+<rect x="763.5" y="1505" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<text x="777.5" y="1529" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >20</text>
+<text transform="translate(781.5,1561) rotate(60)" font-size="11" fill="#0f172a">Office spare 3</text>
+<rect x="801.9" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="815.9" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >21</text>
+<text transform="translate(819.9,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="840.2" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="854.2" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >22</text>
 <text transform="translate(858.2,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="878.5" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="892.5" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >23</text>
 <text transform="translate(896.5,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="916.8" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="930.8" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >24</text>
-<text transform="translate(934.8,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="916.9" y="1505" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="930.9" y="1529" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >24</text>
+<text transform="translate(934.9,1561) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <text x="30" y="1721" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Patch panel B (U28), rack gear and WAN</text>
 <text x="30" y="1738" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >B15–B24 drop to the UDM Pro right below them (LAN port = position − 14); B9–B14 are gear and DAC pass-throughs; B1–B8 free</text>
 <rect x="30" y="1748" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
@@ -268,104 +268,108 @@
 <rect x="73.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="87.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >2</text>
 <text transform="translate(91.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="111.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="125.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >3</text>
-<text transform="translate(129.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="111.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="125.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >3</text>
+<text transform="translate(129.9,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="150.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="164.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >4</text>
 <text transform="translate(168.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="188.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="202.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >5</text>
 <text transform="translate(206.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="226.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="240.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >6</text>
-<text transform="translate(244.8,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
+<rect x="226.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="240.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >6</text>
+<text transform="translate(244.9,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="265.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="279.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >7</text>
 <text transform="translate(283.2,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
 <rect x="303.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="317.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >8</text>
 <text transform="translate(321.5,1812) rotate(60)" font-size="11" fill="#0f172a">Future run</text>
-<rect x="341.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="355.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
-<text transform="translate(359.8,1812) rotate(60)" font-size="11" fill="#0f172a">Big Boi 10G DAC</text>
+<rect x="341.9" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="355.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >9</text>
+<text transform="translate(359.9,1812) rotate(60)" font-size="11" fill="#0f172a">Big Boi 10G DAC</text>
 <rect x="380.2" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="394.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >10</text>
 <text transform="translate(398.2,1812) rotate(60)" font-size="11" fill="#0f172a">Second server</text>
 <rect x="418.5" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
 <text x="432.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >11</text>
 <text transform="translate(436.5,1812) rotate(60)" font-size="11" fill="#0f172a">Mac Studio (future)</text>
-<rect x="456.8" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
-<text x="470.8" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >12</text>
-<text transform="translate(474.8,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
+<rect x="456.9" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="470.9" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >12</text>
+<text transform="translate(474.9,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
 <rect x="495.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="509.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >13</text>
 <text transform="translate(513.2,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
 <rect x="533.5" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="547.5" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >14</text>
 <text transform="translate(551.5,1812) rotate(60)" font-size="11" fill="#0f172a">Pass-through</text>
-<rect x="571.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="585.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >15</text>
-<text transform="translate(589.8,1812) rotate(60)" font-size="11" fill="#0f172a">PDU Pro mgmt</text>
+<rect x="571.9" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="585.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >15</text>
+<text transform="translate(589.9,1812) rotate(60)" font-size="11" fill="#0f172a">PDU Pro mgmt</text>
 <rect x="610.2" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="624.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >16</text>
 <text transform="translate(628.2,1812) rotate(60)" font-size="11" fill="#0f172a">Hue Bridge</text>
 <rect x="648.5" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="662.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >17</text>
 <text transform="translate(666.5,1812) rotate(60)" font-size="11" fill="#0f172a">Lutron hub</text>
-<rect x="686.8" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
-<text x="700.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >18</text>
-<text transform="translate(704.8,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
+<rect x="686.9" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
+<text x="700.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >18</text>
+<text transform="translate(704.9,1812) rotate(60)" font-size="11" fill="#0f172a">HDHomeRun</text>
 <rect x="725.2" y="1756" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="739.2" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >19</text>
 <text transform="translate(743.2,1812) rotate(60)" font-size="11" fill="#0f172a">UPS 2U</text>
 <rect x="763.5" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
 <text x="777.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >20</text>
 <text transform="translate(781.5,1812) rotate(60)" font-size="11" fill="#0f172a">Sonos Amp (U11)</text>
-<rect x="801.8" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
-<text x="815.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >21</text>
-<text transform="translate(819.8,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U3)</text>
+<rect x="801.9" y="1756" width="28" height="38" rx="3" fill="#2563eb" stroke="#2563eb"/>
+<text x="815.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >21</text>
+<text transform="translate(819.9,1812) rotate(60)" font-size="11" fill="#0f172a">Denon AVR (U3)</text>
 <rect x="840.2" y="1756" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="854.2" y="1780" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >22</text>
 <text transform="translate(858.2,1812) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
 <rect x="878.5" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#dc2626"/>
 <text x="892.5" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >23</text>
 <text transform="translate(896.5,1812) rotate(60)" font-size="11" fill="#0f172a">WAN1 CenturyLink</text>
-<rect x="916.8" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="930.8" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >24</text>
-<text transform="translate(934.8,1812) rotate(60)" font-size="11" fill="#0f172a">WAN2 Ting ONT</text>
-<text x="30" y="1972" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Flex mount keystones (U25), basement drops</text>
-<text x="30" y="1989" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >F1–F8 patch sideways to Basement Flex ports 1–8 in the same 1U mount</text>
+<rect x="916.9" y="1756" width="28" height="38" rx="3" fill="#dc2626" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="930.9" y="1780" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >24</text>
+<text transform="translate(934.9,1812) rotate(60)" font-size="11" fill="#0f172a">WAN2 Ting ONT</text>
+<text x="30" y="1972" font-size="14" font-weight="700" fill="#334155" text-anchor="start" >Flex mount keystones (U25) → Basement Flex, 2.5 GbE PoE</text>
+<text x="30" y="1989" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >F1–F8 patch sideways to Basement Flex ports 1–8: the APs and the desk Flex; F5–F8 spare for future APs or 2.5G PoE gear</text>
 <rect x="30" y="1999" width="920" height="54" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
 <rect x="35.2" y="2007" width="28" height="38" rx="3" fill="#ffffff" stroke="#64748b"/>
 <text x="49.2" y="2031" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" >1</text>
-<text transform="translate(53.2,2063) rotate(60)" font-size="11" fill="#0f172a">Basement AP (U7 Pro)</text>
-<rect x="73.5" y="2007" width="28" height="38" rx="3" fill="#111827" stroke="#64748b" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="87.5" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >2</text>
-<text transform="translate(91.5,2063) rotate(60)" font-size="11" fill="#0f172a">Bsmt ent. → Flex (PoE)</text>
-<rect x="111.8" y="2007" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
-<text x="125.8" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >3</text>
-<text transform="translate(129.8,2063) rotate(60)" font-size="11" fill="#0f172a">Guest room</text>
-<rect x="150.2" y="2007" width="28" height="38" rx="3" fill="#2563eb" stroke="#0f172a" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text transform="translate(53.2,2063) rotate(60)" font-size="11" fill="#0f172a">Office → Front AP</text>
+<rect x="73.5" y="2007" width="28" height="38" rx="3" fill="#ffffff" stroke="#64748b"/>
+<text x="87.5" y="2031" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" >2</text>
+<text transform="translate(91.5,2063) rotate(60)" font-size="11" fill="#0f172a">Bar → Back AP</text>
+<rect x="111.9" y="2007" width="28" height="38" rx="3" fill="#ffffff" stroke="#64748b"/>
+<text x="125.9" y="2031" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle" >3</text>
+<text transform="translate(129.9,2063) rotate(60)" font-size="11" fill="#0f172a">Basement AP (U7 Pro)</text>
+<rect x="150.2" y="2007" width="28" height="38" rx="3" fill="#111827" stroke="#111827"/>
 <text x="164.2" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >4</text>
-<text transform="translate(168.2,2063) rotate(60)" font-size="11" fill="#0f172a">Gym / flex room</text>
-<rect x="188.5" y="2007" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
-<text x="202.5" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >5</text>
-<text transform="translate(206.5,2063) rotate(60)" font-size="11" fill="#0f172a">Office spare 1</text>
-<rect x="226.8" y="2007" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
-<text x="240.8" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >6</text>
-<text transform="translate(244.8,2063) rotate(60)" font-size="11" fill="#0f172a">Office spare 2</text>
-<rect x="265.2" y="2007" width="28" height="38" rx="3" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
-<text x="279.2" y="2031" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" >7</text>
-<text transform="translate(283.2,2063) rotate(60)" font-size="11" fill="#0f172a">Office spare 3</text>
+<text transform="translate(168.2,2063) rotate(60)" font-size="11" fill="#0f172a">Office → desk Flex</text>
+<rect x="188.5" y="2007" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="202.5" y="2031" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >5</text>
+<text transform="translate(206.5,2063) rotate(60)" font-size="11" fill="#0f172a">Spare (2.5G PoE)</text>
+<rect x="226.9" y="2007" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="240.9" y="2031" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >6</text>
+<text transform="translate(244.9,2063) rotate(60)" font-size="11" fill="#0f172a">Spare (2.5G PoE)</text>
+<rect x="265.2" y="2007" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+<text x="279.2" y="2031" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >7</text>
+<text transform="translate(283.2,2063) rotate(60)" font-size="11" fill="#0f172a">Spare (2.5G PoE)</text>
 <rect x="303.5" y="2007" width="28" height="38" rx="3" fill="#f1f5f9" stroke="#64748b"/>
 <text x="317.5" y="2031" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" >8</text>
-<text transform="translate(321.5,2063) rotate(60)" font-size="11" fill="#0f172a">Spare</text>
+<text transform="translate(321.5,2063) rotate(60)" font-size="11" fill="#0f172a">Spare (2.5G PoE)</text>
 <text x="30" y="2203" font-size="16" font-weight="700" fill="#0f172a" text-anchor="start" >Port map</text>
 <text x="30" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Pos</text>
 <text x="78" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Run / device</text>
 <text x="240" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Switch port</text>
 <text x="375" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Status</text>
+<text x="500" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Pos</text>
+<text x="548" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Run / device</text>
+<text x="710" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Switch port</text>
+<text x="845" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Status</text>
 <rect x="30" y="2240" width="12" height="12" rx="2" fill="#f97316" stroke="#f97316"/>
 <text x="46" y="2251" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A1</text>
 <text x="78" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Cam front (G5 Turret)</text>
@@ -418,83 +422,84 @@
 <text x="375" y="2413" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
 <rect x="30" y="2420" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
 <text x="46" y="2431" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A11</text>
-<text x="78" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Kitchen 3</text>
+<text x="78" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Basement guest room</text>
 <text x="240" y="2431" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 11</text>
-<text x="375" y="2431" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >dark</text>
-<rect x="30" y="2438" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="375" y="2431" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
+<rect x="30" y="2438" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
 <text x="46" y="2449" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A12</text>
-<text x="78" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Living TV → USW Flex</text>
+<text x="78" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Basement gym / flex</text>
 <text x="240" y="2449" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 12</text>
-<text x="375" y="2449" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<text x="375" y="2449" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
 <rect x="30" y="2456" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
 <text x="46" y="2467" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A13</text>
-<text x="78" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office → desk Flex</text>
+<text x="78" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Living TV → USW Flex</text>
 <text x="240" y="2467" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 13 · 2.5G</text>
 <text x="375" y="2467" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
 <rect x="30" y="2474" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
 <text x="46" y="2485" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A14</text>
-<text x="78" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >2nd fl → Upstairs Flex</text>
+<text x="78" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Bsmt ent. → Flex (PoE)</text>
 <text x="240" y="2485" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 14 · 2.5G</text>
-<text x="375" y="2485" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
-<rect x="30" y="2492" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
+<text x="375" y="2485" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
+<rect x="30" y="2492" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
 <text x="46" y="2503" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A15</text>
-<text x="78" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office → Front AP</text>
+<text x="78" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >2nd fl → Upstairs Flex</text>
 <text x="240" y="2503" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 15 · 2.5G</text>
 <text x="375" y="2503" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
-<rect x="30" y="2510" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
+<rect x="30" y="2510" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="46" y="2521" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A16</text>
-<text x="78" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Bar → Back AP</text>
+<text x="78" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (2.5G)</text>
 <text x="240" y="2521" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >PM 16 · 2.5G</text>
-<text x="375" y="2521" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
-<rect x="30" y="2528" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="46" y="2539" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A17+</text>
-<text x="78" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Future house runs (A17–A24)</text>
+<text x="375" y="2521" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="30" y="2528" width="12" height="12" rx="2" fill="#2563eb" fill-opacity="0.45" stroke="#2563eb"/>
+<text x="46" y="2539" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A17–20</text>
+<text x="78" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Kitchen 3, office spares 1–3</text>
 <text x="240" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >—</text>
-<text x="375" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<rect x="30" y="2546" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
-<text x="46" y="2557" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F1</text>
-<text x="78" y="2557" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Basement AP (U7 Pro)</text>
-<text x="240" y="2557" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 1</text>
-<text x="375" y="2557" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >run in, AP not yet</text>
-<rect x="30" y="2564" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
-<text x="46" y="2575" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F2</text>
-<text x="78" y="2575" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Bsmt ent. → Flex (PoE)</text>
-<text x="240" y="2575" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 2</text>
-<text x="375" y="2575" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
-<rect x="30" y="2582" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="46" y="2593" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F3</text>
-<text x="78" y="2593" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Guest room</text>
-<text x="240" y="2593" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 3</text>
-<text x="375" y="2593" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
-<rect x="30" y="2600" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="46" y="2611" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F4</text>
-<text x="78" y="2611" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Gym / flex room</text>
-<text x="240" y="2611" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 4</text>
-<text x="375" y="2611" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >to pull</text>
-<rect x="30" y="2618" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="46" y="2629" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F5</text>
-<text x="78" y="2629" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office spare 1</text>
-<text x="240" y="2629" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 5</text>
-<text x="375" y="2629" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >dark</text>
-<rect x="30" y="2636" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="46" y="2647" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F6</text>
-<text x="78" y="2647" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office spare 2</text>
-<text x="240" y="2647" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 6</text>
-<text x="375" y="2647" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >dark</text>
-<rect x="30" y="2654" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
-<text x="46" y="2665" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F7</text>
-<text x="78" y="2665" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office spare 3</text>
-<text x="240" y="2665" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 7</text>
-<text x="375" y="2665" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >dark</text>
+<text x="375" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >dark (no port)</text>
+<rect x="30" y="2546" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="46" y="2557" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >A21–24</text>
+<text x="78" y="2557" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Future house runs</text>
+<text x="240" y="2557" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >—</text>
+<text x="375" y="2557" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="30" y="2564" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
+<text x="46" y="2575" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F1</text>
+<text x="78" y="2575" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office → Front AP</text>
+<text x="240" y="2575" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 1</text>
+<text x="375" y="2575" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<rect x="30" y="2582" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
+<text x="46" y="2593" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F2</text>
+<text x="78" y="2593" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Bar → Back AP</text>
+<text x="240" y="2593" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 2</text>
+<text x="375" y="2593" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<rect x="30" y="2600" width="12" height="12" rx="2" fill="#ffffff" stroke="#64748b"/>
+<text x="46" y="2611" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F3</text>
+<text x="78" y="2611" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Basement AP (U7 Pro)</text>
+<text x="240" y="2611" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 3</text>
+<text x="375" y="2611" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >run in, AP not yet</text>
+<rect x="30" y="2618" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
+<text x="46" y="2629" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F4</text>
+<text x="78" y="2629" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Office → desk Flex</text>
+<text x="240" y="2629" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 4</text>
+<text x="375" y="2629" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >in place</text>
+<rect x="30" y="2636" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="46" y="2647" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F5</text>
+<text x="78" y="2647" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (2.5G PoE)</text>
+<text x="240" y="2647" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 5</text>
+<text x="375" y="2647" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
+<rect x="30" y="2654" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="46" y="2665" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F6</text>
+<text x="78" y="2665" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (2.5G PoE)</text>
+<text x="240" y="2665" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 6</text>
+<text x="375" y="2665" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
 <rect x="30" y="2672" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
-<text x="46" y="2683" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F8</text>
-<text x="78" y="2683" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare</text>
-<text x="240" y="2683" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 8</text>
+<text x="46" y="2683" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F7</text>
+<text x="78" y="2683" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (2.5G PoE)</text>
+<text x="240" y="2683" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 7</text>
 <text x="375" y="2683" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
-<text x="500" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Pos</text>
-<text x="548" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Run / device</text>
-<text x="710" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Switch port</text>
-<text x="845" y="2227" font-size="11" font-weight="700" fill="#475569" text-anchor="start" >Status</text>
+<rect x="30" y="2690" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
+<text x="46" y="2701" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >F8</text>
+<text x="78" y="2701" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Spare (2.5G PoE)</text>
+<text x="240" y="2701" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Flex 8</text>
+<text x="375" y="2701" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >spare</text>
 <rect x="500" y="2240" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="516" y="2251" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B1–8</text>
 <text x="548" y="2251" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Future house runs (B1–B8)</text>
@@ -503,17 +508,17 @@
 <rect x="500" y="2258" width="12" height="12" rx="2" fill="#111827" stroke="#111827"/>
 <text x="516" y="2269" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B9</text>
 <text x="548" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Big Boi 10G DAC</text>
-<text x="710" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (pass-through)</text>
+<text x="710" y="2269" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg top row (pass-through)</text>
 <text x="845" y="2269" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >rack gear</text>
 <rect x="500" y="2276" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
 <text x="516" y="2287" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B10</text>
 <text x="548" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Second server</text>
-<text x="710" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (DAC or RJ45 mod)</text>
+<text x="710" y="2287" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg top row (DAC or RJ45 mod)</text>
 <text x="845" y="2287" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
 <rect x="500" y="2294" width="12" height="12" rx="2" fill="#2563eb" stroke="#2563eb"/>
 <text x="516" y="2305" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B11</text>
 <text x="548" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Mac Studio (future)</text>
-<text x="710" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg (RJ45 mod)</text>
+<text x="710" y="2305" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >Agg top row (RJ45 mod)</text>
 <text x="845" y="2305" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
 <rect x="500" y="2312" width="12" height="12" rx="2" fill="#f1f5f9" stroke="#64748b"/>
 <text x="516" y="2323" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B12</text>
@@ -578,10 +583,10 @@
 <rect x="500" y="2528" width="12" height="12" rx="2" fill="#dc2626" stroke="#dc2626"/>
 <text x="516" y="2539" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start" >B24</text>
 <text x="548" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >WAN2 Ting ONT</text>
-<text x="710" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM SFP+1 (RJ45 mod)</text>
+<text x="710" y="2539" font-size="11" font-weight="400" fill="#0f172a" text-anchor="start" >UDM SFP+ 10 (RJ45 mod)</text>
 <text x="845" y="2539" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >not bought</text>
-<text x="30" y="2711" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >PM = USW Pro Max 16 PoE: on the UPS; ports 13–16 are 2.5 GbE. Flex = Basement USW Flex 2.5G 8 PoE: every port 2.5 GbE PoE,</text>
-<text x="30" y="2727" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >on its own adapter (on battery once the PDU Pro arrives); its uplink moves to SFP+ → Aggregation, freeing Pro Max port 12.</text>
-<text x="30" y="2743" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Agg = USW Aggregation (8× SFP+). Doorbell run in copper; cameras can use the CCA box. Rear-port rack gear enters panel B from the back.</text>
-<text x="30" y="2759" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Dark = run exists but stays unpatched until used.</text>
+<text x="30" y="2736" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >PM = USW Pro Max 16 PoE (on the UPS): ports 1–12 are 1 GbE PoE+, 13–16 are 2.5 GbE PoE++; the Upstairs Flex runs off PM 15's PoE.</text>
+<text x="30" y="2752" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Flex = Basement USW Flex 2.5G 8 PoE (196 W, own adapter, on UPS power): 2.5 GbE PoE gear only; uplink by SFP+ to the Aggregation (10G).</text>
+<text x="30" y="2768" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Agg = USW Aggregation (8× SFP+). Doorbell run in copper; cameras can use the CCA box. Rear-port rack gear enters panel B from the back.</text>
+<text x="30" y="2784" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Dark = run exists but stays unpatched until used.</text>
 </svg>
