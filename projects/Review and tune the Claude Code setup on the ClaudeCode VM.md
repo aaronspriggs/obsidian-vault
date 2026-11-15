@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[ClaudeCode (VM)]]'
 - '[[Claude Code (Remote Control service)]]'
-next_step: '2026-11-15: steps 1 to 7 done. Next, in a fresh session: step 8 (slim the four largest project notes, then the backlog triage with Aaron, following the quarterly triage note). Aaron also to say whether the Home Assistant OS and Big Boi System notes get split in step 8 or when next worked on.'
+next_step: '2026-11-15: steps 1 to 7 done. Next, in a fresh session: step 8 (slim the four largest project notes, then the backlog triage with Aaron, following the quarterly triage note). Step 8 also splits the Home Assistant OS and Big Boi System notes (Aaron, 2026-11-15).'
 ---
 
 ## Goal
@@ -37,7 +37,7 @@ Sound and left alone: `make check` clean, vault and repo pushed, memory symlinke
 5. **Rulebook update** (Tier 3). Done 2026-11-15, [change](<../changes/2026-11-15 Updated the rulebook - Claude Code section and a size rule for project notes.md>).
 6. **Drift sweep.** Done 2026-11-15, [change](<../changes/2026-11-15 Split the ClaudeCode System note and pointed the repo docs at the vault.md>): repo docs point at the vault, [the quarterly triage note](<Quarterly KB triage with Aaron (Deferred items and Ideas).md>) has the memory fold, and the ClaudeCode System note is split in two.
 7. **Loose files.** Done 2026-11-15, [change](<../changes/2026-11-15 Deleted the loose files on the ClaudeCode VM and the retired kb-export copies.md>): all deleted on Aaron's yes, none versioned, plus the retired kb-export's deployed copies.
-8. **Backlog triage** with Aaron (pulls the quarterly triage forward) and slim the four largest project notes.
+8. **Slim the four largest project notes, split the Home Assistant OS and Big Boi System notes, then the backlog triage** with Aaron (pulls the quarterly triage forward).
 
 ## Decisions
 
@@ -54,11 +54,11 @@ Sound and left alone: `make check` clean, vault and repo pushed, memory symlinke
 - **2026-11-15, step 6, triage note: the memory fold is a step in it,** since CLAUDE.md → Memory names the triage as when it happens. Only untested runbooks go to Aaron from the upkeep lists. A run reads about 13,000 tokens.
 - **2026-11-15, step 7 (Aaron: "yes and kb-export"): delete everything, version nothing.** Each item was superseded by the vault or git, or (the work brief) wasn't homelab material. Rejected: an archive folder in the repo (it is what `.archive/` was, and nothing read it in two months) and keeping the two skills in the repo (never used; the built-in `artifact-design` skill covers page design).
 - **2026-11-15, a false hold on a note edit was not worked around.** The step 6 update of this note named the SSH authorized-keys file and was held; it waited for Aaron's yes and was retried unchanged, as CLAUDE.md says.
+- **2026-11-15 (Aaron): the Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are split in step 8,** not left until each is next worked on. He wants them "organized well and properly linked between everything": done the way the ClaudeCode split was, with the line of the split proposed to him first, every fact checked live and given one home, both notes on the Systems skeleton, and the projects, runbooks and other notes that point at a moved part relinked.
 
 ## Open questions
 
 - Step 2 still needs its live check: the first session past 400k should compact, keep what the compact instructions list, and reload the KB block. Check then whether ToolSearch schemas need loading again.
 - False holds from the guard's word rules, four on 2026-11-15: `keygenChangesKeys` matches `ssh-keygen` anywhere in a command (a `cat` of a change note, a heredoc editing this note), and the rule on `authorized_keys` does the same (a read-only check, a heredoc editing this note). The fix is to match both only where a simple command starts or names the file as an argument of a write: another Tier 3 guard change and deploy by Aaron. Recommended: bundle it with the next guard change; Aaron to say if he wants it sooner.
 - Fix runs haven't run since 2026-10-17. Their tools were switched from Notion to the vault at the 2026-10-22 cutover and have only been through a dry run, so the first real tap is the test. [Verify one-tap actions on first real use](<Verify one-tap actions on first real use.md>) is the place to track it.
-- The Home Assistant OS (1,720 words) and Big Boi (1,689) System notes are over the 1,500 limit and no step covers them. Recommended: split each the next time it is worked on, since a split means verifying the whole note live, a session of its own; Aaron to say if he wants them in step 8.
 - Plan: settled for now, Aaron stays on Pro (2026-11-15). Revisit if usage credits become regular.
