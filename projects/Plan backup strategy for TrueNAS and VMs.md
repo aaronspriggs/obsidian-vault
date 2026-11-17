@@ -4,7 +4,7 @@ status: active
 priority: high
 system:
 - '[[Big Boi storage (pool, datasets, shares, backups)]]'
-next_step: '2026-11-17: both B2 tasks ran clean on 2026-11-15 (checked live). Aaron reads the real bucket size himself at https://secure.backblaze.com/b2_buckets.htm (bucket spriggs-bigboi-backup; expected about 4-5 GB): Claude has no B2 credentials, and the TrueNAS API can''t report the bucket''s size including old file versions. Phase 2 (rips to B2) waits for the Big Boi rebuild, when rips get their own dataset on the HDD pool (Aaron 2026-11-08).'
+next_step: '2026-11-17: the bucket really holds 6.3 GB (Aaron, B2 web UI), inside the 10 GB free tier; both tasks have ended SUCCESS every night since 2026-10-16 (job history through 2026-11-16). Nothing to do until phase 2 (rips to B2), which waits for the Big Boi rebuild, when rips get their own dataset on the HDD pool (Aaron 2026-11-08). Re-read the bucket size at the February 2027 triage; look sooner only if a B2 invoice shows a charge.'
 notion_id: 3087ae76-22ba-8115-9603-e15b0f8b9f21
 ---
 
@@ -12,11 +12,11 @@ notion_id: 3087ae76-22ba-8115-9603-e15b0f8b9f21
 
 Design and implement a backup strategy that protects all irreplaceable data in the homelab against hardware failure, accidental deletion, and catastrophic loss (fire, theft, power surge). Acceptable recovery time is one week.
 
-## Status (2026-11-15)
+## Status (2026-11-17)
 
 - **Layer 1, local snapshots: done.** Daily recursive snapshots of `Big Boi/vmstore` and `Big Boi/BIGBOI`, kept 30 days (verified live 2026-11-15). The `BIGBOI` task excludes `plex_content` and `plex_recordings`. S.M.A.R.T. tests run weekly (short) and monthly (long), verified 2026-10-15.
-- **Layer 2 phase 1, offsite to B2: live since 2026-10-16.** Two nightly Cloud Sync tasks, `B2 offsite: BIGBOI` (01:00) and `B2 offsite: vmstore` (01:15), push to bucket `spriggs-bigboi-backup`, encrypted by TrueNAS, with B2 keeping prior versions 30 days. Both ended SUCCESS on 2026-11-15 (live). A restore was tested on 2026-10-16. What's covered and how to restore: [the B2 runbook](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>).
-- **Bucket size.** Estimated 4.3 GB after one week and heading for about 10 GB, the edge of the free tier; the 2026-10-23 fix cut the nightly upload from about 225 MiB to 60–70 MiB, so the 30-day steady state should be 4–5 GB. These are estimates from TrueNAS job history, because Claude has no B2 credentials.
+- **Layer 2 phase 1, offsite to B2: live since 2026-10-16.** Two nightly Cloud Sync tasks, `B2 offsite: BIGBOI` (01:00) and `B2 offsite: vmstore` (01:15), push to bucket `spriggs-bigboi-backup`, encrypted by TrueNAS, with B2 keeping prior versions 30 days. Both have ended SUCCESS every night since (job history, 2026-11-16). A restore was tested on 2026-10-16. What's covered and how to restore: [the B2 runbook](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>).
+- **Bucket size: 6.3 GB on 2026-11-17** (Aaron, read in the B2 web UI), inside the 10 GB free tier, so B2 costs nothing. The 4–5 GB estimate of 2026-10-23 was too low: after that day's fix the nightly upload is about 125 MiB (vmstore 91–138 MiB, BIGBOI about 20 MiB), not 60–70 MiB. The last of the heavier versions from before the fix age out around 2026-11-23; after that the bucket should hold between about 5.5 and 6.5 GB. Past 10 GB each extra GB costs $0.007 a month. Claude has no B2 credentials, so only Aaron can read the real figure ([check](<../changes/2026-11-17 Compared the real B2 bucket size (6.3 GB) with the job history.md>)).
 - **Left:** phase 2, the self-ripped discs.
 
 Slimmed 2026-11-15: the March design in full and the phase 1 detail are in two change notes, linked under Plan.
@@ -31,6 +31,7 @@ Slimmed 2026-11-15: the March design in full and the phase 1 detail are in two c
 4. B2 phase 1: staging pre-script, Plex DB export and task design ([2026-10-15](<../changes/2026-10-15 B2 offsite phase 1 - staging pre-script, Plex DB export and Cloud Sync task.md>)); account and tasks created ([2026-10-16](<../changes/2026-10-16 Created B2 account and the two Cloud Sync tasks on Big Boi (B2 offsite.md>)); first syncs ([2026-10-16](<../changes/2026-10-16 First B2 offsite syncs succeeded (vmstore 430 MiB, BIGBOI 2.0 GiB).md>)); restore test and runbook ([2026-10-16](<../changes/2026-10-16 Tested a B2 restore of vmstore and wrote the offsite backup runbook.md>)).
 5. Orphaned directories from the 2026-03-07 dataset audit removed ([2026-10-16](<../changes/2026-10-16 Removed the stale pre-Dockhand servarr copy from BIGBOI-servarr (kept.md>)).
 6. One-week bucket check ([estimate, source sizes, prices and the phase 1 steps as completed](<../changes/2026-10-23 Estimated the B2 bucket size after one week and recorded the Layer 2 sizes and phase 1 steps.md>)) and the fix it led to ([2026-10-23](<../changes/2026-10-23 B2 vmstore sync stages consistent servarr DBs and skips logs.md>)).
+7. Real bucket size read by Aaron and compared with the job history ([2026-11-17](<../changes/2026-11-17 Compared the real B2 bucket size (6.3 GB) with the job history.md>)).
 
 The original three-layer design, the UNAS Pro layout, the dataset audit and the action checklist are in [this change note](<../changes/2026-03-07 Recorded the three-layer backup design, the UNAS Pro layout and the BIGBOI dataset audit.md>).
 
@@ -55,7 +56,6 @@ Sized 2026-11-08 (`du --apparent-size` on the Plex VM's `/mnt/media`, Radarr `/a
 ## Open questions
 
 - Aaron to confirm the 11 likely rips.
-- The real bucket size, from the B2 web UI.
 - Whether `plex_content` gets snapshots before the rebuild; today it has none, by the task's exclusion.
 
 ## Changes
