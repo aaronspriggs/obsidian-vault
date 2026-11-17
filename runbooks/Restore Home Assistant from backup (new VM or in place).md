@@ -4,6 +4,7 @@ status: active
 system:
 - '[[Home Assistant OS (VM)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
+last_tested: 2026-11-17
 notion_id: 3fb7ae76-22ba-816a-81f2-da95dd0e0fee
 ---
 
@@ -16,7 +17,7 @@ Home Assistant is lost or broken beyond fixing one object: the zvol `vmstore/hao
 - **Zvol intact, problem under 30 days old, VM won't boot:** roll back the daily `vmstore` snapshot of `haos_disk` in TrueNAS (with the VM stopped). It's the fastest option, and like a restore it loses everything since the snapshot.
 - **HA boots but its config is broken:** Path A (restore in place).
 - **VM or zvol gone:** Path B (new VM, restore during onboarding).
-A restore is **Tier 3**: it discards everything since the backup and restarts HA, so Aaron confirms it every time. Expect about 1 hour for Path B. Desk-checked against the live instance and its TrueNAS definition on 2026-10-16; not yet test-restored. On 2026-11-17 the newest backup was confirmed present and encrypted in both locations; whether the 1Password key matches the one Home Assistant uses is with Aaron ([task](<../projects/Test the Home Assistant restore and ClaudeCode VM rebuild runbooks before the February 2027 triage.md>)).
+A restore is **Tier 3**: it discards everything since the backup and restarts HA, so Aaron confirms it every time. Expect about 1 hour for Path B. Desk-checked against the live instance and its TrueNAS definition on 2026-10-16; not yet test-restored. Partly tested on 2026-11-17, without a restore: the newest backup was confirmed present and encrypted in both locations, and Aaron saved the key Home Assistant is using into 1Password that day ([change](<../changes/2026-11-17 Checked the newest Home Assistant backup and its key without a restore.md>)).
 
 ## What a backup holds (verified 2026-11-17)
 
@@ -24,7 +25,7 @@ Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Goo
 
 ## Prerequisites
 
-- **HA backup encryption key** (emergency kit), 1Password, Aaron's vault. Without it no backup can be restored.
+- **HA backup encryption key** (emergency kit), 1Password, Aaron's vault (saved from Home Assistant 2026-11-17; item name not recorded). Without it no backup can be restored. While Home Assistant still runs, the key can be read again at Settings → System → Backups, on the Encryption key card.
 - Google account login (for Drive) and the HA owner login `aaronspriggs` with its MFA (Proton Authenticator); [Home Assistant MFA Recovery (TOTP Lockout)](<Home Assistant MFA Recovery (TOTP Lockout).md>) if MFA is lost.
 - Path B: Big Boi up, TrueNAS shell with sudo, the Sonoff ZBDongle-E plugged into Big Boi.
 - **Never run two HA instances on the LAN at once.** If the old VM still exists, stop it and turn off its autostart. Keep its zvol until the new instance passes Verify.
