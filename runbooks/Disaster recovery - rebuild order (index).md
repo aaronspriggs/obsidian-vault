@@ -35,7 +35,7 @@ All in Aaron's 1Password unless noted. Without the first three, the offsite copi
 | --- | --- | --- |
 | 1Password account (master password, Secret Key) | Aaron | Everything else depends on it |
 | B2 `truenas-bigboi`: keyID, applicationKey, **encryption password and salt** | Item "Backblaze B2 - truenas-bigboi" | Created 2026-10-16 |
-| HA backup encryption key (emergency kit) | Aaron's vault (item name not recorded) | Saved from Home Assistant 2026-11-17 |
+| HA backup encryption key (emergency kit) | Item "Home Assistant Snapshot Backups" | Saved from Home Assistant 2026-11-17 |
 | Google account (holds the HA backups in Drive) | Aaron, 2FA |  |
 | GitHub (repo admin, for the deploy key) | Aaron |  |
 | Claude account ([claude.ai](http://claude.ai/) login) | Email magic link to Gmail |  |

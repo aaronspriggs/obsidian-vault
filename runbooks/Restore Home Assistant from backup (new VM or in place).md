@@ -25,7 +25,7 @@ Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Goo
 
 ## Prerequisites
 
-- **HA backup encryption key** (emergency kit), 1Password, Aaron's vault (saved from Home Assistant 2026-11-17; item name not recorded). Without it no backup can be restored. While Home Assistant still runs, the key can be read again at Settings → System → Backups, on the Encryption key card.
+- **HA backup encryption key** (emergency kit), 1Password item "Home Assistant Snapshot Backups" in Aaron's vault (saved from Home Assistant 2026-11-17). Without it no backup can be restored. While Home Assistant still runs, the key can be read again at Settings → System → Backups, on the Encryption key card.
 - Google account login (for Drive) and the HA owner login `aaronspriggs` with its MFA (Proton Authenticator); [Home Assistant MFA Recovery (TOTP Lockout)](<Home Assistant MFA Recovery (TOTP Lockout).md>) if MFA is lost.
 - Path B: Big Boi up, TrueNAS shell with sudo, the Sonoff ZBDongle-E plugged into Big Boi.
 - **Never run two HA instances on the LAN at once.** If the old VM still exists, stop it and turn off its autostart. Keep its zvol until the new instance passes Verify.

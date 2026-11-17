@@ -17,7 +17,7 @@ Aaron picked this runbook at the 2026-11-15 triage as one of two to test before 
 ## How
 
 - **Backup (Claude, ha-mcp):** the newest automatic backup, `f1d6befb` of 2026-11-16 05:19, Core 2026.11.0, 409.6 MB, is in `hassio.local` and in Google Drive, encrypted in both, with settings, database, five add-ons and the `ssl` folder and no failed parts.
-- **Key (Aaron):** saved from Home Assistant into 1Password on 2026-11-17, from Settings → System → Backups, the Encryption key card ([docs](https://www.home-assistant.io/more-info/backup-emergency-kit/)). Claude never saw it. The item name isn't recorded yet.
+- **Key (Aaron):** saved from Home Assistant into 1Password on 2026-11-17, from Settings → System → Backups, the Encryption key card ([docs](https://www.home-assistant.io/more-info/backup-emergency-kit/)). Claude never saw it. The item is "Home Assistant Snapshot Backups" in Aaron's vault.
 
 Not done: no backup was decrypted or restored. ha-mcp has no decrypt-only check, and a real restore is Tier 3.
 
