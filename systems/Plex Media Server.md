@@ -5,7 +5,7 @@ ip: 192.168.1.116
 url: http://192.168.1.116:32400/web
 runs_on:
 - '[[TrueNAS SCALE (Big Boi)]]'
-last_verified: 2026-10-20
+last_verified: 2026-11-17
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/plex-vm
 notion_id: 3087ae76-22ba-819f-aef3-e5cbf40b98e5
 ---
@@ -38,7 +38,7 @@ Plex Media Server running as a VM on TrueNAS SCALE (Big Boi). Plex Pass lifetime
 - **Public mapping:** WAN IP:32400 (the WAN IP is dynamic; Plex re-detects it)
 - **Port forward:** TCP 32400 → 192.168.1.116:32400 (configured on UDM Pro)
 - **Remote access preference:** Bookmarked full URL (no DDNS or reverse proxy configured)
-- **Version:** 1.43.4.10903-e5521bd8c (upgraded 2026-09-24 from 1.43.0.10492)
+- **Version:** 1.43.5.11079-b3b13e506 (upgraded 2026-11-09 from 1.43.4.10903; the newest on plex.tv at the 2026-11-15 weekly run)
 - **Repo:** none. The old Plex apt repo (`downloads.plex.tv/repo/deb`) stopped serving a Release file in late Oct 2026, which broke `apt-get update`; its source, keyring and unattended-upgrades rule were removed 2026-11-09. Upgrade Plex with `claude-maint upgrade-plex`, which installs the latest *public* .deb from [plex.tv](http://plex.tv/)'s official download API. See the "Updating the Plex VM (OS + Plex)" runbook.
 - **Plex Pass:** Lifetime
 - **Service:** plexmediaserver (systemd, active)
