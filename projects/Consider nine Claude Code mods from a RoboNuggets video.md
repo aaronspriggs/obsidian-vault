@@ -32,3 +32,5 @@ Aaron hasn't said yet which mods he liked; ask before starting. Blast Radius' im
 ## Status (2026-11-15, quarterly triage)
 
 Kept. The VM now runs Claude Code 2.1.321, so the version floors above (2.1.287, and 2.1.306 for Filetree) no longer rule anything out. Still waiting on Aaron saying which mods he liked, and on the mod UI re-test for the UI-only ones.
+
+**2026-11-17 (Aaron):** review these in the same chat as the mod UI re-test.

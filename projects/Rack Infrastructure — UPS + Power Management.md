@@ -1,11 +1,11 @@
 ---
 type: project
-status: active
+status: blocked
 priority: low
 system:
 - '[[UniFi UPS 2U]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
-next_step: '2026-10-16: TrueNAS UPS config re-verified unchanged (SLAVE to unifiups@192.168.1.12:3493, shutdown BATT, 300 s). Still parked until Aaron picks a maintenance window: shut Big Boi down, 20 s pull to test Power Cycle on Restore, BIOS Power On, full >5 min test, runbook. Until then a >5 min outage leaves Big Boi off until powered on by hand. Later: UPS data into HA via NUT. Aaron confirmed 2026-10-16 he wants this finished, not dropped.'
+next_step: '2026-11-17 (Aaron): postponed until the 30U rack move is finished. Then Aaron picks a maintenance window: shut Big Boi down, 20 s pull to test Power Cycle on Restore, BIOS Power On, full >5 min test, runbook. Until then a >5 min outage leaves Big Boi off until powered on by hand. TrueNAS UPS config last verified 2026-10-16 (SLAVE to unifiups@192.168.1.12:3493, shutdown BATT, 300 s). Later: UPS data into HA via NUT. Aaron confirmed 2026-10-16 he wants this finished, not dropped.'
 notion_id: 3187ae76-22ba-814f-a287-d9785fedac44
 ---
 

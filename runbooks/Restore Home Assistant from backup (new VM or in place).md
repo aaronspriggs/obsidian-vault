@@ -16,11 +16,11 @@ Home Assistant is lost or broken beyond fixing one object: the zvol `vmstore/hao
 - **Zvol intact, problem under 30 days old, VM won't boot:** roll back the daily `vmstore` snapshot of `haos_disk` in TrueNAS (with the VM stopped). It's the fastest option, and like a restore it loses everything since the snapshot.
 - **HA boots but its config is broken:** Path A (restore in place).
 - **VM or zvol gone:** Path B (new VM, restore during onboarding).
-A restore is **Tier 3**: it discards everything since the backup and restarts HA, so Aaron confirms it every time. Expect about 1 hour for Path B. Desk-checked against the live instance and its TrueNAS definition on 2026-10-16; not yet test-restored.
+A restore is **Tier 3**: it discards everything since the backup and restarts HA, so Aaron confirms it every time. Expect about 1 hour for Path B. Desk-checked against the live instance and its TrueNAS definition on 2026-10-16; not yet test-restored. On 2026-11-17 the newest backup was confirmed present and encrypted in both locations; whether the 1Password key matches the one Home Assistant uses is with Aaron ([task](<../projects/Test the Home Assistant restore and ClaudeCode VM rebuild runbooks before the February 2027 triage.md>)).
 
-## What a backup holds (verified 2026-10-16)
+## What a backup holds (verified 2026-11-17)
 
-Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Google Drive account `spriggs.aaron@gmail.com` (kept 30 days), about 430 MB each, encrypted. Contents: HA settings (`.storage`, YAML, automations, dashboards, HACS custom components including ha-mcp and Alert2), the recorder DB, and **all apps with their data**: Mosquitto, Matter Server (the Matter fabric, so Matter devices don't need recommissioning), Terminal & SSH, Studio Code Server, Spotify Connect. Not included: the `share`, `media` and `ssl` folders (unused), and the VM definition itself (below). Expect to lose up to ~24 h of history and any changes since the backup. Check with Claude: `ha_get_integration` on the `backup` entry with diagnostics shows `include_all_addons: true`, `include_database: true`.
+Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Google Drive account `spriggs.aaron@gmail.com` (kept 30 days), about 410 MB each, encrypted in both places. Contents: HA settings (`.storage`, YAML, automations, dashboards, HACS custom components including ha-mcp and Alert2), the recorder DB, and **all apps with their data**: Mosquitto, Matter Server (the Matter fabric, so Matter devices don't need recommissioning), Terminal & SSH, Studio Code Server, Scrypted, plus the `ssl` folder. Not included: the `share` and `media` folders (unused), and the VM definition itself (below). Expect to lose up to ~24 h of history and any changes since the backup. Check with Claude: `ha_get_integration` on the `backup` entry with diagnostics shows `include_all_addons: true`, `include_database: true`.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Goo
 ## Verify
 
 Claude, over ha-mcp, unless marked:
-- `ha_get_overview`: version is the backed-up one (2026.10.1 as of this writing) and the entity count is close to before (about 830).
+- `ha_get_overview`: version is the backed-up one (2026.11.0 on 2026-11-17) and the entity count is close to before (about 830).
 - `ha_get_system_health(include="repairs")`: no new repairs. `ha_get_integration`: nothing in `setup_error`; the only `setup_retry` entries are the known ones (Denon, PrusaLink, wall panel Bluetooth).
 - `ha_get_system_health(include="zha_network")`: Zigbee devices report LQI/RSSI and recent `last_seen`. If ZHA can't open the radio, the USB passthrough is wrong (step 2).
 - `ha_get_app(source="installed")`: all 5 apps started. Matter devices are available.

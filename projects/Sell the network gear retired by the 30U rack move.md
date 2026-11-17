@@ -6,7 +6,7 @@ system:
 - '[[USW Pro Max 16 PoE]]'
 - '[[USW Flex 2.5G 8 PoE]]'
 parent: '[[Move the homelab into the 30U floor rack]]'
-next_step: '2026-11-15: Aaron returns the USW Aggregation inside its return window and answers the open questions below (boxes, Flex mount model, Isobar and 12U rack, where to sell); listings go up once the 30U rack has run cleanly on the Enterprise 48 for a week.'
+next_step: '2026-11-17: Aaron bought the USW Aggregation on 2026-11-11 with 30 days to return it (window closes about 2026-12-11) and expects to return it the week of 2026-11-16. The open questions below (boxes, Flex mount model, Isobar and 12U rack, where to sell) wait for their own chat; listings go up once the 30U rack has run cleanly on the Enterprise 48 for a week.'
 ---
 
 ## Goal
@@ -57,7 +57,7 @@ Used, working, factory reset and removed from my UniFi controller. 8× 2.5 GbE P
 
 ## Open questions
 
-- Where and when was the Aggregation bought, and when does its return window close?
+- Where was the Aggregation bought? (Bought 2026-11-11, 30-day return window, so about 2026-12-11; Aaron, 2026-11-17.)
 - Are the original boxes kept for the Pro Max 16 and the Flex?
 - What is the Flex's 1U keystone mount (model), and does it go with the Flex or separately?
 - Sell the Tripp Lite Isobar and the 12U wall rack once the 30U is up, or keep them?

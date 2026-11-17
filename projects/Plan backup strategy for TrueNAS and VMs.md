@@ -4,7 +4,7 @@ status: active
 priority: high
 system:
 - '[[Big Boi storage (pool, datasets, shares, backups)]]'
-next_step: '2026-11-15: both B2 tasks ran clean on 2026-11-15 (checked live). Around 2026-11-16, 30 days after the first sync, Aaron reads the real bucket size in the B2 web UI to confirm it levelled off at about 4-5 GB. Phase 2 (rips to B2) waits for the Big Boi rebuild, when rips get their own dataset on the HDD pool (Aaron 2026-11-08).'
+next_step: '2026-11-17: both B2 tasks ran clean on 2026-11-15 (checked live). Aaron reads the real bucket size himself at https://secure.backblaze.com/b2_buckets.htm (bucket spriggs-bigboi-backup; expected about 4-5 GB): Claude has no B2 credentials, and the TrueNAS API can''t report the bucket''s size including old file versions. Phase 2 (rips to B2) waits for the Big Boi rebuild, when rips get their own dataset on the HDD pool (Aaron 2026-11-08).'
 notion_id: 3087ae76-22ba-8115-9603-e15b0f8b9f21
 ---
 

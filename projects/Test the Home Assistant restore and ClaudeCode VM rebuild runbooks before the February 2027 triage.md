@@ -5,7 +5,7 @@ priority: low
 system:
 - '[[Home Assistant OS (VM)]]'
 - '[[ClaudeCode (VM)]]'
-next_step: '2026-11-15: picked by Aaron at the quarterly triage. In a fresh session Claude dry-runs "Rebuild the ClaudeCode VM from scratch" against the repo and the live VM (every file, unit and step it names exists and matches), fixes the runbook and sets last_tested. Then, with Aaron: confirm the newest Home Assistant backup opens with the encryption key from 1Password, and set last_tested on the restore runbook. Both before February 2027.'
+next_step: '2026-11-17: Home Assistant half started. Claude checked the newest backup live (below); Aaron compares the encryption key Home Assistant shows at /config/backup/settings with the one in 1Password and says whether they match, then Claude sets last_tested on the restore runbook. Still to do in a fresh session: Claude dry-runs "Rebuild the ClaudeCode VM from scratch" against the repo and the live VM, fixes the runbook and sets last_tested.'
 ---
 
 From the quarterly triage of 2026-11-15. Of the 12 untested runbooks, Aaron picked two to test before the next triage.
@@ -22,3 +22,9 @@ Know that the two recovery paths that matter most would work: this VM's disk isn
 ## Decisions
 
 - **2026-11-15 (Aaron): the other ten are left or ride along with other work.** The Big Boi reboot checklist is exercised by the rack move and the bare-metal rebuild runbook by the rebuild; the Cloudflare DDNS runbook is checked when Ting goes live; Claude checks the dashboard reference and the Mosquitto setup against the live system alone, as it touches them. Left until needed: the disaster recovery index (tested through its parts), the appliance-image VM setup, the MFA recovery (a real test risks a lockout), the Plex VM rebuild (after the Big Boi rebuild) and the wall panel troubleshooting (Claude has no SSH to the Pi).
+
+## Status (2026-11-17)
+
+Home Assistant restore, Claude's half: the newest automatic backup (`f1d6befb`, 2026-11-16 05:19, Core 2026.11.0, 409.6 MB) is in both locations (`hassio.local` and Google Drive), is encrypted in both (`protected: true`), and holds the settings, the database, all five add-ons and the `ssl` folder, with no failed parts. The restore runbook's "What a backup holds" section was corrected to match.
+
+Aaron's half: compare the key. Claude never sees it: the key is in Aaron's own 1Password vault, and typing it into a chat would leave it in the session log on this VM. A match between the key Home Assistant is using and the 1Password copy means the automatic backups, which are encrypted with that key, open with it. It is not a restore; the runbook stays "not yet test-restored".

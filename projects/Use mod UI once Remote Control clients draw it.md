@@ -25,3 +25,5 @@ Ask Claude in a session to load the `plugin-authoring` skill and copy repo `clau
 ## Status (2026-11-15, quarterly triage)
 
 Kept. The VM now runs Claude Code 2.1.321 (the last test was on 2.1.286), so the re-check under "How to re-check" is due. It needs Aaron to send `/ui-test` from the desktop app and from the phone.
+
+**2026-11-17 (Aaron):** he runs the re-test in a chat of its own, and reviews the nine mods in the same chat.

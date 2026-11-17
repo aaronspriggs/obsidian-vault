@@ -7,7 +7,7 @@ system:
 - '[[UniFi (UDM Pro)]]'
 - '[[UniFi UPS 2U]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-15: waiting on the 30U rack, the Enterprise 48, the PDU Pro and the 12S4 (arrivals not recorded). When the 12S4 arrives Aaron measures it without feet; then the gear moves to layout v17 and the runs are re-terminated to patch map v12.'
+next_step: '2026-11-17: waiting on the 30U rack, the Enterprise 48, the PDU Pro and the 12S4 (arrivals not recorded). Then the gear moves to layout v17 and the runs are re-terminated to patch map v12. No measuring of the 12S4 on arrival (Aaron, 2026-11-17: it will fit).'
 ---
 
 ## Goal
@@ -62,7 +62,7 @@ About 152–176 lb with 4 HDDs in Big Boi and 164–188 lb with 12, against the 
 
 ## Decisions
 
-- **2026-11-02 (Aaron): plan the 12S4 as 6U with 1U open above it for airflow.** The listing says 262 mm, one owner measured 272 mm (6U is 266.7 mm); the evidence is in [the case change note](<../changes/2026-10-26 Recorded the JMCD 12S4 case specs and an owner's build log.md>). v17's open U18 covers either figure.
+- **2026-11-02 (Aaron): plan the 12S4 as 6U with 1U open above it for airflow.** The listing says 262 mm, one owner measured 272 mm (6U is 266.7 mm); the evidence is in [the case change note](<../changes/2026-10-26 Recorded the JMCD 12S4 case specs and an owner's build log.md>). v17's open U18 covers either figure, so Aaron dropped the on-arrival measurement on 2026-11-17 ("It'll fit").
 - **2026-11-12 (Aaron): Big Boi definitely moves to the 12S4, and the old 2U case stays in the rack as a second server** for other uses, hardware not chosen. He wanted it away from Big Boi over heat concerns; v17 puts it above Big Boi with U18 open between them.
 - **2026-11-12 (Aaron): only the USB radios need care.** The hubs have had no issues inside the rack. The Zigbee dongle goes up to the hub shelf on a USB extension; the ZWA-2 is too big for a shelf, so it goes on top of the rack or on the wall. The Ting ONT fits on the hub shelf; the CenturyLink ONT is outdoors in a box and stays there.
 - **2026-11-12 (Aaron): the Denon goes on the existing StarTech shelf** from the 12U rack, reused, and on a surge-only outlet.
@@ -73,7 +73,6 @@ About 152–176 lb with 4 HDDs in Big Boi and 164–188 lb with 12, against the 
 
 ## Open questions
 
-- The 12S4's height without feet, measured on arrival.
 - Rack top venting or a roof fan: the Enterprise 48 (150 W before PoE) sits at U29.
 - The StarTech tray's inside width against the Denon's 434 mm.
 - What the three small boxes on the 12U's shelf are, and what the Isobar feeds today.

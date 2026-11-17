@@ -4,7 +4,7 @@ status: active
 priority: medium
 system:
 - '[[Dockhand]]'
-next_step: '2026-11-15: made active at the quarterly triage. The token was created 2026-10-01 with about 90 days, so it expires around 2026-12-30 (exact date in the 1Password item). By 2026-12-20 Aaron and Claude rotate it in one sitting, together with the TrueNAS read-only key; both are Tier 3 and need Aaron in the UI and in 1Password.'
+next_step: '2026-11-17 (Aaron): do it at the end of December, not now. The token was created 2026-10-01 with about 90 days, so it expires around 2026-12-30 (exact date in the 1Password item); rotate it in the week of 2026-12-21, in one sitting with the TrueNAS read-only key. Both are Tier 3 and need Aaron in the UI and in 1Password. If it is missed, dockhand-api returns HTTP 401.'
 parent: '[[Dockhand - give Claude API access and build out Dockhand as the Docker platform]]'
 notion_id: 3ec7ae76-22ba-817d-9049-f7f3633774e9
 ---

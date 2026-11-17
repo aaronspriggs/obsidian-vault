@@ -7,7 +7,7 @@ system:
 - '[[Home Assistant (integrations and automations)]]'
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-10-28: ZWA-2 ordered (Aaron); when it arrives, Claude passes it through to the HA VM and adds Z-Wave JS. Still to buy: UP Siren PoE. Aaron has unused Ring devices to include too (Hardware on hand). Phase 0 (Alarmo + door zones) waits on Aaron''s go.'
+next_step: '2026-11-17: the UP Siren PoE is bought and in hand (Aaron). ZWA-2 ordered 2026-10-28 (arrival not recorded); when it is here, Claude passes it through to the HA VM and adds Z-Wave JS. Aaron has unused Ring devices to include too (Hardware on hand). Phase 0 (Alarmo + door zones) waits on Aaron''s go, which he will give in a separate chat.'
 ---
 
 ## Goal
@@ -16,7 +16,7 @@ A home alarm built on Home Assistant: Alarmo as the alarm panel and the single s
 
 ## Status (2026-11-15)
 
-Planning. Built so far are the garage door in HA with its left-open alert (2026-10-30) and the lock's battery alert (2026-10-27, 20% threshold). The Alarmo install waits on Aaron's go. ZWA-2 ordered 2026-10-28 (arrival not recorded); UP Siren PoE still to buy. Slimmed 2026-11-15: the research is in two change notes, [UniFi Protect](<../changes/2026-10-27 Researched UniFi Protect's Home Assistant integration for the alarm plan.md>) and [the lock and entry points](<../changes/2026-10-28 Tested the Aqara U400's unlock sources and researched the alarm's entry points.md>).
+Planning. Built so far are the garage door in HA with its left-open alert (2026-10-30) and the lock's battery alert (2026-10-27, 20% threshold). The Alarmo install waits on Aaron's go. ZWA-2 ordered 2026-10-28 (arrival not recorded); UP Siren PoE in hand (Aaron, 2026-11-17). Slimmed 2026-11-15: the research is in two change notes, [UniFi Protect](<../changes/2026-10-27 Researched UniFi Protect's Home Assistant integration for the alarm plan.md>) and [the lock and entry points](<../changes/2026-10-28 Tested the Aqara U400's unlock sources and researched the alarm's entry points.md>).
 
 What HA has, checked live 2026-11-15 (HA 2026.11.0):
 
@@ -44,7 +44,7 @@ What HA has, checked live 2026-11-15 (HA 2026.11.0):
 3. Alarmo (HACS `nielsfaber/alarmo` plus `alarmo-card`, Tier 2) with modes Away and Home (night: perimeter only, no motion). Zones: front, back and garage entrance doors as entry/exit with delay; garage overhead door with a longer entry delay (step 8); back-door accelerometer and the IKEA motion sensors Away-only.
 4. Z-Wave: ZWA-2 on Big Boi, on its cable outside the metal rack, USB passthrough to the HA VM like the Zigbee dongle (bus/port path), Z-Wave JS, include the keypad with S2. The keypad is the only Z-Wave node at first, so it must reach the stick directly (basement center to 1st-floor front door); if not, add a mains-powered Z-Wave repeater or plug. Both dongles get re-mapped in the [Big Boi rebuild](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>).
 5. Keypad: [Advanced Ring Keypad V2 Blueprint (Alarmo)](https://community.home-assistant.io/t/advanced-ring-keypad-v2-blueprint-for-home-assistant-alarmo/1010017) for state sync, codes, buttons and panic buttons (police/fire/medical → siren + critical push, or dispatch if step 14 is adopted). Fallback: [Synchronize Ring Alarm Keypad v2 with Alarmo](https://community.home-assistant.io/t/synchronize-ring-alarm-keypad-v2-with-alarmo/349461).
-6. Siren: [UniFi Protect Siren PoE](https://store.ui.com/us/en/products/up-siren-poe) ($109, 110 dB; Aaron to buy). HA's `siren` entity plays at most 30 s at a time, so an automation re-plays it every 30 s while Alarmo is `triggered` and stops it on disarm. Right after adoption, check Protect is still in Local mode (some retailers brand the siren SuperLink). Backup sounder: the keypad's alarm tones.
+6. Siren: [UniFi Protect Siren PoE](https://store.ui.com/us/en/products/up-siren-poe) ($109, 110 dB; in hand, Aaron 2026-11-17). HA's `siren` entity plays at most 30 s at a time, so an automation re-plays it every 30 s while Alarmo is `triggered` and stops it on disarm. Right after adoption, check Protect is still in Local mode (some retailers brand the siren SuperLink). Backup sounder: the keypad's alarm tones.
 
 **C. Entry points and who's coming in**
 

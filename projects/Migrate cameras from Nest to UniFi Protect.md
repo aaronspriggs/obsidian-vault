@@ -1,11 +1,11 @@
 ---
 type: project
-status: active
+status: blocked
 priority: medium
 system:
 - '[[Home Assistant (integrations and automations)]]'
 - '[[UniFi (UDM Pro)]]'
-next_step: '2026-11-14: Aaron picks up 2× G5 Turret Ultra + 1× G5 Bullet + ~800 ft Cat6 today; Claude helps plan the cable runs and adopts the cameras into Protect once they are powered.'
+next_step: '2026-11-17 (Aaron): the camera work waits until the 30U rack is built. Then Claude helps plan the cable runs and adopts the cameras into Protect once they are powered. Planned hardware: 2× G5 Turret Ultra, 1× G5 Bullet, about 800 ft of Cat6 (pick-up was planned for 2026-11-14; not confirmed).'
 notion_id: 3e57ae76-22ba-8116-bd2b-c9886cacd1dd
 ---
 

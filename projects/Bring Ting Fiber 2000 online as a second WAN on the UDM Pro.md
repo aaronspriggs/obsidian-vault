@@ -4,7 +4,7 @@ status: active
 priority: high
 system:
 - '[[UniFi (UDM Pro)]]'
-next_step: 2026-11-09 Aaron orders a UACC-CM-RJ45-MG and a Cat6a patch cable (must arrive before 2026-12-07) and decides where the Ting ONT goes; Claude verifies each UDM step with unifi-api on install day.
+next_step: '2026-11-17: Aaron has the UACC-CM-RJ45-MG in hand (bought two at Micro Center; the second is a copper SFP+ spare). Still open before 2026-12-07: a Cat6a patch cable from the ONT to the rack (not confirmed bought) and where the Ting ONT goes; Claude verifies each UDM step with unifi-api on install day.'
 ---
 
 ## Goal
@@ -13,7 +13,7 @@ Ting Fiber 2000 (2 Gbps symmetrical) installs **2026-12-07 at 3 pm**. Plug the T
 
 ## Status / next step
 
-2026-11-09: research done, plan below. Before install day, Aaron orders the hardware and decides where the ONT goes. Nothing on the UDM changes until 2026-12-07.
+2026-11-09: research done, plan below. Before install day, Aaron gets a Cat6a patch cable (the module is in hand since 2026-11-17) and decides where the ONT goes. Nothing on the UDM changes until 2026-12-07.
 
 ## Starting point (read live with unifi-api, 2026-11-09)
 
@@ -42,7 +42,7 @@ Not documented anywhere I could read (two of Ting's 2 Gig help pages return 404)
 
 **Before 2026-12-07 (Aaron):**
 
-1. Order the UACC-CM-RJ45-MG and a Cat6a patch cable.
+1. UACC-CM-RJ45-MG: in hand, two of them (Aaron, 2026-11-17; the second is a spare for any other copper 10G link). Still needed: a Cat6a patch cable.
 2. Decide where the ONT goes and tell the tech on the day: as close to the rack as practical. If the UPS 2U has a free battery-backed outlet, plug the ONT into it. The CenturyLink ONT isn't on battery today, so internet drops on a power cut. All four battery outlets are believed to be in use (UPS note, 2026-09-29), so check first.
 3. If the order includes Ting's eero rental (Whole Home Wi-Fi), decide whether to keep it. The UDM and U7 APs replace it.
 

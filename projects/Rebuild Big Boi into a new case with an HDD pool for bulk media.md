@@ -5,7 +5,7 @@ priority: medium
 system:
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[Big Boi storage (pool, datasets, shares, backups)]]'
-next_step: 2026-11-08 Order 3× 0.5 m SFF-8643 cables and 1× Corsair Type 4 Molex cable (third backplane on the RM1000x); then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).
+next_step: '2026-11-17: the 3× 0.5 m SFF-8643 cables are in hand (Aaron, from Amazon). Still to order: 1× Corsair Type 4 Molex cable (third backplane on the RM1000x; not confirmed bought) and a CPU cooler; then pick the HDDs; rack plan is the 12S4 as 6U with 1U open or blanked above it (Aaron 2026-11-02).'
 notion_id: 3fa7ae76-22ba-811b-9baa-c2e05b8e9c2e
 ---
 
@@ -15,7 +15,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-11-15)
 
-Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM kit (2026-11-07), PSU (2026-11-08) and GPU (2026-11-09). What has arrived isn't recorded. Still to buy: backplane cables, one Molex cable, a CPU cooler and the HDDs. Slimmed 2026-11-15: research is in the change notes linked below, the rack move is its own project, the earlier text is in git history.
+Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM kit (2026-11-07), PSU (2026-11-08) and GPU (2026-11-09). Arrived or in hand as far as recorded: the GPU and the backplane cables (2026-11-17). Still to buy: one Molex cable, a CPU cooler and the HDDs. Slimmed 2026-11-15: research is in the change notes linked below, the rack move is its own project, the earlier text is in git history.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -27,7 +27,7 @@ Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM
 |---|---|---|
 | Case | JMCD 12S4, 12-bay, base bundle (no cables, no fans). Limits: ATX board, card ≤ 250 mm with 25 mm fans fitted, PSU ≤ 170 mm, cooler ≤ 135 mm | **Ordered 2026-10-26** |
 | HBA | Broadcom SAS 9305-16i, used, full-height bracket | **Ordered 2026-10-28**; verify on arrival |
-| Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | To buy |
+| Backplane cables | 3× SFF-8643 ↔ SFF-8643, 0.5 m | **In hand** (Aaron, 2026-11-17; Amazon) |
 | Board | Gigabyte Z390 DESIGNARE, used | **Ordered by 2026-10-28** |
 | CPU | Intel i9-9900 | Keep |
 | CPU cooler | Candidate: Noctua NH-U9S | Open (see Open questions) |
