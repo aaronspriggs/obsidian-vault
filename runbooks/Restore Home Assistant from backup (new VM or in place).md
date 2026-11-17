@@ -49,7 +49,7 @@ Automatic backups run daily around 05:00 to `hassio.local` (kept 7 days) and Goo
 
 Claude, over ha-mcp, unless marked:
 - `ha_get_overview`: version is the backed-up one (2026.11.0 on 2026-11-17) and the entity count is close to before (about 830).
-- `ha_get_system_health(include="repairs")`: no new repairs. `ha_get_integration`: nothing in `setup_error`; the only `setup_retry` entries are the known ones (Denon, PrusaLink, wall panel Bluetooth).
+- `ha_get_system_health(include="repairs")`: no new repairs. `ha_get_integration`: nothing in `setup_error`; the only `setup_retry` entries are the known ones (Denon, PrusaLink until its stale IP is fixed, wall panel Bluetooth).
 - `ha_get_system_health(include="zha_network")`: Zigbee devices report LQI/RSSI and recent `last_seen`. If ZHA can't open the radio, the USB passthrough is wrong (step 2).
 - `ha_get_app(source="installed")`: all 5 apps started. Matter devices are available.
 - Wall panel: dashboard loads and MQTT clients reconnect (Mosquitto log shows `mqttdashboard`).
