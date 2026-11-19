@@ -80,4 +80,5 @@ Alert2 firing pushes and reminders get **Ack**, **Snooze (2hr)** and **Open dash
 - After any Kuma restart, weekly push monitors read `unavailable` in HA until their next push. Alert2 conditions ignore `unavailable`.
 - Event alerts are fired only by `alert2.report` or a `trigger`; undeclared names raise an `alert2_error`.
 - `alert2.reload` re-arms reminders, so any alert that is on and has reminders gets re-pushed at once. Check `states.alert2` for open alerts before reloading during the day.
+- `alert2.global_exception` ignores `ClientConnectionResetError` (client websocket resets) and `AvrNetworkError` (Denon receiver unreachable, since 2026-11-19). Alert2 HTML-escapes its own messages, so its exception pushes show `&lt;`/`&gt;`; tracked alerts can't template `message`, so that stays.
 - Monthly: look at Alert2 fire counts and lengthen delays, lower priority or delete alerts that fired without needing action.
