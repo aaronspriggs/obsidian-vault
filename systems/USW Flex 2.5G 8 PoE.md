@@ -2,7 +2,7 @@
 status: active
 category: network
 ip: 192.168.1.24
-last_verified: 2026-11-15
+last_verified: 2026-11-19
 notion_id: 3087ae76-22ba-81b9-a191-ebeeb66ad5df
 ---
 
@@ -21,7 +21,7 @@ Feeds the second floor: the U7 Pro - Upstairs AP and the other 2nd-floor runs. I
 
 ## Port Assignments (verified via UniFi API 2026-11-15)
 
-- Port 1: link up at 100 Mb, no PoE draw, no client identified (a device without an IP, or a dumb device)
+- Port 1: Cheryl's Office Sonos One SL (MAC 38:42:0b:1f:31:a6, 192.168.1.205), 100 Mb. STP holds this port in `discarding`: the Sonos also links over SonosNet to the wired kitchen Sonos on Pro Max ports 8 and 9, which makes a loop, so UniFi lists the Sonos on Pro Max port 9 instead (verified 2026-11-19; see the change note of that date)
 - Port 3: U7 Pro - Upstairs AP, 2.5 GbE, 8.4 W PoE
 - Port 9: uplink to Pro Max port 15, 2.5 GbE
 - Other ports unused

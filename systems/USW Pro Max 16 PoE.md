@@ -26,7 +26,7 @@ Core distribution switch for the homelab network. Uplinked to the UDM Pro via SF
 | 4 | down | 0.6 W | Ring keypad PoE converter (Aaron believes; 0.6 W with no data link) |
 | 6 | 1 GbE | 5.0 W | Raspberry Pi wall panel `hadashboard` (192.168.1.84), PoE-powered |
 | 8 | 100 Mb | 0 | Sonos (192.168.1.32) |
-| 9 | 100 Mb | 0 | Sonos ×2 (192.168.1.205, .171), so something daisy-chained or a small switch |
+| 9 | 100 Mb | 0 | Sonos (192.168.1.171). Cheryl's Office Sonos (.205) also shows here, but it's wired upstairs: it reaches this port over SonosNet while STP blocks its own port (re-checked 2026-11-19) |
 | 10 | down | — | USW Flex (spare, offline by design) |
 | 12 | 1 GbE | 0 | USW Flex 2.5G 8 PoE - Basement (its port 9; adopted, on its own adapter) |
 | 13 | 2.5 GbE | 3.5 W | USW Flex 2.5G 5 - Aaron's Desk (its port 5; PoE-powered); Aaron's MacBook `mbp-017446` sits behind it |
