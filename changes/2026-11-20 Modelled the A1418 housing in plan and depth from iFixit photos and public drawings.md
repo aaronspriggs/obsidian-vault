@@ -58,7 +58,13 @@ Component heights and sources:
 | 20 mm | 49.9 mm | 22.1 | 31.6 |
 | 25 mm | 57.8 mm | 27.3 | 38.4 |
 
-Every source puts the deepest point at 38.8–44.3 mm, so the PSU's tall zone can't be much over 16 mm. The 25 mm listings most likely include its end brackets. **The `calibrated` model is the consistent one:** display 11.05 mm, wall 1.5 mm, case 43.6 mm deep, and PSU tall zone 16 mm. Every input in it is sourced or bounded, and every stock part clears. `nominal` (41.5 mm deep) is kept as `raw-public-data` for comparison.
+Every source puts the deepest point at 38.8–44.3 mm. If those are right, the PSU's tall zone can't be much over 16 mm.
+
+That 16 mm is **inferred from the case depth, not sourced**. It contradicts the photo estimate (about 20 mm) and the listings (25 mm). That the 25 mm includes the end brackets is a hypothesis, not checked. So the PSU check here is a fitted parameter, not independent evidence. The PSU's real height is the weakest input and the first thing to measure. If it is 20 mm, the drawings are about 6 mm too shallow.
+
+**The `calibrated` model:** display 11.05 mm (sourced), wall 1.5 mm (estimate), case 43.6 mm deep (inside the sourced range), PSU tall zone 16 mm (inferred). The PSU, HDD and blower clear in it. `nominal` (41.5 mm deep) is kept as `raw-public-data` for comparison.
+
+**The sides are not validated.** All three checks sit within X ±80 of the centre, so nothing tests the profile's side-to-side shape. The speakers would, since they stay at X ±140 to 239 where the model leaves 6–9 mm, but no depth is published for them. iFixit's [left speaker guide 95629](https://www.ifixit.com/Guide/iMac+Intel+21.5-Inch+Retina+4K+Display+(2017)+Left+Speaker+Replacement/95629) shows them only front-on. Treat free depth outside about X ±120 as unvalidated, including the 17 mm limit at the R9513's outer edge. If the speakers turn out deeper, the fix is the `shape` blend toward the silhouette upper bound, which deepens the sides, not the max depth.
 
 Calibrated free depth: 31 mm peak near (0, 170); 21–24 mm across the old PSU bay's middle (Y 95, X −100 to 0); 13–17.5 mm along its chin edge (Y 70); 6–9 mm at X ±200; under 14 mm above Y 320.
 
@@ -71,19 +77,20 @@ Minimum free depth per part, nominal / calibrated:
 - `Crossovers.stl`, 9.2 mm: 17.3 / 18.7
 - xstranger's plate plus board, 21 mm estimated: 15.4 / 16.7. Free depth is 16.7 mm at its outer edge (X 150) and about 24 mm mid-plate. His finished build fits, so its stack is at most about 17 mm out there; treat that as the R9513's limit at that edge.
 
-**The LRS-150-12 doesn't fit while the stock blower stays.** `place_lrs150()` tried every 159 × 97 mm placement, both ways round in 4 mm steps, against the kept speakers, blower, duct and exhaust grille. The old PSU bay is only about 58 mm tall above the chin, so the box can't sit there flat. The left bay is 99 mm wide between the speaker and the duct, and the blower blocks it upright. The only clear spots are upright in the old logic-board area, where the driver board goes, and the most free depth any of them has is 17.9 mm against 30 mm needed. The centre has 26 mm and sits on the blower's duct. Even a case 47 mm deep, past every source, leaves at most 20 and 29 mm. So it's the external 12 V brick or the stock PSU.
+**The LRS-150-12 doesn't fit while the stock blower stays, whatever the stock PSU's height.** `place_lrs150()` tried every 159 × 97 mm placement, both ways round in 4 mm steps, against the kept speakers, blower, duct and exhaust grille. The old PSU bay is only about 58 mm tall above the chin, so the box can't sit there flat. The left bay is 99 mm wide between the speaker and the duct, and the blower blocks it upright. The only clear spots are upright in the old logic-board area, where the driver board goes. Every row of the table leaves them short of the 30 mm needed: 17.8 mm at a 14 mm PSU, up to 27.3 mm at 25 mm, where the case would be 57.8 mm deep. The centre is deep enough only at an 18 mm PSU or more, and it sits on the blower's duct. So it's the external 12 V brick or the stock PSU.
 
 ## What is still estimated
 
-These inputs are sourced only within a range:
+These inputs are still unsourced:
 
-- the 4K panel's thickness (taken as the same as the 2K assembly)
-- the rear wall (1.5 ±0.5 mm)
-- the blower and speaker depths
-- the R9513 stack
-- the shape of the skin between the two drawing views (±2 mm at the corners)
+- **stock PSU height:** inferred, 16 mm against estimates of 20–25
+- **4K panel thickness:** taken as the same as the 2K assembly
+- **rear wall:** 1.5 ±0.5 mm
+- **blower and speaker depths:** the speakers mean the sides are unvalidated
+- **R9513 stack**
+- **skin shape between the two drawing views:** ±2 mm at the corners
 
-The calibrated model is self-consistent within those ranges. A single caliper pass on the donor removes the ranges. None of them can change the LRS-150 result: closing that gap would take 12 mm more depth.
+One caliper pass on the donor settles all of them. None of them changes the LRS-150 result.
 
 ## Other builds' parts, measured for reference
 
