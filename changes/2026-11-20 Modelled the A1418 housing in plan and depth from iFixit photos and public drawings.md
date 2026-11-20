@@ -7,7 +7,7 @@ system:
 
 # Modelled the A1418 housing in plan and depth from iFixit photos and public drawings
 
-For [Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack](<../projects/Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack.md>). Aaron asked for a model of the 2017 21.5" Retina 4K (A1418, iMac18,2) housing to plan the printed parts against, then for its depth: how much room there is behind the display and whether each component fits. Nothing has been measured on a real unit yet; the donor isn't bought. The plan view is good to about ±3 mm at the centre. The depth model doesn't fit the parts Apple ships in the case, so it is off by a few millimetres or more somewhere, and calipers on the donor have to settle it.
+For [Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack](<../projects/Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack.md>). Aaron asked for a model of the 2017 21.5" Retina 4K (A1418, iMac18,2) housing to plan the printed parts against, then for its depth: how much room there is behind the display and whether each component fits. Nothing has been measured on a real unit yet; the donor isn't bought. The plan view is good to about ±3 mm at the centre. The depth model uses LG's spec for the display assembly (11.05 mm) and is calibrated so every part Apple ships fits, with the case 43.6 mm deep, inside the published 38.8–44.3 mm range. What is still a range is listed under "What is still estimated".
 
 ## Plan view (X, Y)
 
@@ -27,60 +27,71 @@ Checked against xstranger's STLs ([MakerWorld 2549010](https://www.makerworld.co
 
 ## Depth (Z)
 
-Z runs from the front glass face toward the back. Free depth at a point is the external depth, minus the rear wall, minus the display stack (or minus the chin's front wall below Y 64).
+Z runs from the front glass face toward the back. Free depth at a point is the external depth, minus the rear wall, minus the display assembly (or minus the chin's front wall below Y 64).
 
-External depth. Apple publishes only the 5 mm edge. The [dimensions.com 21.5" iMac (2019) drawing](https://www.dimensions.com/element/apple-imac-21-5-inch-2019) was parsed from its SVG, at about 0.867 units per mm. Its side view gives 38.8 mm deepest, at Y about 180, near the hinge. Its plan view gives 44.3 mm at the centre. iFixit's 2012 teardown says "over 4 cm" at the thickest point. Working range: 41.5 ±3 mm. Each silhouette is the maximum over the hidden axis, so the drawings bound the surface but don't fix it. Depth is at most the smaller of the two profiles at every point. The upper bound is `min(gx, gy)`, the smooth low guess is the product `gx·gy`, and the nominal case averages them.
+**Display assembly: 11.05 mm, sourced.** The A1418's glass-fused display is LG LM215WF3-SDD1, Apple 661-7109 ([iFixit answer](https://www.ifixit.com/Answers/View/428399/Is+there+no+way+to+replace+a+new+iMac's+glass+panel)). Its outline is 528.3 × 318.765 × 11.05 mm ([Taiwan Screen](https://www.twscreen.com/en/lcdpanel/1539/lgdisplay/lm215wf3-sdd1/21.5/1920x1080-Monitor-LCD-Panel), [lcds-screen](https://www.lcds-screen.com/products/LM215WF3-SDD1_LG-Display.html)). The 528.3 mm width is the full front glass, so this is the whole assembly. The 4K LM215UH1 (SD)(B1) sits in the same housing but its outline isn't published, so it is modelled at 11.05 ±1 mm. The 13–14 mm figures first used were for LG's unlaminated panels and were wrong for this case.
 
-Display stack. No outline drawing exists for the LM215UH1 (SD)(B1). The LM215WF3-SDA1 datasheet (same housing, 2012 non-Retina) gives 12.95 mm typical and 16.3 mm max. LG's LM215UH1-SPA1 (standalone 4K) is 13.8 mm. Modelled at 12.95–14.5 mm. The rear aluminium wall wasn't measured; it is modelled at 1.2–2.0 mm.
+**External depth.** Apple publishes only the 5 mm edge. The [dimensions.com 21.5" iMac (2019) drawing](https://www.dimensions.com/element/apple-imac-21-5-inch-2019) was parsed from its SVG at about 0.867 units per mm. Its side view gives 38.8 mm deepest, at Y about 180 near the hinge. Its plan view gives 44.3 mm at the centre. iFixit's 2012 teardown says "over 4 cm". The model starts at 41.5 ±3 mm. Each view is a silhouette, the maximum over the hidden axis, so together they bound the surface without fixing it. The upper bound is `min(gx, gy)`, the low guess is the product `gx·gy`, and the nominal case averages them. iFixit's 2012 side photo is shot about 15° from behind (the Apple logo shows foreshortened), so it can't give an absolute depth. Its shape does agree with the drawing: the back tapers toward the bottom, and the deepest point is near the hinge.
 
-Component heights and their sources:
+**Rear wall:** not published, modelled at 1.5 ±0.5 mm.
 
-- Stock PSU: an open board, solder side to the display, parts facing the rear wall ([PSU guide 95634](https://www.ifixit.com/Guide/iMac+Intel+21.5-Inch+Retina+4K+Display+(2017)+Power+Supply+Replacement/95634)).
-  - Tall zone (400 V bulk capacitors lying flat, plus the transformer, about X −75 to 5): 20 ±2 mm, scaled from the 8 mm capacitors in the component-side photo. An aftermarket listing gives 25 mm overall.
-  - Rest of the board: 14 ±2 mm. The edge photo shows parts about 12 mm under the board, using its 1500 µF capacitor as the scale.
-- HDD in bracket: 13 mm (drive label 9.5 mm).
-- xstranger's plate plus R9513: 21 ±3 mm. `Mainboard.stl` is 5.7 mm; a standoff, the PCB and HDMI-height connectors were estimated.
-- `Crossovers.stl`: 9.2 mm.
-- Blower: about 18 mm, not published or measured.
-- Mean Well LRS-150-12: 159 × 97 × 30 mm (datasheet).
+Component heights and sources:
 
-Results, nominal case (41.5 mm max, display 13.5, wall 1.5). Free depth peaks at about 26 mm near (0, 170), the hinge. It is about 19 mm at the old PSU bay's middle (Y 95), 13–14 mm along its bottom edge (Y 70), and under 10 mm outside X ±150 and above Y 320. Fit checks give the minimum free depth over each footprint, tight / nominal / loose:
+- **Stock PSU:** an open board, solder side toward the display, parts facing the rear wall ([PSU guide 95634](https://www.ifixit.com/Guide/iMac+Intel+21.5-Inch+Retina+4K+Display+(2017)+Power+Supply+Replacement/95634)).
+  - Two retail listings give 0.98 in (25 mm) overall.
+  - From the photos, the tall zone (400 V bulk capacitors lying flat plus the transformer, about X −75 to 5) is about 20 mm.
+  - The case bounds it tighter, as the calibration below shows: about 16 mm.
+  - Rest of the board: 14 ±2 mm, from the edge photo, using its 1500 µF capacitor as the scale.
+- **HDD in bracket:** 13 mm (drive label 9.5 mm).
+- **Blower:** about 18 mm, not published.
+- **xstranger's plate plus R9513:** about 21 mm. `Mainboard.stl` is 5.7 mm; the standoff, PCB and connector heights are estimated.
+- **`Crossovers.stl`:** 9.2 mm.
+- **Mean Well LRS-150-12:** 159 × 97 × 30 mm (datasheet).
 
-- Stock PSU tall zone, 20 mm: 8 / 12 / 16. **Fails in every case**, though the real one fits.
-- Stock PSU rest of board, 14 mm: 2 / 9 / 15.
-- HDD in bracket, 13 mm: 8 / 12 / 16.
-- Blower, 18 mm: 12 / 17 / 22.
-- xstranger plate plus R9513, 21 mm: 8 / 13 / 18. His finished build fits, so this fails too.
-- `Crossovers.stl`, 9.2 mm: 11 / 15 / 18. Fits.
-- LRS-150 at its best footprint-clear spot (upright in the old logic-board area, X 44 to 141, Y 108 to 267), 30 mm: 9 / 14 / 19. Fails.
-- LRS-150 at the centre (Y 140 to 237, on top of the kept blower duct), 30 mm: 17 / 22 / 26. Fails.
+**Calibration.** Parts Apple ships must fit. The model deepens the skin in proportion to the bulge, keeping the 5 mm edge fixed, until every stock part clears by 1 mm over 95% of its footprint. The case depth that requires depends on how tall the stock PSU's tall zone is:
 
-The speakers fail the same way: the model leaves about 6 mm at X ±200, and the speaker enclosures are clearly deeper than that.
-
-**What this means.** Parts Apple ships in the case don't fit the model, so the public inputs leave it too shallow by roughly 4 to 13 mm. The shortfall is everywhere, not just at the bottom. The likeliest cause is the display stack: the 13–14 mm figures are LG datasheet numbers for unlaminated modules, while the 2012-on iMac panel is laminated to its glass. In the display-lift photo (teardown step 3) its edge looks only about 5 mm thick. The drawing's profiles come next. Below is the uniform correction the model needs before every stock part clears by 1 mm over 95% of its footprint, for a range of stock PSU heights, and what the LRS-150 checks become with it:
-
-| Stock PSU tall zone | Correction | LRS-150, best clear spot (min free) | LRS-150, centre (min free) |
+| PSU tall zone | Max case depth needed | LRS-150 min free, best clear spot | LRS-150 min free, centre |
 |---|---|---|---|
-| 16 mm | +3.8 mm | 17.9, no | 25.6, no |
-| 20 mm | +7.8 mm | 21.9, no | 29.6, no |
-| 25 mm | +12.8 mm | 26.9, no | 34.6, yes |
+| 14 mm | 43.4 mm | 17.8 | 25.9 |
+| 16 mm | 43.6 mm | 17.9 | 26.1 |
+| 18 mm | 46.8 mm | 20.0 | 28.8 |
+| 20 mm | 49.9 mm | 22.1 | 31.6 |
+| 25 mm | 57.8 mm | 27.3 | 38.4 |
 
-**The LRS-150-12 doesn't fit while the stock blower stays.** This rests mostly on the footprint. `place_lrs150()` tried every 159 × 97 mm placement, both ways round in 4 mm steps, against the kept speakers, blower, duct and exhaust grille. The old PSU bay is only about 58 mm tall above the chin, so the box can't sit there flat. The left bay is 99 mm wide between the speaker and the duct, and the blower blocks it upright. The only clear spots are upright in the old logic-board area, which is where the driver board goes. There, even the most generous calibration in the table (a 25 mm stock PSU) leaves at least 3 mm too little depth: 26.9 mm free for a 30 mm box. The centre is deep enough only if the stock PSU is 22 mm or more, and that is the blower's duct and exhaust path. So the choice is the external 12 V brick or the stock PSU.
+Every source puts the deepest point at 38.8–44.3 mm, so the PSU's tall zone can't be much over 16 mm. The 25 mm listings most likely include its end brackets. **The `calibrated` model is the consistent one:** display 11.05 mm, wall 1.5 mm, case 43.6 mm deep, and PSU tall zone 16 mm. Every input in it is sourced or bounded, and every stock part clears. `nominal` (41.5 mm deep) is kept as `raw-public-data` for comparison.
 
-**Calibrated model.** The `calibrated` case is the nominal shell with the display stack thinned to 5.7 mm. That is the +7.8 mm needed for a 20 mm stock PSU, applied where the likeliest error is. In it, every stock part clears over its whole footprint:
+Calibrated free depth: 31 mm peak near (0, 170); 21–24 mm across the old PSU bay's middle (Y 95, X −100 to 0); 13–17.5 mm along its chin edge (Y 70); 6–9 mm at X ±200; under 14 mm above Y 320.
 
-- PSU tall zone and rest of board: 20.0 and 16.5 mm minimum free, against 20 and 14 mm needed.
-- HDD: 19.7 against 13.
-- Blower: 24.7 against 18.
-- xstranger's plate and board: 20.8 against 21. It clears across 100% of the sampled footprint; the corner sample is within its ±3 mm estimate.
+Minimum free depth per part, nominal / calibrated:
 
-Use it for planning until the donor is measured. The `raw-public-data` files are the uncorrected model, kept for comparison.
+- PSU tall zone, 16 mm: 14.6 / 15.9
+- PSU rest of board, 14 mm: 11.1 / 12.2
+- HDD, 13 mm: 14.4 / 15.6
+- Blower, 18 mm: 19.4 / 20.9
+- `Crossovers.stl`, 9.2 mm: 17.3 / 18.7
+- xstranger's plate plus board, 21 mm estimated: 15.4 / 16.7. Free depth is 16.7 mm at its outer edge (X 150) and about 24 mm mid-plate. His finished build fits, so its stack is at most about 17 mm out there; treat that as the R9513's limit at that edge.
+
+**The LRS-150-12 doesn't fit while the stock blower stays.** `place_lrs150()` tried every 159 × 97 mm placement, both ways round in 4 mm steps, against the kept speakers, blower, duct and exhaust grille. The old PSU bay is only about 58 mm tall above the chin, so the box can't sit there flat. The left bay is 99 mm wide between the speaker and the duct, and the blower blocks it upright. The only clear spots are upright in the old logic-board area, where the driver board goes, and the most free depth any of them has is 17.9 mm against 30 mm needed. The centre has 26 mm and sits on the blower's duct. Even a case 47 mm deep, past every source, leaves at most 20 and 29 mm. So it's the external 12 V brick or the stock PSU.
+
+## What is still estimated
+
+These inputs are sourced only within a range:
+
+- the 4K panel's thickness (taken as the same as the 2K assembly)
+- the rear wall (1.5 ±0.5 mm)
+- the blower and speaker depths
+- the R9513 stack
+- the shape of the skin between the two drawing views (±2 mm at the corners)
+
+The calibrated model is self-consistent within those ranges. A single caliper pass on the donor removes the ranges. None of them can change the LRS-150 result: closing that gap would take 12 mm more depth.
 
 ## Other builds' parts, measured for reference
 
 Marco Markl's 27" set ([MakerWorld 1390804](https://makerworld.com/en/models/1390804-apple-imac-27-2017-conversion-to-5k-monitor)). Measured from his STLs (Aaron uploaded nine plus the USDZ, 2026-11-20; kept on the ClaudeCode VM at `~/project-files/imac-rack-display/markl-27in-5k-makerworld-1390804/`, not backed up and re-downloadable from MakerWorld; the measuring script is `stl_analyze.py` one level up): walls 2.0 mm (some 1.5 mm); hex vents 6.5 mm across flats (7.5 mm across corners); feet are 10.3 mm rings with 7.3 mm bores over the iMac's mounting points; M3 holes at 3.0 mm (self-tapping) and 3.4 mm (clearance), M2 at about 2.1 mm for the crossovers. Envelopes: driver-board cage 146 × 171 × 41 mm, controller-and-fan 135 × 125 × 40 mm, power-supply cage 174 × 112 × 24 mm (all 27"; the 21.5" case is shallower, so ours will be lower). The port cover is a 2.4 mm plate 123 × 19 mm with four 3.8 × 11.7 mm openings in a row plus a 25 × 1.7 mm slot; check whether the 21.5" port row matches before reusing its spacing. Cable ducts are 30 × 30 mm clips with a 6.8 × 12.4 mm channel.
 
 [KevDoy's 27" 2014 set on Printables](https://www.printables.com/model/311111-apple-imac-27-2014-5k-monitor-conversion) has an I/O door replacing the RAM door, mounted with the original screws (27" only; also blocks Claude). A community [iFixit guide](https://www.ifixit.com/Guide/Turn+Your+iMac+2015+into+a+monitor/181638) (a 27" Retina) reused original openings: HDMI, DP and camera cables through two USB openings joined into one, audio out through the Ethernet opening, and the power button's own two wires, kept from the bottom left, soldered to the control module's power button pins. Its author dropped the speakers on crossovers as "too nasal".
+
+**xstranger's build in full** (read from Aaron's screenshots 2026-11-20). no published dimensions exist for the A1418's rear openings or logic board port positions, so measuring stays necessary. [MakerWorld 2549010](https://www.makerworld.com/en/models/2549010), by xstranger, is a finished 2017 A1418 4K build (text and comments read from Aaron's screenshots 2026-11-20): an AliExpress 4K A1418 board on a printed `Mainboard.stl` adapter, fixed right of the fan tube on the two stand-hinge bolts (swapped for longer ones), crossovers on the matching bolts to its left, cables behind the fan tube; the **original PSU kept in its mount**, with a bought mating plug on its 6-pin harness (three +12 V, three ground) feeding the stock fan, a DC PWM fan controller (knob on the rear housing) and the display board; the PSU runs as soon as it's plugged in, no modification. The original fan tube reused with the heat pipes removed. USB openings slightly widened for cable passthrough, finished with a printed TPU gasket. Control buttons moved onto the stand. The iMac power button left unused; the designer says it only signalled the logic board and could be soldered in parallel with the board's power button. One commenter (PortoLAB, 2026-10-27) got a high-pitched whine from the original PSU with all lines reading 12 V and suspected too little load; the designer runs iMac PSUs in three monitors without it. A reviewer printed at 0.12 mm, 3 walls, 25% infill. Next: compare the designer's AliExpress board link with the R9513 listing; if it's the same board, use his `Mainboard.stl`. His nine STLs (Aaron uploaded them 2026-11-20) are on the VM at `~/project-files/imac-rack-display/xstranger-21in-4k-makerworld-2549010/`, measured with `stl_holes.py` one level up. `Mainboard.stl` holds the driver board on four M3 holes in a **56 × 106 mm** rectangle and fixes to the stand-hinge bolts (**24.0 mm apart**). The others hold the crossovers, the 7-button strip on the stand, the fan knob (`PWM.stl`, not needed) and small fillers. Their placement in the housing is in the plan-view section. Whether his `Mainboard.stl` fits the R9513 depends on its mounting holes matching 56 × 106 mm; ask the seller or measure on arrival. The two 27" builds are summarised in the section above.
 
 ## Measurements that close the model
 
@@ -90,7 +101,7 @@ With the display off, lay a straightedge across the rim and measure, with a dept
 - the PSU bay's two ends
 - X ±150 and ±200 at Y 170
 
-Also measure the display assembly's thickness at its centre and edges, the stock PSU's height at the bulk capacitors and the transformer, the blower's height, and one speaker's depth. Those replace every estimated input above. The model takes them as table edits in `src/model3d.py`.
+Also measure the display assembly's thickness, the stock PSU's height at the bulk capacitors and the transformer, the blower's height, and one speaker's depth. Those replace the remaining ranges. The model takes them as table edits in `src/model3d.py`.
 
 ## Files
 
