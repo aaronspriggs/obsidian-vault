@@ -48,7 +48,7 @@ Measured from his STLs (Aaron uploaded nine plus the USDZ, 2026-11-20; kept on t
 
 ## Open questions
 
-- Power: the MakerWorld build shows the original PSU can stay, but Aaron (2026-11-20) is wary of the whine one builder reported and leans to the external 12 V brick; Claude's alternative is a Mean Well LRS-150-12 inside, wired to the Apple AC inlet (stock cord), if it fits the old PSU's space. Decide before ordering.
+- Power: the MakerWorld build shows the original PSU can stay, but Aaron (2026-11-20) is wary of the whine one builder reported and leans to the external 12 V brick; Claude's alternative is a Mean Well LRS-150-12 inside, wired to the Apple AC inlet (stock cord), if it fits the old PSU's space. Decide before ordering. Aaron found end brackets for the LRS-200 case ([MakerWorld 2305588](https://makerworld.com/en/models/2305588), copy at `~/project-files/imac-rack-display/meanwell-lrs-200-brackets/`): they fit an LRS-200-12 (same case, 215 × 115 × 30 mm) but not the smaller LRS-150-12, and the -24 version is the wrong voltage for this 12 V board.
 - Cooling: Aaron doesn't want a manual fan knob (2026-11-20). Proposed: keep the stock blower and its intake-bottom, exhaust-behind-stand path, driven by a temperature-controlled 4-wire PWM module with an NTC probe on the board heatsink; a Noctua 40 mm on the heatsink only if testing shows hot spots. Apple fans swap 12 V and ground against the standard pinout (aiwipro).
 - Board: xstranger's AliExpress link opens a MacPanel Store listing (LM215UH1 SDA1/SDB1/SDC1 variants, $83.26, 1 review at 1.0 stars, 2 sold, seen 2026-11-20), not the R9513 listing; his `Mainboard.stl` fits his board. Compare the two boards' mounting holes before choosing.
 
