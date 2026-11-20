@@ -50,6 +50,6 @@ Researched, nothing bought. The donor, board and layout are chosen (below). What
 - Board: xstranger's AliExpress link opens a MacPanel Store listing (LM215UH1 SDA1/SDB1/SDC1 variants, $83.26, 1 review at 1.0 stars, 2 sold, seen 2026-11-20), not the R9513 listing; his `Mainboard.stl` fits his board. Compare the two boards' mounting holes before choosing.
 
 - What it displays and from which machine (a server console through a KVM, a dashboard source, or a Mac). The rack plan has room for a possible Mac Studio, not one in hand.
-- Measurements, taken at teardown: AC inlet opening size and edge thickness, recess depth, clearance to the stand hinge, how the inlet is held, Thunderbolt, USB-A and Ethernet opening sizes and spacing, port positions against the screw holes on the removed logic board, SD slot size, chin underside and intake slot, speaker connector and impedance.
+- Measurements, taken at teardown: AC inlet opening size and edge thickness, recess depth, clearance to the stand hinge, how the inlet is held, Thunderbolt, USB-A and Ethernet opening sizes and spacing, port positions against the screw holes on the removed logic board, SD slot size, chin underside and intake slot, the original PSU's footprint and height and the gap from rear housing to panel there (an LRS-150-12 is about 159 × 97 × 30 mm), speaker connector and impedance.
 - The rack's outside width on top, once the 30U rack arrives.
 - Whether the board restores its input after a power cut.
