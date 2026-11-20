@@ -53,6 +53,16 @@ Files, all on the ClaudeCode VM and not backed up:
 - `src/` holds the measuring and drawing scripts. `build.py` holds the calibration, and `svg.py` and `overlay.js` render the two images.
 - `ifixit-originals/` holds the source photos. They can be downloaded again from the iFixit guide API.
 
+**Model checked against xstranger's STLs (2026-11-20):** the 24.0 mm bolt spacing was one of the inputs for scaling the model, so it can't confirm anything. These checks are independent of it:
+
+- His `Mainboard.stl` plate, put on the right bolt pair and run outward, covers X 52 to 151 and Y 107 to 221. That fills the vacated logic-board area, 8 mm clear of the fan duct and 4 mm clear of the right speaker's lower edge. That is tight enough to suggest the model's duct, hinge and speaker positions agree with his real build, but the margins are inside the ±3 to 5 mm tolerance, so it doesn't prove them.
+- His `Crossovers.stl`, put on the left pair and run outward, sits in the empty HDD bay at X −149 to −52, Y 155 to 195. It is 17 mm below the blower and 7 mm clear of the duct.
+- His SD-slot cover in `HolesCovers.stl` is 26.4 mm long. The board photo gives the SD slot as about 27 mm.
+- `Plug.stl` is a 41.5 × 13.3 mm plug with a 1 mm lip. It most likely fills the four USB-A openings that he widened into one. My port centres give about 45 mm for that run, so either the openings are narrower than the 5.5 mm I assumed or the pitch reads about 1 mm high. Check at teardown.
+- `CameraMount.stl` has screw holes 41.4 mm apart. The photo shows no clear screw heads at the camera, so this was not checked.
+
+Both plates are drawn in the model files, as features 23 to 25.
+
 **Wiring:** the iMac power button's two wires joined to the GND and POWER wires of the button strip's ribbon (Markl's method); speakers on the 4-pin header, simplest in series without crossovers ([jorycz](https://github.com/jorycz/iMac-5K-display-convert) lists the 27" speaker pinout and a crossover option); set the OSD before sealing.
 
 **Budget:** donor $190 + board $88 + brick ~$30 + extensions, adhesive and wire ~$40. Selling the donor's logic board, i7-7700, RAM, PSU and drives (estimated $100-150 net) and the 2011 iMac (estimated $80-150, boxed) covers most of it.
