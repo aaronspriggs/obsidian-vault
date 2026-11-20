@@ -7,7 +7,7 @@ system:
 
 # Modelled the A1418 housing in plan and depth from iFixit photos and public drawings
 
-For [Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack](<../projects/Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack.md>). Aaron asked for a model of the 2017 21.5" Retina 4K (A1418, iMac18,2) housing to plan the printed parts against, then for its depth: how much room there is behind the display and whether each component fits. Nothing has been measured on a real unit yet; the donor isn't bought. The plan view is good to about ±3 mm at the centre. The depth model uses LG's spec for the display assembly (11.05 mm) and is calibrated so every part Apple ships fits, with the case 43.6 mm deep, inside the published 38.8–44.3 mm range. What is still a range is listed under "What is still estimated".
+For [Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack](<../projects/Convert a 21.5-inch Retina 4K iMac into a display for the top of the 30U rack.md>). Aaron asked for a model of the 2017 21.5" Retina 4K (A1418, iMac18,2) housing to plan the printed parts against, then for its depth: how much room there is behind the display and whether each component fits. Nothing has been measured on a real unit yet; the donor isn't bought. The plan view is good to about ±3 mm at the centre. The depth model uses LG's spec for the display assembly (11.05 mm). Its skin is fitted so the stock PSU, HDD and blower clear, giving a case 43.6 mm deep, inside the published 38.8–44.3 mm range. That fit assumes the stock PSU is about 16 mm, which is inferred, and the sides are unvalidated; see "What is still estimated".
 
 ## Plan view (X, Y)
 
