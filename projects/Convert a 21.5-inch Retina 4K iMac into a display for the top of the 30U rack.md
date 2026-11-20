@@ -61,6 +61,8 @@ Files, all on the ClaudeCode VM and not backed up:
 - `Plug.stl` is a 41.5 × 13.3 mm plug with a 1 mm lip. It most likely fills the four USB-A openings that he widened into one. My port centres give about 45 mm for that run, so either the openings are narrower than the 5.5 mm I assumed or the pitch reads about 1 mm high. Check at teardown.
 - `CameraMount.stl` has screw holes 41.4 mm apart. The photo shows no clear screw heads at the camera, so this was not checked.
 
+Scale cross-check, same day: Aaron asked whether a print dimension could set the grid instead. The two photos were already scaled independently. One used xstranger's 24.0 mm bolt pair. The other used the 528 mm case width plus the 2.5" drive. Three standoffs are visible in both photos, and the bolt-scaled distances between them come out within 0.2 mm, 0.1 mm and 2.8 mm of the case-scaled ones. The last pair has one ring partly hidden. Scaling everything from the bolts instead would put the case at 528.5 mm wide, a 0.1% change. So no rescale: the print, Apple's case width and the drive all agree to within about 0.5%. What's left in the error budget is picking points by eye on the photos (about 1–2 mm) and parts sitting at different depths.
+
 Both plates are drawn in the model files, as features 23 to 25.
 
 **Wiring:** the iMac power button's two wires joined to the GND and POWER wires of the button strip's ribbon (Markl's method); speakers on the 4-pin header, simplest in series without crossovers ([jorycz](https://github.com/jorycz/iMac-5K-display-convert) lists the 27" speaker pinout and a crossover option); set the OSD before sealing.
