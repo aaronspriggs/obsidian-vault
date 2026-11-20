@@ -45,7 +45,9 @@ Researched, nothing bought. The donor, board and layout are chosen (below). What
 
 ## Open questions
 
-- Power: the MakerWorld build shows the original PSU can stay (no brick, stock power cord and inlet), which would replace the external-brick decision and move the DC jack and DP plate out of the AC inlet; the DP input would then go in the Ethernet opening. Pending Aaron.
+- Power: the MakerWorld build shows the original PSU can stay, but Aaron (2026-11-20) is wary of the whine one builder reported and leans to the external 12 V brick; Claude's alternative is a Mean Well LRS-150-12 inside, wired to the Apple AC inlet (stock cord), if it fits the old PSU's space. Decide before ordering.
+- Cooling: Aaron doesn't want a manual fan knob (2026-11-20). Proposed: keep the stock blower and its intake-bottom, exhaust-behind-stand path, driven by a temperature-controlled 4-wire PWM module with an NTC probe on the board heatsink; a Noctua 40 mm on the heatsink only if testing shows hot spots. Apple fans swap 12 V and ground against the standard pinout (aiwipro).
+- Board: xstranger's AliExpress link opens a MacPanel Store listing (LM215UH1 SDA1/SDB1/SDC1 variants, $83.26, 1 review at 1.0 stars, 2 sold, seen 2026-11-20), not the R9513 listing; his `Mainboard.stl` fits his board. Compare the two boards' mounting holes before choosing.
 
 - What it displays and from which machine (a server console through a KVM, a dashboard source, or a Mac). The rack plan has room for a possible Mac Studio, not one in hand.
 - Measurements, taken at teardown: AC inlet opening size and edge thickness, recess depth, clearance to the stand hinge, how the inlet is held, Thunderbolt, USB-A and Ethernet opening sizes and spacing, port positions against the screw holes on the removed logic board, SD slot size, chin underside and intake slot, speaker connector and impedance.
