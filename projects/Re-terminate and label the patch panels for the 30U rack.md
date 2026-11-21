@@ -59,7 +59,7 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 - The vault files hold map v12 and rack v17 (checked 2026-11-15): `attachments/Rack - 30U floor rack proposed layout.svg` (the diagram source of truth), `Rack - 30U rack layout page.html`, and the physical patching view ![Top of rack patching](<../attachments/Rack - 30U top of rack patching front view.svg>)
 - Generators, which hard-code the map: [unifi/rack-panels.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-panels.py) (panel front view and port map, in the SVG and the page), [unifi/rack-patching.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-patching.py) (patching view; re-splice the page between its `patching:start`/`patching:end` markers) and [unifi/rack-docwidget.py](https://github.com/aaronspriggs/spriggs-homelab/blob/main/unifi/rack-docwidget.py) (the doc's widgets). When the map changes, change all three and regenerate.
 - Doc artifact, the working copy, editable from any VM session through the Claude Docs connector: [30U rack — patch panels and layout](https://claude.ai/artifact/4y1iZZLXsEYS9URxmAcKwp), last redrawn to v12 / rack v16.
-- HTML page [30U floor rack](https://claude.ai/artifact/WGjYYkQUgNJvS256sGvmDG), published from the vault's HTML file; last recorded as republished with map v4. Republishing needs a session that has the `Artifact` tool: edit the vault file first, then publish it to that URL.
+- HTML page [30U floor rack](https://claude.ai/artifact/WGjYYkQUgNJvS256sGvmDG), published from the vault's HTML file; the live page shows rack v17 and map v12 (read 2026-11-21). Republishing needs a session that has the `Artifact` tool: edit the vault file first, then publish it to that URL.
 
 ## Decisions
 
@@ -82,4 +82,4 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 
 - Port and SFP+ cage numbering on the Enterprise 48: the map assumes odd ports on the top row, even on the bottom. Check on arrival; if different, change `top_port`/`bottom_port` in rack-panels.py and regenerate.
 - Pro Max port 4 feeds the Ring keypad's PoE converter: Aaron believes so, not verified.
-- Republish the HTML page from the vault file, and redraw the doc artifact to rack v17.
+- Redraw the doc artifact to rack v17.
