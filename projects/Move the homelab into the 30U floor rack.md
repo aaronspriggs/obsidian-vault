@@ -7,14 +7,16 @@ system:
 - '[[UniFi (UDM Pro)]]'
 - '[[UniFi UPS 2U]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-17: waiting on the 30U rack, the Enterprise 48, the PDU Pro and the 12S4 (arrivals not recorded). Then the gear moves to layout v17 and the runs are re-terminated to patch map v12. No measuring of the 12S4 on arrival (Aaron, 2026-11-17: it will fit).'
+next_step: '2026-11-21: the 30U rack is assembled (Aaron). He is mounting the new gear now without shutting the 12U down: panels, shelves, brush plates, Enterprise 48 and PDU Pro, with the switch adopted on a temporary uplink so Claude can confirm its port numbering. Still to record: whether the Enterprise 48, PDU Pro and 12S4 have arrived. The cutover (Big Boi down, gear moved to layout v17, runs re-terminated to patch map v12) comes later.'
 ---
 
 ## Goal
 
 Move everything from the full 12U wall rack into a 30U floor rack, laid out so the rebuilt Big Boi (6U), a second server, the AV receiver and the new switch all fit with room to grow. Split out of [Rebuild Big Boi](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>) on 2026-11-15, when that note was slimmed; the layout drafts v3 to v15 are in that note's git history (2026-11-11 to 2026-11-15).
 
-## Status (2026-11-15)
+## Status (2026-11-21)
+
+The 30U rack is assembled (Aaron, 2026-11-21). Nothing in the 12U has moved.
 
 Layout v17 is agreed, together with patch map v12. Ordered: the 30U rack, the USW Enterprise 48 PoE ($851 with shipping and tax), the PDU Pro and the rack accessories (2026-11-12, itemised list not recorded). Nothing has moved yet. The cabling half of the move is [Re-terminate and label the patch panels for the 30U rack](<Re-terminate and label the patch panels for the 30U rack.md>); the gear that leaves is in [Sell the network gear retired by the 30U rack move](<Sell the network gear retired by the 30U rack move.md>).
 
