@@ -32,7 +32,7 @@ Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM
 | CPU | Intel i9-9900 | Keep |
 | CPU cooler | Candidate: Noctua NH-U9S | Open (see Open questions) |
 | RAM | 4× 32 GB = 128 GB: the existing CMK64GX4M2D3600C18 kit plus a second identical one | Bought 2026-11-07 |
-| NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep |
+| NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep; needs a full-height bracket for the 12S4 (Aaron can't find the original, 2026-11-22). Single port only: the Enterprise 48's 4 SFP+ cages are all allocated (patch map v12) |
 | Boot | Patriot P300 128 GB NVMe (today's boot drive, moves over with the boot pool) in M2P | Have (Aaron 2026-11-08) |
 | PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift); add 1× Corsair Type 4 Molex cable (CP-8920199 or CP-8920196) to its stock 2 | **Bought** (Aaron, 2026-11-08); Molex cable to buy |
 | Case fans | Aaron's own, 120 × 25 and 92 × 25, 4-pin PWM | Have (Aaron 2026-10-26) |
