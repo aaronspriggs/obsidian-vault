@@ -15,7 +15,7 @@ Rebuild Big Boi (TrueNAS SCALE) into a new case with new hardware, so it runs tw
 
 ## Status (2026-11-15)
 
-Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM kit (2026-11-07), PSU (2026-11-08) and GPU (2026-11-09). Arrived or in hand as far as recorded: the GPU and the backplane cables (2026-11-17). Still to buy: one Molex cable, a CPU cooler and the HDDs. Slimmed 2026-11-15: research is in the change notes linked below, the rack move is its own project, the earlier text is in git history.
+Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM kit (2026-11-07), PSU (2026-11-08) and GPU (2026-11-09) and NIC (2026-11-22). Arrived or in hand as far as recorded: the GPU and the backplane cables (2026-11-17). Still to buy: one Molex cable, a CPU cooler and the HDDs. Slimmed 2026-11-15: research is in the change notes linked below, the rack move is its own project, the earlier text is in git history.
 
 ![Proposed layout](<../attachments/Big Boi rebuild - proposed layout.svg>)
 
@@ -32,7 +32,7 @@ Ordered or bought: the case (2026-10-26), HBA and board (2026-10-28), second RAM
 | CPU | Intel i9-9900 | Keep |
 | CPU cooler | Candidate: Noctua NH-U9S | Open (see Open questions) |
 | RAM | 4× 32 GB = 128 GB: the existing CMK64GX4M2D3600C18 kit plus a second identical one | Bought 2026-11-07 |
-| NIC | 10Gtek Intel 82599EN in PCIEX4 | Keep; needs a full-height bracket for the 12S4 (Aaron can't find the original, 2026-11-22). Single port only: the Enterprise 48's 4 SFP+ cages are all allocated (patch map v12) |
+| NIC | Intel X520-DA2 (E10G42BTDA, 82599ES, 2× SFP+), used, full-height bracket, in PCIEX4; one port used | **Bought 2026-11-22** (eBay seller ZETA INC AI, listed at $39; delivery Nov 25–28). On arrival check the full-height bracket is fitted |
 | Boot | Patriot P300 128 GB NVMe (today's boot drive, moves over with the boot pool) in M2P | Have (Aaron 2026-11-08) |
 | PSU | Corsair RM1000x ATX 3.1 (2024, non-Shift); add 1× Corsair Type 4 Molex cable (CP-8920199 or CP-8920196) to its stock 2 | **Bought** (Aaron, 2026-11-08); Molex cable to buy |
 | Case fans | Aaron's own, 120 × 25 and 92 × 25, 4-pin PWM | Have (Aaron 2026-10-26) |
@@ -48,6 +48,7 @@ Slots: GPU in PCIEX16 and HBA in PCIEX8 (x8/x8), NIC in PCIEX4, NVMe boot in M2P
 3. Board: flash the latest BIOS (F11a) first. The i9-9900 needs F6 or newer, Resizable BAR for the A380 needs F9, and some Z390 boards need an update for 32 GB DIMMs. The seller says the BIOS was updated (Aaron, 2026-11-02), version unknown; a board older than F6 can only be flashed with an older CPU fitted.
 4. Before turning CSM off for the A380, check Big Boi boots UEFI (`[ -d /sys/firmware/efi ]`).
 5. RAM: XMP 3600 first, then voltage, then 3466 or 3200; a long memtest pass either way.
+6. Network: the X520-DA2 port with the DAC gets a new interface name (not `enp1s0`). Rebuild `br0` on it from the console before starting the VMs, then check VM connectivity (`br0` rolled back once when first created). Leave the second port unconfigured.
 
 ### Migration
 
@@ -70,6 +71,7 @@ Build new, move the SSD pool, create the HDD pool, replicate the media across. D
 - **2026-11-08 (Aaron, decided earlier in conversation): PSU is the Corsair RM1000x (2024, non-Shift), not the SF750,** because the SF750 has 3 peripheral sockets for 3 backplanes plus 5 SSDs. This replaces the 2026-10-25 plan to keep the SF750 and feed the backplanes from 2 Molex cables. One cable for all three was never an option: the seller marks it incorrect, and 12 drives starting together would pull about 23 A through one 12 V wire. Rejected on the way: the RM1000x Shift (Aaron, 2026-11-01: a standard ATX PSU only just fits the 12S4 top to bottom, so there's no room for side connectors), and five smaller units with 3 or 4 peripheral sockets (named in the research note). The SF750 stays with the old box. [Research](<../changes/2026-11-01 Researched backplane power and PSUs for the Big Boi rebuild.md>).
 - **2026-11-09 (Aaron): GPU is an Intel Arc A380, for AV1 encode.** On 2026-10-25 a future GPU was to be Nvidia, because Intel supports Arc only on 10th gen and newer. On 2026-10-28 he set the rule for the AV1 card: Nvidia only if one with AV1 encode costs about $200, otherwise an A380; the cheapest Nvidia encoders cost more. For an LLM card he said on 2026-10-28 that about $700 was more than he wanted to spend (an RTX 3060 12 GB at about $290, or deferring, were the options), and on 2026-11-07 it went out of scope. On 2026-11-09 the last objection went: the 10th-gen floor is Intel's Resizable BAR validation, and the Designare has ReBAR from BIOS F9 (Gigabyte's support page). It was ordered that day, ahead of the planned check that the 4th-gen Apple TV (2026-11-13) direct-plays AV1 in Plex. [Research, including the LLM cards](<../changes/2026-10-28 Researched GPUs for the Big Boi rebuild (AV1 encode and local LLMs).md>).
 - **2026-11-08 (Aaron): the old box (ASRock Z390M-ITX/ac, i5-9400, 8 GB, 256 GB SATA SSD, SF750) won't host Home Assistant or the ClaudeCode VM.** HA downtime isn't a big concern, the box is overkill for it, and Big Boi's 128 GB is meant to carry the VMs. It stays intact as known-good spare parts until the rebuild is stable, then gets sold unless another use turns up. Its 2U case stays in the rack as a second server (2026-11-12, rack project).
+- **2026-11-22 (Aaron): NIC is a used Intel X520-DA2, replacing the 10Gtek 82599EN,** because the 82599EN's full-height bracket is lost (it's low-profile, from the 2U case) and single-port X520-DA1 full-height brackets weren't for sale. Same 82599 family and `ixgbe` driver, so the DAC behaves as today. One port only: the Enterprise 48's 4 SFP+ cages are all allocated (patch map v12), and PCIEX4 (PCIe 2.0 x4 for this card, about 16 Gb/s) couldn't run both at full speed anyway. Rejected: a DA2 bracket on the DA1 board (different layout), an X710-DA2 (stricter module checks, its PCIe 3.0 not needed for one port), Amazon clones (a Vimin dual-port with both brackets was acceptable; the Intel pull was cheaper with a better seller record). The 82599EN keeps its low-profile bracket and stays a spare; it fits the old 2U case if the second server needs 10G.
 - **2026-11-08 (Aaron): no offsite box for now.** The old box's MyElectronics 2U Mini-ITX case has no 3.5" bays. Only `plex_content` (2,111 GB; `vmstore` is 309 GB, everything else under 2 GB, TrueNAS API 2026-11-08) would justify one, what's irreplaceable is already in B2 ([B2 runbook](<../runbooks/Offsite backup to B2 - what's covered and how to restore.md>)), and re-ripping is an acceptable worst case.
 
 ## Open questions
