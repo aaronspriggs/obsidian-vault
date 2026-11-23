@@ -23,4 +23,4 @@ Aaron asked what the new UniFi gear needs. The core switch and the PDU had no of
 
 ## Notes
 
-Findings left for Aaron, in the rack and patch panel projects: the Enterprise 48's STP priority is the default 32768 while the Upstairs Flex has 8192; the PDU's measured 171 W against the UPS's 160 W output says the PDU isn't on a UPS battery outlet as planned (or Big Boi, the UDM and the switch are on the PDU); the switch's first temperature read is 62 °C. Roll back the labels with `ha_set_entity(..., labels=['homelab_watch'], label_operation='remove')` and `alert2.reload`.
+Findings left for Aaron, in the rack and patch panel projects: the Enterprise 48's STP priority is the default 32768 while the Upstairs Flex has 8192; the PDU's measured 171 W against the UPS's 160 W output looked like the PDU wasn't on battery (corrected the same day: Aaron says the PDU is on a UPS battery outlet and feeds everything else, so it was meter disagreement); the switch's first temperature read is 62 °C. Roll back the labels with `ha_set_entity(..., labels=['homelab_watch'], label_operation='remove')` and `alert2.reload`.
