@@ -9,7 +9,7 @@ system:
 - '[[USW Enterprise 48 PoE]]'
 - '[[USP PDU Pro]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. System notes for the Enterprise 48 and PDU Pro written 2026-11-23. Open with Aaron: what feeds the PDU Pro and what is on each outlet (Open questions); forget the Pro Max 16, Basement Flex in UniFi.'
+next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. System notes for the Enterprise 48 and PDU Pro written 2026-11-23. Open with Aaron: name the PDU outlets, and whether Big Boi moves to its own UPS battery outlet (Open questions); forget the Pro Max 16, Basement Flex in UniFi.'
 ---
 
 ## Goal
@@ -58,7 +58,7 @@ The drawing is `attachments/Rack - 30U floor rack proposed layout.svg` (source o
 
 ### Power
 
-The UPS 2U's four battery outlets go to Big Boi, the UDM Pro, the Enterprise 48 and the PDU Pro (Aaron, 2026-11-15), so the hub shelf, second server and Sonos Amp are on battery through the PDU and no battery outlet is spare. The Denon (460 W rated) goes on a UPS surge-only outlet, not the PDU; so would a future GPU box. A second server on the UPS-fed PDU needs its own NUT client to shut down cleanly. Estimated UPS load is 350–400 W, about 15 min of runtime (an estimate, not measured); the PoE-only estimate is in the patch panel note.
+As built (Aaron, 2026-11-23): one UPS 2U battery outlet feeds the PDU Pro and every other device in the rack plugs into the PDU, leaving three battery outlets free. The plan was that the four battery outlets go to Big Boi, the UDM Pro, the Enterprise 48 and the PDU Pro (Aaron, 2026-11-15), so the hub shelf, second server and Sonos Amp are on battery through the PDU and no battery outlet is spare. The Denon (460 W rated) goes on a UPS surge-only outlet, not the PDU; so would a future GPU box. A second server on the UPS-fed PDU needs its own NUT client to shut down cleanly. Estimated UPS load is 350–400 W, about 15 min of runtime (an estimate, not measured); the PoE-only estimate is in the patch panel note.
 
 ### Weight
 
@@ -81,7 +81,7 @@ About 152–176 lb with 4 HDDs in Big Boi and 164–188 lb with 12, against the 
 
 ## Open questions
 
-- **What feeds the PDU Pro, and what is on each outlet?** (Claude, 2026-11-23.) The plan puts the PDU on a UPS battery outlet, but at the same moment the PDU measured 171 W and the UPS output 160 W, which can't both hold if the PDU plus Big Boi, the UDM Pro and the Enterprise 48 are all behind the UPS. Busy outlets: 6 (103 W), 20 (32 W), 5 (23 W), 8 (8 W), 15, 17, 18 (1–2 W each). Naming the outlets in UniFi gives HA's sensors names. UPS: 93% battery and 47.5 min runtime at 160 W, still charging after the cutover.
+- **What is on each PDU outlet?** Answered in part (Aaron, 2026-11-23): the PDU Pro is on one UPS battery outlet and everything else in the rack plugs into the PDU, so all of it is on battery (the 171 W PDU against 160 W UPS reading was meter disagreement). Still to do: name the outlets in UniFi so HA's sensors carry names. Claude suggested moving Big Boi to its own UPS battery outlet so a PDU fault, a mis-toggled outlet or a PDU firmware update can't cut its power without the NUT shutdown; Aaron hasn't decided. UPS: 93% battery and 47.5 min runtime at 160 W, still charging after the cutover.
 
 - Rack top venting or a roof fan: the Enterprise 48 (150 W before PoE) sits at U29. First read after the cutover: 62 °C (143.6 °F) internal; decide from a week of `sensor.usw_enterprise_48_poe_temperature` history.
 - The StarTech tray's inside width against the Denon's 434 mm.
