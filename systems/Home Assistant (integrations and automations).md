@@ -8,7 +8,7 @@ last_verified: 2026-11-15
 repo: https://github.com/aaronspriggs/spriggs-homelab/tree/main/ha
 ---
 
-Home Assistant itself: logins, Claude's ha-mcp access, integrations, automations, update approvals and the Alert2 homelab alerting. Core 2026.11.0 on 2026-11-15.
+Home Assistant itself: logins, Claude's ha-mcp access, integrations, automations, update approvals and the Alert2 homelab alerting. Core 2026.11.2 on 2026-11-23.
 
 ## Overview
 
@@ -24,7 +24,7 @@ Home Assistant Core and its configuration, running on the [Home Assistant OS VM]
 
 ## Config
 
-**Versions and size:** Core 2026.11.0 (2026.11.1 available), Python 3.14.10. 1,520 entities, 5 dashboards, 14 scenes, no scripts. Recorder: SQLite, 857 MiB, history since 2026-10-30. One repair is open (Nest `legacy_pubsub_topic`, since 2026-11-09); no persistent notifications.
+**Versions and size (2026-11-23):** Core 2026.11.2, Python 3.14.10; nothing pending in the Marketplace. 1,520 entities, 5 dashboards, 14 scenes, no scripts. Recorder: SQLite, 857 MiB, history since 2026-10-30. One repair is open (Nest `legacy_pubsub_topic`, since 2026-11-09); no persistent notifications.
 
 **Store:** HACS became the built-in Marketplace in Core 2026.11. It refuses installs and updates ("Open the Marketplace and read the warning first") until its custom-code warning is accepted, and HA keeps that acceptance per user: Aaron accepted it for his login on 2026-11-23, and ha-mcp (the `claude` user) needs its own, through `ha_manage_hacs(action="accept_warning", confirm=True)` once Aaron says he has read it. 22 repositories are installed: 9 integrations, 12 dashboard cards and one theme. Five integrations with no config entry (Amplifi, Raspberry Pi GPIO, Raspberry Pi GPIO PWM, Stream Deck, Dyson Cloud) were removed on 2026-11-15. Still odd: the store lists two repositories for the one folder `custom_components/dyson_local`, `libdyson-wg/ha-dyson` (the code on disk, with its own cloud module) and the older `shenxn/ha-dyson`; left alone, because removing the stale entry through the store could delete the folder both point at. Dyson VOC and NO₂ come only as the `*_volatile_organic_compounds_index` and `*_nitrogen_dioxide_index` sensors (a low-is-good index, not µg/m³); the old raw entities were orphans and were removed on 2026-11-22.
 
@@ -35,7 +35,7 @@ Home Assistant Core and its configuration, running on the [Home Assistant OS VM]
 - Media: Sonos, Google Cast, Apple TV, Living Room TV (HomeKit controller), Denon AVR, Radio Browser.
 - Cameras: **UniFi Protect** (entry "Dream-Machine-Pro", host 192.168.1.1, API-key-only mode since 2026-10-20, key in 1Password `Unifi Protect - HA API Key`) gives the G6 Instant 38 entities, among them `camera.g6_instant_high_resolution_channel`, motion and smart-detection sensors and events. Nest carries cameras only since the thermostats left it on 2026-10-17.
 - HomeKit: HA exposes six single accessories to Apple Home (four Nest cameras, "Kitchen" and the Office Floor Lamp). The bridge "Home Assistant - Homekit Bridge" is disabled (see Decisions).
-- Homelab: UniFi Network, Uptime Kuma, Dockhand (`raetha/ha-dockhand`), System Monitor, ha-mcp, and MQTT (26 entities) on the VM's Mosquitto broker.
+- Homelab: UniFi Network, Uptime Kuma, Dockhand (`raetha/ha-dockhand` 2.1.0 since 2026-11-23: environment settings are switches such as `switch.big_boi_update_checks` and `switch.big_boi_auto_update`, and Dockhand itself has `update.dockhand_192_168_1_248_3001`, which stays off because precise update versions are off), System Monitor, ha-mcp, and MQTT (26 entities) on the VM's Mosquitto broker.
 - Other: Met.no weather, Sun, Backup and Google Drive (the backup target; backups are in the VM's note).
 - Helpers: Battery Notes (126 entities), 11 template sensors (Home Health and `sensor.homelab_issue_count`), the `sensor.water_usage` utility meter, 4 input helpers and 3 timers.
 
