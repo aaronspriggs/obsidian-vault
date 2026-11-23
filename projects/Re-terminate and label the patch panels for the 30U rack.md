@@ -7,7 +7,7 @@ system:
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
 parent: '[[Move the homelab into the 30U floor rack]]'
-next_step: '2026-11-15: Enterprise 48 ordered. On arrival confirm its port and SFP+ cage numbering; then during the 30U move Aaron re-terminates, colours and labels to v12, and Claude moves the UniFi port settings to their new ports after checking HA automations for port-specific PoE entities.'
+next_step: '2026-11-23: re-terminated and patched during the cutover (Aaron). Port numbering confirmed live: A n = port 2n-1, B n = port 2n. Next: Aaron answers the findings under Open questions; then Claude sets the UniFi port names (needs a UniFi write route or Aaron in the UI) and checks HA automations for port-specific PoE entities.'
 ---
 
 ## Goal
@@ -80,6 +80,9 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 
 ## Open questions
 
-- Port and SFP+ cage numbering on the Enterprise 48: the map assumes odd ports on the top row, even on the bottom. Check on arrival; if different, change `top_port`/`bottom_port` in rack-panels.py and regenerate.
-- Pro Max port 4 feeds the Ring keypad's PoE converter: Aaron believes so, not verified.
+- **Confirmed 2026-11-23 (Claude, UniFi API):** odd ports on the top row, even on the bottom, as the map assumed. The clients on each port matched v12: Hue, Lutron and HDHomeRun on 2, 4 and 6 (B1–B3), the wall Pi on 17 (A9), Kitchen Sonos 2 on 21 (A11), UPS and PDU Pro on 26 and 28 (B13–B14), the Front and Back APs on 30 and 32 (B15–B16), the Upstairs and desk Flexes on 38 and 40 (B19–B20). Big Boi's DAC is on SFP+ 2 (port 50) and the UDM's on SFP+ 4 (port 52, the switch's uplink to UDM SFP+ 11). Which physical cages those are isn't confirmed.
+- Kitchen Sonos 1 is on port 33 (A17, the main-floor Presence Pro's position), and port 19 (A10) is empty: either the run or the patch cord is in the wrong place.
+- The Upstairs Flex draws 17 W of PoE (Class 4) from port 38. v12 has it on its own 210 W adapter with the port carrying data only.
+- Ring keypad, port 13 (A7): no link, 0.5 W of PoE (Class 3). It was the same on the Pro Max before the move (port 4: down, 0.63 W), so the move didn't cause it.
+- Not on the switch yet: Sonos Amp (B4, port 8) and Denon (B5, port 10).
 - Redraw the doc artifact to rack v17.

@@ -7,7 +7,7 @@ system:
 - '[[UniFi (UDM Pro)]]'
 - '[[UniFi UPS 2U]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-23: cutover started. Maintenance mode on (Claude, before shutdown); Aaron shuts everything down by hand and moves it. After power-up Claude checks the baseline under Status, adopts nothing (UniFi is read-only: Aaron adopts the Enterprise 48 and PDU Pro), confirms the Enterprise 48 port numbering, then turns maintenance mode off.'
+next_step: '2026-11-23: cutover done (Aaron); Big Boi is in its 2U case at U19-U20 until the 12S4 rebuild. Checked after power-up except HA: VMs, pool, Dockhand stacks, UniFi and Zigbee passthrough OK. Next: check HA through ha-mcp (it failed to connect because HA was still booting) and turn maintenance mode off; get Aaron''s answers on the open findings in Status (Kitchen Sonos 1 port, Upstairs Flex PoE, SFP+ cages, Sonos Amp and Denon); write System notes for the Enterprise 48 and PDU Pro.'
 ---
 
 ## Goal
@@ -15,6 +15,8 @@ next_step: '2026-11-23: cutover started. Maintenance mode on (Claude, before shu
 Move everything from the full 12U wall rack into a 30U floor rack, laid out so the rebuilt Big Boi (6U), a second server, the AV receiver and the new switch all fit with room to grow. Split out of [Rebuild Big Boi](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>) on 2026-11-15, when that note was slimmed; the layout drafts v3 to v15 are in that note's git history (2026-11-11 to 2026-11-15).
 
 ## Status (2026-11-23)
+
+**Cutover done 2026-11-23 (Aaron).** Big Boi went in at U19–U20 in its old 2U case (Aaron), the second server's slot in v17, until it moves to the 12S4 at U12–U17. Checked by Claude after power-up: all three VMs running, pool Big Boi ONLINE and healthy, TrueNAS UPS service running, the Dockhand containers all running, the Zigbee dongle back on `usb_1_5`. UniFi: the Enterprise 48 (192.168.1.79, firmware 7.6.11) and PDU Pro (192.168.1.128) adopted; the Pro Max 16 and Basement Flex offline and still adopted; WAN1 up on UDM port 9, UDM SFP+ 11 up at 10G. Home Assistant answered on 8123, but ha-mcp had failed to connect at session start, so HA itself and maintenance mode are not checked yet. Findings for Aaron are in the patch panel note's Open questions.
 
 Cutover started 2026-11-23; baseline read by Claude before the shutdown, to check against after power-up. Big Boi VMs, all autostart and running: HomeAssistant (id 3), Plex (4), ClaudeCode (5). HA's Zigbee dongle (Silicon Labs CP210x, 10c4:ea60) is passed through by USB port, `usb_1_5` (bus 1, port 5), not by vendor and product ID: if it comes back on a different port or through a hub, HA loses Zigbee until the VM's USB device is changed in TrueNAS (Claude's `claude-maint` key can't edit VM devices). UniFi had 10 devices online, the old Basement USW Flex (USF5P) already offline; the Enterprise 48 and PDU Pro were not adopted yet. UDM Pro storage is eMMC only (no HDD).
 
