@@ -7,14 +7,16 @@ system:
 - '[[UniFi (UDM Pro)]]'
 - '[[UniFi UPS 2U]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-21: the 30U rack is assembled (Aaron). He is mounting the new gear now without shutting the 12U down: panels, shelves, brush plates, Enterprise 48 and PDU Pro, with the switch adopted on a temporary uplink so Claude can confirm its port numbering. Still to record: whether the Enterprise 48, PDU Pro and 12S4 have arrived. The cutover (Big Boi down, gear moved to layout v17, runs re-terminated to patch map v12) comes later.'
+next_step: '2026-11-23: cutover started. Maintenance mode on (Claude, before shutdown); Aaron shuts everything down by hand and moves it. After power-up Claude checks the baseline under Status, adopts nothing (UniFi is read-only: Aaron adopts the Enterprise 48 and PDU Pro), confirms the Enterprise 48 port numbering, then turns maintenance mode off.'
 ---
 
 ## Goal
 
 Move everything from the full 12U wall rack into a 30U floor rack, laid out so the rebuilt Big Boi (6U), a second server, the AV receiver and the new switch all fit with room to grow. Split out of [Rebuild Big Boi](<Rebuild Big Boi into a new case with an HDD pool for bulk media.md>) on 2026-11-15, when that note was slimmed; the layout drafts v3 to v15 are in that note's git history (2026-11-11 to 2026-11-15).
 
-## Status (2026-11-21)
+## Status (2026-11-23)
+
+Cutover started 2026-11-23; baseline read by Claude before the shutdown, to check against after power-up. Big Boi VMs, all autostart and running: HomeAssistant (id 3), Plex (4), ClaudeCode (5). HA's Zigbee dongle (Silicon Labs CP210x, 10c4:ea60) is passed through by USB port, `usb_1_5` (bus 1, port 5), not by vendor and product ID: if it comes back on a different port or through a hub, HA loses Zigbee until the VM's USB device is changed in TrueNAS (Claude's `claude-maint` key can't edit VM devices). UniFi had 10 devices online, the old Basement USW Flex (USF5P) already offline; the Enterprise 48 and PDU Pro were not adopted yet. UDM Pro storage is eMMC only (no HDD).
 
 The 30U rack is assembled (Aaron, 2026-11-21). Nothing in the 12U has moved.
 
