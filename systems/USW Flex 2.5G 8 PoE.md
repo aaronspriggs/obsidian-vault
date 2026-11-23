@@ -2,22 +2,22 @@
 status: active
 category: network
 ip: 192.168.1.24
-last_verified: 2026-11-19
+last_verified: 2026-11-23
 notion_id: 3087ae76-22ba-81b9-a191-ebeeb66ad5df
 ---
 
-Upstairs switch (UniFi name "USW Flex 2.5G 8 PoE - Upstairs"), in the upstairs utility room. Uplinked to USW Pro Max port 15 at 2.5 GbE and powered by PoE from it. Hosts the U7 Pro - Upstairs AP.
+Upstairs switch (UniFi name "USW Flex 2.5G 8 PoE - Upstairs"), in the upstairs utility room. Uplinked to [USW Enterprise 48 PoE](<USW Enterprise 48 PoE.md>) port 38 (patch B19) at 2.5 GbE since the 30U cutover (2026-11-23), still powered by PoE from it until its 210 W adapter is plugged in. Hosts the U7 Pro - Upstairs AP.
 
 ## Overview
 
-Feeds the second floor: the U7 Pro - Upstairs AP and the other 2nd-floor runs. It takes its power from Pro Max port 15 (15.5 W drawn, 2026-11-15), which caps its own PoE budget at 46 W. A second, identical model sits in the rack: "USW Flex 2.5G 8 PoE - Basement" (verified live 2026-11-15) runs on its own adapter with a 196 W PoE budget, uplinked at 1 GbE to Pro Max port 12 with nothing else connected yet; it has no note of its own yet, and its planned use is in [[Re-terminate and label the patch panels for the 30U rack]].
+Feeds the second floor: the U7 Pro - Upstairs AP and the other 2nd-floor runs. Until 2026-11-22 it took PoE++ from Pro Max port 15 (15.5 W drawn, 2026-11-15), which left it a 46 W PoE budget. Since the cutover it takes 802.3at (Class 4) from Enterprise 48 port 38, which leaves 16 W total and 12 W effective for its own ports: too little for the U7 Pro (up to 21 W), which has been rebooting on it (2026-11-23). On its 210 W adapter the budget is 196 W. A second, identical model sits in the rack: "USW Flex 2.5G 8 PoE - Basement" (verified live 2026-11-15) runs on its own adapter with a 196 W PoE budget, uplinked at 1 GbE to Pro Max port 12 with nothing else connected yet; it has no note of its own yet, and its planned use is in [[Re-terminate and label the patch panels for the 30U rack]].
 
 ## Hardware
 
 - **Model:** UniFi USW Flex 2.5G 8 PoE
 - **IP Address:** 192.168.1.24
 - **Uplink:** its port 9 (2.5 GbE) to USW Pro Max port 15
-- **Firmware:** 2.1.8.971. IP by DHCP (controller-managed). PoE draw 8.4 W of a 46 W budget (2026-11-15).
+- **Firmware:** 2.1.8.971. IP by DHCP (controller-managed). PoE draw 8.8 W of 12 W effective on PoE input (2026-11-23).
 
 ## Port Assignments (verified via UniFi API 2026-11-15)
 
