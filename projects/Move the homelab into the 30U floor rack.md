@@ -6,8 +6,10 @@ system:
 - '[[TrueNAS SCALE (Big Boi)]]'
 - '[[UniFi (UDM Pro)]]'
 - '[[UniFi UPS 2U]]'
+- '[[USW Enterprise 48 PoE]]'
+- '[[USP PDU Pro]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. Then write System notes for the Enterprise 48 and PDU Pro.'
+next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. System notes for the Enterprise 48 and PDU Pro written 2026-11-23. Open with Aaron: what feeds the PDU Pro and what is on each outlet (Open questions); forget the Pro Max 16, Basement Flex in UniFi.'
 ---
 
 ## Goal
@@ -79,7 +81,9 @@ About 152–176 lb with 4 HDDs in Big Boi and 164–188 lb with 12, against the 
 
 ## Open questions
 
-- Rack top venting or a roof fan: the Enterprise 48 (150 W before PoE) sits at U29.
+- **What feeds the PDU Pro, and what is on each outlet?** (Claude, 2026-11-23.) The plan puts the PDU on a UPS battery outlet, but at the same moment the PDU measured 171 W and the UPS output 160 W, which can't both hold if the PDU plus Big Boi, the UDM Pro and the Enterprise 48 are all behind the UPS. Busy outlets: 6 (103 W), 20 (32 W), 5 (23 W), 8 (8 W), 15, 17, 18 (1–2 W each). Naming the outlets in UniFi gives HA's sensors names. UPS: 93% battery and 47.5 min runtime at 160 W, still charging after the cutover.
+
+- Rack top venting or a roof fan: the Enterprise 48 (150 W before PoE) sits at U29. First read after the cutover: 62 °C (143.6 °F) internal; decide from a week of `sensor.usw_enterprise_48_poe_temperature` history.
 - The StarTech tray's inside width against the Denon's 434 mm.
 - What the three small boxes on the 12U's shelf are, and what the Isobar feeds today.
 

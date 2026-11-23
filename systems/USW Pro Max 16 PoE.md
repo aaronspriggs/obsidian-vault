@@ -1,12 +1,13 @@
 ---
-status: active
+status: deprecated
+superseded_by: '[[USW Enterprise 48 PoE]]'
 category: network
 ip: 192.168.1.250
 last_verified: 2026-09-28
 notion_id: 3087ae76-22ba-81fb-ae83-e37beaa72a78
 ---
 
-Core switch. SFP+ 1 uplink to UDM Pro (10 GbE); SFP+ 2 to Big Boi (10 GbE). Powers the wall APs, Flex 2.5G and wall panel Pi.
+Retired 2026-11-23: replaced as core switch by the [USW Enterprise 48 PoE](<USW Enterprise 48 PoE.md>) at the 30U cutover, and waiting to be sold ([sale project](<../projects/Sell the network gear retired by the 30U rack move.md>)). Still adopted in UniFi and offline, so `alert2.homelab_usw_pro_max_16_poe_offline` fires until its `homelab_watch` label is removed or the switch is forgotten in UniFi. The rest of this note is its state before the move. Its STP priority was 4096.
 
 ## Overview
 

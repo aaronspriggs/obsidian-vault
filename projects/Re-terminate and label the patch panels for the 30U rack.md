@@ -3,6 +3,7 @@ type: project
 status: active
 priority: medium
 system:
+- '[[USW Enterprise 48 PoE]]'
 - '[[USW Pro Max 16 PoE]]'
 - '[[USW Flex 2.5G 8 PoE]]'
 - '[[UniFi (UDM Pro)]]'
@@ -86,3 +87,4 @@ Rules (networking practice): panel, switch, panel. Panel A (U30) sits over the s
 - Ring keypad, port 13 (A7): no link, 0.5 W of PoE (Class 3). It was the same on the Pro Max before the move (port 4: down, 0.63 W), so the move didn't cause it.
 - Not on the switch yet: Sonos Amp (B4, port 8) and Denon (B5, port 10).
 - Redraw the doc artifact to rack v17.
+- **STP (Claude, 2026-11-23):** the Enterprise 48 runs at the default priority 32768, while the Upstairs Flex has 8192 (set earlier, value as in Sonos's UniFi guide) and the retired Pro Max 16 had 4096. So the core switch is no longer the lowest-priority bridge, and the edge switch upstairs is. The switches also report different root bridges. Fix: set the Enterprise 48 to 4096 in UniFi (Devices → the switch → Settings → STP priority), which makes it root as the Pro Max was. Claude has no UniFi write route. Upstairs Flex port 1 (Cheryl's Office Sonos) is still `discarding`; the Sonos Wi-Fi fix from [the STP change note](<../changes/2026-11-19 Traced the Upstairs Flex STP port-block alert to Cheryl's Office Sonos.md>) is still pending.
