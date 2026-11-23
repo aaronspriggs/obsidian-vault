@@ -9,7 +9,7 @@ system:
 - '[[USW Enterprise 48 PoE]]'
 - '[[USP PDU Pro]]'
 parent: '[[Rebuild Big Boi into a new case with an HDD pool for bulk media]]'
-next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. System notes for the Enterprise 48 and PDU Pro written 2026-11-23. Open with Aaron: name the PDU outlets, and whether Big Boi moves to its own UPS battery outlet (Open questions); forget the Pro Max 16, Basement Flex in UniFi.'
+next_step: '2026-11-23: cutover done (Aaron) and every service checked after power-up, HA included. Maintenance mode is still on, kept on until Aaron finishes the re-patching fixes in the patch panel note (Kitchen Sonos 1 cord, Upstairs Flex adapter); then Claude turns it off and reads the "Maintenance over" push. System notes for the Enterprise 48 and PDU Pro written 2026-11-23. Open with Aaron: name the PDU outlets, and check the PDU outlet behaviour when power returns (Open questions); forget the Pro Max 16, Basement Flex in UniFi.'
 ---
 
 ## Goal
@@ -81,7 +81,7 @@ About 152–176 lb with 4 HDDs in Big Boi and 164–188 lb with 12, against the 
 
 ## Open questions
 
-- **What is on each PDU outlet?** Answered in part (Aaron, 2026-11-23): the PDU Pro is on one UPS battery outlet and everything else in the rack plugs into the PDU, so all of it is on battery (the 171 W PDU against 160 W UPS reading was meter disagreement). Still to do: name the outlets in UniFi so HA's sensors carry names. Claude suggested moving Big Boi to its own UPS battery outlet so a PDU fault, a mis-toggled outlet or a PDU firmware update can't cut its power without the NUT shutdown; Aaron hasn't decided. UPS: 93% battery and 47.5 min runtime at 160 W, still charging after the cutover.
+- **What is on each PDU outlet?** Answered in part (Aaron, 2026-11-23): the PDU Pro is on one UPS battery outlet and everything else in the rack plugs into the PDU, so all of it is on battery (the 171 W PDU against 160 W UPS reading was meter disagreement). Still to do: name the outlets in UniFi so HA's sensors carry names. Claude first suggested moving Big Boi to its own UPS battery outlet, then withdrew it the same day: the UPS 2U's outlets are switchable too and report no per-outlet power, and with single-PSU gear any device in the chain is a single point of failure, so UPS → PDU → everything is the standard layout. Real power-path redundancy needs dual PSUs on A/B feeds, or an ATS. Instead, treat the PDU as a remote power switch: name the outlets, keep outlet control to Aaron's admin account, no schedules or power-cycle routines on server outlets, firmware auto-update off, and check what the outlets do when power returns after a full UPS run-down. UPS: 93% battery and 47.5 min runtime at 160 W, still charging after the cutover.
 
 - Rack top venting or a roof fan: the Enterprise 48 (150 W before PoE) sits at U29. First read after the cutover: 62 °C (143.6 °F) internal; decide from a week of `sensor.usw_enterprise_48_poe_temperature` history.
 - The StarTech tray's inside width against the Denon's 434 mm.
